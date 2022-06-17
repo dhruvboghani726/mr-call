@@ -18,9 +18,7 @@ enum Direction {
   Original = 'Original',
   None = 'None'
 }
-/*
-* Componenet Header : Envivo Clinic header componenet
-*/
+
 @Component({
   selector: 'app-website-sidenav',
   templateUrl: './website-sidenav.component.html',

@@ -3,9 +3,6 @@ import { Router } from '@angular/router';
 
 
 
-/*
-* Componenet Home : Envivo Clinic home page componenet
-*/
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
