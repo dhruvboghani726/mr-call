@@ -2,39 +2,40 @@
 
 
   <!-- Slider Section -->
-  <div class="slider backimg"  [ngStyle.xs]="{ padding: '13px'}"
+  <div class="slider "  fxLayout="column"> 
+  <section class="Slidersection"   ngClass.xs="Slidersection-xs"  [ngStyle.xs]="{ padding: '10px'}"
   [ngStyle.sm]="{ padding: '53px'}"
   [ngStyle.md]="{ padding: '63px'}"
-  [ngStyle.lg]="{ padding: '73px'}"
-    fxLayout="column">
-    <div class="slider-img">
-      <div class="float-right" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md
+  [ngStyle.lg]="{ padding: '65px'}" fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column">
+    <div class="contain"  fxLayout="row"  fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div class="Sliderleft"  ngClass.xs="Sliderleft-xs">
+        <div class="content"  fxLayout="column" fxLayoutGap="10px" fxHide.lt-md
         fxShow.gt-md>
-        <div class="cardpadding">
-          <!-- <p class="matdisplay-3 color-primary cursor-auto">ide.para<br>2</p> -->
-          <p class="matdisplay-3 color-accent">Serving Your Health<br>Needs is Our Priority</p>
-          <button mat-raised-button class="btn" (click)=gotologin() color="primary">Make Appointment
-          </button>
-          <img class="centered" ngClass.xs="centered-xs" src="/assets/images/websitehome/image-3.png" alt="">
-          <!-- routerLink="/patient/patient-login"  -->
+        <p class="matdisplay-3 color-accent">Serving Your Health<br>Needs is Our Priority</p>
+       
+          
         </div>
-      </div>
-
-      <div class=" padding-top" fxLayout="column" fxLayoutAlign="center start" fxHide.gt-md fxShow.lt-md
+        <button fxHide.lt-md
+        fxShow.gt-md mat-raised-button class="btn" (click)=gotologin() color="primary">Make Appointment
+        </button>
+        <div class="content"  fxLayout="column" fxLayoutGap="10px" fxHide.gt-md fxShow.lt-md
         fxHide>
-        <div fxLayout="row" fxLayoutAlign="center center" class="cardpadding">
-          <p class="mat-h1 color-accent">Serving Your Health<br>Needs is Our Priority</p>
-     
-        </div>
-        <div class="cardpadding" fxLayout="row" fxLayoutAlign="center start">
-
-          <button mat-raised-button class="btn" (click)=gotologin() color="primary"> Make Appointment
-          </button>
+        <p class="mat-h1 color-accent">Serving Your Health<br>Needs is Our Priority</p>
+       
+        <button mat-raised-button class="btn" (click)=gotologin() color="primary">Make Appointment
+        </button>
+          
         </div>
       </div>
+    
+      <div class="Sliderright"  ngClass.xs="Sliderright-xs">
+        
+      </div>
+    
     </div>
+  </section>
   </div>
-
+  
   
 
   <div class="header-home cardpadding secpartimg padding-top"  fxLayout="column" 

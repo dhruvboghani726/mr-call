@@ -1,0 +1,30 @@
+.cardsizedash {
+    height: 350px;
+    max-height: 350px;
+    width: 550px;
+    max-width: 550px;
+    border-radius: 5px;
+    background-color: #f8f5e9;
+  }
+  .paddingLeft{
+    padding: 0 0px 0 17px;
+
+    font-size: 20px;
+    color: black;
+  }
+  .paddingTop{
+    padding: 10px 0px 0 0px;
+  }
+  .fill {
+    flex: 1;
+  }
+  .txtdecorate{
+    text-decoration: underline;
+    color:#2AA7FF
+  
+  }
+
+::ng-deep .mat-card-header .mat-card-title {
+    font-size: 30px !important;
+  }
+  

@@ -10,6 +10,7 @@ $mat-mr-accent: (100: #1B3C74,
   contrast: (100: white,
   ));
 
+
 $primary:mat-palette($mat-mr-primary, 100, 100);
 $accent: mat-palette($mat-mr-accent, 100, 100);
 $warn:mat-palette($mat-red);
