@@ -1,0 +1,118 @@
+.serach-box {
+    background-color: #2AA7FF;
+    float: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 100%;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.search-icon {
+    margin-left: -10px;
+    margin-top: 27px;
+    color: grey;
+}
+
+.header-card {
+    box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
+    // background-color: linear-gradient(to right, #2AA7FF, to leftend, #ffffff);
+    background-color: #c9e3f5;
+
+}
+
+.cardsize {
+    height: auto;
+    max-height: auto;
+    width: auto;
+    max-width: auto;
+}
+
+.dr-profile {
+    height: auto;
+    width: auto;
+}
+
+mat-icon {
+    color: #15558D;
+    margin-top: 10px;
+}
+
+.mat-h2 {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+
+    .mat-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        display: table;
+        border-collapse: collapse;
+        margin: 0px;
+    }
+
+    .mat-row,
+    .mat-header-row {
+        display: table-row;
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 5px;
+        line-break: unset;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+}
+
+.mat-header-column-Position,
+.mat-header-column-Date,
+.mat-header-column-Doctorname,
+.mat-header-column-Hospital,
+.mat-header-column-Territory,
+.mat-header-column-Timeslot,
+.mat-header-column-Status,
+.mat-header-column-Cancel {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #15558d;
+    padding: 5px;
+}
+
+::ng-deep th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type {
+    padding-right: 5px !important;
+}
+
+::ng-deep th.mat-header-cell:first-of-type,
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type {
+    padding-left: 5px !important;
+}
+
+td.mat-cell {
+    padding: 8px;
+}
