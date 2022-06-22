@@ -1,0 +1,109 @@
+<div fxLayout="column" fxLayoutGap="15px">
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;">
+        <mat-card fxFlex="70" class="remindercard backgroud-color-greylight">
+            <mat-card-header fxLayoutAlign="center center">
+                <mat-card-title class="mat-h1">Add New Brand Reminder Card</mat-card-title>
+               
+            </mat-card-header>
+            
+            <mat-card-content  class="backgroud-color-white" style="border-radius: 15px;
+            padding: 18px 40px 0px 40px;">
+                <form #loginForm="ngForm" >
+                    <!-- <mat-form-field apie>
+                      <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
+                     
+                    </mat-form-field> -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input matInput placeholder="Title">
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                     
+                      </mat-form-field>
+                      <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+                        <!-- First name field -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Product1</mat-label>
+                            <input matInput placeholder="Product1">
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                           
+                          </mat-form-field>
+                        <!-- Last name field -->
+                        <mat-form-field appearance="outline">
+                            <mat-label>Product2</mat-label>
+                            <input matInput placeholder="Product2">
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                           
+                          </mat-form-field>
+                      </div>
+                      
+                     
+                      <!-- <mat-form-field appearance="outline">
+                        <mat-label>Upload Image</mat-label>
+                        <input matInput placeholder="Placeholder">
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                      
+                      </mat-form-field> -->
+                      <mat-form-field  appearance="outline">
+                        <mat-label>Upload Image</mat-label>
+                        <div>
+                          <mat-toolbar>
+                            <input matInput  />
+                           
+                          </mat-toolbar>
+                          <input
+                            type="file"
+                            id="fileInput"
+                            name="fileInput"
+                            accept="image/*" multiple 
+                          
+                          />
+                        </div>
+                      </mat-form-field>
+                   
+                      <mat-card-actions  align="center"  fxLayoutGap="5px">
+                        
+                      
+                        <button mat-stroked-button color="primary"><mat-icon>refresh</mat-icon>Reset</button>
+                        <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Add</button>
+                        
+                    </mat-card-actions>
+                  </form>
+                 
+            </mat-card-content>
+           
+         
+         
+           
+          
+        </mat-card>
+       
+      
+        <div fxFlex="30"  fxLayout="column" fxLayout.xs="column" fxLayoutGap="15px">
+            <mat-card class="halfcard backgroud-color-bluelight">
+                <span class="menu-button color-primary">
+                    <mat-icon>info</mat-icon>
+                    <span class="mat-h2" ngClass.xs="mat-h2"> Notes:</span>
+                </span><br>
+                <span class="mat-h3"  ngClass.xs="mat-h5">
+                   A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
+                </span>
+            </mat-card>
+            <mat-card  class="halfcard  backgroud-color-greylight"  fxLayout="column" fxLayoutAlign="center center"> 
+                <span class="mat-h2"  ngClass.xs="mat-h5">
+                   Remaining Space in Card Bucket 
+                 </span>
+                 <span class="mat-h1 color-primary"  ngClass.xs="mat-h5">
+                   5 
+                  </span>
+            </mat-card>
+        </div>
+       
+    </div>
+    <div fxLayout="column" style="padding: 20px;">
+
+        <mat-card class="appointcard  backgroud-color-bluelight">
+           
+        </mat-card>
+    </div>
+</div>

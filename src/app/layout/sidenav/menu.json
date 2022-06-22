@@ -1,0 +1,21 @@
+ {
+        "text": "Suit",
+        "icon": "inventory_2",
+        "children": [
+            {
+                "text": "Category",
+                "icon": "category",
+                "routerLink": "/product/category"
+            },
+            {
+                "text": "Sub Category",
+                "icon": "layers",
+                "routerLink": "/product/sub-category"
+            },
+            {
+                "text": "Product",
+                "icon": "all_inbox",
+                "routerLink": "/product/manage"
+            }
+        ]
+    }

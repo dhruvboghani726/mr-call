@@ -17,6 +17,13 @@ body { margin: 0; font-family:Font-Inter,Montserrat,Arial; }
 .backgroud-color-accent {
   background-color: mat-color($accent);
 }
+.backgroud-color-bluelight{
+  background-color: #e6fdf8;
+}
+.backgroud-color-greylight{
+  background-color: #f8f5e9;
+}
+
 .color-primary {
   color: mat-color($primary);
 }
@@ -101,6 +108,42 @@ body { margin: 0; font-family:Font-Inter,Montserrat,Arial; }
   margin-top: 5px;
 }
 //provide space
+
+.mat-h5{
+  font-weight: 400;
+  margin: 0;
+  font-size: 15px !important;
+}
+.mat-h1 {
+  font-weight: 1000;
+  margin: 0;
+}
+.mat-display-1 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 36px;
+}
+.mat-display-2 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 34px;
+}
+.mat-display-4 {
+  font-size: 80px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: none;
+  line-height: 90px;
+}
+
+.mat-h4,
+.mat-h3 {
+  margin: 0;
+}
+.mat-h2 {
+  font-weight: 400;
+  margin: 0;
+}
 .padding-top {
   padding: 10px;
 }
@@ -242,24 +285,16 @@ input.star-5:checked ~ label.star:before {
 .border-grey {
   border-color: mat-color($mat-grey, 500);
 }
-//OTP input box
-.otp-box input:focus {
-  outline-color: mat-color($primary);
-}
-//Video call button
-.videocall-button {
-  background-color: $light-primary-text !important;
-}
-//Chat message
-.chat-message .left-bubble span.msg-name {
-  font-size: 12px;
-  font-weight: bold;
-  color: mat-color($primary);
-}
-.chat-message .right-bubble span.msg-name {
-  font-size: 12px;
-  font-weight: bold;
-  color: mat-color($mat-green, 500);
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+  mat-icon {
+    margin-right: 8px;
+  }
 }
 .cursor-auto {
   cursor: auto;
@@ -278,4 +313,7 @@ mat-divider {
   margin-top: 4px;
   margin-bottom: 4px;
   background-color: rgba(255, 255, 255, 0.5);
+}
+.card-second-backgoung-color {
+  background-color: #c9e3f5;
 }

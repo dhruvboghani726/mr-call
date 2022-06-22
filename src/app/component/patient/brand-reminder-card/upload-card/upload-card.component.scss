@@ -1,0 +1,49 @@
+.remindercard{
+    height: 410px;
+    max-height: 410px;
+  
+    border-radius: 5px;
+    background-color: #f8f5e9;
+}
+.halfcard{
+    // height: 175px;
+    // max-height: 175px;
+    height: 181px;
+    max-height: 181px;
+   
+    border-radius: 5px;
+  
+}
+.appointcard{
+    height: 350px;
+    max-height: 350px;
+  
+    border-radius: 5px;
+  
+}
+
+mat-form-field {
+    width: 100%;
+    font-weight: 500;
+  }
+  .mat-input-element {
+    font-size: medium;
+    font-weight: 200;
+  }
+  #fileInput {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+  }
+  .mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+    padding: 0;
+  }
+  .mat-toolbar-single-row button {
+    width: 100px;
+  }
