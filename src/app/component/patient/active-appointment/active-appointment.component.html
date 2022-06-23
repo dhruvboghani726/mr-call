@@ -1,95 +1,88 @@
-<!-- <div class="cardpadding" fxLayout="column" fxLayoutGap="20px">
-    <mat-card class="card-box-shadow" fxLayoutAlign="start " style="background-color: #c9e3f5;">
-        <div fxLayout="column">
-            <mat-icon color-primary>timelapse</mat-icon>
-
-        </div>
-        <div fxLayout="column">
-            <p class="mat-h2 color-primary">Active Appoinment</p>
-        </div> -->
-<!-- &nbsp;&nbsp;
-        <div fxlayouta="row" fxLayoutAlign="center center">
-            <input type="text" class="serach-box" placeholder="Search.." name="search"
-                style="background-color: #2AA7FF;">
-            <button class="serch-btn" type="submit">
-                <mat-icon>search</mat-icon>
-            </button>
-        </div> -->
-<!--         
-        <div fxLayout="column" fxLayoutGap="15px" style="align-self:center;">
-            <mat-icon role="img" color="accent" matbadgecolor="warn" fxLayoutAlign="end center"
-                class="mat-icon notranslate mat-badge mat-accent mat-badge-warn material-icons mat-badge-overlap mat-badge-above mat-badge-after mat-badge-medium"
-                aria-hidden="true" ng-reflect-color="warn" ng-reflect-content="1" data-mat-icon-type="font">
-                notifications_active<span id="mat-badge-content-0" class="mat-badge-content mat-badge-active">1</span>
-            </mat-icon>
-            &nbsp;&nbsp;
-            <div fxLayout="column">
-                <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image"
-                    class="avatar mat-elevation-z8" style="max-width:40px; max-height: 50px; border-radius: 50%;">
-            </div>
-        </div>
-
-    </mat-card>
-</div> -->
-
 <div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="20px" fxFlexAlign="center">
 
-    <mat-card class="header-card mat-elevation-z4" fxLayout="row" fxFlex.xs="100%" fxFlex.sm="33%">
-        <div fxLayoul="column " fxFlex="3">
-            <mat-icon color-primary>timelapse</mat-icon>
+    <mat-card fxHide.xs class="header-card mat-elevation-z4" fxLayout="row" fxFlex.xs="100%">
+        <span class="menu-button color-primary" fxFlex="25" fxFlex.lt.sm="100">
+            <mat-icon>assignment</mat-icon>
+            <span class="mat-h2" ngClass.xs="mat-h2">Active Appoiment</span>
+        </span><br>
+        <div fxHide.xs fxLayout="column" fxFlex="50%" fxFlex.lt.sm="100" fxFlexAlign="center">
+
+            <span class="fileter-width">
+                <mat-form-field id="search" appearance="outline" style="width: 100%;">
+                    <input matInput [(ngModel)]="value" placeholder="Search">
+                    <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
+                        (click)="value=''">
+                        <mat-icon class="mat-18 color-primary">search</mat-icon>
+                    </button>
+                </mat-form-field>
+            </span>
         </div>
-        <div fxLayout="column" fxFlex="20" fxFlex.lt.sm="100" fxFlexAlign="center">
-            <p class="mat-h2 color-primary" [ngClass.lt-sm]="'mat-h3'"> Active Appoinment</p>
-        </div>
-        <div fxLayout="column" fxFlex="70" fxFlex.lt.sm="100" fxFlexAlign="center">
-            <input type="text" class="serach-box" placeholder="Search.." name=" search">
-        </div>
-        <div fxLayout="column" fxFlex="7" fxFlex.lt.sm="100" fxFlexAlign="center">
+        <div fxLayout="column" fxFlex="25" fxFlex.lt.sm="100" fxLayoutAlign="space-between end" class="haeader-avtar">
             <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
                 style="max-width:40px; max-height: 50px; border-radius: 50%;">
         </div>
     </mat-card>
+    <!-- for mobile view  -->
+    <mat-card class="header-card mat-elevation-z4" fxLayout="row" fxFlex.xs="100%" fxHide.sm fxHide.gt-sm>
+        <div fxlayout="row">
+            <div fxlayout="column" fxHide.sm fxHide.gt-sm>
+                <span class="menu-button color-primary" fxFlex.lt.sm="100" fxLayoutAlign="space-between end">
+                    <!-- <mat-icon>assignment</mat-icon> -->
+                    <span class="mat-h2" ngClass.xs="mat-h2">Active Appoiment</span>
+                    <span>
+                        <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image"
+                            class="avatar mat-elevation-z8"
+                            style="max-width:40px; max-height: 50px; border-radius: 50%;">
+                    </span>
+                </span>
+            </div>
+            <div fxlayout="column" fxHide.SM fxHide.gt-sm>
+                <span class="fileter-width">
+                    <mat-form-field id="search" appearance="outline" style="width: 100%;">
+                        <input matInput [(ngModel)]="value" placeholder="Search">
+                        <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="value=''">
+                            <mat-icon class="mat-18 color-primary">search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </span>
+            </div>
+        </div>
+    </mat-card>
+    <!-- for mobile view end  -->
     <br>
-    <div [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="20px">
         <mat-card class="card-second-backgoung-color mat-elevation-z4">
-            <div fxLayout="row">
-                <div fxLayout="column">
-                    <mat-icon>info</mat-icon>
-                </div>
-                &nbsp;&nbsp;
-                <div fxLayout="column">
-                    <h2 class="color-primary" style="font-weight: 600; margin-top:5px;">Note:</h2>
-                </div>
-                &nbsp;&nbsp;
-                <div fxLayout="column">
-                    <h3 class=" color-primary" style="margin-top:7px;">Active appoinment show below arre your today's &
-                        tommorrow's appoinment
-                    </h3>
-                </div>
-            </div>
-            <div fxLayout="row" class="loram">
-                <p style="text-align:justify;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Dolor ullam ipsum perferendis
-                    repudiandae!
-                    Earum
-                    esse
-                    perferendis voluptatem deserunt aliquam exercitationem,<br> iusto nemo facilis incidunt officia
-                    tenetur
-                    distinctio
-                    temporibus? Quam, laborum!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Corporis eum aperiam culpa explicabo
-                    nam
-                    sunt<br>
-                    assumenda odio doloribus dignissimos repellat amet ea rem quo, dolorum doloremque excepturi illum et
-                    voluptatibus.
-                </p>
-            </div>
+            <span class="menu-button color-primary">
+                <span class="mat-h2" ngClass.xs="mat-h2">
+                    <mat-icon class="color-primary">info</mat-icon> Notes: Active appoinment show below arre your
+                    today's &
+                    tommorrow's appoinment
+                </span>&nbsp;
+            </span>
+            <br>
+            <!-- <div fxLayout="row" class="loram"> -->
+            <p ngClass.xs="mat-h3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Dolor ullam ipsum perferendis
+                repudiandae!
+                Earum
+                esse
+                perferendis voluptatem deserunt aliquam exercitationem,<br> iusto nemo facilis incidunt officia
+                tenetur
+                distinctio
+                temporibus? Quam, laborum!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Corporis eum aperiam culpa explicabo
+                nam
+                sunt<br>
+                assumenda odio doloribus dignissimos repellat amet ea rem quo, dolorum doloremque excepturi illum et
+                voluptatibus.
+            </p>
         </mat-card>
     </div>
-    <br>
+
     <mat-card class="header-card mat-elevation-z4">
-        <div fxLayout="row">
-            <div fxLayoul="column " fxFlex="80" fxFlex.xs="100%" fxFlex.sm="33%" fxFlexAlign="center">
+        <div fxLayout="row" fxLayout.xs="column">
+            <div fxLayoul="column " fxFlex="70" fxFlex.xs="100%" fxFlex.sm="33%" fxFlexAlign="center">
                 <mat-form-field appearance="outline">
                     <mat-label>Show Entry</mat-label>
                     <mat-select>
@@ -99,16 +92,21 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div class="example" fxLayout="column" fxFlex="15" fxFlex.lt.sm="100" fxFlexAlign=" end center"
-                style="margin:auto;max-width:200px">
-                <input type="text" placeholder="Search.." name="search2">
+            <div>
+                <!-- <mat-toolbar class="backgroud-color-white"> -->
+                <span class="fileter-width">
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="value" placeholder="Search">
+                        <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="value=''">
+                            <mat-icon class="mat-18 color-primary">search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </span>
+                <!-- </mat-toolbar> -->
             </div>
-            <div class="example" fxLayout="column" fxFlex="5" fxFlex.lt.sm="100" fxFlexAlign=" end center">
-                <mat-icon class="search-icon">search</mat-icon>
-            </div>
-
         </div>
-
+        <br>
         <div class="table-responsive">
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                 <!-- Position Column -->

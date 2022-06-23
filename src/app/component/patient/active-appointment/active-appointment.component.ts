@@ -16,7 +16,7 @@ export interface PeriodicElement {
 }
 const ELEMENT_DATA: PeriodicElement[] = [
   { Position: 1, Date: '2-5-2022', Doctorname: 'John Deo', Hospital: 'Civil', Territory: 'surat', Timeslot: '2:30 to 3:00', Status: 'Done', Cancel: 'Not Avalible' },
-  { Position: 1, Date: '2-5-2022', Doctorname: 'John Deo', Hospital: 'Civil', Territory: 'surat', Timeslot: '2:30 to 3:00', Status: 'Done', Cancel: 'Not Avalible' },
+  { Position: 2, Date: '2-5-2022', Doctorname: 'John Deo', Hospital: 'Civil', Territory: 'surat', Timeslot: '2:30 to 3:00', Status: 'Done', Cancel: 'Not Avalible' },
 ];
 @Component({
   selector: 'app-active-appointment',
@@ -26,6 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 
 export class ActiveAppointmentComponent implements OnInit {
+  value
   foods: Food[] = [
     { value: 'steak-0', viewValue: '10' },
     { value: 'pizza-1', viewValue: '20' },

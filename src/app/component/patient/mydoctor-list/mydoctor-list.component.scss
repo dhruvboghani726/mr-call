@@ -2,31 +2,27 @@
     box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
     // background-color: linear-gradient(to right, #2AA7FF, to leftend, #ffffff);
     background-color: #c9e3f5;
+
 }
 
 ::ng-deep #search {
-    font-size: 10px;
+    font-size: 10px; // example
 }
 
 .haeader-avtar {
     align-items: flex-end;
 }
 
-.cardsize {
+.noticecard {
     height: auto;
     max-height: auto;
-    width: auto;
-    max-width: auto;
-}
-
-.dr-profile {
-    height: auto;
-    width: auto;
+    background-color: #c9e3f5;
+    //     display: inline-flex;
+    //     flex-flow: row wrap;
 }
 
 .mat-h2 {
     font-weight: 600;
-
 }
 
 .table-responsive {

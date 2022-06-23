@@ -32,6 +32,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { A11yModule } from '@angular/cdk/a11y';
+import { ReactiveFormsModule } from '@angular/forms';
 const MaterialComponents = [
   A11yModule,
   MatButtonToggleModule,
@@ -62,11 +63,12 @@ const MaterialComponents = [
   MatExpansionModule,
   MatChipsModule,
   MatAutocompleteModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  ReactiveFormsModule
 ];
 
 @NgModule({
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [],
   imports: [
 
