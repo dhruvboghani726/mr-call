@@ -135,6 +135,11 @@ body { margin: 0; font-family:Font-Inter,Montserrat,Arial; }
   text-transform: none;
   line-height: 90px;
 }
+.mat-h6{
+  font-weight: 500 !important;
+    margin: 0 ;
+    font-size: 13px !important;
+}
 
 .mat-h4,
 .mat-h3 {
@@ -316,4 +321,40 @@ mat-divider {
 }
 .card-second-backgoung-color {
   background-color: #c9e3f5;
+}
+.backgroud-color-whitered{
+  background-color: #e8f3f4;
+}
+// header
+.serach-box {
+  background-color: #2AA7FF;
+  float: center;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 100%;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.search-icon {
+  margin-left: -10px;
+  margin-top: 27px;
+  color: grey;
+}
+.header-card {
+  box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
+  // background-color: linear-gradient(to right, #2AA7FF, to leftend, #ffffff);
+  background-color: #c9e3f5;
+
 }

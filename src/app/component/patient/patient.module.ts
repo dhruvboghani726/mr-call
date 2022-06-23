@@ -13,6 +13,11 @@ import { UploadCardComponent } from './brand-reminder-card/upload-card/upload-ca
 import { ShareCardComponent } from './brand-reminder-card/share-card/share-card.component';
 import { CardHistoryComponent } from './brand-reminder-card/card-history/card-history.component';
 import { ActiveAppointmentComponent } from './active-appointment/active-appointment.component';
+import { ProfileSettingsComponent } from './profile-settings/profile-settings.component';
+import { UpdateProfileComponent } from './profile-settings/update-profile/update-profile.component';
+import { ChangePasswordComponent } from './profile-settings/change-password/change-password.component';
+import { MydoctorListComponent } from './mydoctor-list/mydoctor-list.component';
+import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component';
 
 
 @NgModule({
@@ -22,10 +27,15 @@ import { ActiveAppointmentComponent } from './active-appointment/active-appointm
     DashboardComponent,
     ActiveAppointmentComponent,
          BookAnAppointmentComponent,
+         MydoctorListComponent,
+         MRepsVacancyComponent,
          BrandReminderCardComponent,
          UploadCardComponent,
          ShareCardComponent,
          CardHistoryComponent,
+         ProfileSettingsComponent,
+         UpdateProfileComponent,
+         ChangePasswordComponent,
      ],
   imports: [
    

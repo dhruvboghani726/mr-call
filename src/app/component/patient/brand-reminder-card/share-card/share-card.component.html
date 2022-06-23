@@ -1,16 +1,17 @@
-<div fxLayout="column" fxLayoutGap="15px">
+<div fxLayout="column" fxLayoutGap="20px">
+    
     <div fxLayout="row" fxLayoutGap="10px" style="padding:15px" fxLayout.xs="column">
         <mat-card class="appointmentcard " ngClass.xs="appointmentcard-xs">
 
-            <span class="menu-button mat-h2" >
+            <span class="menu-button mat-h2">
                 <mat-icon>assignment_turned_in</mat-icon>
-                <span class="mat-h2"  ngClass.xs="mat-h3"> Appointment Booking Points(0)</span>
+                <span class="mat-h2" ngClass.xs="mat-h3"> Reminder Card Balance :20</span>
             </span>
         </mat-card>
-        <mat-card class="appointmentcard"  ngClass.xs="appointmentcard-xs">
+        <mat-card class="appointmentcard" ngClass.xs="appointmentcard-xs">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
-                <span class="mat-h2"  ngClass.xs="mat-h3">Purchase Booking Points</span>
+                <span class="mat-h2" ngClass.xs="mat-h3">Purchase Reminder Card</span>
             </span>
 
         </mat-card>
@@ -19,48 +20,79 @@
     </div>
     <div fxLayout="column" style="padding:10px" fxLayout.xs="column" fxLayoutGap="10px">
         <mat-card style="background-color:#e6fdf8">
-
-            <span class="menu-button color-primary">
+            <div fxLayout="row">
+                <div class="color-primary" style="margin-top:6px;">
+                    <mat-icon>info</mat-icon>
+                </div>
+                &nbsp;&nbsp;
+                <div>
+                    <h2 class="color-primary" style="font-weight: 600; margin-top:5px;">Note:</h2>
+                </div>
+                &nbsp;&nbsp;
+                <div fxLayout="column">
+                    <h3 style="margin-top:7px;">Active appoinment show below arre your today's &
+                        tommorrow's appoinment
+                    </h3>
+                </div>
+            </div>
+            <!-- <span class="menu-button color-primary">
                 <mat-icon>info</mat-icon>
                 <span class="mat-h1" ngClass.xs="mat-h2"> Notes:</span>
+                <span class="mat-h1  color-" ngClass.xs="mat-h2">Booking Window Open from 3:00 P.M TO 9:00 A.M</span>
             </span>
             <span class="mat-h3"  ngClass.xs="mat-h5">
-               A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M<br>
+               A)&nbsp;<br>
                B)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
-            </span>
+            </span> -->
 
 
         </mat-card>
 
     </div>
-    
-    
+
+
     <div fxLayout="row" style="padding:10px" fxLayoutGap="10px" fxLayout.xs="column">
-        <mat-card fxLayoutGap="10px"  class="twocard"  ngClass.xs="twocard-xs" fxLayout="column">
-            <span class="mat-h1" ngClass.xs="mat-h2">Dr.Bhargav</span>
-            <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
-            <span class="menu-button  color-primary">
-                <mat-icon> local_hospital</mat-icon>
-                <span class="mat-h3" ngClass.xs="mat-h4"> Dave Eye care</span>
-            </span>
-            <span class="menu-button">
-                <mat-icon> place</mat-icon>
-                <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
-            </span>
-            <span class="mat-h2" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
+        <mat-card fxLayoutGap="10px" class="twocard" ngClass.xs="twocard-xs" fxLayout="column">
+            <div fxLayout="row"   fxLayout.xs="column"  fxLayoutGap="15px" style="padding: 20px;">
+                <div fxFlex="50" >
+                    <h2 Class="mat-h1" ngClass.xs="mat-h5">Share Brand Reminder Card</h2>
+                   
+
+                        <mat-form-field style="min-width: calc(100% + 0px) !important;" appearance="outline">
+                            <mat-label>Select</mat-label>
+                            <mat-select>
+                                <mat-option value="All">All</mat-option>
+                                <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                                <mat-option value="Surat">Surat</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                  
+                </div>
+                <div fxFlex="50" >
+                    <h2   Class="mat-h1" ngClass.xs="mat-h2" fxHide.xs >Share Brand Reminder Card</h2>
+                   
+                        <mat-form-field  style="min-width: calc(100% + 0px) !important;" appearance="outline">
+                            <mat-label>Select</mat-label>
+                            <mat-select>
+                                <mat-option value="All">All</mat-option>
+                                <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                                <mat-option value="Surat">Surat</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                   
+                </div>
+            </div>
+            <div fxLayout="row"  fxLayout.xs="column"  fxLayoutGap="15px"  style="padding: 10px;">
+             
+              
+                <div class="rectangle" [ngStyle.xs]="{    height: '250px;', width: '250px;' }" fxLayoutAlign="center center"> 
+                    Card Image
+                  </div>
+                  <div> 
+                    <button mat-raised-button color="primary"><mat-icon>keyboard_arrow_up</mat-icon>Send Card To Selected Doctors</button>
+                  </div>
+            </div>
         </mat-card>
-        <mat-card   class="twocard"  ngClass.xs="twocard-xs" fxLayoutGap="10px" fxLayout="column">
-            <span class="mat-h1" ngClass.xs="mat-h2">Dr.Bhargav</span>
-            <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
-            <span class="menu-button  color-primary">
-                <mat-icon> local_hospital</mat-icon>
-                <span class="mat-h3" ngClass.xs="mat-h4"> Dave Eye care</span>
-            </span>
-            <span class="menu-button">
-                <mat-icon> place</mat-icon>
-                <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
-            </span>
-            <span class="mat-h2" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
-        </mat-card>
+
     </div>
 </div>
