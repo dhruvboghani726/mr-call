@@ -1,30 +1,25 @@
 <mat-toolbar class="mat-elevation-z8">
-  <button
-    mat-icon-button
-    *ngIf="sidenav.mode === 'over'"
-    (click)="sidenav.toggle()"
-  >
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
   </button>
   <!-- <span class="brand-logo" fxFlex="75%">
     MR CALL
   </span> -->
-  <span class="full-width" fxLayout="row"  >
+  <span class="full-width" fxLayout="row">
     MR CALL
-   
+
   </span>
   <div fxLayout="row" fxFlex="25%" fxLayoutAlign="center center">
     <!-- Doctor patient name -->
     <span fxHide.xs *ngIf="this.allDetalis || this.allDetalis!= null" fxLayout="row" fxLayoutAlign="end center"
       fxFlex="50%">
       <span [ngStyle]="{'margin':'0px 5px 0px 0px','fontSize':'16px' }" class=" color-primary">
-       John Doe
+        John Doe
       </span>
     </span>
     <!-- Status toggle -->
-    <span fxLayout="row" fxLayoutAlign="center center" 
-      fxFlex="30%">
+    <span fxLayout="row" fxLayoutAlign="center center" fxFlex="30%">
       <span *ngIf="hide != true" fxLayout="column" class="mat-small">
 
         <span [ngClass]="{
@@ -41,92 +36,89 @@
     </span>
     <!-- Notification button -->
     <div fxFlex="10%">
-      <button  mat-icon-button
-        [matMenuTriggerFor]="menu">
-        <mat-icon color="accent" matBadgeColor="warn" 
-          [matBadge]="1">notifications_active</mat-icon>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon color="accent" matBadgeColor="warn" [matBadge]="1">notifications_active</mat-icon>
       </button>
     </div>
-  
-  <mat-menu #menu="matMenu" class="my-menu">
 
-    <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
-  
-      <mat-nav-list >
-        <mat-list-item mat-line >
-          <p mat-line class="notificationline-hover">
-           Appointment is here
-          </p>
+    <mat-menu #menu="matMenu" class="my-menu">
 
-          <p mat-line>
+      <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
 
-            {{this.today | dateAgo }}
-          </p>
-        
-        </mat-list-item>
-        <mat-divider></mat-divider>
-      </mat-nav-list>
-    </div>
-  </mat-menu>
-</div>
+        <mat-nav-list>
+          <mat-list-item mat-line>
+            <p mat-line class="notificationline-hover">
+              Appointment is here
+            </p>
+
+            <p mat-line>
+
+              {{this.today | dateAgo }}
+            </p>
+
+          </mat-list-item>
+          <mat-divider></mat-divider>
+        </mat-nav-list>
+      </div>
+    </mat-menu>
+  </div>
 </mat-toolbar>
 
 <mat-sidenav-container>
 
-  
+
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <img
-      class="avatar mat-elevation-z8"
-      src="https://source.unsplash.com/c_GmwfHBDzk/200x200"
-    />
+    <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
 
     <h4 class="name">John Smith</h4>
     <p class="designation">Patient</p>
 
     <mat-divider></mat-divider>
-    <div fxLayout="column" 
-    fxLayoutGap="10px">
-    <button mat-button class="menu-button"   routerLinkActive="active-list-item" routerLink="/patient/dashboard">
-      <mat-icon>dashboard</mat-icon>
-      <span>Dashboard</span>
-    </button>
-    <button mat-button class="menu-button"routerLinkActive="active-list-item"   routerLink="/patient/book-an-appointment">
-      <mat-icon>assignment_turned_in</mat-icon>
-      <span>Book An Appointment</span>
-    </button>
-    <button mat-button class="menu-button" routerLinkActive="active-list-item"  routerLink="/patient/active-appoinment">
-      <mat-icon>assignment</mat-icon>
-      <span>Active Appointment</span>
-    </button>
-    <button mat-button class="menu-button"  routerLinkActive="active-list-item"  routerLink="/patient/brand-reminder-card">
-    <mat-icon>credit_card</mat-icon>
-      <span>Brand Reminder Card</span>
-    </button>
-    <button mat-button class="menu-button" routerLinkActive="active-list-item"  routerLink="/patient/mydoctor-list">
-      <mat-icon> supervised_user_circle</mat-icon>
-      <span>My Doctor List</span>
-    </button>
-    <button mat-button class="menu-button" routerLinkActive="active-list-item"  routerLink="/patient/m-resp-vacancy">
-     	<mat-icon>search</mat-icon>
-      <span>M-Reps Vacancy</span>
-    </button>
-    <button mat-button class="menu-button"  routerLinkActive="active-list-item"  routerLink="/patient/profile-settings">
-     <mat-icon>account_circle</mat-icon>
-      <span>Profile Setting</span>
-    </button>
-   
+    <div fxLayout="column" fxLayoutGap="10px">
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/patient/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item"
+        routerLink="/patient/book-an-appointment">
+        <mat-icon>assignment_turned_in</mat-icon>
+        <span>Book An Appointment</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item"
+        routerLink="/patient/active-appoinment">
+        <mat-icon>assignment</mat-icon>
+        <span>Active Appointment</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item"
+        routerLink="/patient/brand-reminder-card">
+        <mat-icon>credit_card</mat-icon>
+        <span>Brand Reminder Card</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/patient/mydoctor-list">
+        <mat-icon> supervised_user_circle</mat-icon>
+        <span>My Doctor List</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/patient/m-resp-vacancy">
+        <mat-icon>search</mat-icon>
+        <span>M-Reps Vacancy</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/patient/profile-settings">
+        <mat-icon>account_circle</mat-icon>
+        <span>Profile Setting</span>
+      </button>
 
 
-    <mat-divider></mat-divider>
 
-    <button mat-button class="menu-button" routerLink="/help">
-     <mat-icon>exit_to_app</mat-icon>
-           <span>Logout</span>
-    </button>
+      <mat-divider></mat-divider>
 
-    
-   
-  </div>
+      <button mat-button class="menu-button" routerLink="/website/home">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+
+
+
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="contentside mat-elevation-z8 backgroud-color-white">

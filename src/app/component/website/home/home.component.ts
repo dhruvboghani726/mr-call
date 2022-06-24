@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: [ './home.component.scss' ]
+  styleUrls: ['./home.component.scss']
 })
 
 /*
@@ -23,22 +23,22 @@ export class HomeComponent implements OnInit, AfterViewInit {
   @ViewChild('content') contentRef: ElementRef;
 
   //Banner silder images for the home Page
-  speciality= [
+  speciality = [
     { 'image': '/assets/images/websitehome/icons-2.png', 'name': 'Cardiology', 'dec': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ' },
     { 'image': '/assets/images/websitehome/icons-2.png', 'name': 'Monthly Checkup', 'dec': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
-    { 'image': '/assets/images/websitehome/icons-2.png', 'name': 'Dental Care', 'dec': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' } ,
-    { 'image': '/assets/images/websitehome/icons-2.png', 'name': 'Opthalmology', 'dec': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' } 
+    { 'image': '/assets/images/websitehome/icons-2.png', 'name': 'Dental Care', 'dec': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' },
+    { 'image': '/assets/images/websitehome/icons-2.png', 'name': 'Opthalmology', 'dec': 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' }
   ];
-  members: {title: string, subtitle: string, content: string, url: string}[] = [
-    {title: 'By Michle John Doe', subtitle: 'Health Care That Convenient', content: 'Content here', url: '/assets/images/websitehome/Mask Group 1.png'},
-    {title: 'By Michle John Doe', subtitle: 'Health Care That Convenient', content: 'Content here', url: '/assets/images/websitehome/Mask Group 3.png'},
-    {title: 'By Michle John Doe', subtitle: 'Health Care That Convenient ', content: 'Content here', url: '/assets/images/websitehome/Mask Group 4.png'},
+  members: { title: string, subtitle: string, content: string, url: string }[] = [
+    { title: 'By Michle John Doe', subtitle: 'Health Care That Convenient', content: 'Content here', url: '/assets/images/websitehome/Mask Group 1.png' },
+    { title: 'By Michle John Doe', subtitle: 'Health Care That Convenient', content: 'Content here', url: '/assets/images/websitehome/Mask Group 3.png' },
+    { title: 'By Michle John Doe', subtitle: 'Health Care That Convenient ', content: 'Content here', url: '/assets/images/websitehome/Mask Group 4.png' },
 
   ];
-  doctors: {name: string, service: string, url: string}[] = [
-    {name: 'Dr.Nafisa Flora', service: 'Orthopedis', url: '/assets/images/websitehome/Mask Group 5.png'},
-    {name: 'Dr.Nafisa Flora', service: 'Orthopedis', url: '/assets/images/websitehome/Mask Group 6.png'},
-    {name: 'Dr.Nafisa Flora', service: 'Orthopedis', url: '/assets/images/websitehome/Mask Group 7.png'},
+  doctors: { name: string, service: string, url: string }[] = [
+    { name: 'Dr.Nafisa Flora', service: 'Orthopedis', url: '/assets/images/websitehome/Mask Group 5.png' },
+    { name: 'Dr.Nafisa Flora', service: 'Orthopedis', url: '/assets/images/websitehome/Mask Group 6.png' },
+    { name: 'Dr.Nafisa Flora', service: 'Orthopedis', url: '/assets/images/websitehome/Mask Group 7.png' },
 
   ];
   constructor(
@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   //about us redirect
   goAboutUs() {
-    this.router.navigate([ '/website/about-us' ]);
+    this.router.navigate(['/website/about-us']);
   }
   ngAfterViewInit() {
     //Scrolls to top of Page after page view initialized
@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   //Get speciality api
   getSpeciality() {
-  
+
   }
 
   //speciality List show
@@ -89,6 +89,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   // Login page redirect
   gotologin() {
-   
+    this.router.navigate(['/patient/dashboard']);
   }
 }

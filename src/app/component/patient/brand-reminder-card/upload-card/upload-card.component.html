@@ -1,15 +1,31 @@
-<div fxLayout="column" fxLayoutGap="15px">
+<div fxLayout="column">
+    <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}">
+        <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
+            <span class="menu-button mat-h2">
+                <mat-icon>credit_card</mat-icon>
+                <span class="mat-h2" ngClass.xs="mat-h3">Upload Card</span>
+            </span>
+        </div>
+        <div fxLayoul="column" fxFlex="5" fxFlex.lt.sm="100">
+            <button routerLink="/patient/brand-reminder-card" style="height: 30px; width:30px;"
+                fxFlexAlign="center space-between" mat-mini-fab color="backgroud-color-white"
+                aria-label="Example icon button with a menu icon">
+                <mat-icon class="color-primary" style="margin-right: 0px;margin-top: -10px;">clear</mat-icon>
+            </button>
+        </div>
+    </mat-card>
+    <div fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;"
+        [ngStyle.xs]="{  padding:'10'}">
 
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;" [ngStyle.xs]="{  padding:'10'}">
         <mat-card fxFlex="70" class="remindercard backgroud-color-greylight">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h1">Add New Brand Reminder Card</mat-card-title>
-               
+
             </mat-card-header>
-            
-            <mat-card-content  fxLayoutAlign.xs="center center" class="backgroud-color-white" 
-            style="border-radius: 15px;padding: 18px 40px 0px 40px;" >
-                <form #loginForm="ngForm" >
+
+            <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
+                style="border-radius: 15px;padding: 18px 40px 0px 40px;">
+                <form #loginForm="ngForm">
                     <!-- <mat-form-field apie>
                       <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
                      
@@ -18,95 +34,95 @@
                         <mat-label>Title</mat-label>
                         <input matInput placeholder="Title">
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-                     
-                      </mat-form-field>
-                      <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column" fxLayoutAlign="flex-start">
+
+                    </mat-form-field>
+                    <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
+                        fxLayoutAlign="flex-start">
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Product1</mat-label>
                             <input matInput placeholder="Product1">
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-                           
-                          </mat-form-field>
+
+                        </mat-form-field>
                         <!-- Last name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Product2</mat-label>
                             <input matInput placeholder="Product2">
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-                           
-                          </mat-form-field>
-                      </div>
-                      
-                     
-                      <!-- <mat-form-field appearance="outline">
+
+                        </mat-form-field>
+                    </div>
+
+
+                    <!-- <mat-form-field appearance="outline">
                         <mat-label>Upload Image</mat-label>
                         <input matInput placeholder="Placeholder">
                         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                       
                       </mat-form-field> -->
-                      <mat-form-field  class="mat-form-field" appearance="outline">
+                    <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Upload Image</mat-label>
                         <div>
-                          <mat-toolbar>
-                            <input matInput  />
-                           
-                          </mat-toolbar>
-                          <input
-                            type="file"
-                            id="fileInput"
-                            name="fileInput"
-                            accept="image/*" multiple 
-                          
-                          />
+                            <mat-toolbar>
+                                <input matInput />
+
+                            </mat-toolbar>
+                            <input type="file" id="fileInput" name="fileInput" accept="image/*" multiple />
                         </div>
-                      </mat-form-field>
-                   
-                      <mat-card-actions fxLayout.xs="row" fxLayoutAlign.xs="center center" align="center"   fxLayoutGap="5px">
-                        
-                      
-                        <button mat-stroked-button color="primary"><mat-icon>refresh</mat-icon>Reset</button>
-                        <button mat-raised-button color="primary"><mat-icon>add</mat-icon>Add</button>
-                        
+                    </mat-form-field>
+
+                    <mat-card-actions fxLayout.xs="row" fxLayoutAlign.xs="center center" align="center"
+                        fxLayoutGap="5px">
+
+
+                        <button mat-stroked-button color="primary">
+                            <mat-icon>refresh</mat-icon>Reset
+                        </button>
+                        <button mat-raised-button color="primary">
+                            <mat-icon>add</mat-icon>Add
+                        </button>
+
                     </mat-card-actions>
-                  </form>
-                 
+                </form>
+
             </mat-card-content>
-           
-         
-         
-           
-          
+
+
+
+
+
         </mat-card>
-       
-      
-        <div fxFlex="30"  fxLayout="column" fxLayout.xs="column" fxLayoutGap="15px">
+
+
+        <div fxFlex="30" fxLayout="column" fxLayout.xs="column" fxLayoutGap="15px">
             <mat-card class="halfcard backgroud-color-bluelight">
                 <span class="menu-button color-primary">
                     <mat-icon>info</mat-icon>
                     <span class="mat-h2" ngClass.xs="mat-h2"> Notes:</span>
                 </span><br>
-                <span class="mat-h3"  ngClass.xs="mat-h5">
-                   A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
+                <span class="mat-h3" ngClass.xs="mat-h5">
+                    A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
                 </span>
             </mat-card>
-            <mat-card  class="halfcard  backgroud-color-greylight"  fxLayout="column" fxLayoutAlign="center center"> 
-                <span class="mat-h2"  ngClass.xs="mat-h5">
-                   Remaining Space in Card Bucket 
-                 </span>
-                 <span class="mat-h1 color-primary"  ngClass.xs="mat-h5">
-                   5 
-                  </span>
+            <mat-card class="halfcard  backgroud-color-greylight" fxLayout="column" fxLayoutAlign="center center">
+                <span class="mat-h2" ngClass.xs="mat-h5">
+                    Remaining Space in Card Bucket
+                </span>
+                <span class="mat-h1 color-primary" ngClass.xs="mat-h5">
+                    5
+                </span>
             </mat-card>
         </div>
-       
+
     </div>
     <div fxLayout="column" style="padding: 20px;">
 
-     
-       
+
+
         <mat-card class="appointcard backgroud-color-bluelight">
-            <mat-card  fxLayout="row" fxLayout.xs="column"  fxLayoutAlign="space-between center">
-                <div >
+            <mat-card fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+                <div>
                     <mat-toolbar class="backgroud-color-white">
                         <mat-form-field>
                             <mat-label>Show Entry</mat-label>
@@ -118,12 +134,13 @@
                         </mat-form-field>
                     </mat-toolbar>
                 </div>
-                <div >
+                <div>
                     <mat-toolbar class="backgroud-color-white">
                         <span class="fileter-width">
                             <mat-form-field>
-                                <input matInput  placeholder="Get Doctor List">
-                                <button  [ngStyle.xs]="{ width: 'auto'}" class="backgroud-color-white"mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear">
+                                <input matInput placeholder="Get Doctor List">
+                                <button [ngStyle.xs]="{ width: 'auto'}" class="backgroud-color-white" mat-button
+                                    class="remove-search" matSuffix mat-icon-button aria-label="Clear">
                                     <mat-icon class="mat-18">search</mat-icon>
                                 </button>
                             </mat-form-field>
@@ -131,9 +148,9 @@
                     </mat-toolbar>
                 </div>
             </mat-card>
-         
 
-    
+
+
             <div class="table-responsive">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                     <!-- Position Column -->
@@ -141,19 +158,19 @@
                         <th mat-header-cell *matHeaderCellDef> # </th>
                         <td mat-cell *matCellDef="let element"> {{element.Position}} </td>
                     </ng-container>
-    
+
                     <!-- Date Column -->
                     <ng-container matColumnDef="Date">
-                        <th mat-header-cell *matHeaderCellDef>  Added on </th>
+                        <th mat-header-cell *matHeaderCellDef> Added on </th>
                         <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
                     </ng-container>
-    
+
                     <!--  Doctor Name Column-->
                     <ng-container matColumnDef="Doctorname">
                         <th mat-header-cell *matHeaderCellDef>Card Title </th>
                         <td mat-cell *matCellDef="let element"> {{element.Doctorname}} </td>
                     </ng-container>
-    
+
                     <!-- Hospital Column -->
                     <ng-container matColumnDef="Hospital">
                         <th mat-header-cell *matHeaderCellDef> Hospital </th>

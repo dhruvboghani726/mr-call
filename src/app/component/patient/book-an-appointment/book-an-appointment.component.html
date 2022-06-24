@@ -1,16 +1,24 @@
 <div fxLayout="column" fxLayoutGap="15px">
+    <mat-card class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
+
+        <span class="menu-button mat-h2">
+            <mat-icon>assignment_turned_in</mat-icon>
+            <span class="mat-h2" ngClass.xs="mat-h3">BookAppoinment</span>
+        </span>
+    </mat-card>
+
     <div fxLayout="row" fxLayoutGap="10px" style="padding:15px" fxLayout.xs="column">
         <mat-card class="appointmentcard " ngClass.xs="appointmentcard-xs">
 
-            <span class="menu-button mat-h2" >
+            <span class="menu-button mat-h2">
                 <mat-icon>assignment_turned_in</mat-icon>
-                <span class="mat-h2"  ngClass.xs="mat-h3"> Appointment Booking Points(0)</span>
+                <span class="mat-h2" ngClass.xs="mat-h3"> Appointment Booking Points(0)</span>
             </span>
         </mat-card>
-        <mat-card class="appointmentcard"  ngClass.xs="appointmentcard-xs">
+        <mat-card class="appointmentcard" ngClass.xs="appointmentcard-xs">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
-                <span class="mat-h2"  ngClass.xs="mat-h3">Purchase Booking Points</span>
+                <span class="mat-h2" ngClass.xs="mat-h3">Purchase Booking Points</span>
             </span>
 
         </mat-card>
@@ -24,9 +32,9 @@
                 <mat-icon>info</mat-icon>
                 <span class="mat-h1" ngClass.xs="mat-h2"> Notes:</span>
             </span>
-            <span class="mat-h3"  ngClass.xs="mat-h5">
-               A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M<br>
-               B)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
+            <span class="mat-h3" ngClass.xs="mat-h5">
+                A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M<br>
+                B)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
             </span>
 
 
@@ -46,12 +54,13 @@
 
         </mat-card>
     </div>
-    <div fxLayout="column" style="padding:10px" fxLayoutGap="10px" >
+    <div fxLayout="column" style="padding:10px" fxLayoutGap="10px">
         <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px" class="threecard" fxLayout.xs="column">
             <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
 
                 <span class="mat-h2">
-                    Total Doctors in My List: &nbsp;<span fxLayout.xs="row" fxLayoutAlign.xs="center center" class="backgroud-color-primary color-white">2</span>
+                    Total Doctors in My List: &nbsp;<span fxLayout.xs="row" fxLayoutAlign.xs="center center"
+                        class="backgroud-color-primary color-white">2</span>
                 </span>
             </mat-card>
             <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
@@ -87,7 +96,7 @@
         </mat-card>
     </div>
     <div fxLayout="row" style="padding:10px" fxLayoutGap="10px" fxLayout.xs="column">
-        <mat-card fxLayoutGap="10px"  class="twocard"  ngClass.xs="twocard-xs" fxLayout="column">
+        <mat-card fxLayoutGap="10px" class="twocard" ngClass.xs="twocard-xs" fxLayout="column">
             <span class="mat-h1" ngClass.xs="mat-h2">Dr.Bhargav</span>
             <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
             <span class="menu-button  color-primary">
@@ -100,7 +109,7 @@
             </span>
             <span class="mat-h2" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
         </mat-card>
-        <mat-card   class="twocard"  ngClass.xs="twocard-xs" fxLayoutGap="10px" fxLayout="column">
+        <mat-card class="twocard" ngClass.xs="twocard-xs" fxLayoutGap="10px" fxLayout="column">
             <span class="mat-h1" ngClass.xs="mat-h2">Dr.Bhargav</span>
             <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
             <span class="menu-button  color-primary">

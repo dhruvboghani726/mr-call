@@ -1,39 +1,45 @@
-.remindercard{
+.remindercard {
     height: 410px;
     max-height: 410px;
-  
+
     border-radius: 5px;
     background-color: #f8f5e9;
 }
-.halfcard{
+
+.halfcard {
     // height: 175px;
     // max-height: 175px;
     height: 181px;
     max-height: 181px;
-   
+
     border-radius: 5px;
-  
+
 }
-.appointcard{
+
+.appointcard {
     height: 350px;
     max-height: 350px;
-  
+
     border-radius: 5px;
-  
+
 }
-.mat-form-fieldhalf{
+
+.mat-form-fieldhalf {
     width: 25% !important;
     font-weight: 500;
 }
+
 .mat-form-field {
     width: 100%;
     font-weight: 500;
-  }
-  .mat-input-element {
+}
+
+.mat-input-element {
     font-size: medium;
     font-weight: 200;
-  }
-  #fileInput {
+}
+
+#fileInput {
     position: absolute;
     cursor: pointer;
     z-index: 10;
@@ -41,21 +47,24 @@
     height: 100%;
     left: 0px;
     top: 0px;
-  }
-  .mat-toolbar-single-row {
+}
+
+.mat-toolbar-single-row {
     height: auto !important;
     background: transparent;
     padding: 0;
-  }
-  .mat-toolbar-single-row button {
+}
+
+.mat-toolbar-single-row button {
     width: 100px;
-  }
+}
 
 .mat-header-cell {
     background: #2AA7FF;
     color: white;
 }
-  .serach-box {
+
+.serach-box {
     background-color: #2AA7FF;
     float: center;
     padding: 6px 10px;
@@ -102,15 +111,6 @@
     width: auto;
 }
 
-// mat-icon {
-//     color: #15558D;
-//     margin-top: 10px;
-// }
-
-.mat-h2 {
-    font-weight: 600;
-    margin-top: 10px;
-}
 
 .table-responsive {
     display: block;

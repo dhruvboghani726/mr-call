@@ -1,13 +1,26 @@
-<div fxLayout="column"  class="backgroud-color-bluelight">
-
-
-
-
+<mat-card class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
+    <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
+        <span class="menu-button mat-h2">
+            <mat-icon>credit_card</mat-icon>
+            <span class="mat-h2" ngClass.xs="mat-h3">History Card</span>
+        </span>
+    </div>
+    <div fxLayoul="column" fxFlex="5" fxFlex.lt.sm="100">
+        <button routerLink="/patient/brand-reminder-card" style="height: 30px; width:30px;"
+            fxFlexAlign="center space-between" mat-mini-fab color="backgroud-color-white"
+            aria-label="Example icon button with a menu icon">
+            <mat-icon class="color-primary" style="margin-right: 0px;margin-top: -10px;">clear</mat-icon>
+        </button>
+    </div>
+</mat-card>
+<!-- <br> -->
+<div fxLayout="column" class="backgroud-color-bluelight">
+    <!--  -->
     <!-- <div  fxLayout="column"   fxLayoutGap="40px"> -->
-        <!-- [ngStyle.xs]="{ padding: '0px;' ,margin: '0' }" -->
-        <div fxLayout="column" style="padding: 20px;" fxLayoutGap="20px">
-        <mat-card class="backgroud-color-white"  ngClass.xs="secondcard-xs">
-            <div fxLayout="column" fxLayout.xs="column"  fxHide.xs>
+    <!-- [ngStyle.xs]="{ padding: '0px;' ,margin: '0' }" -->
+    <div fxLayout="column" style="padding: 20px;" fxLayoutGap="20px">
+        <mat-card class="backgroud-color-white" ngClass.xs="secondcard-xs">
+            <div fxLayout="column" fxLayout.xs="column" fxHide.xs>
                 <mat-label Class="mat-h2" ngClass.xs="mat-h3">Status</mat-label>
 
             </div>
@@ -34,94 +47,94 @@
 
         </mat-card>
     </div>
-        <div fxLayout="column" style="padding: 20px;" fxLayoutGap="20px">
+    <div fxLayout="column" style="padding: 20px;" fxLayoutGap="20px">
 
 
 
-          
-                <mat-card >
-                    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
-                    <div >
-                        <!-- <mat-toolbar class="backgroud-color-white"> -->
-                            <mat-form-field appearance="outline">
-                                <mat-label>Show Entry</mat-label>
-                                <mat-select>
-                                    <mat-option value="10">All</mat-option>
-                                    <mat-option value="20">Ahmedabad</mat-option>
-                                    <mat-option value="30">Surat</mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        <!-- </mat-toolbar> -->
-                    </div>
-                    <div>
-                        <!-- <mat-toolbar class="backgroud-color-white"> -->
-                            <!-- <span class="fileter-width"> -->
-                                <mat-form-field appearance="outline">
-                                    <input matInput placeholder="Search">
-                                    <button [ngStyle.xs]="{ width: 'auto'}" class="backgroud-color-white" mat-button
-                                        matSuffix mat-icon-button aria-label="Clear">
-                                        <mat-icon class="mat-18">search</mat-icon>
-                                    </button>
-                                </mat-form-field>
-                            <!-- </span> -->
-                        <!-- </mat-toolbar> -->
-                    </div>
+
+        <mat-card>
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
+                <div>
+                    <!-- <mat-toolbar class="backgroud-color-white"> -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Show Entry</mat-label>
+                        <mat-select>
+                            <mat-option value="10">All</mat-option>
+                            <mat-option value="20">Ahmedabad</mat-option>
+                            <mat-option value="30">Surat</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <!-- </mat-toolbar> -->
                 </div>
-                </mat-card>
-
-
-                <mat-card>
-                <div class="table-responsive">
-                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="Position">
-                            <th mat-header-cell *matHeaderCellDef> # </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Position}} </td>
-                        </ng-container>
-
-                        <!-- Date Column -->
-                        <ng-container matColumnDef="Date">
-                            <th mat-header-cell *matHeaderCellDef> Added on </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
-                        </ng-container>
-
-                        <!--  Doctor Name Column-->
-                        <ng-container matColumnDef="Doctorname">
-                            <th mat-header-cell *matHeaderCellDef>Card Title </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Doctorname}} </td>
-                        </ng-container>
-
-                        <!-- Hospital Column -->
-                        <ng-container matColumnDef="Hospital">
-                            <th mat-header-cell *matHeaderCellDef> Hospital </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Hospital}} </td>
-                        </ng-container>
-                        <!-- Territory Column -->
-                        <ng-container matColumnDef="Territory">
-                            <th mat-header-cell *matHeaderCellDef> Territory </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Territory}} </td>
-                        </ng-container>
-                        <!-- Time Slot Column -->
-                        <ng-container matColumnDef="Timeslot">
-                            <th mat-header-cell *matHeaderCellDef> Time Slot </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Timeslot}} </td>
-                        </ng-container>
-                        <!-- Status Column -->
-                        <ng-container matColumnDef="Status">
-                            <th mat-header-cell *matHeaderCellDef> Status </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
-                        </ng-container>
-                        <!-- Hospital Column -->
-                        <ng-container matColumnDef="Cancel">
-                            <th mat-header-cell *matHeaderCellDef> Reason to Cancel </th>
-                            <td mat-cell *matCellDef="let element"> {{element.Cancel}} </td>
-                        </ng-container>
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
+                <div>
+                    <!-- <mat-toolbar class="backgroud-color-white"> -->
+                    <!-- <span class="fileter-width"> -->
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="Search">
+                        <button [ngStyle.xs]="{ width: 'auto'}" class="backgroud-color-white" mat-button matSuffix
+                            mat-icon-button aria-label="Clear">
+                            <mat-icon class="mat-18">search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <!-- </span> -->
+                    <!-- </mat-toolbar> -->
                 </div>
-            </mat-card>
-        </div>
+            </div>
+        </mat-card>
+
+
+        <mat-card>
+            <div class="table-responsive">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Position">
+                        <th mat-header-cell *matHeaderCellDef> # </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Position}} </td>
+                    </ng-container>
+
+                    <!-- Date Column -->
+                    <ng-container matColumnDef="Date">
+                        <th mat-header-cell *matHeaderCellDef> Added on </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+                    </ng-container>
+
+                    <!--  Doctor Name Column-->
+                    <ng-container matColumnDef="Doctorname">
+                        <th mat-header-cell *matHeaderCellDef>Card Title </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Doctorname}} </td>
+                    </ng-container>
+
+                    <!-- Hospital Column -->
+                    <ng-container matColumnDef="Hospital">
+                        <th mat-header-cell *matHeaderCellDef> Hospital </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Hospital}} </td>
+                    </ng-container>
+                    <!-- Territory Column -->
+                    <ng-container matColumnDef="Territory">
+                        <th mat-header-cell *matHeaderCellDef> Territory </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Territory}} </td>
+                    </ng-container>
+                    <!-- Time Slot Column -->
+                    <ng-container matColumnDef="Timeslot">
+                        <th mat-header-cell *matHeaderCellDef> Time Slot </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Timeslot}} </td>
+                    </ng-container>
+                    <!-- Status Column -->
+                    <ng-container matColumnDef="Status">
+                        <th mat-header-cell *matHeaderCellDef> Status </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+                    </ng-container>
+                    <!-- Hospital Column -->
+                    <ng-container matColumnDef="Cancel">
+                        <th mat-header-cell *matHeaderCellDef> Reason to Cancel </th>
+                        <td mat-cell *matCellDef="let element"> {{element.Cancel}} </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+        </mat-card>
+    </div>
     <!-- </div> -->
 
 </div>

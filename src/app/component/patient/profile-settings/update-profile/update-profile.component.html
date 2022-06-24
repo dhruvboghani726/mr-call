@@ -1,5 +1,19 @@
 <div>
-
+    <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}">
+        <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
+            <span class="menu-button mat-h2">
+                <mat-icon>credit_card</mat-icon>
+                <span class="mat-h2" ngClass.xs="mat-h3">Update Profile</span>
+            </span>
+        </div>
+        <div fxLayoul="column" fxFlex="5" fxFlex.lt.sm="100">
+            <button routerLink="/patient/profile-settings" style="height: 30px; width:30px;"
+                fxFlexAlign="center space-between" mat-mini-fab color="backgroud-color-white"
+                aria-label="Example icon button with a menu icon">
+                <mat-icon class="color-primary" style="margin-right: 0px;margin-top: -10px;">clear</mat-icon>
+            </button>
+        </div>
+    </mat-card>
     <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;">
         <mat-card fxFlex="33" class="backgroud-color-bluelight" style="height: 650px; max-height: 650px;"
             [ngStyle.xs]="{  height: '650px;' }">
@@ -16,7 +30,7 @@
 
 
                         <mat-label>Title</mat-label>
-                        <mat-select > 
+                        <mat-select>
                             <mat-option value="Mr">Mr</mat-option>
                             <mat-option value="Mrs">Mrs</mat-option>
                             <mat-option value="Mrs">Ms</mat-option>
@@ -40,7 +54,7 @@
                         <input matInput placeholder="1234567890" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
-                    </mat-form-field> 
+                    </mat-form-field>
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Email</mat-label>
                         <input matInput placeholder="abc@gmail.com" value="abc@gmail.com" required disabled>
@@ -49,21 +63,21 @@
                     </mat-form-field>
                     <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
                         fxLayoutAlign="flex-start">
-                    <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
-                        <mat-label>Date Of Birth</mat-label>
-                        <input matInput [matDatepicker]="picker">
-                        <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matSuffix [for]="picker">
-                            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-                        </mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
+                            <mat-label>Date Of Birth</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-hint>MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matSuffix [for]="picker">
+                                <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+                            </mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
-                    </mat-form-field>
-                    <section class="example-section" ngClass.xs="example-section-xs">
-                        <mat-checkbox class="example-margin">Show to M-reps</mat-checkbox>
-                        
-                      </section>
+                        </mat-form-field>
+                        <section class="example-section" ngClass.xs="example-section-xs">
+                            <mat-checkbox class="example-margin">Show to M-reps</mat-checkbox>
+
+                        </section>
                     </div>
 
                 </form>
@@ -83,7 +97,7 @@
 
 
                 <form #loginForm="ngForm">
-                    <mat-form-field class="mat-form-field"  appearance="outline">
+                    <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Company</mat-label>
                         <input matInput placeholder="Valiants Pharmaceuticals" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->

@@ -1,34 +1,37 @@
 <div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="20px" fxFlexAlign="center">
-    <mat-card fxHide.xs class="header-card mat-elevation-z4" fxLayout="row" fxFlex.xs="100%">
-        <span class="menu-button color-primary" fxFlex="25%" fxFlex.lt.sm="100">
-            <mat-icon> supervised_user_circle</mat-icon>
-            <span class="mat-h2" ngClass.xs="mat-h2">My Doctor List</span>
+    <mat-card fxHide.xs class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
+
+        <span class="menu-button mat-h2" fxFlex="26%" fxFlex.lt.sm="100">
+            <mat-icon>search</mat-icon>
+            <span class="mat-h2" ngClass.xs="mat-h3">M-Resp Vacancy</span>
         </span>
-        <div fxLayout="column" fxFlex="50%" fxFlex.lt.sm="100" fxFlexAlign="center">
+        <div fxLayout="column" fxFlex="49%" fxFlex.lt.sm="100" fxFlexAlign="center">
 
             <span class="fileter-width">
                 <mat-form-field id="search" appearance="outline" style="width: 100%;">
-                    <input matInput [(ngModel)]="value" placeholder="Search">
+                    <input matInput [(ngModel)]="value" placeholder="Search..">
                     <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
                         (click)="value=''">
-                        <mat-icon class="mat-18 color-primary">search</mat-icon>
+                        <mat-icon class="mat-18color-white">search</mat-icon>
                     </button>
                 </mat-form-field>
             </span>
-
         </div>
         <div fxLayout="column" fxFlex="25%" fxFlex.lt.sm="100" fxLayoutAlign="space-between end" class="haeader-avtar">
             <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
                 style="max-width:40px; max-height: 50px; border-radius: 50%;">
         </div>
     </mat-card>
-    <!-- for mobile view  -->
-    <mat-card class="header-card mat-elevation-z4" fxLayout="row" fxFlex.xs="100%" fxHide.sm fxHide.gt-sm>
+
+    <!-- Mobile view  -->
+
+    <mat-card class="backgroud-color-primary color-white" fxLayout="row" fxFlex.xs="100%" fxHide.sm fxHide.gt-sm
+        [ngStyle.xs]="{margin:'0px'}">
         <div fxlayout="row">
             <div fxlayout="column" fxHide.sm fxHide.gt-sm>
-                <span class="menu-button color-primary" fxFlex.lt.sm="100" fxLayoutAlign="space-between end">
+                <span class="menu-button mat-h2" fxFlex.lt.sm="100" fxLayoutAlign="space-between end">
                     <!-- <mat-icon> supervised_user_circle</mat-icon> -->
-                    <span class="mat-h2" ngClass.xs="mat-h2">Active Appoiment</span>
+                    <span class="mat-h2" ngClass.xs="mat-h3">M-Resp Vacancy</span>
                     <span>
                         <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image"
                             class="avatar mat-elevation-z8"
@@ -42,14 +45,14 @@
                         <input matInput [(ngModel)]="value" placeholder="Search">
                         <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
                             (click)="value=''">
-                            <mat-icon class="mat-18 color-primary">search</mat-icon>
+                            <mat-icon class="mat-18 color-white">search</mat-icon>
                         </button>
                     </mat-form-field>
                 </span>
             </div>
         </div>
     </mat-card>
-    <!-- for mobile view end  -->
+    <!-- mobile view end  -->
     <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column">
         <div fxLayout="column" fxFlex="65%" fxFlex.lt.sm="100">
             <mat-card mat-elevation-z4 class="formcard-description">
@@ -120,7 +123,9 @@
                                 <textarea matInput placeholder="Ex.Enter Requirement Brief..."></textarea>
                             </mat-form-field>
                             <div fxLayoutAlign="center">
-                                <button mat-raised-button color="primary">Submit</button>
+                                <button mat-raised-button color="primary">
+                                    <mat-icon>add</mat-icon>Add Vacancy
+                                </button>
                             </div>
 
                         </div>
