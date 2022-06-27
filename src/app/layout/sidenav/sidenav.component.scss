@@ -3,16 +3,22 @@ mat-toolbar {
   color: white;
 }
 
+::ng-deep #search {
+  font-size: 10px;
+  margin-top: 10px;
+}
+
 mat-sidenav {
   margin: 16px;
   width: 245px;
   border-right: none;
   // background: #f8f5e9;
   // #e8f3f4
-  background: #f8f5e9;;
-  
+  background: #f8f5e9;
+  ;
+
   // background-image: url('/assets/images/websitehome/rectangle-1.png');
-  
+
   color: #2AA7FF;
   border-radius: 10px;
   padding: 16px;
@@ -23,7 +29,7 @@ mat-sidenav {
   height: calc(100vh - 130px);
   border-radius: 10px;
   margin: 16px;
-  margin-left: 32px;
+  // margin-left: 32px;
 
   padding: 16px;
 
@@ -69,11 +75,12 @@ mat-divider {
   margin-bottom: 16px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 .active-list-item {
-  
+
   background: #2AA7FF !important;
-  
+
   // background-image: url('/assets/images/websitehome/rectangle-1.png');
-  
+
   color: #f8f5e9 !important;
 }

@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
 import { OfflinedialogComponent } from '~app/layout/sidenav/offlinedialog/offlinedialog.component';
-import {ViewChild } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
@@ -19,11 +19,11 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 /*
  *Sidenav component 
  */
- @UntilDestroy()
+@UntilDestroy()
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: [ './sidenav.component.scss' ],
+  styleUrls: ['./sidenav.component.scss'],
 })
 
 /*
@@ -36,15 +36,15 @@ export class SidenavComponent implements OnDestroy {
   @Input()
   checked: Boolean
   autoRenew = true;
-
+  value
   hide;
   notificationList;
   patientcount;
   public error: string;
   mobileQuery: MediaQueryList;
-  currentUser ;
-  currentDoctor ;
-  currentAdmin ;
+  currentUser;
+  currentDoctor;
+  currentAdmin;
   count;
   results;
   Notificationinterval;
@@ -53,12 +53,12 @@ export class SidenavComponent implements OnDestroy {
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
   userinfo = "patient"
   doctorinfo = null
-  admininfo =null
+  admininfo = null
   status: any
   notiList;
   isExpanded = true;
-  checkstatus="Online"
-   pages =  [
+  checkstatus = "Online"
+  pages = [
     {
       name: 'Smart ',
       link: '/smart',
@@ -71,7 +71,7 @@ export class SidenavComponent implements OnDestroy {
           icon: 'crop_landscape',
           id: 'markRectangle',
           children: [
-    
+
           ]
         }
       ]
@@ -82,7 +82,7 @@ export class SidenavComponent implements OnDestroy {
       icon: 'crop_landscape',
       id: 'markRectangle'
     },
-    ];
+  ];
   fillerContent = Array.from({ length: 50 }, () =>
     `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -99,15 +99,15 @@ export class SidenavComponent implements OnDestroy {
   allDetalis
   constructor(private observer: BreakpointObserver, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog,
     private router: Router,
-  
+
     private location: Location,
   ) {
-  
+
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
 
-    
+
 
   }
 
@@ -143,7 +143,7 @@ export class SidenavComponent implements OnDestroy {
 
   //consulting dialog open
   openDialog() {
-   
+
   }
 
   users;
@@ -152,27 +152,27 @@ export class SidenavComponent implements OnDestroy {
 
   //Patient logout
   logout() {
-  
+
   }
 
   //Doctor logout
   doctorlogout() {
-   
+
   }
 
   //Admin logout
   adminlogout() {
-   
+
   }
 
   ngOnInit() {
-   
+
   }
 
   //Doctor status api
   doctorStatus(Status) {
 
-  
+
   }
 
   //stop notification
@@ -183,7 +183,7 @@ export class SidenavComponent implements OnDestroy {
   //Status api
   Status() {
 
-    
+
   }
 
   //Offline dialog open
@@ -199,18 +199,18 @@ export class SidenavComponent implements OnDestroy {
 
   //Get data by id
   getDataByid() {
-  
+
   }
 
   // notification list api
   getNotificationList() {
-   
+
   }
 
   //Notofication read
   IsNotificationRead(notification) {
 
-   
+
   }
   enter(index) {
     this.hoverIndex = index;
@@ -222,7 +222,7 @@ export class SidenavComponent implements OnDestroy {
 
   //Get break time
   getbreakTimeend() {
-   
+
   }
 
   // utc to local
@@ -234,34 +234,34 @@ export class SidenavComponent implements OnDestroy {
   }
 
   doctorstatuscheck() {
-   
-}
-ngAfterViewInit() {
-  this.observer
-    .observe(['(max-width: 800px)'])
-    .pipe(delay(1), untilDestroyed(this))
-    .subscribe((res) => {
-      console.log(res)
-      if (res.matches) {
-        console.log(res.matches)
-        this.sidenav.mode = 'over';
-        this.sidenav.close();
-      } else {
-        this.sidenav.mode = 'side';
-        this.sidenav.open();
-      }
-    });
 
-  this.router.events
-    .pipe(
-      untilDestroyed(this),
-      filter((e) => e instanceof NavigationEnd)
-    )
-    .subscribe(() => {
-      if (this.sidenav.mode === 'over') {
-        this.sidenav.close();
-      }
-    });
-}
+  }
+  ngAfterViewInit() {
+    this.observer
+      .observe(['(max-width: 800px)'])
+      .pipe(delay(1), untilDestroyed(this))
+      .subscribe((res) => {
+        console.log(res)
+        if (res.matches) {
+          console.log(res.matches)
+          this.sidenav.mode = 'over';
+          this.sidenav.close();
+        } else {
+          this.sidenav.mode = 'side';
+          this.sidenav.open();
+        }
+      });
+
+    this.router.events
+      .pipe(
+        untilDestroyed(this),
+        filter((e) => e instanceof NavigationEnd)
+      )
+      .subscribe(() => {
+        if (this.sidenav.mode === 'over') {
+          this.sidenav.close();
+        }
+      });
+  }
 }
 

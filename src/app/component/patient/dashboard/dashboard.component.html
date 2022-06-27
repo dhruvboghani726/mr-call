@@ -1,4 +1,4 @@
-<div class=" cardpadding" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="15px">
+<div class=" cardpadding cardpadding-xs" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="15px">
   <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}">
     <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
       <span class="menu-button mat-h2">
@@ -6,22 +6,12 @@
         <span class="mat-h2" ngClass.xs="mat-h3">Dashboard</span>
       </span>
     </div>
-    <!-- <div fxLayoul="column" fxFlex="10" fxFlex.lt.sm="100">
-      <button routerLink="/patient/dashboard" style="height: 30px; width:30px;" fxFlexAlign="center space-between"
-        mat-mini-fab color="backgroud-color-white" aria-label="Example icon button with a menu icon">
-        <mat-icon class="color-primary" style="margin-right: 0px;margin-top: -10px;">clear</mat-icon>
-      </button> -->
-    <!-- </div> -->
   </mat-card>
   <div fxLayout="row" class="paddingTop" fxLayoutGap=" 15px" fxLayout.xs="column">
-
     <!-- <mat-grid-tile style="background-image: url('/assets/images/websitehome/rectangle-1.png')"> -->
     <mat-card class="cardsizedash " [ngStyle.xs]="{ width: 'auto'}" fxFlex="50">
       <mat-card-header class="paddingTop">
         <mat-card-title class="mat-h1" ngClass.xs="mat-h2">Remaining Booking Ponits(0)</mat-card-title>
-
-
-
       </mat-card-header>
       <!-- <mat-card-header class="paddingTop" fxHide.gt-md fxShow.lt-md
       fxHide>
@@ -35,7 +25,6 @@
         <mat-card class="mat-h2" ngClass.xs="mat-h5"></mat-card>
 
       </mat-card-content>
-
     </mat-card>
     <!-- </mat-grid-tile> -->
     <mat-card class="cardsizedash" fxFlex="50" [ngStyle.xs]="{ width: 'auto'}">

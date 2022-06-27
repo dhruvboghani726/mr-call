@@ -1,26 +1,10 @@
-<div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="20px" fxFlexAlign="center">
+<div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="15px" fxFlexAlign="center">
     <mat-card fxHide.xs class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
 
         <span class="menu-button mat-h2" fxFlex="26%" fxFlex.lt.sm="100">
             <mat-icon>assignment</mat-icon>
             <span class="mat-h2" ngClass.xs="mat-h3">Active Appointment</span>
         </span>
-        <div fxLayout="column" fxFlex="49%" fxFlex.lt.sm="100" fxFlexAlign="center">
-
-            <span class="fileter-width">
-                <mat-form-field id="search" appearance="outline" style="width: 100%;">
-                    <input matInput [(ngModel)]="value" placeholder="Search..">
-                    <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
-                        (click)="value=''">
-                        <mat-icon class="mat-18color-white">search</mat-icon>
-                    </button>
-                </mat-form-field>
-            </span>
-        </div>
-        <div fxLayout="column" fxFlex="25%" fxFlex.lt.sm="100" fxLayoutAlign="space-between end" class="haeader-avtar">
-            <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
-                style="max-width:40px; max-height: 50px; border-radius: 50%;">
-        </div>
     </mat-card>
 
     <!-- Mobile view  -->
@@ -30,24 +14,7 @@
         <div fxlayout="row">
             <div fxlayout="column" fxHide.sm fxHide.gt-sm>
                 <span class="menu-button mat-h2" fxFlex.lt.sm="100" fxLayoutAlign="space-between end">
-                    <!-- <mat-icon> supervised_user_circle</mat-icon> -->
                     <span class="mat-h2" ngClass.xs="mat-h3">Active Appointment</span>
-                    <span>
-                        <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image"
-                            class="avatar mat-elevation-z8"
-                            style="max-width:40px; max-height: 50px; border-radius: 50%;">
-                    </span>
-                </span>
-            </div>
-            <div fxlayout="column" fxHide.sm fxHide.gt-sm>
-                <span class="fileter-width">
-                    <mat-form-field id="search" appearance="outline" style="width: 100%;">
-                        <input matInput [(ngModel)]="value" placeholder="Search">
-                        <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
-                            (click)="value=''">
-                            <mat-icon class="mat-18 color-white">search</mat-icon>
-                        </button>
-                    </mat-form-field>
                 </span>
             </div>
         </div>
