@@ -2,7 +2,7 @@
     <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}">
         <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
             <span class="menu-button mat-h2">
-                <mat-icon>credit_card</mat-icon>
+                <mat-icon class="color-white">credit_card</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Update Profile</span>
             </span>
         </div>
@@ -15,7 +15,7 @@
         </div>
     </mat-card>
     <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;">
-        <mat-card fxFlex="33" class="backgroud-color-bluelight" style="height: 650px; max-height: 650px;"
+        <mat-card fxFlex="40" class="backgroud-color-bluelight" style="height: 650px; max-height: 650px;"
             [ngStyle.xs]="{  height: '650px;' }">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Personal Information</mat-card-title>
@@ -72,21 +72,18 @@
                             </mat-datepicker-toggle>
                             <mat-datepicker #picker></mat-datepicker>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
                         </mat-form-field>
-                        <section class="example-section" ngClass.xs="example-section-xs">
-                            <mat-checkbox class="example-margin">Show to M-reps</mat-checkbox>
-
-                        </section>
                     </div>
 
+                    <section class="example-section" ngClass.xs="example-section-xs">
+                        <mat-checkbox color="primary" class="example-margin color-primary">Show to M-reps</mat-checkbox>
+                    </section>
                 </form>
 
             </mat-card-content>
-
-
         </mat-card>
-        <mat-card fxFlex="33" class=" backgroud-color-bluelight">
+
+        <mat-card fxFlex="60" class=" backgroud-color-bluelight">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Professional Information</mat-card-title>
 
@@ -110,24 +107,19 @@
                             <mat-label>Divison</mat-label>
                             <input matInput placeholder="VALIANTS" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                        <!-- Last name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Speciality</mat-label>
-                            <input matInput placeholder="Ophtholmic" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
                         </mat-form-field>
                     </div>
 
+                    <!-- Last name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Speciality</mat-label>
+                        <input matInput placeholder="Ophtholmic" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
                 </form>
-
-
-
-
-
             </mat-card-content>
+
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Territoris </mat-card-title>
 
@@ -171,120 +163,119 @@
                     </div>
                 </form>
             </mat-card-content>
-
-
-        </mat-card>
-        <mat-card fxFlex="33" class=" backgroud-color-bluelight">
-            <mat-card-header fxLayoutAlign="center center">
-                <mat-card-title class="mat-h2" ngClass="mat-h6">Update Your Products List</mat-card-title>
-
-            </mat-card-header>
-
-            <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
-                style="border-radius: 10px;padding: 18px 40px 0px 40px;">
-                <form #loginForm="ngForm">
-                    <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
-                        <!-- First name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 1</mat-label>
-                            <input matInput placeholder="Product 1" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                        <!-- Last name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 2</mat-label>
-                            <input matInput placeholder="Product 2" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                    </div>
-                    <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
-                        <!-- First name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 3</mat-label>
-                            <input matInput placeholder="Product 3" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                        <!-- Last name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 4</mat-label>
-                            <input matInput placeholder="Product 4" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                    </div>
-                    <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
-                        <!-- First name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 5</mat-label>
-                            <input matInput placeholder="Product 5" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                        <!-- Last name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 6</mat-label>
-                            <input matInput placeholder="Product 6" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                    </div>
-                    <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
-                        <!-- First name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 7</mat-label>
-                            <input matInput placeholder="Product 7" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                        <!-- Last name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 8</mat-label>
-                            <input matInput placeholder="Product 8" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                    </div>
-                    <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
-                        <!-- First name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 9</mat-label>
-                            <input matInput placeholder="Product 9" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                        <!-- Last name field -->
-                        <mat-form-field class="mat-form-field" appearance="outline">
-                            <mat-label>Product 10</mat-label>
-                            <input matInput placeholder="Product 10" required>
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
-                        </mat-form-field>
-                    </div>
-
-                    <mat-card-actions fxLayout.xs="row" align="center" fxLayoutGap="5px">
-
-
-
-                        <button mat-raised-button color="primary">
-                            <mat-icon>edit</mat-icon>Update
-                        </button>
-
-                    </mat-card-actions>
-                </form>
-
-            </mat-card-content>
-
-
-
-
         </mat-card>
     </div>
+
+    <mat-card class=" backgroud-color-bluelight">
+        <mat-card-header fxLayoutAlign="center center">
+            <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Product List </mat-card-title>
+
+        </mat-card-header>
+
+        <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
+            style="border-radius: 10px;padding: 18px 40px 0px 40px;">
+            <form #loginForm="ngForm">
+                <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
+                    fxLayoutAlign="flex-start">
+                    <!-- First name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 1</mat-label>
+                        <input matInput placeholder="Product 1" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                    <!-- Last name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 2</mat-label>
+                        <input matInput placeholder="Product 2" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                </div>
+                <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
+                    fxLayoutAlign="flex-start">
+                    <!-- First name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 3</mat-label>
+                        <input matInput placeholder="Product 3" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                    <!-- Last name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 4</mat-label>
+                        <input matInput placeholder="Product 4" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                </div>
+                <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
+                    fxLayoutAlign="flex-start">
+                    <!-- First name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 5</mat-label>
+                        <input matInput placeholder="Product 5" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                    <!-- Last name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 6</mat-label>
+                        <input matInput placeholder="Product 6" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                </div>
+                <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
+                    fxLayoutAlign="flex-start">
+                    <!-- First name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 7</mat-label>
+                        <input matInput placeholder="Product 7" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                    <!-- Last name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 8</mat-label>
+                        <input matInput placeholder="Product 8" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                </div>
+                <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
+                    fxLayoutAlign="flex-start">
+                    <!-- First name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 9</mat-label>
+                        <input matInput placeholder="Product 9" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                    <!-- Last name field -->
+                    <mat-form-field class="mat-form-field" appearance="outline">
+                        <mat-label>Product 10</mat-label>
+                        <input matInput placeholder="Product 10" required>
+                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+                    </mat-form-field>
+                </div>
+
+                <mat-card-actions fxLayout.xs="row" align="center" fxLayoutGap="5px">
+
+
+
+                    <button mat-raised-button color="primary">
+                        <mat-icon>edit</mat-icon>Update
+                    </button>
+
+                </mat-card-actions>
+            </form>
+
+        </mat-card-content>
+
+
+
+
+    </mat-card>
 </div>

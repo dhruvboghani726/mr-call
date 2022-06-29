@@ -1,30 +1,55 @@
 .cardsizedash {
-    height: 350px;
-    max-height: 350px;
-    width: 550px;
-    max-width: 550px;
-    border-radius: 5px;
-    background-color: #f8f5e9;
-  }
-  .paddingLeft{
-    padding: 0 0px 0 17px;
+  height: auto;
+  max-height: auto;
+  width: auto;
+  max-width: auto;
+  border-radius: 5px;
+  // background-color: #d1e5f3;
+  // box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+}
 
-    font-size: 20px;
-    color: black;
-  }
-  .paddingTop{
-    padding: 10px 0px 0 0px;
-  }
-  .fill {
-    flex: 1;
-  }
-  .txtdecorate{
-    text-decoration: underline;
-    color:#2AA7FF
-  
-  }
+.card-box-shadow {
+  height: auto;
+  max-height: 120px;
+  width: auto;
+  max-width: auto;
+  // box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+}
+
+// .news-card {
+//   box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+//   height: 400px;
+//   max-height: 400px;
+//   width: auto;
+//   max-width: 250px;
+// }
+
+// #header-box {
+//   box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+//   background-color: #1DE9B6;\
+
+// }
+
+.paddingLeft {
+  // padding: 0 0px 0 17px;
+
+  // font-size: 20px;
+  color: black;
+}
+
+.paddingTop {
+  padding: 10px 0px 0 0px;
+}
+
+.fill {
+  flex: 1;
+}
+
+.txtdecorate {
+  text-decoration: none;
+  cursor: pointer;
+}
 
 // ::ng-deep .mat-card-header .mat-card-title {
 //     font-size: 30px !important;
 //   }
-  

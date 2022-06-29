@@ -1,63 +1,63 @@
-<mat-toolbar class="mat-elevation-z8">
+<mat-toolbar class="mat-elevation-z8" color="primary">
   <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-    <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
+    <mat-icon class="color-white" *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon class="color-white" *ngIf="sidenav.opened"> close </mat-icon>
   </button>
   <!-- <span class="brand-logo" fxFlex="75%">
     MR CALL
   </span> -->
-  <span fxLayout="row" fxFlex="70%">
+  <!-- <span fxLayout="row" fxFlex="70%">
     MR CALL
-  </span>
-  <!-- <div fxlayout="column"> -->
-  <span fxHide.xs class="fileter-width">
-    <mat-form-field id="search" appearance="outline" style="width: 100%;">
-      <input matInput [(ngModel)]="value" placeholder="Search">
-      <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon class="mat-18 color-white">search</mat-icon>
-      </button>
-    </mat-form-field>
-  </span>
-
-
-  <!-- </div> -->
-  <div fxLayout="row" fxFlex="" fxLayoutAlign="center center" fxLayoutGap="5px">
-    <!-- Doctor patient name -->
-    <span fxHide.xs *ngIf="this.allDetalis || this.allDetalis!= null" fxLayout="row" fxLayoutAlign="end center"
-      fxFlex="50%">
-      <span [ngStyle]="{'margin':'0px 5px 0px 0px','fontSize':'16px' }" class=" color-primary">
-        John Doe
-      </span>
+  </span> -->
+  <div fxlayout="row" class="full-width">
+    <span fxHide.xs class="fileter-width">
+      <mat-form-field id="search" appearance="outline" style="width: 100%;">
+        <input matInput [(ngModel)]="value" placeholder="Search">
+        <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon class="mat-18 color-white">search</mat-icon>
+        </button>
+      </mat-form-field>
     </span>
-    <!-- Status toggle -->
-    <span fxLayout="row" fxLayoutAlign="center center" fxFlex="">
-      <span *ngIf="hide != true" fxLayout="column" class="mat-small">
 
-        <span [ngClass]="{
+
+    <!-- </div> -->
+    <div fxLayout="row" fxFlex="" fxLayoutAlign="end center" fxLayoutGap="5px">
+      <!-- Doctor patient name -->
+      <span fxHide.xs *ngIf="this.allDetalis || this.allDetalis!= null" fxLayout="row" fxLayoutAlign="end center"
+        fxFlex="50%">
+        <span [ngStyle]="{'margin':'0px 5px 0px 0px','fontSize':'16px' }" class=" color-primary">
+          John Doe
+        </span>
+      </span>
+      <!-- Status toggle -->
+      <span fxLayout="row" fxLayoutAlign="center center">
+        <span *ngIf="hide != true" fxLayout="column" class="mat-small">
+
+          <span [ngClass]="{
       'color-warn'  :this.checkstatus == 'Online',
       'color-secondary' :this.checkstatus == 'Offline' ,
       'color-light-yellow' :this.checkstatus =='Away' ,
       'color-danger' :this.checkstatus == 'InSession'
       }">
-          {{this.checkstatus}}
+            {{this.checkstatus}}
 
+          </span>
         </span>
+
       </span>
+      <!-- Notification button -->
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="color-white" matBadgeColor="warn" [matBadge]="1">notifications_active</mat-icon>
+        </button>
+      </div>
+      <div fxLayoutAlign="center center">
+        <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
+          style="max-width:30px; max-height: 30px; border-radius: 50%;  margin-top: 0px;">
+        <mat-icon class="color-white">arrow_drop_down</mat-icon>
+      </div>
 
-    </span>
-    <!-- Notification button -->
-    <div fxFlex="30">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon color="accent" matBadgeColor="warn" [matBadge]="1">notifications_active</mat-icon>
-      </button>
-    </div>
-    <div fxLayoutAlign="center center">
-      <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
-        style="max-width:30px; max-height: 30px; border-radius: 50%;  margin-top: 0px;">
-      <mat-icon class="color-white">arrow_drop_down</mat-icon>
-    </div>
-
-    <!-- 
+      <!-- 
     <div fxlayout="column">
       <div>
         <span fxLayout="column" class="fileter-width" fxHide.sm fxHide.gt-sm [ngStyle.xs]="{margin:'0px'}">
@@ -71,26 +71,27 @@
       </div>
     </div> -->
 
-    <mat-menu #menu="matMenu" class="my-menu">
+      <mat-menu #menu="matMenu" class="my-menu">
 
-      <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
+        <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
 
-        <mat-nav-list>
-          <mat-list-item mat-line>
-            <p mat-line class="notificationline-hover">
-              Appointment is here
-            </p>
+          <mat-nav-list>
+            <mat-list-item mat-line>
+              <p mat-line class="notificationline-hover">
+                Appointment is here
+              </p>
 
-            <p mat-line>
+              <p mat-line>
 
-              {{this.today | dateAgo }}
-            </p>
+                {{this.today | dateAgo }}
+              </p>
 
-          </mat-list-item>
-          <mat-divider></mat-divider>
-        </mat-nav-list>
-      </div>
-    </mat-menu>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-nav-list>
+        </div>
+      </mat-menu>
+    </div>
   </div>
   <!-- 
   <div fxlayout="column">
@@ -121,11 +122,12 @@
 <mat-sidenav-container>
 
 
-  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
-    <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8  card-background-color">
+    <h1 class="mat-h1 font-color-primary2">MR Call</h1>
+    <!-- <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
 
     <h4 class="name">John Smith</h4>
-    <p class="designation">Patient</p>
+    <p class="designation">Patient</p> -->
 
     <mat-divider></mat-divider>
     <div fxLayout="column" fxLayoutGap="10px">

@@ -1,6 +1,8 @@
 mat-toolbar {
-  background: #2AA7FF;
-  color: white;
+  background-color: #fbfdff;
+  color: #87888a;
+  box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%) !important;
+  z-index: 40;
 }
 
 ::ng-deep #search {
@@ -12,14 +14,6 @@ mat-sidenav {
   margin: 16px 0;
   width: 245px;
   border-right: none;
-  // background: #f8f5e9;
-  // #e8f3f4
-  background: #f8f5e9;
-  ;
-
-  // background-image: url('/assets/images/websitehome/rectangle-1.png');
-
-  color: #2AA7FF;
   border-radius: 10px;
   padding: 16px;
   text-align: center;
@@ -29,10 +23,8 @@ mat-sidenav {
   height: calc(100vh - 130px);
   border-radius: 10px;
   margin: 16px;
-  // margin-left: 32px;
-
   padding: 16px;
-
+  color: black;
   overflow: auto;
 }
 
@@ -45,7 +37,8 @@ mat-sidenav-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size: 1rem;
+  font-size: 14px;
+  font-weight: 600;
 
   mat-icon {
     margin-right: 8px;
@@ -53,7 +46,7 @@ mat-sidenav-container {
 }
 
 .avatar {
-  margin-top: 16px;
+  margin-top: 5px;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -62,6 +55,7 @@ mat-sidenav-container {
 .name {
   margin-top: 8px;
   font-weight: normal;
+  margin-bottom: 0px;
 }
 
 .designation {
@@ -71,16 +65,21 @@ mat-sidenav-container {
 }
 
 mat-divider {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 8px;
+  margin-bottom: 12px;
   background-color: rgba(255, 255, 255, 0.5);
 }
 
 .active-list-item {
 
-  background: #2AA7FF !important;
+  background: #7661e2 !important;
 
   // background-image: url('/assets/images/websitehome/rectangle-1.png');
 
-  color: #f8f5e9 !important;
+  color: #fbfdff;
+
+  .mat-icon {
+
+    color: #fbfdff;
+  }
 }
