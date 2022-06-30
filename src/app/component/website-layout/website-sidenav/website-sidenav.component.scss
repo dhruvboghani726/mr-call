@@ -3,6 +3,7 @@ a {
     letter-spacing: 1px;
     text-decoration: none;
 }
+
 .header {
     position: absolute;
     width: 100%;
@@ -10,13 +11,15 @@ a {
     overflow: auto;
     padding: 10px;
 }
+
 .content {
     position: absolute;
     width: 100%;
     height: 89%;
     overflow: auto;
-    top: 11%;
+    top: 10%;
 }
+
 .content1 {
     position: absolute;
     width: 100%;
@@ -24,11 +27,13 @@ a {
     overflow: auto;
     top: 19%;
 }
+
 .footer {
     bottom: 0;
     width: 100%;
     margin: 0px;
 }
+
 .mat-h2 {
     font-weight: 600;
     margin: 0;
@@ -40,21 +45,25 @@ a {
     letter-spacing: 1px;
     font-size: 16px;
 }
+
 .padding-top {
     padding: 20px;
 }
+
 .sidenav-button {
     border-radius: 2px;
 }
+
 .mat-sidenav-container {
     height: 100%;
 }
+
 .text-center {
     text-align: center;
 }
 
 .scrollContent {
-     min-height: 1000px;
+    min-height: 1000px;
 }
 
 .getstarted {
@@ -63,13 +72,14 @@ a {
     font-size: 16px;
     cursor: auto;
 }
-.backimg{
+
+.backimg {
     // position: absolute;
     // content: "";
     // margin-left: -110px;
     // margin-top: 30px;
-   
+
     background-image: url("/assets/images/websitehome/RECTANGLE-11.png");
     // background-repeat: no-repeat;
-   
+
 }

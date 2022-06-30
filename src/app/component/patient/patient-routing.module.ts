@@ -41,45 +41,59 @@ import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component
         children: [
           {
             path: 'dashboard', children: [
-              { path: '', component: DashboardComponent, pathMatch: 'full'},
-            
+              { path: '', component: DashboardComponent, pathMatch: 'full' },
+
             ],
           },
-          { path: 'active-appoinment', component: ActiveAppointmentComponent, pathMatch: 'full' },  
-          { path: 'book-an-appointment', component: BookAnAppointmentComponent, pathMatch: 'full' },  
+          { path: 'active-appoinment', component: ActiveAppointmentComponent, pathMatch: 'full' },
+          { path: 'book-an-appointment', component: BookAnAppointmentComponent, pathMatch: 'full' },
           { path: 'mydoctor-list', component: MydoctorListComponent, pathMatch: 'full' },
           { path: 'm-resp-vacancy', component: MRepsVacancyComponent, pathMatch: 'full' },
-          
+
           {
             path: 'brand-reminder-card', children: [
               { path: '', component: BrandReminderCardComponent, pathMatch: 'full' },
-              { path: 'upload-card', component: UploadCardComponent, pathMatch: 'full'},
-              { path: 'share-card', component: ShareCardComponent, pathMatch: 'full'},
-              { path: 'card-history', component: CardHistoryComponent, pathMatch: 'full'},
-              
+              { path: 'upload-card', component: UploadCardComponent, pathMatch: 'full' },
+              { path: 'share-card', component: ShareCardComponent, pathMatch: 'full' },
+              { path: 'card-history', component: CardHistoryComponent, pathMatch: 'full' },
+
             ]
           },
-        
+
           {
             path: 'profile-settings', children: [
               { path: '', component: ProfileSettingsComponent, pathMatch: 'full' },
-              { path: 'update-profile', component: UpdateProfileComponent, pathMatch: 'full'},
-              { path: 'change-password', component: ChangePasswordComponent, pathMatch: 'full'},
-             
-              
+              { path: 'update-profile', component: UpdateProfileComponent, pathMatch: 'full' },
+              { path: 'change-password', component: ChangePasswordComponent, pathMatch: 'full' },
+
+
             ]
           },
-         
-         
-        
+
+
+
         ],
       },
+      {
+        path: '',
+        component: BlankLayoutComponent,
+        children: [
+          {
+            path: 'mr-login',
+            loadChildren: () =>
+              import('./login/login.module').then(
+                m => m.LoginModule)
+          },
+        ]
+
+      }
+
     ]),
     LayoutsModule,
   ],
-  exports: [ RouterModule ],
+  exports: [RouterModule],
 
 })
 
 
-export class  PatientRoutingModule { }
+export class PatientRoutingModule { }

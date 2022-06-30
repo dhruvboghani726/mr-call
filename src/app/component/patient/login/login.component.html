@@ -1,0 +1,138 @@
+<div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
+    <!-- <svg viewBox="0 0 500 150" preserveAspectRatio="none" fxHide.lt-sm>
+        <path d="M-1.12,150.48 C19.74,-7.39 343.11,134.70 505.64,-89.30 L500.00,150.00 L0.00,150.00 Z"
+            style="stroke: none; fill: #faf8f4b8;"></path>
+    </svg> -->
+    <div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
+        <!-- Logo and Banner image for desktop -->
+        <mat-card fxHide.xs class="cardimage cardsize" fxFlex.sm="50%">
+            <span fxLayoutAlign="center">
+                <a routerLink="/website/home">
+                    <!-- <img src="assets/img/login-banner.png" height="90px" alt="logo"> -->
+                    <p class="color-primary mat-headline">Telemedicine</p>
+                </a>
+            </span>
+            <span>
+                <img src="/assets/images/websitehome/image-3.png" class="img-responsive" alt="banner">
+            </span>
+        </mat-card>
+        <!-- Logo for mobile -->
+        <span fxLayoutAlign="center center" fxHide.sm fxHide.gt-sm>
+            <a routerLink="/website/home">
+                <img src="/assets/images/websitehome/image-3.png" height="100px" alt="logo">
+            </a>
+        </span>
+        <mat-card class="cardsize" fxFlex.sm="50%">
+            <mat-card-title class="padding-top">
+                <span fxLayoutAlign="center" class="patient-login-label">Patient Login</span>
+            </mat-card-title>
+            <mat-card-content class="cardpadding margin-top">
+                <form [formGroup]="LoginForm" (keyup.enter)="submit()" autocomplete="off">
+                    <!-- Email field -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username</mat-label>
+                        <input matInput formControlName="username" type="text" id="Username" maxlength="256" required>
+                        <mat-error>Username is required</mat-error>
+
+                    </mat-form-field>
+                    <!-- Password field -->
+                    <mat-form-field appearance="outline" class="margin-top">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'" matInput
+                            required maxlength="256" />
+                        <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
+
+                        <mat-error>Password is required</mat-error>
+                    </mat-form-field>
+                    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+                        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="this.error">
+                            <p class="color-warn">{{this.error}}</p>
+                        </div>
+                        <div class="margin-top">
+
+                            <!-- Forgot password link-->
+                            <span fxFlex="100" align="center" fxLayoutAlign="center">
+                                <a routerLink="/patient/patient-user-check" class="color-primary">
+                                    Forgot password?</a>
+                            </span>
+                        </div>
+
+                    </div>
+                    <!-- Login button -->
+                    <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-top]="'20px'">
+                        <button mat-button mat-raised-button color="primary" [disabled]="LoginForm.invalid" fxFlex="100"
+                            (click)="submit()">Login</button>
+                    </div>
+                </form>
+            </mat-card-content>
+
+
+            <mat-card-actions>
+
+                <!-- Login account button -->
+                <div>
+                    <!--SignUp account button -->
+                    <div fxLayoutAlign="center">
+                        <a routerLink="/patient/patient-register" class="color-primary">Create new account?</a>
+                    </div>
+                </div>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
+
+<!-- Page Content -->
+<!-- <div class="row">
+    <div class="col-md-8 offset-md-2"> -->
+
+<!-- Account Content -->
+<!-- <div class="account-content">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-7 col-lg-6 login-left">
+                    <img src="assets/img/login-banner.png" class="img-fluid" alt="Login Banner">
+                </div>
+                <div class="col-md-12 col-lg-6 login-right">
+                    <form class="example-form" [formGroup]="LoginForm" (ngSubmit)="submit()">
+                        <div class="login-header">
+                            <h3>Patient Login </h3>
+                        </div> -->
+
+<!-- Register Form -->
+
+<!-- <div class="form-group form-focus">
+                            <input type="text" class="form-control floating" formControlName="username" >
+                            <label class="focus-label">Username</label>
+                        </div>
+                        <div class="form-group form-focus">
+                            <input type="password" class="form-control floating" formControlName="Password">
+                            <label class="focus-label">Password</label>
+                        </div>
+                        <div class="text-right">
+                            <a class="forgot-link" [routerLink]="'/patient/patient-register'">Create new account?</a>
+                        </div>
+                        <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Login</button> -->
+<!-- <div class="login-or">
+                            <span class="or-line"></span>
+                            <span class="span-or">or</span>
+                        </div>
+                        <div class="row form-row social-login">
+                            <div class="col-6">
+                                <a href="#" class="btn btn-facebook btn-block"><i class="fab fa-facebook-f mr-1"></i> Login</a>
+                            </div>
+                            <div class="col-6">
+                                <a href="#" class="btn btn-google btn-block"><i class="fab fa-google mr-1"></i> Login</a>
+                            </div>
+                        </div> -->
+<!-- </form> -->
+<!-- /Register Form -->
+<!-- 
+                </div>
+            </div>
+        </div> -->
+<!-- /Account Content -->
+<!-- 
+    </div>
+</div> -->
+
+<!-- /Page Content -->

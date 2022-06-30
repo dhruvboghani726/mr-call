@@ -83,6 +83,7 @@ body {
   color: $light-primary-text;
 }
 
+
 .backgroud-color-teal {
   background-color: mat-color($mat-teal, 400);
 }
@@ -147,6 +148,12 @@ body {
   margin-top: 5px;
 }
 
+// Button hover shadow
+.button-shadow:hover {
+  background-color: mat-color($primary);
+  color: $light-primary-text;
+  box-shadow: 0 9px 20px 0 mat-color($primary, 0.9);
+}
 
 
 
@@ -160,6 +167,14 @@ body {
   font-weight: 600;
   margin: 0;
   font-size: 34px;
+}
+
+.mat-display-3 {
+
+  font-size: 350 56px/56px Quicksand;
+  font-family: Quicksand;
+  letter-spacing: -0.02em;
+  margin: 0 0 25px;
 }
 
 .mat-display-4 {
@@ -410,13 +425,6 @@ input.star-5:checked~label.star:before {
 
 .cursor-pointer {
   cursor: pointer;
-}
-
-.matdisplay-3 {
-
-  font: 350 56px/56px Font-Inter, Montserrat, Arial;
-  letter-spacing: -0.02em;
-  margin: 0 0 25px;
 }
 
 mat-divider {

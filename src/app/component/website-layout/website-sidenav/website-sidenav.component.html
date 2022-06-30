@@ -4,14 +4,13 @@
     <mat-nav-list>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
         <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Home</a>
-        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding" >Service</a>
-        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding" >About Us</a>
-        <a class="mat-h2 color-secondary cardpadding" (click)=gotologin()>Gallery</a>
-        <a class="mat-h2 color-secondary cardpadding" (click)=gotologin()>Blogs</a>
+        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Doctor</a>
+        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">About Us</a>
+        <!-- <a class="mat-h2 color-secondary cardpadding" (click)=gotologin()>Gallery</a>
+        <a class="mat-h2 color-secondary cardpadding" (click)=gotologin()>Blogs</a> -->
         <!-- routerLink="/patient/patient-login" -->
-      
-        <a class="mat-h2 color-secondary cardpadding"  (click)="ContactUs()">Contact
-          Us</a>
+
+        <a class="mat-h2 color-secondary cardpadding" (click)="ContactUs()">Login/Signup </a>
       </div>
     </mat-nav-list>
   </mat-sidenav>
@@ -28,47 +27,64 @@
             </button>
           </div>
           <!-- class="logo" -->
-          <div  fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-sm="70" >
-            <img src="/assets/images/websitehome/MR CALL.png" alt="company logo here" >
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-sm="70">
+            <h1 class="mat-h1 color-primary" style="margin-bottom: 0px;">MR Call</h1>
           </div>
         </div>
-        
-        <!-- <div fxLayout="row" fxLayoutAlign="end end" fxFlex="47" fxHide.lt-md> -->
-          <!-- <div class="backimg"> -->
-          <div fxLayout="row" fxLayoutAlign="end center"  fxFlex="97" fxHide.lt-md>
-          <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
-            <a  (click)=gotologin() fxLayout="row" fxLayoutAlign="center center"
-              class="mat-h2 color-secondary text-center cursor-pointer" >Home</a>
-              <a fxLayout="row" fxLayoutAlign="center center" (click)=gotologin()
-              class="mat-h2 color-secondary text-center cursor-pointer" >Service</a>
-            <a  fxLayout="row" fxLayoutAlign="center center"  (click)=gotologin()
-              class="mat-h2 color-secondary text-center cursor-pointer">About Us</a>
-           
-         
-            <a fxLayout="row" fxLayoutAlign="center center" class="mat-h2 color-secondary text-center cursor-pointer"
-              (click)="ContactUs()">Gallery</a>
-              <a fxLayout="row" fxLayoutAlign="center center" class="mat-h2 color-secondary text-center cursor-pointer"
-              (click)="ContactUs()">Blogs</a>
-              <a fxLayout="row" fxLayoutAlign="center center" class="mat-h2 color-secondary text-center cursor-pointer"
-              (click)="ContactUs()">Gallery</a>
-              <button mat-raised-button class="btn" (click)=gotologin() color="primary"
-              >
-              Contact Us </button>
-             
-          
-            </ul>
-       
-        
-        </div>
 
-      <!-- </div> -->
+        <!-- <div fxLayout="row" fxLayoutAlign="end end" fxFlex="47" fxHide.lt-md> -->
+        <!-- <div class="backimg"> -->
+        <div fxHide.xs fxLayout="row" fxLayoutAlign="center center" fxFlex="22" fxFlex.lt-sm="30">
+          <h1 class="mat-h1 color-primary ">MR Call</h1>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex="47" fxHide.lt-md>
+          <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
+            <a (click)=gotologin() fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Home</a>
+
+            <a fxLayout="row" fxLayoutAlign="center center" (click)=gotologin()
+              class="mat-h2 color-secondary text-center cursor-pointer" [matMenuTriggerFor]="menu"
+              #menuTrigger="matMenuTrigger" (mouseover)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)"
+              fxLayout="row" fxLayoutAlign="center center">Doctor</a>
+
+            <a fxLayout="row" fxLayoutAlign="center center" (click)=gotologin()
+              class="mat-h2 color-secondary text-center cursor-pointer">About Us</a>
+
+            <mat-menu #menu="matMenu" [hasBackdrop]="false">
+              <div (mouseenter)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)">
+                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Pharma</a>
+                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Resps</a>
+                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Medical/Pharma</a>
+                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Representative</a>
+                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Jobs</a>
+                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Vacancy</a>
+              </div>
+            </mat-menu>
+            <mat-menu #menu1="matMenu">
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Pharma</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Resps</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center"
+                class="mat-h2 color-primary">Medical/Pharma</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center"
+                class="mat-h2 color-primary">Representative</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Jobs</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Vacancy</a>
+            </mat-menu>
+          </ul>
+        </div>
+        <!-- button for desktop -->
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="row" fxLayoutAlign="center center" fxFlex="30"
+          fxFlex.lt-md="40" fxFlex.lt-sm="25" fxLayoutGap="10px" fxHide.lt-sm>
+          <button mat-raised-button color="primary" class="btn button-shadow mat-h2" (click)=gotologin()>
+            Login / Signup </button>
+        </div>
       </div>
     </div>
 
     <!-- Content for website -->
     <div class="content-router content backgroud-color-secondary" #main>
       <!-- class="scrollContent" -->
-      <router-outlet ></router-outlet>
+      <router-outlet></router-outlet>
 
       <app-footer></app-footer>
     </div>

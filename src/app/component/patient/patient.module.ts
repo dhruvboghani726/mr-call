@@ -18,39 +18,41 @@ import { UpdateProfileComponent } from './profile-settings/update-profile/update
 import { ChangePasswordComponent } from './profile-settings/change-password/change-password.component';
 import { MydoctorListComponent } from './mydoctor-list/mydoctor-list.component';
 import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component';
+// import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   declarations: [
-   
+
     DashboardComponent,
     ActiveAppointmentComponent,
-         BookAnAppointmentComponent,
-         MydoctorListComponent,
-         MRepsVacancyComponent,
-         BrandReminderCardComponent,
-         UploadCardComponent,
-         ShareCardComponent,
-         CardHistoryComponent,
-         ProfileSettingsComponent,
-         UpdateProfileComponent,
-         ChangePasswordComponent,
-     ],
+    BookAnAppointmentComponent,
+    MydoctorListComponent,
+    MRepsVacancyComponent,
+    BrandReminderCardComponent,
+    UploadCardComponent,
+    ShareCardComponent,
+    CardHistoryComponent,
+    ProfileSettingsComponent,
+    UpdateProfileComponent,
+    ChangePasswordComponent,
+    // LoginComponent,
+  ],
   imports: [
-   
- 
-  
+
+
+
     CommonModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     PatientRoutingModule,
     FlexLayoutModule,
-   
+
   ],
-  providers: [ AsyncPipe, DatePipe ],
- 
+  providers: [AsyncPipe, DatePipe],
+
 
 })
 

@@ -1,536 +1,630 @@
 .mat-h1 {
-    font-weight: 1000;
-    margin: 0;
+  font-weight: 1000;
+  margin: 0;
 }
+
 .mat-display-1 {
-    font-weight: 600;
-    margin: 0;
-    font-size: 36px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 36px;
 }
+
 .mat-display-2 {
-    font-weight: 600;
-    margin: 0;
-    font-size: 34px;
+  font-weight: 600;
+  margin: 0;
+  font-size: 34px;
 }
+
 .mat-display-4 {
-    font-size: 80px;
-    letter-spacing: 1px;
-    font-weight: bold;
-    text-transform: none;
-    line-height: 90px;
+  font-size: 80px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: none;
+  line-height: 90px;
 }
+
 .qualuty-care-card {
-    height: 100%;
-    max-height: 100%;
-    width: 258px;
-    max-width: 260px;
+  height: 100%;
+  max-height: 100%;
+  width: 258px;
+  max-width: 260px;
 }
+
 .text-justify {
-    text-align: justify;
+  text-align: justify;
 }
+
 .text-center {
-    text-align: center;
+  text-align: center;
 }
+
 .mat-h4,
 .mat-h3 {
-    margin: 0;
+  margin: 0;
 }
+
 .mat-h2 {
-    font-weight: 400;
-    margin: 0;
+  font-weight: 400;
+  margin: 0;
 }
+
 .mat-display-2 {
-    font-weight: 800;
-    letter-spacing: 2px;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
+
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
+
 .float-right {
-    width: 60%;
-    height: 100%;
+  width: 60%;
+  height: 100%;
 }
+
 .quality-care p {
-    margin: 0;
+  margin: 0;
 }
+
 .simple-and-affortable img,
 .how-it-work img {
-    width: 70px;
-    height: auto;
+  width: 70px;
+  height: auto;
 }
 
 .how-it-work figure {
-    width: 160px;
-    height: 160px;
-    display: block;
-    margin: 0 auto;
-    border-radius: 100%;
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 100%;
 }
 
 .how-it-work img {
-    width: 70px;
-    height: 70px;
-    padding: 10px;
+  width: 70px;
+  height: 70px;
+  padding: 10px;
 }
 
 .dc-workdetail {
-    float: left;
-    width: auto;
-    padding: 20px;
-    margin-bottom: 30px;
-    text-align: center;
-    border-radius: 100%;
-    // background: url(assets/images/border-img.png);
-    background-color: aqua;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+  float: left;
+  width: auto;
+  padding: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  border-radius: 100%;
+  // background: url(assets/images/border-img.png);
+  background-color: aqua;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .safe-and-secure img {
-    width: 200px;
-    max-width: 100%;
-    height: auto;
+  width: 200px;
+  max-width: 100%;
+  height: auto;
 }
 
 .safe-and-secure .cardsize {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .footer img {
-    width: 255px;
-    height: 50px;
+  width: 255px;
+  height: 50px;
 }
 
 .footer li {
-    list-style: none;
+  list-style: none;
 }
 
 .dial-911 img {
-    height: 58px;
-    width: auto;
+  height: 58px;
+  width: auto;
 }
 
 .dial-911 {
-    padding: 20px 30px;
-    border-radius: 40px;
-    z-index: 1;
+  padding: 20px 30px;
+  border-radius: 40px;
+  z-index: 1;
 }
+
 .dial .mat-h2 {
-    font-weight: 600;
+  font-weight: 600;
 }
+
 .footer-text .mat-h2 {
-    font-weight: 600;
-    font-size: 19px;
+  font-weight: 600;
+  font-size: 19px;
 }
+
 .full-height {
-    height: 100%;
+  height: 100%;
 }
+
 .padding-center {
-    padding: 70px 0px;
+  padding: 70px 0px;
 }
+
 .padding-bottom {
-    padding: 70px 0px 140px;
+  padding: 70px 0px 140px;
 }
+
 .padding-top-bottom {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
+
 .padding-center1 {
-    padding: 50px 50px;
+  padding: 50px 50px;
 }
+
 .social-icon {
-    font-size: 20px;
+  font-size: 20px;
 }
+
 .btn {
-    padding: 4px 20px;
-    letter-spacing: 0.8px;
-    font-size: 14px;
-    font-weight: 600;
+  padding: 4px 20px;
+  letter-spacing: 0.8px;
+  font-size: 14px;
+  font-weight: 600;
 }
+
 .figure-shadow,
 .boxshadow:hover {
-    box-shadow: 0 9px 20px 0 rgba(165, 165, 165, 0.5);
+  box-shadow: 0 9px 20px 0 rgba(165, 165, 165, 0.5);
 }
-.dc-workdetails-border:after {
-    position: absolute;
-    content: "";
-    margin-left: -110px;
-    margin-top: 30px;
-    width: 220px;
-    height: 143px;
-    // background: url(assets/images/work-icon/line-01.png);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.dc-workdetails-bordertwo:before {
-    position: absolute;
-    margin-left: -110px;
-    margin-top: 30px;
-    content: "";
-    width: 220px;
-    height: 143px;
-    // background: url(assets/images/work-icon/line-02.png);
-  
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-.padding-topuseit {
-    padding: 5px;
-}
-.overflow {
-    overflow: hidden;
-}
-.backimg{
-  
-    background-image: url("/assets/images/websitehome/Rectangle.png");
-    background-size: 100% 100%;
-     width: auto;
-     height: 500px;
-     max-height: 500px;
-    //  padding: 73px;
-    //  display:block;
-    //  width:100%;
-    //  height:100%;
-    //  background: url("/assets/images/websitehome/Rectangle.png") no-repeat center center fixed;
-  
-}
-.secpartimg{
-  
-    background-image: url("/assets/images/websitehome/Rectangle 3.png");
-    background-size: 100% 100%;
-   
-}
-.smilertimg{
-  
-    background-image: url("/assets/images/websitehome/RECTANGLE-11.png");
-    background-size: 100% 100%;
-    width: auto;
-    height: 500px;
-    max-height: 500px;
-    // display:block;
-    // width:100%;
-    // height:100%;
-    // background: url("/assets/images/websitehome/RECTANGLE-11.png") no-repeat center center fixed;
-  
-}
-.faqimg{
-  
-    // background-image: url("/assets/images/websitehome/Rectangle-60.png");
-    // background-size: 100% 100%;
-    // width: auto;
-    // height: 500px;
-    // max-height: 500px;
 
-    display:block;
-    width:auto;
-    height:100%;
-    background: url('/assets/images/websitehome/Rectangle-60.png') no-repeat center center fixed;
-  
+.dc-workdetails-border:after {
+  position: absolute;
+  content: "";
+  margin-left: -110px;
+  margin-top: 30px;
+  width: 220px;
+  height: 143px;
+  // background: url(assets/images/work-icon/line-01.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
-.bannerimg{
-    background-image: url("/assets/images/websitehome/image-3.png");
-  
+
+.dc-workdetails-bordertwo:before {
+  position: absolute;
+  margin-left: -110px;
+  margin-top: 30px;
+  content: "";
+  width: 220px;
+  height: 143px;
+  // background: url(assets/images/work-icon/line-02.png);
+
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
+
+.padding-topuseit {
+  padding: 5px;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.backimg {
+
+  background-image: url("/assets/images/websitehome/Rectangle.png");
+  background-size: 100% 100%;
+  width: auto;
+  height: 500px;
+  max-height: 500px;
+  //  padding: 73px;
+  //  display:block;
+  //  width:100%;
+  //  height:100%;
+  //  background: url("/assets/images/websitehome/Rectangle.png") no-repeat center center fixed;
+
+}
+
+.secpartimg {
+
+  background-image: url("/assets/images/websitehome/Rectangle 3.png");
+  background-size: 100% 100%;
+
+}
+
+.smilertimg {
+
+  background-image: url("/assets/images/websitehome/RECTANGLE-11.png");
+  background-size: 100% 100%;
+  width: auto;
+  height: 500px;
+  max-height: 500px;
+  // display:block;
+  // width:100%;
+  // height:100%;
+  // background: url("/assets/images/websitehome/RECTANGLE-11.png") no-repeat center center fixed;
+
+}
+
+.faqimg {
+
+  // background-image: url("/assets/images/websitehome/Rectangle-60.png");
+  // background-size: 100% 100%;
+  // width: auto;
+  // height: 500px;
+  // max-height: 500px;
+
+  display: block;
+  width: auto;
+  height: 100%;
+  background: url('/assets/images/websitehome/Rectangle-60.png') no-repeat center center fixed;
+
+}
+
+.bannerimg {
+  background-image: url("/assets/images/websitehome/image-3.png");
+
+}
+
 .centered {
-    position: absolute;
-    top: 32%;
-    left: 63%;
-    transform: translate(-50%, -50%);
-    width: 55%;
-  }
+  position: absolute;
+  top: 32%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+}
 
 
 
 .imgservice {
-  
-    width: 150px;
-    height: 100px;
-    background-image: url("/assets/images/websitehome/icons-2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-  }
-  .mat-card-background{
-    background-image: url("/assets/images/websitehome/Rectangle 33.png");
-   
-    background-repeat: no-repeat;
-  }
-  .backgroudblue {
-    min-height: 50vh;;
- 
-  
-    background-image: url("/assets/images/websitehome/Rectangle 33.png");
-   
-    background-repeat: no-repeat;
-   
-  
 
-    padding: 20px;
-    border-radius: 8px;
-    color: white;
-    margin-left: 150px;
-    margin-right: 150px;
-  }
- 
- 
-
-  .doctorcard {
-    width: 194px;
-    min-height: 176px;
-    // background: url('/assets/images/websitehome/Rectangle-60.png') no-repeat center center fixed;
-    background: url('/assets/images/websitehome/Rectangle 21.png') no-repeat center center ; 
+  width: 150px;
+  height: 100px;
+  background-image: url("/assets/images/websitehome/icons-2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
-  .change-avatar {
-    text-align: center;
-  }
-  .group {
-    display: flex;
-    flex-flow: wrap;
-    overflow: auto;
-    height: 275px;
-  }
-  .group1 {
-    display: flex;
-    flex-flow: wrap;
-    overflow: auto;
-    max-height: 800px;
-  }
-  .change-avatar .profile-img img {
-  
-    height: 191px;
-    width: 225px;
-    object-fit: cover;
-  
-  }
-  .change-avatar .profile-imgdoctor img {
- 
-    height: 191px;
-    width: 151px;
-    /* margin-bottom: -21px; */
-    margin: 0;
-    padding: 1px;
- 
-  }
-  .doctorcard2 {
-    width: 194px;
-    min-height: 176px;
-    background: url('/assets/images/websitehome/rectangle-1.png') no-repeat center center ;
-    // background: url('/assets/images/websitehome/Rectangle 21.png') no-repeat center center fixed;
-  }
 
-  .Experience{
-    min-height: 50vh;;
-    width: 100%;
-  
-    background: url('/assets/images/websitehome/Rectangle 3.png')
-    no-repeat center / cover;
-  }
+.mat-card-background {
+  background-image: url("/assets/images/websitehome/Rectangle 33.png");
 
-  .Slidersection{
-    min-height: 50vh;;
-    width: 100%;
-   
-    background: url('/assets/images/websitehome/Rectangle.png')
-    no-repeat center / cover;
-  }
-  .big_circle-xs {
-    background-color: #eef2ea;
-    border: 12px solid #fddcb8;
-    height: 125px;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    width: 125px;
-    position: absolute;
-    top: 38%;
-    left: 45%;
+  background-repeat: no-repeat;
 }
-  .Slidersection-xs{
-    min-height: 50vh;;
-    width: 100%;
-   
-    background:#eef2ea;
-  }
-  .Sliderleft {
-    width: 50%;
-    height: 460px;
-    border-radius: 8px;
-  }
-  .Sliderright {
-    width: 50%;
-    height: 460px;
-   
-    background: url('/assets/images/websitehome/image-3.png')
-      no-repeat center / cover;
-    border-radius: 8px;
-   
-  
-  }
-  .Sliderright-xs{
-    width: 100%;
-    height: 400px;
-    
-  }
 
-  .Sliderleft-xs{
-    width: 90%;
-    margin: 0;
-    height:0%
-  }
-  .section {
-   min-height: 50vh;;
-    width: 100%;
-  
-    background: url('/assets/images/websitehome/RECTANGLE-11.png')
-    no-repeat center / cover;
-  }
-  .faq  {
-    min-height: 50vh;;
-     width: 100%;
-     
-     background: url('/assets/images/websitehome/Rectangle-60.png')
-     no-repeat center / cover;
-   }
-  .contain {
-    width: 90%;
-    max-width: 1000px;
-    margin: 50px auto;
-   
-    
-  }
-  .left {
-    width: 50%;
-    height: 460px;
-    background: url('/assets/images/websitehome/Mask Group 1.png')
-      no-repeat center / cover;
-    border-radius: 8px;
-  }
-  .right {
-    width: 50%;
-    height: 460px;
-   
-   
-    border-radius: 8px;
-  
-  }
-  .right h1 {
-    font-size: 40px;
-    font-weight: lighter;
-  }
+.backgroudblue {
+  min-height: 50vh;
+  ;
+
+
+  background-image: url("/assets/images/websitehome/Rectangle 33.png");
+
+  background-repeat: no-repeat;
+
+
+
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+
+
+.doctorcard {
+  width: 194px;
+  min-height: 176px;
+  // background: url('/assets/images/websitehome/Rectangle-60.png') no-repeat center center fixed;
+  background: url('/assets/images/websitehome/Rectangle 21.png') no-repeat center center;
+}
+
+.change-avatar {
+  text-align: center;
+}
+
+.group {
+  display: flex;
+  flex-flow: wrap;
+  overflow: auto;
+  height: 275px;
+}
+
+.group1 {
+  display: flex;
+  flex-flow: wrap;
+  overflow: auto;
+  max-height: 800px;
+}
+
+.change-avatar .profile-img img {
+
+  height: 191px;
+  width: 225px;
+  object-fit: cover;
+
+}
+
+.change-avatar .profile-imgdoctor img {
+
+  height: 191px;
+  width: 151px;
+  /* margin-bottom: -21px; */
+  margin: 0;
+  padding: 1px;
+
+}
+
+.doctorcard2 {
+  width: 194px;
+  min-height: 176px;
+  background: url('/assets/images/websitehome/rectangle-1.png') no-repeat center center;
+  // background: url('/assets/images/websitehome/Rectangle 21.png') no-repeat center center fixed;
+}
+
+.Experience {
+  min-height: 50vh;
+  ;
+  width: 100%;
+
+  background: url('/assets/images/websitehome/Rectangle 3.png') no-repeat center / cover;
+}
+
+.Slidersection {
+  min-height: 50vh;
+  ;
+  width: 100%;
+
+  background: url('/assets/images/websitehome/Rectangle.png') no-repeat center / cover;
+}
+
+.big_circle-xs {
+  background-color: #eef2ea;
+  border: 12px solid #fddcb8;
+  height: 125px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  width: 125px;
+  position: absolute;
+  top: 38%;
+  left: 45%;
+}
+
+.Slidersection-xs {
+  min-height: 50vh;
+  ;
+  width: 100%;
+
+  background: #eef2ea;
+}
+
+.Sliderleft {
+  width: 50%;
+  height: 460px;
+  border-radius: 8px;
+}
+
+.Sliderright {
+  width: 50%;
+  height: 460px;
+
+  background: url('/assets/images/websitehome/image-3.png') no-repeat center / cover;
+  border-radius: 8px;
+
+
+}
+
+.Sliderright-xs {
+  width: 100%;
+  height: 400px;
+
+}
+
+.Sliderleft-xs {
+  width: 90%;
+  margin: 0;
+  height: 0%
+}
+
+.section {
+  min-height: 50vh;
+  ;
+  width: 100%;
+
+  background: url('/assets/images/websitehome/RECTANGLE-11.png') no-repeat center / cover;
+}
+
+.faq {
+  min-height: 50vh;
+  ;
+  width: 100%;
+
+  background: url('/assets/images/websitehome/Rectangle-60.png') no-repeat center / cover;
+}
+
+.contain {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+
+
+}
+
+.left {
+  width: 50%;
+  height: 460px;
+  background: url('/assets/images/websitehome/Mask Group 1.png') no-repeat center / cover;
+  border-radius: 8px;
+}
+
+.right {
+  width: 50%;
+  height: 460px;
+
+
+  border-radius: 8px;
+
+}
+
+.right h1 {
+  font-size: 40px;
+  font-weight: lighter;
+}
 
 
 .matdisplay-2 {
-    font: 369 43px/56px Font-Inter, Montserrat, Arial;
-    letter-spacing: -0.02em;
-    margin: 0 0 25px;
+  font: 369 43px/56px Quicksand;
+  letter-spacing: -0.02em;
+  margin: 0 0 25px;
+  color: #7661e2;
 }
+
 .matdisplay-3 {
-    font: 369 37px/56px Font-Inter, Montserrat, Arial;
-    letter-spacing: -0.02em;
-    margin: 0 0 25px;
+  font: 369 37px/56px Quicksand;
+  letter-spacing: -0.02em;
+  margin: 0 0 25px;
+  color: #7661e2;
 }
 
 .rect10 {
-    width: 30%;
-    height: 400px;
-    background: url('/assets/images/websitehome/Rectangle 10.png')
-    no-repeat center / cover;
-   
-  }
-  .mastgruop4 {
-    width: 30%;
-    min-height: 400px;
-    background-color: #303137;
-    background: url("/assets/images/websitehome/Mask Group 4.png") no-repeat center/cover;
-    transform: translate(-43%, -4%) rotate(9deg);
-  }
-  .rightnew{
-    width: 50%;
-    height: 460px;
-    border-radius: 8px;
-    padding-top: 43px;
-    margin-left: -100px;
-  }
+  width: 30%;
+  height: 400px;
+  background: url('/assets/images/websitehome/Rectangle 10.png') no-repeat center / cover;
+
+}
+
+.mastgruop4 {
+  width: 30%;
+  min-height: 400px;
+  background-color: #303137;
+  background: url("/assets/images/websitehome/Mask Group 4.png") no-repeat center/cover;
+  transform: translate(-43%, -4%) rotate(9deg);
+}
+
+.rightnew {
+  width: 50%;
+  height: 460px;
+  border-radius: 8px;
+  padding-top: 43px;
+  margin-left: -100px;
+}
+
 //   small device
 .rect10-xs {
-    width: 70%;
-    height: 200px;
-    
-    background: url('/assets/images/websitehome/Rectangle 10.png')
-    no-repeat center / cover;
-   
-  }
-  .mastgruop4-xs {
-   
-    // background: url("/assets/images/websitehome/Mask Group 4.png") no-repeat center/cover;
-  
-    // width: 70%;
-    // min-height: 230px;
-    // height: 200px;
-   
-    
-    // transform: translate(18%, -100%) rotate(10deg);
-   
-    width: 100%;
-    /* height: 357px; */
-    min-height: 305px;
-    transform: translate(0%, 0%) rotate(9deg);
-  }
-  .rightnew-xs{
-   
-    width: 90%;
-    margin: 0;
-    height:0%
-  }
-  .faqimgleft{
-    width: 50%;
-    height: 460px;
-    background: url('/assets/images/websitehome/happy-doctor-wearing-glasses-presenting-something.png')
-      no-repeat center / cover;
-    border-radius: 8px;
-  }
-  .faqimgright{
-    width: 50%;
-    height: 460px;
-  
-   
-  }
-  .faqimgleft-xs{
-    // width: 100%;
-    // height: 400px;
-    // width: 102%;
+  width: 70%;
+  height: 200px;
 
-    width: 100%;
-    height: 300px;
-    min-height: 300px;
-  }
-  .faqimgright-xs{
-    // width: 90%;
-    margin: 0;
-    height:0%;
-    width: 102%;
-   
-  }
-  .centered-xs{
-    position: absolute;
-    top: 32%;
-    left: 63%;
-    transform: translate(-50%, -50%);
-    width: 55%;
-  }
- 
-  // .contain-xs {
-  //   flex-direction: column;
-  //   width: 100%;
-  //   margin: 0 20px;
-  // }
-  .left-xs {
-    width: 100%;
-    height: 400px;
-  }
-  .right-xs {
-    width: 90%;
-    margin: 0;
-    height:0%
-    // margin-top: -100px;
-  }
+  background: url('/assets/images/websitehome/Rectangle 10.png') no-repeat center / cover;
+
+}
+
+.mastgruop4-xs {
+
+  // background: url("/assets/images/websitehome/Mask Group 4.png") no-repeat center/cover;
+
+  // width: 70%;
+  // min-height: 230px;
+  // height: 200px;
+
+
+  // transform: translate(18%, -100%) rotate(10deg);
+
+  width: 100%;
+  /* height: 357px; */
+  min-height: 305px;
+  transform: translate(0%, 0%) rotate(9deg);
+}
+
+.rightnew-xs {
+
+  width: 90%;
+  margin: 0;
+  height: 0%
+}
+
+.faqimgleft {
+  width: 50%;
+  height: 460px;
+  background: url('/assets/images/websitehome/happy-doctor-wearing-glasses-presenting-something.png') no-repeat center / cover;
+  border-radius: 8px;
+}
+
+.faqimgright {
+  width: 50%;
+  height: 460px;
+
+
+}
+
+.faqimgleft-xs {
+  // width: 100%;
+  // height: 400px;
+  // width: 102%;
+
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+}
+
+.faqimgright-xs {
+  // width: 90%;
+  margin: 0;
+  height: 0%;
+  width: 102%;
+
+}
+
+.centered-xs {
+  position: absolute;
+  top: 32%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+}
+
+// .contain-xs {
+//   flex-direction: column;
+//   width: 100%;
+//   margin: 0 20px;
+// }
+.left-xs {
+  width: 100%;
+  height: 400px;
+}
+
+.right-xs {
+  width: 90%;
+  margin: 0;
+  height: 0% // margin-top: -100px;
+}
+
+.simple-and-affortable img,
+.how-it-work img {
+  width: 70px;
+  height: auto;
+}
+
+.how-it-work figure {
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 100%;
+}
+
+.how-it-work img {
+  width: 70px;
+  height: 70px;
+  padding: 10px;
+}
+
+.dc-workdetail {
+  float: left;
+  width: 50px;
+  padding: 50px;
+  margin-bottom: 30px;
+  text-align: center;
+  border-radius: 100%;
+  // background: url(assets/images/border-img.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
