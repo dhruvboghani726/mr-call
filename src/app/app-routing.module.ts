@@ -7,13 +7,13 @@ const routes: Routes = [];
     RouterModule.forRoot(
       [
         { path: '', redirectTo: 'website/home', pathMatch: 'full' },
-      
+
         { path: 'website', loadChildren: () => import('./component/website/website.module').then(m => m.WebsiteModule) },
-       
+
         { path: 'doctor', loadChildren: () => import('./component/doctor/doctor.module').then(m => m.DoctorModule) },
-        { path: 'patient', loadChildren: () => import('./component/patient/patient.module').then(m => m.PatientModule) },
+        { path: 'mr', loadChildren: () => import('./component/patient/patient.module').then(m => m.PatientModule) },
       ],
-     
+
     ),
   ],
   exports: [RouterModule]

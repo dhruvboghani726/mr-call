@@ -18,6 +18,7 @@ import { UpdateProfileComponent } from './profile-settings/update-profile/update
 import { ChangePasswordComponent } from './profile-settings/change-password/change-password.component';
 import { MydoctorListComponent } from './mydoctor-list/mydoctor-list.component';
 import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component';
+import { RegisterComponent } from './register/register.component';
 
 
 
@@ -84,6 +85,7 @@ import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component
               import('./login/login.module').then(
                 m => m.LoginModule)
           },
+          { path: 'mr-register', component: RegisterComponent, pathMatch: 'full' },
         ]
 
       }

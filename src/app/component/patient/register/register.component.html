@@ -1,0 +1,85 @@
+<div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
+    <div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
+        <!-- Logo and Banner image for desktop -->
+        <mat-card fxHide.xs class="cardimage cardsize backgroud-color-gray" fxFlex.sm="50%">
+            <span fxLayoutAlign="start start">
+                <a routerLink="/website/home">
+                    <p class="color-primary mat-headline">MR Call</p>
+                </a>
+            </span>
+
+            <!-- <div fxLayout="column" fxLayoutAlign="start start" class="features color-secondary"
+                style="margin-top:3rem;">
+                <h3 class="color-primary">Features for Patients</h3>
+                <li>Online clinic</li>
+                <li>Doctor can video call with patient</li>
+                <li>Can see patient symptons before call</li>
+                <li>Can see patient history</li>
+            </div> -->
+
+            <span fxLayoutAlign="center center" style="margin-top: 3rem;">
+                <img src="assets/images/websitehome/image-3.png" class="img-responsive" alt="banner">
+            </span>
+        </mat-card>
+        <!-- Logo for mobile -->
+        <span fxLayoutAlign="center center" fxHide.sm fxHide.gt-sm>
+            <a routerLink="/website/home">
+                <img src="assets/images/websitehome/image-3.png" height="100px" alt="logo">
+                <!-- <p class="color-primary mat-headline">Telemedicine</p> -->
+            </a>
+        </span>
+        <mat-card class="cardsize" fxFlex.sm="50%">
+            <mat-card-title class="padding-top">
+                <span fxLayoutAlign="center" class="color-primary mat-headline">Register</span>
+            </mat-card-title>
+            <mat-card-content class="cardpadding margin-top">
+                <form [formGroup]="RegistarionForm" (keyup.enter)="submit()" autocomplete="off">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mobile No</mat-label>
+                        <input formControlName="MobileNumber" type="tel" id="mobilenumnber" matInput
+                            placeholder="123-456-7890" maxlength="10" required>
+                        <mat-error>Mobile No is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>FirstName</mat-label>
+                        <input matInput formControlName="FirstName" type="text" id="firstname" maxlength="256" required>
+                        <mat-error>FirstName is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>LastName</mat-label>
+                        <input matInput formControlName="LastName" type="text" id="lastName" maxlength="256" required>
+                        <mat-error>LastName is required</mat-error>
+                    </mat-form-field>
+                    <!-- Email field -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Username or Email</mat-label>
+                        <input matInput formControlName="username" type="email" id="username" maxlength="256" required>
+                        <mat-error>Username is required</mat-error>
+                    </mat-form-field>
+                    <!-- Password field -->
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'" matInput
+                            required maxlength="256" />
+                        <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ? 'visibility_off' :
+                            'visibility'}}</mat-icon>
+                        <mat-error>Password is required</mat-error>
+
+                    </mat-form-field>
+                    <div class="margin-top">
+                        <!-- Forgot password link-->
+                        <span fxFlex="100" align="end" fxLayoutAlign="end">
+                            <a routerLink="/mr/mr-login" class="color-primary">
+                                Already have an account?</a>
+                        </span>
+                    </div>
+                    <!-- Login button -->
+                    <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-top]="'20px'">
+                        <button mat-button mat-raised-button color="primary" [disabled]="RegistarionForm.invalid"
+                            fxFlex="100" (click)="submit()">Register</button>
+                    </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

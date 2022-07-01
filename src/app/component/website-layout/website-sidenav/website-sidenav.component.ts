@@ -1,7 +1,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { AfterViewInit, ChangeDetectorRef, Component, HostBinding, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { fromEvent, Subject } from 'rxjs';
 import { distinctUntilChanged, filter, map, pairwise, share, takeUntil, throttleTime } from 'rxjs/operators';
@@ -22,7 +22,7 @@ enum Direction {
 @Component({
   selector: 'app-website-sidenav',
   templateUrl: './website-sidenav.component.html',
-  styleUrls: [ './website-sidenav.component.scss' ],
+  styleUrls: ['./website-sidenav.component.scss'],
   animations: [
     trigger('scrollAnimation', [
       state(VisibilityState.Visible, style({
@@ -111,7 +111,7 @@ export class WebsiteSidenavComponent implements AfterViewInit, OnDestroy {
 
   // go to login page
   gotologin() {
-   
+    this.router.navigate(['/mr/mr-login']);
   }
   timedOutCloser;
 
