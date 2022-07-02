@@ -1,83 +1,90 @@
-<div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
-    <!-- <svg viewBox="0 0 500 150" preserveAspectRatio="none" fxHide.lt-sm>
-        <path d="M-1.12,150.48 C19.74,-7.39 343.11,134.70 505.64,-89.30 L500.00,150.00 L0.00,150.00 Z"
-            style="stroke: none; fill: #faf8f4b8;"></path>
-    </svg> -->
-    <div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
-        <!-- Logo and Banner image for desktop -->
-        <mat-card fxHide.xs class="cardimage cardsize backgroud-color-gray" fxFlex.sm="50%">
-            <span fxLayoutAlign="start">
-                <a routerLink="/website/home">
-                    <!-- <img src="assets/img/login-banner.png" height="90px" alt="logo"> -->
-                    <p class="color-primary mat-headline">MR Call</p>
-                </a>
-            </span>
-            <span>
-                <img src="/assets/images/websitehome/image-3.png" class="img-responsive" alt="banner">
-            </span>
-        </mat-card>
-        <!-- Logo for mobile -->
-        <span fxLayoutAlign="center center" fxHide.sm fxHide.gt-sm>
-            <a routerLink="/website/home">
-                <img src="/assets/images/websitehome/image-3.png" height="100px" alt="logo">
-            </a>
-        </span>
-        <mat-card class="cardsize" fxFlex.sm="50%">
-            <mat-card-title class="padding-top">
-                <span fxLayoutAlign="center" class="color-primary mat-headline">Login</span>
-            </mat-card-title>
-            <mat-card-content class="cardpadding margin-top">
-                <form [formGroup]="LoginForm" (keyup.enter)="submit()" autocomplete="off">
-                    <!-- Email field -->
-                    <mat-form-field appearance="outline">
-                        <mat-label>Mobile No or Email</mat-label>
-                        <input formControlName="MobileNumber" type="tel" id="mobilenumnber" matInput
-                            placeholder="123-456-7890" maxlength="10" required>
-                        <mat-error>Mobile No is required</mat-error>
-                    </mat-form-field>
-                    <!-- Password field -->
-                    <mat-form-field appearance="outline" class="margin-top">
-                        <mat-label>Password</mat-label>
-                        <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'" matInput
-                            required maxlength="256" />
-                        <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ? 'visibility_off' :
-                            'visibility'}}</mat-icon>
+<mat-tab-group class="color-primary" mat-align-tabs="center">
+    <mat-tab label="Login">
+        <ng-template matTabContent>
+            <div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
+                <div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
+                    <!-- Logo and Banner image for desktop -->
+                    <mat-card fxHide.xs class="cardimage cardsize backgroud-color-gray" fxFlex.sm="50%">
+                        <span fxLayoutAlign="start">
+                            <a routerLink="/website/home">
+                                <!-- <img src="assets/img/login-banner.png" height="90px" alt="logo"> -->
+                                <p class="color-primary mat-headline">MR Call</p>
+                            </a>
+                        </span>
+                        <span>
+                            <img src="/assets/images/websitehome/image-3.png" class="img-responsive" alt="banner">
+                        </span>
+                    </mat-card>
+                    <!-- Logo for mobile -->
+                    <span fxLayoutAlign="center center" fxHide.sm fxHide.gt-sm>
+                        <a routerLink="/website/home">
+                            <img src="/assets/images/websitehome/image-3.png" height="100px" alt="logo">
+                        </a>
+                    </span>
+                    <mat-card class="cardsize" fxFlex.sm="50%">
+                        <mat-card-title class="padding-top">
+                            <span fxLayoutAlign="center" class="color-primary mat-headline">Login</span>
+                        </mat-card-title>
+                        <mat-card-content class="cardpadding margin-top">
+                            <form [formGroup]="LoginForm" (keyup.enter)="submit()" autocomplete="off">
+                                <!-- Email field -->
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Mobile No or Email</mat-label>
+                                    <input formControlName="MobileNumber" type="tel" id="mobilenumnber" matInput
+                                        placeholder="123-456-7890" maxlength="10" required>
+                                    <mat-error>Mobile No is required</mat-error>
+                                </mat-form-field>
+                                <!-- Password field -->
+                                <mat-form-field appearance="outline" class="margin-top">
+                                    <mat-label>Password</mat-label>
+                                    <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'"
+                                        matInput required maxlength="256" />
+                                    <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ?
+                                        'visibility_off' :
+                                        'visibility'}}</mat-icon>
 
-                        <mat-error>Password is required</mat-error>
-                    </mat-form-field>
-                    <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
-                        <div fxLayout="row" fxLayoutAlign="center center" *ngIf="this.error">
-                            <p class="color-warn">{{this.error}}</p>
-                        </div>
-                        <div class="margin-top">
+                                    <mat-error>Password is required</mat-error>
+                                </mat-form-field>
+                                <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="5px">
+                                    <div fxLayout="row" fxLayoutAlign="center center" *ngIf="this.error">
+                                        <p class="color-warn">{{this.error}}</p>
+                                    </div>
+                                    <div class="margin-top">
 
-                            <!-- Forgot password link-->
-                            <span fxFlex="100" align="center" fxLayoutAlign="center">
-                                <a routerLink="/patient/patient-user-check" class="color-primary">
-                                    Forgot password?</a>
-                            </span>
-                        </div>
+                                        <!-- Forgot password link-->
+                                        <span fxFlex="100" align="center" fxLayoutAlign="center">
+                                            <a routerLink="/mr/mr-forgot-password" class="color-primary">
+                                                Forgot password?</a>
+                                        </span>
+                                    </div>
 
-                    </div>
-                    <!-- Login button -->
-                    <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-top]="'20px'">
-                        <button mat-button mat-raised-button color="primary" [disabled]="LoginForm.invalid" fxFlex="100"
-                            (click)="submit()">Login</button>
-                    </div>
-                </form>
-            </mat-card-content>
+                                </div>
+                                <!-- Login button -->
+                                <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-top]="'20px'">
+                                    <button mat-button mat-raised-button color="primary" [disabled]="LoginForm.invalid"
+                                        fxFlex="100" (click)="submit()">Login</button>
+                                </div>
+                            </form>
+                        </mat-card-content>
 
 
-            <mat-card-actions>
+                        <mat-card-actions>
 
-                <!-- Login account button -->
-                <div>
-                    <!--SignUp account button -->
-                    <div fxLayoutAlign="center">
-                        <a routerLink="/mr/mr-register" class="color-primary">Create new account?</a>
-                    </div>
+                            <!-- Login account button -->
+                            <div>
+                                <!--SignUp account button -->
+                                <div fxLayoutAlign="center">
+                                    <a routerLink="/mr/mr-register" class="color-primary">Create new account?</a>
+                                </div>
+                            </div>
+                        </mat-card-actions>
+                    </mat-card>
                 </div>
-            </mat-card-actions>
-        </mat-card>
-    </div>
-</div>
+            </div>
+        </ng-template>
+    </mat-tab>
+
+    <mat-tab label="Register">
+        <app-register></app-register>
+    </mat-tab>
+</mat-tab-group>

@@ -19,8 +19,13 @@ import { ChangePasswordComponent } from './profile-settings/change-password/chan
 import { MydoctorListComponent } from './mydoctor-list/mydoctor-list.component';
 import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component';
 import { RegisterComponent } from './register/register.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { OtpVeficationComponent } from './otp-vefication/otp-vefication.component';
+import { environment } from 'environments/environment';
 // import { LoginComponent } from './login/login.component';
-
+// import { StripeModule } from "stripe-angular"
 
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -39,19 +44,21 @@ import { RegisterComponent } from './register/register.component';
     UpdateProfileComponent,
     ChangePasswordComponent,
     RegisterComponent,
-    // LoginComponent,
+    AppointmentComponent,
+
+    LoginComponent,
+    ForgotPasswordComponent,
+    OtpVeficationComponent,
+
   ],
   imports: [
-
-
-
     CommonModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     PatientRoutingModule,
     FlexLayoutModule,
-
+    // StripeModule.forRoot(environment.stripAPIKey)
   ],
   providers: [AsyncPipe, DatePipe],
 

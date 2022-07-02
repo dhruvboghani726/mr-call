@@ -1,0 +1,224 @@
+<div class="cardpadding" fxLayout="column" fxLayoutGap="20px">
+    <mat-card class="backgroud-color-primary color-white" fxLayout="row" fxLayout="column" fxLayoutAlign="start">
+
+        <mat-card-title class="mat-h2" ngClass.xs="mat-h3"> Appointment</mat-card-title>
+    </mat-card>
+
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+
+        <div fxFlex="65%" fxFlex.xs="100%" fxFlex.sm="33%">
+            <form [formGroup]="patientDetailsFormGroup">
+                <mat-card class="mat-elevation-z4" flexLayoutAlign="start" fxLayoutAlign.sm="center center"
+                    fxLayoutGap="40px">
+
+                    <div fxlayout="row" flexLayoutAlign="start start">
+                        <mat-card-title>Appointment Timing</mat-card-title>
+                    </div>
+                    <br>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Appointment Date</mat-label>
+                        <input matInput [matDatepicker]="picker" [min]="minDate" formControlName="appointmentDate"
+                            (dateChange)="onDateChange($event.value)">
+
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker (change)="changeAppointmentDateTime()">
+
+                        </mat-datepicker>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="margin-top">
+                        <mat-label>Appoiment Time</mat-label>
+                        <mat-select>
+                            <mat-option *ngFor="let appioment of appioments" [value]="appioment.value">
+                                {{appioment.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <!-- <mat-form-field appearance="fill" class="margin-top">
+					<mat-label>Choose Appoiment Time</mat-label>
+					<mat-select>
+						<mat-option *ngFor="let appioment of appioments" [value]="appioment.value">
+							{{appioment.viewValue}}
+						</mat-option>
+					</mat-select>
+				 </mat-form-field> -->
+                    <br><br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxlayout="row" flexLayoutAlign="start start">
+                        <mat-card-title>Personal Information</mat-card-title>
+                    </div>
+                    <br>
+
+                    <mat-form-field appearance="outline" class="margin-top">
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" type="text" id="firstName" maxlength="256" required>
+                        <mat-error>Firstname is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName" type="text" id="lastName" maxlength="256" required>
+                        <mat-error>Lastname is required</mat-error>
+                    </mat-form-field>
+                    <br>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput formControlName="email" type="text" id="email" maxlength="256" required>
+                        <mat-error>Email is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Phone </mat-label>
+                        <input matInput formControlName="phone" type="tel" id="phone" maxLength="10" required>
+                        <mat-error>Phone is required</mat-error>
+                    </mat-form-field>
+
+                </mat-card>
+            </form>
+            <br><br>
+            <mat-card class="mat-elevation-z4" fxLayoutGap="40px">
+                <div fxlayout="row" flexLayoutAlign="start start">
+                    <mat-card-title>Payment Method</mat-card-title>
+                </div>
+                <br>
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1" color="primary" checked>
+                        <span style="font-weight: 600;">Credit Card</span>
+                    </mat-radio-button>
+                </mat-radio-group>
+
+                <!-- <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions">
+									</ngx-stripe-card> -->
+                <!-- <stripe-card #stripeCard [(token)]="token" (catch)="onStripeError($event)"
+                    [(complete)]="cardDetailsFilledOut" [(invalid)]="invalidError" (cardMounted)="cardCaptureReady = 1"
+                    (paymentMethodChange)="setPaymentMethod($event)" (tokenChange)="setStripeToken($event)"
+                    (sourceChange)="setStripeSource($event)">
+                </stripe-card> -->
+                <br>
+                <section class="example-section" fxLayout="row" fxLayoutAlign="start start"
+                    fxLayoutAlign="space-between">
+                    <mat-checkbox color="primary" class="example-margin">
+                        <span>
+                            I have read and accept. <span class="color-primary ">Terms
+                                &
+                                Conditions</span>
+                        </span>
+                    </mat-checkbox>
+                </section>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="start">
+                    <button mat-raised-button color="primary" style="cursor: pointer;"
+                        (click)="checkoutBooking()">Confirm And Pay</button>
+                </div>
+            </mat-card>
+
+
+            <!-- </div> -->
+        </div>
+
+        <!-- doctor profile -->
+        <div fxFlex="35%" fxFlex.xs="100%" fxFlex.lt-sm="33%" fxFlex.lt-md="50%">
+            <mat-card class="mat-elevation-z4">
+                <!-- <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between start"
+					fxLayoutAlign.lt-sm="center center" fxLayoutGap="10px" fxFlex> -->
+                <!-- <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex.lt-sm="100"> -->
+                <div fxLayout="row">
+                    <mat-card-title>Booking Summary</mat-card-title>
+                </div>
+                <!-- <br> -->
+                <mat-divider></mat-divider>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <div fxLayout="column" fxLayoutAlign.lt-sm="center center">
+                        <a [routerLink]="'/patient/doctor-profile'" [queryParams]="{id: doctorid}">
+                            <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image"
+                                class="profile-img">
+                        </a>
+                    </div>
+                    <div fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="end end" fxLayoutAlign="space-between">
+                        <div fxLayout="row">
+                            <h2 class="color-primary "><a [routerLink]="''" style="text-decoration: none;"
+                                    [queryParams]="{id: doctorid}">Dr.Bhargav</a>
+                            </h2>
+                        </div>
+
+                        <div fxLayout="row" class="rating">
+                            <mat-icon class="rating-color">star</mat-icon>
+                            <mat-icon class="rating-color">star</mat-icon>
+                            <mat-icon class="rating-color">star</mat-icon>
+                            <mat-icon class="rating-color">star</mat-icon>
+                            <mat-icon class="backgroud-color-white">star_half</mat-icon>
+                            <!-- <i class="fas fa-star" style="color:#dedfe0;"></i> -->
+                            <span style="font-size:18px">35</span>
+                        </div>
+                        <div fxLayout="row" style="margin-top: -8px;">
+                            <mat-icon>room</mat-icon>
+                            <p class="mat-h4">Bhavnagar, India
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <div fxLayout="column" fxLayoutAlign="start start">
+                        <h4>Date</h4>
+                        <h4>Time</h4>
+                        <h4>Consulting Fee</h4>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="end end">
+                        <h4>02 Jul 2022</h4>
+                        <h4>12:00 AM</h4>
+                        <h4>$ 25</h4>
+                    </div>
+                </div>
+
+                <mat-divider></mat-divider>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <div fxLayout="column" fxLayoutAlign="start start">
+                        <h3 style="font-weight: 600;">Total</h3>
+                    </div>
+                    <div fxLayout="column" fxLayoutAlign="end end">
+                        <h3 class="color-primary" style="font-weight: 600;">$ 25
+                        </h3>
+                    </div>
+                </div>
+            </mat-card>
+            <br><br><br>
+            <mat-card class="mat-elevation-z4">
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                    <mat-card-title>Available Timing</mat-card-title>
+                </div>
+                <!-- <br> -->
+                <mat-divider></mat-divider>
+                <br>
+                <div *ngIf="this.dayWiseSchedule.length == 0 && !isLoading">
+                    <p>No Available Time</p>
+                </div>
+                <div *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+                    <mat-progress-spinner color="primary" mode="indeterminate" [diameter]="40">
+                    </mat-progress-spinner>
+                </div>
+                <div *ngIf="this.dayWiseSchedule.length != 0 && !isLoading">
+
+
+
+                    <div fxLayoutAlign="" class="mat-chip-align" fxLayout="row wrap" fxLayoutGap="3px grid"
+                        *ngFor="let item of this.dayWiseSchedule">
+                        <!-- {{item.weekDay}}: -->
+
+                        <div *ngFor="let timezone of item.timeSlots" fxLayout="row wrap">
+                            <mat-chip-list class="small-chip" aria-label="Time  selection">
+                                <mat-chip color="primary" selected>{{timezone.fromTimeSlot}} -
+                                    {{timezone.toTimeSlot}}
+                                </mat-chip>
+                            </mat-chip-list>
+                        </div>
+
+                    </div>
+
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>

@@ -19,6 +19,9 @@ import { ChangePasswordComponent } from './profile-settings/change-password/chan
 import { MydoctorListComponent } from './mydoctor-list/mydoctor-list.component';
 import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component';
 import { RegisterComponent } from './register/register.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { OtpVeficationComponent } from './otp-vefication/otp-vefication.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 
 
@@ -50,6 +53,8 @@ import { RegisterComponent } from './register/register.component';
           { path: 'book-an-appointment', component: BookAnAppointmentComponent, pathMatch: 'full' },
           { path: 'mydoctor-list', component: MydoctorListComponent, pathMatch: 'full' },
           { path: 'm-resp-vacancy', component: MRepsVacancyComponent, pathMatch: 'full' },
+          { path: 'mr-appoinment', component: AppointmentComponent, pathMatch: 'full' },
+
 
           {
             path: 'brand-reminder-card', children: [
@@ -85,7 +90,11 @@ import { RegisterComponent } from './register/register.component';
               import('./login/login.module').then(
                 m => m.LoginModule)
           },
+          { path: 'mr-otp', component: OtpVeficationComponent, pathMatch: 'full' },
+          { path: 'mr-forgot-password', component: ForgotPasswordComponent, pathMatch: 'full' },
           { path: 'mr-register', component: RegisterComponent, pathMatch: 'full' },
+
+
         ]
 
       }

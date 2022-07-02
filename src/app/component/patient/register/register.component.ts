@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
     this.InitForm();
   }
+  constructor(
+    public router: Router) { }
   InitForm() {
     this.RegistarionForm = new FormGroup({
       MobileNumber: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
@@ -29,6 +31,7 @@ export class RegisterComponent implements OnInit {
   get f() {
     return this.RegistarionForm.controls;
   }
+
   submit() {
     // async submit() {
     //   try {

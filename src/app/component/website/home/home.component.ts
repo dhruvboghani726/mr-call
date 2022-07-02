@@ -89,6 +89,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   // Login page redirect
   gotologin() {
-    this.router.navigate(['/patient/dashboard']);
+    this.router.navigate(['/mr/dashboard']);
   }
 }

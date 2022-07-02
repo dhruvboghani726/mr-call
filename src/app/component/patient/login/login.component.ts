@@ -23,7 +23,20 @@ export class LoginComponent implements OnInit {
   txtEmail: string;
   txtPassword: any;
   errors: any;
-  constructor(private router: Router, private fb: FormBuilder,) { }
+  // links: any[];
+  constructor(private router: Router, private fb: FormBuilder,) {
+    // this.links = [
+    //   {
+    //     label: 'Login',
+    //     link: './mr/mr-login',
+    //     index: 0
+    //   }, {
+    //     label: 'Register',
+    //     link: './mr/mr-register',
+    //     index: 1
+    //   },
+    // ];
+  }
 
   ngOnInit(): void {
     this.InitForm();
@@ -38,6 +51,8 @@ export class LoginComponent implements OnInit {
   get f() {
     return this.LoginForm.controls;
   }
+
+
   submit() {
 
   }
