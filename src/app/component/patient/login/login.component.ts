@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CONSTANT } from '~app/shared/utils/constant';
 
 @Component({
   selector: 'app-login',
@@ -43,7 +42,7 @@ export class LoginComponent implements OnInit {
   }
   InitForm() {
     this.LoginForm = this.fb.group({
-      mobileno: ['', Validators.required,],
+      MobileNumber: ['', Validators.required,],
 
       Password: ['', Validators.required]
     });

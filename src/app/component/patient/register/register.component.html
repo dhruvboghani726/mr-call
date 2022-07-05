@@ -35,7 +35,7 @@
             <mat-card-content class="cardpadding margin-top">
                 <form [formGroup]="RegistarionForm" (keyup.enter)="submit()" autocomplete="off">
                     <mat-form-field appearance="outline">
-                        <mat-label>Mobile No</mat-label>
+                        <mat-label>Enter Mobile No</mat-label>
                         <input formControlName="MobileNumber" type="tel" id="mobilenumnber" matInput
                             placeholder="123-456-7890" maxlength="10" required>
                         <mat-error>Mobile No is required</mat-error>
@@ -52,13 +52,13 @@
                     </mat-form-field> -->
                     <!-- Email field -->
                     <mat-form-field appearance="outline">
-                        <mat-label>Username or Email</mat-label>
+                        <mat-label> Enter Full UserName</mat-label>
                         <input matInput formControlName="username" type="email" id="username" maxlength="256" required>
-                        <mat-error>Username is required</mat-error>
+                        <mat-error>Full Username is required</mat-error>
                     </mat-form-field>
                     <!-- Password field -->
                     <mat-form-field appearance="outline">
-                        <mat-label>Password</mat-label>
+                        <mat-label> Enter Password</mat-label>
                         <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'" matInput
                             required maxlength="256" />
                         <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ?

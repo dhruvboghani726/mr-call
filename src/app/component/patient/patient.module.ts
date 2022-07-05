@@ -22,8 +22,12 @@ import { RegisterComponent } from './register/register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { OtpVeficationComponent } from './otp-vefication/otp-vefication.component';
 import { environment } from 'environments/environment';
+import { EmailCheckComponent } from './email-check/email-check.component';
+import { MatStepperModule } from '@angular/material/stepper';
+import { NgOtpInputModule } from 'ng-otp-input';
+import { CountdownModule } from 'ngx-countdown';
+
 // import { LoginComponent } from './login/login.component';
 // import { StripeModule } from "stripe-angular"
 
@@ -45,10 +49,9 @@ import { environment } from 'environments/environment';
     ChangePasswordComponent,
     RegisterComponent,
     AppointmentComponent,
-
     LoginComponent,
     ForgotPasswordComponent,
-    OtpVeficationComponent,
+    EmailCheckComponent,
 
   ],
   imports: [
@@ -58,6 +61,9 @@ import { environment } from 'environments/environment';
     ReactiveFormsModule,
     PatientRoutingModule,
     FlexLayoutModule,
+    MatStepperModule,
+    NgOtpInputModule,
+    CountdownModule,
     // StripeModule.forRoot(environment.stripAPIKey)
   ],
   providers: [AsyncPipe, DatePipe],

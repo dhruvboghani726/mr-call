@@ -6,11 +6,6 @@
         <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Home</a>
         <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Doctor</a>
         <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">About Us</a>
-        <!-- <a class="mat-h2 color-secondary cardpadding" (click)=gotologin()>Gallery</a>
-        <a class="mat-h2 color-secondary cardpadding" (click)=gotologin()>Blogs</a> -->
-        <!-- routerLink="/patient/patient-login" -->
-
-        <a class="mat-h2 color-secondary cardpadding" (click)="ContactUs()">Login/Signup </a>
       </div>
     </mat-nav-list>
   </mat-sidenav>
@@ -34,20 +29,19 @@
 
         <!-- <div fxLayout="row" fxLayoutAlign="end end" fxFlex="47" fxHide.lt-md> -->
         <!-- <div class="backimg"> -->
-        <div fxHide.xs fxLayout="row" fxLayoutAlign="center center" fxFlex="22" fxFlex.lt-sm="30">
-          <h1 class="mat-h1 color-primary ">MR Call</h1>
+        <div fxHide.xs fxLayout="row" fxL ayoutAlign="center center" fxFlex="22" fxFlex.lt-sm="30">
+          <h1 class="mat-h1 color-primary" style="margin: 0px;">MR Call</h1>
         </div>
         <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex="47" fxHide.lt-md>
           <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
-            <a (click)=gotologin() fxLayout="row" fxLayoutAlign="center center"
+            <a fxLayout="row" fxLayoutAlign="center center"
               class="mat-h2 color-secondary text-center cursor-pointer">Home</a>
 
-            <a fxLayout="row" fxLayoutAlign="center center" (click)=gotologin()
-              class="mat-h2 color-secondary text-center cursor-pointer" [matMenuTriggerFor]="menu"
-              #menuTrigger="matMenuTrigger" (mouseover)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)"
-              fxLayout="row" fxLayoutAlign="center center">Doctor</a>
+            <a fxLayout="row" fxLayoutAlign="center center" class="mat-h2 color-secondary text-center cursor-pointer"
+              [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="mouseEnter(menuTrigger)"
+              (mouseleave)="mouseLeave(menuTrigger)" fxLayout="row" fxLayoutAlign="center center">Doctor</a>
 
-            <a fxLayout="row" fxLayoutAlign="center center" (click)=gotologin()
+            <a fxLayout="row" fxLayoutAlign="center center"
               class="mat-h2 color-secondary text-center cursor-pointer">About Us</a>
 
             <mat-menu #menu="matMenu" [hasBackdrop]="false">

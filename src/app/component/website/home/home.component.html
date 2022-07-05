@@ -1,10 +1,9 @@
-<div class="container" fxLayout="column" fxLayoutGap="20px">
-
+<div class="container" fxLayout="column" fxLayoutGap="0px">
 
   <!-- Slider Section -->
   <div class="slider " fxLayout="column">
     <section class="Slidersection" ngClass.xs="Slidersection-xs" [ngStyle.xs]="{ padding: '10px'}"
-      [ngStyle.sm]="{ padding: '53px'}" [ngStyle.md]="{ padding: '63px'}" [ngStyle.lg]="{ padding: '65px'}"
+      [ngStyle.sm]="{ padding: '53px'}" [ngStyle.md]="{ padding: '63px'}" [ngStyle.lg]="{ padding: '50px'}"
       fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column">
       <div class="contain" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
         <div class="Sliderleft" ngClass.xs="Sliderleft-xs">
@@ -17,7 +16,7 @@
             Appointment
           </button>
           <div class="content" fxLayout="column" fxLayoutGap="10px" fxHide.gt-md fxShow.lt-md fxHide>
-            <p class="mat-h1 color-accent">Serving Your Health<br>Needs is Our Priority</p>
+            <p class="mat-display-1-xs color-primary">Serving Your Health<br>Needs is Our Priority</p>
 
             <button mat-raised-button class="btn" (click)=gotologin() color="primary">Make Appointment
             </button>
@@ -36,10 +35,10 @@
 
 
   <!--  How it work -->
-  <div class="header-home cardpadding secpartimg " fxLayout="column" fxLayoutGap="-130px">
+  <div fxHide.xs class="header-home  secpartimg " fxLayout="column" fxLayoutGap="-130px" style="margin-bottom: 0px;">
 
     <div fxLayout="column" class="backgroud-color-primary padding-bottom work-heading" fxLayoutGap="30px">
-      <div fxLayout="row" fxLayoutAlign="center center" class="how-it-work-heading cardpadding">
+      <div fxLayout="row" fxLayoutAlign="center center" class="how-it-work-heading ">
         <p class="mat-display-1 text-center color-white">How It Works? As Easy As 1, 2, 3..</p>
       </div>
     </div>
@@ -62,7 +61,7 @@
 
         <div class="cardpadding" fxLayout="column" fxLayoutAlign="center center">
           <p class="mat-h1 text-center color-primary">Register In A Minute</p>
-          <p class="mat-h4 text-center color-primary">Our easy to use website
+          <p class="mat-h4 text-center  color-grey">Our easy to use website
             lets you register
             in a minute. Your information
             will be stored securely for upcoming visits.</p>
@@ -79,7 +78,7 @@
 
         <div class="cardpadding" fxLayout="column" fxLayoutAlign="center center">
           <p class="mat-h1 text-center color-primary">Book Appointment</p>
-          <p class="mat-h4 text-center color-primary">Connect you with a physician
+          <p class="mat-h4 text-center color-grey">Connect you with a physician
             who really gets to
             know you, listens to you,
             and has time for you. Connect using your favorite devices.</p>
@@ -96,7 +95,7 @@
 
         <div class="cardpadding" fxLayout="column" fxLayoutAlign="center center">
           <p class="mat-h1 text-center color-primary">Metting OneTime</p>
-          <p class="mat-h4 text-center color-primary">Our physicians treat
+          <p class="mat-h4 text-center  color-grey">Our physicians treat
             you so well that you
             feel better faster.</p>
         </div>
@@ -105,9 +104,8 @@
   </div>
 
   <!-- service section -->
-  <section class="section" fxLayout="row" fxLayoutAlign="center center">
-    <div class="header-home cardpadding secpartimg padding-top" fxLayout="column" fxLayoutAlign.lt-sm="center center"
-      fxLayoutGap="20px">
+  <section class="section" fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 0px;">
+    <div class="header-home  secpartimg " fxLayout="column" fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px">
       <div fxLayout="column" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
         <p class="mat-h1 text-center color-primary">Our Services</p>
         <p class="mat-display-1 text-center color-accent">Serving For Your Health</p>
@@ -115,7 +113,7 @@
       </div>
       <div fxLayout="column" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide>
         <p class="mat-h2 text-center color-primary">Our Services</p>
-        <p class="mat-h1 text-center color-accent">Serving For Your Health</p>
+        <p class="mat-display-1-xs  text-center color-accent">Serving For Your Health</p>
 
       </div>
 
@@ -123,7 +121,7 @@
 
         <div *ngFor="let speciality of this.speciality; let i = index" class="qualuty-care-card  boxshadow"
           fxFlex.sm="50%">
-          <div fxLayout="column" class="padding-top backgroud-color-gray ">
+          <div fxLayout="column" class="padding-top backgroud-color-gray" style="border-radius: 8px;">
 
 
             <div>
@@ -140,7 +138,7 @@
     </div>
   </section>
   <!-- experience section -->
-  <section class="Experience" fxLayout="row" fxLayoutAlign="center center">
+  <section class="Experience  backgroud-color-gray" fxLayout="row" fxLayoutAlign="center center">
     <div class="contain" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
       <div class="rect10" ngClass.xs="rect10-xs" fxHide.lt-md fxShow.gt-md></div>
       <div class="mastgruop4" ngClass.xs="mastgruop4-xs"></div>
@@ -149,7 +147,7 @@
 
           <p class="mat-h1 color-primary">25+ Year Of Experience</p>
 
-          <p class="matdisplay-2 color-accent">We Are Always Ensure<br> Best Medical Treatment<br> For Your Health</p>
+          <p class="mat-display-1 color-accent">We Are Always Ensure<br> Best Medical Treatment<br> For Your Health</p>
           <p class="mat-h5 color-grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
             galley
@@ -160,7 +158,8 @@
 
           <p class="mat-h2 color-primary">25+ Year Of Experience</p>
 
-          <p class="mat-h1 color-accent">We Are Always Ensure<br> Best Medical Treatment<br> For Your Health</p>
+          <p class="mat-display-1-xs color-accent">We Are Always Ensure<br> Best Medical Treatment<br> For Your Health
+          </p>
           <p class="mat-h5 color-grey">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
             Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
             galley
@@ -181,7 +180,7 @@
         <div class="content" fxLayout="column" fxLayoutGap="10px" fxHide.lt-md fxShow.gt-md>
 
           <p class="mat-h1 color-primary"> Our Benefits ?</p>
-          <p class="matdisplay-2 color-accent">Don't Be Hesitate To<br>Contact Us</p>
+          <p class="mat-display-1 color-accent">Don't Be Hesitate To<br>Contact Us</p>
 
           <p class="mat-h3 color-grey">Medical insurance.</p>
           <p class="mat-h3 color-grey">Address your patients' physical needs.</p>
@@ -195,7 +194,7 @@
 
           <p class="mat-h2 color-primary"> Our Benefits ?</p>
 
-          <p class="mat-h1 color-accent">Don't Be Hesitate To<br>Contact Us</p>
+          <p class="mat-display-1-xs color-accent">Don't Be Hesitate To<br>Contact Us</p>
           <p class="mat-h3 color-grey">Medical insurance.</p>
           <p class="mat-h3 color-grey">Address your patients' physical needs.</p>
           <p class="mat-h3 color-grey">Strengthening communication with patient</p>
@@ -207,19 +206,18 @@
       </div>
     </div>
   </section>
-  <!-- benefit section end -->
 
   <!-- expert doctor section start -->
-  <div class="secpartimg padding-top">
-    <div class="secpartimg padding-top" fxLayout="column" fxLayoutAlign="center center"
-      fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px">
+  <div class="secpartimg  backgroud-color-gray" style="margin-bottom: 0px">
+    <div class="secpartimg " fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.lt-sm="center center"
+      fxLayoutGap="20px">
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
         <p class="mat-h1 text-center color-primary">Professional Team Members</p>
         <p class="mat-display-1 text-center color-accent">Meet Our Expert Doctors</p>
       </div>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide>
-        <p class="mat-h2 text-center color-primary">Professional Team Members</p>
-        <p class="mat-h1 text-center color-accent">Meet Our Expert Doctors</p>
+        <p class="mat-h1 text-center color-primary">Professional Team Members</p>
+        <p class="mat-display-1-xs text-center color-accent">Meet Our Expert Doctors</p>
       </div>
       <div fxLayout="column" fxLayoutAlign="center center">
         <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="45px grid">
@@ -254,7 +252,7 @@
   <!-- faq and ask section start -->
 
   <!-- blog start section -->
-  <div class="secpartimg padding-top" fxLayout="column" fxLayoutAlign="center center"
+  <div class="secpartimg padding-top backgroud-color-gray " fxLayout="column" fxLayoutAlign="center center"
     fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px">
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
       <p class="mat-h1 text-center color-primary">Blog & News</p>
@@ -263,13 +261,13 @@
     </div>
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide>
       <p class="mat-h2 text-center color-primary">Blog & News</p>
-      <p class="mat-h1 text-center color-accent">Read Our Letest New</p>
+      <p class="mat-display-1-xs text-center color-accent">Read Our Letest New</p>
 
     </div>
 
     <div fxLayout="column" fxLayoutAlign="center center">
 
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="10px grid">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="45px grid">
 
         <div class="grouphead" *ngFor="let num of  members ">
           <mat-card class="doctorcard">
@@ -290,7 +288,8 @@
 
 
 
-                  <span style=" text-decoration: underline;" class=" cursor color-primary mat-small"> Read More</span>
+                  <span style=" text-decoration: none;" class=" cursor-pointer  color-primary mat-small"> Read
+                    More</span>
 
                 </div>
               </div>
@@ -303,37 +302,19 @@
 
   </div>
   <div [ngStyle.xs]="{  padding:'0 20px 0 20px'}" [ngStyle.sm]="{ padding:'0 40px 0 40px'}"
-    [ngStyle.md]="{ padding:'0 50px 0 50px'}" [ngStyle.lg]="{ padding:'0 60px 0 60px'}" fxLayout="column">
+    [ngStyle.md]="{ padding:'0 50px 0 50px'}" [ngStyle.lg]="{ padding:'8px 60px 8px 60px'}" fxLayout="column">
     <mat-card class="card-box-shadow backgroud-color-primary" fxHide.lt-md fxShow.gt-md fxLayout="row"
       fxLayoutGap="20px" fxLayoutAlign="center center">
       <p class="mat-h1 color-white">Want to make an appointment easily ?</p>
-      <button mat-raised-button class="backgroud-color-white color-primary" (click)=gotologin()>
+      <button mat-raised-button class="backgroud-color-white color-primary">
         Contact Here </button>
     </mat-card>
     <mat-card class="card-box-shadow backgroud-color-primary" fxHide.gt-md fxShow.lt-md fxHide fxLayout="column"
       fxLayoutGap="20px" fxLayoutAlign="center center">
       <p class="mat-h2 color-white">Want to make an appointment easily ?</p>
-      <button mat-raised-button class="backgroud-color-white color-primary" (click)=gotologin()>
+      <button mat-raised-button class="backgroud-color-white color-primary">
         Contact Here </button>
     </mat-card>
     <app-footer></app-footer>
   </div>
-
-  <!-- <div class="backgroudblue" fxLayout="row" fxLayoutAlign="center center" >
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
-
-     
-     
-        <div  fxLayoutAlign="center center">
-           <div class="matdisplay-3 color-white">Want to make an appointment easily ?</div>
-          <button mat-raised-button class="backgroud-color-white color-primary" (click)=gotologin()>
-            Contact Here </button>
-        </div>
-
-    </div>
-   
-
-  </div> -->
-
-
 </div>

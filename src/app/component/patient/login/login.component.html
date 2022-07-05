@@ -7,7 +7,6 @@
                     <mat-card fxHide.xs class="cardimage cardsize backgroud-color-gray" fxFlex.sm="50%">
                         <span fxLayoutAlign="start">
                             <a routerLink="/website/home">
-                                <!-- <img src="assets/img/login-banner.png" height="90px" alt="logo"> -->
                                 <p class="color-primary mat-headline">MR Call</p>
                             </a>
                         </span>
@@ -29,14 +28,14 @@
                             <form [formGroup]="LoginForm" (keyup.enter)="submit()" autocomplete="off">
                                 <!-- Email field -->
                                 <mat-form-field appearance="outline">
-                                    <mat-label>Mobile No or Email</mat-label>
-                                    <input formControlName="MobileNumber" type="tel" id="mobilenumnber" matInput
+                                    <mat-label> Enter Mobile No</mat-label>
+                                    <input formControlName="MobileNumber" type="tel" id="MobileNumber" matInput
                                         placeholder="123-456-7890" maxlength="10" required>
                                     <mat-error>Mobile No is required</mat-error>
                                 </mat-form-field>
                                 <!-- Password field -->
                                 <mat-form-field appearance="outline" class="margin-top">
-                                    <mat-label>Password</mat-label>
+                                    <mat-label> Enter Password</mat-label>
                                     <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'"
                                         matInput required maxlength="256" />
                                     <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ?

@@ -1,3 +1,4 @@
+import { WeekDay } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -73,6 +74,10 @@ export class AppointmentComponent implements OnInit {
     { value: '23:30:00-00:00:00', viewValue: '23:30' },
 
   ];
+  myFilter = (d: Date) => {
+    const day = (d || new Date()).getDate();
+    return day !== 21 && day !== 22;
+  };
 
   doctorDetails;
   doctorId;
