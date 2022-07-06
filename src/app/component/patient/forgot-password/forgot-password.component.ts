@@ -40,7 +40,7 @@ export class ForgotPasswordComponent implements OnInit {
   checked = false;
   durationInSeconds = 5;
   selectedValue: number;
-  isEditable: true;
+  isEditable: false;
   @ViewChild('ngOtpInput', { static: false }) ngOtpInput: any;
   config = {
     allowNumbersOnly: true,

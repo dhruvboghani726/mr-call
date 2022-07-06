@@ -1,9 +1,6 @@
-import { WeekDay } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-
 // import { ToastrService } from 'ngx-toastr';
 // import { AppointmentService } from 'src/app/shared/services/appointment.service';
 // import { LoaderService } from 'src/app/shared/services/loader.service';
@@ -74,10 +71,6 @@ export class AppointmentComponent implements OnInit {
     { value: '23:30:00-00:00:00', viewValue: '23:30' },
 
   ];
-  myFilter = (d: Date) => {
-    const day = (d || new Date()).getDate();
-    return day !== 21 && day !== 22;
-  };
 
   doctorDetails;
   doctorId;
@@ -108,8 +101,11 @@ export class AppointmentComponent implements OnInit {
   data: any[];
   weekDay: any;
   minDate = new Date();
+  maxDate = new Date();
   isLoading = false;
   loading: boolean = false;
+  public date = new Date();
+
   Days = [
     { value: 1, day: 'Monday' },
     { value: 2, day: 'Tuesday' },
@@ -134,6 +130,9 @@ export class AppointmentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.date.setDate(this.date.getDate() + 14);
+    this.maxDate = this.date;
+
     // this.doctorId = this.route.snapshot.queryParams['id'];
     // this.patientId = 1;
     // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -182,6 +181,7 @@ export class AppointmentComponent implements OnInit {
     // });
 
   }
+
   DravaileblTimezone(timeZone) {
     // this.searchDoctorService.getDoctorAvailibility(this.doctorId, timeZone).subscribe(res => {
     //   if (res["data"] != null) {
@@ -332,6 +332,10 @@ export class AppointmentComponent implements OnInit {
     // this.summaryTime = moment('0001-01-01T' + this.patientDetailsFormGroup.controls.appointmentTime.value).format('hh:mm A');
   }
   onDateChange(event) {
+
+
+
+    // this.maxDate = new Date(2022, 6, 21);
     // this.isLoading = true;
     // moment(event).format('DD MMM YYYY');
     // this.appointmentDateChange = moment(event).format('YYYY-MM-DD')

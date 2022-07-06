@@ -21,7 +21,7 @@ import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AppointmentComponent } from './appointment/appointment.component';
-import { EmailCheckComponent } from './email-check/email-check.component';
+
 
 
 
@@ -93,7 +93,7 @@ import { EmailCheckComponent } from './email-check/email-check.component';
 
           { path: 'mr-forgot-password', component: ForgotPasswordComponent, pathMatch: 'full' },
           { path: 'mr-register', component: RegisterComponent, pathMatch: 'full' },
-          // { path: 'mr-email-check', component: EmailCheckComponent, pathMatch: 'full' },
+
 
 
 

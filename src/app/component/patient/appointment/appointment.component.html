@@ -18,7 +18,7 @@
 
                     <mat-form-field appearance="outline">
                         <mat-label>Appointment Date</mat-label>
-                        <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [min]="minDate"
+                        <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate"
                             formControlName="appointmentDate" (dateChange)="onDateChange($event.value)">
 
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
