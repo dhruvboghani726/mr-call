@@ -1,0 +1,43 @@
+.cardsizedash {
+    height: auto;
+    max-height: auto;
+    width: auto;
+    max-width: auto;
+    border-radius: 5px;
+  
+    // box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+  }
+  
+  .card-box-shadow {
+    height: auto;
+    max-height: 110px;
+    width: auto;
+    max-width: auto;
+    // box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+  }
+  
+  .mat-elevation-z4 {
+    height: auto;
+    max-height: auto;
+  }
+  
+  
+  .paddingLeft {
+    // padding: 0 0px 0 17px;
+  
+    // font-size: 20px;
+    color: black;
+  }
+  
+  .paddingTop {
+    padding: 10px 0px 0 0px;
+  }
+  
+  .fill {
+    flex: 1;
+  }
+  
+  .txtdecorate {
+    text-decoration: none;
+    cursor: pointer;
+  }

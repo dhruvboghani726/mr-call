@@ -1,0 +1,64 @@
+.mat-form-field {
+    display: block !important;
+    position: relative;
+    text-align: left;
+}
+
+mat-form-field {
+    width: 100%;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+}
+
+.row-height svg {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.cardsize {
+    height: 380px;
+    max-height: 380px;
+    width: 350px;
+    max-width: 350px;
+    box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
+}
+
+.row-style {
+    display: flex;
+    flex-direction: row;
+    place-content: center space-around;
+    align-items: center;
+}
+
+.padding-button {
+    padding-top: 20px;
+}
+
+.img-responsive {
+    max-width: 85%;
+    margin: 0px 100px 0px 0px;
+}
+
+.cardimage {
+    background-size: 400px 440px;
+}
+
+.mat-headline {
+    margin: 0;
+}
+
+.patient-login-label {
+    color: #7661e2;
+}
+
+.mat-headline {
+    color: #7661e2;
+}
+
+.Patient-Register-label {
+    color: #7661e2;
+}

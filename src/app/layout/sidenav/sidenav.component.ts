@@ -52,8 +52,10 @@ export class SidenavComponent implements OnDestroy {
   countnumber;
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
   userinfo = "patient"
-  doctorinfo = null
-  admininfo = null
+  doctorinfo = JSON.parse(localStorage.getItem('currentDoctor'));
+  mrinfo = JSON.parse(localStorage.getItem('currentMr'));
+  // doctorinfo = null
+  // admininfo = null
   status: any
   notiList;
   isExpanded = true;

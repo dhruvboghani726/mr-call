@@ -3,12 +3,7 @@
     <mat-icon class="color-white" *ngIf="!sidenav.opened"> menu </mat-icon>
     <mat-icon class="color-white" *ngIf="sidenav.opened"> close </mat-icon>
   </button>
-  <!-- <span class="brand-logo" fxFlex="75%">
-    MR CALL
-  </span> -->
-  <!-- <span fxLayout="row" fxFlex="70%">
-    MR CALL
-  </span> -->
+
   <div fxlayout="row" class="full-width">
     <span fxHide.xs class="fileter-width">
       <mat-form-field id="search" appearance="outline" style="width: 100%;">
@@ -57,20 +52,6 @@
         <mat-icon class="color-white">arrow_drop_down</mat-icon>
       </div>
 
-      <!-- 
-    <div fxlayout="column">
-      <div>
-        <span fxLayout="column" class="fileter-width" fxHide.sm fxHide.gt-sm [ngStyle.xs]="{margin:'0px'}">
-          <mat-form-field id="search" appearance="outline" style="width: 100%;">
-            <input matInput [(ngModel)]="value" placeholder="Search">
-            <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-              <mat-icon class="mat-18 color-white">search</mat-icon>
-            </button>
-          </mat-form-field>
-        </span>
-      </div>
-    </div> -->
-
       <mat-menu #menu="matMenu" class="my-menu">
 
         <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
@@ -93,29 +74,6 @@
       </mat-menu>
     </div>
   </div>
-  <!-- 
-  <div fxlayout="column">
-    <div>
-      <span class="fileter-width" fxHide.sm fxHide.gt-sm [ngStyle.xs]="{margin:'0px'}">
-        <mat-form-field id="search" appearance="outline" style="width: 100%;">
-          <input matInput [(ngModel)]="value" placeholder="Search">
-          <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-            <mat-icon class="mat-18 color-white">search</mat-icon>
-          </button>
-        </mat-form-field>
-      </span>
-    </div>
-    <div> -->
-  <!-- <span class="fileter-width" fxHide.sm fxHide.gt-sm [ngStyle.xs]="{margin:'0px'}">
-        <mat-form-field id="search" appearance="outline" style="width: 100%;">
-          <input matInput [(ngModel)]="value" placeholder="Search">
-          <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-            <mat-icon class="mat-18 color-white">search</mat-icon>
-          </button>
-        </mat-form-field>
-      </span> -->
-  <!-- </div>
-  </div> -->
 
 </mat-toolbar>
 
@@ -124,13 +82,10 @@
 
   <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8  card-background-color">
     <h1 class="mat-h1 font-color-primary2">MR Call</h1>
-    <!-- <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" />
-
-    <h4 class="name">John Smith</h4>
-    <p class="designation">Patient</p> -->
 
     <mat-divider></mat-divider>
-    <div fxLayout="column" fxLayoutGap="10px">
+    <!-- {{this.mrinfo}} -->
+    <div  *ngIf="this.mrinfo || this.mrinfo!= null" fxLayout="column" fxLayoutGap="10px">
       <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/dashboard">
         <mat-icon>dashboard</mat-icon>
         <span>Dashboard</span>
@@ -172,6 +127,27 @@
 
 
     </div>
+
+    <div *ngIf="this.mrinfo == null" fxLayout="column" fxLayoutGap="10px">
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/appointment">
+        <mat-icon>assignment_turned_in</mat-icon>
+        <span>Appointment</span>
+      </button>
+    
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button" routerLink="/website/home">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+
+
+
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="contentside mat-elevation-z8 backgroud-color-white">
@@ -179,13 +155,3 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!-- 
-<div fxLayout="column">
-  <div>
-    test
-  </div>
-  <div>
-    test
-  </div>
-</div> -->

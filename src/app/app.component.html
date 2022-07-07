@@ -1,1 +1,16 @@
+<ng-container *ngIf="loading$ | async">
+    <div class="overlay">
+        <div class="center">
+            <mat-progress-spinner diameter=50 [mode]="'indeterminate'">
+            </mat-progress-spinner>
+
+
+
+        </div>
+
+    </div>
+
+  
+</ng-container>
+
 <router-outlet></router-outlet>

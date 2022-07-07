@@ -16,7 +16,7 @@ import { Router } from '@angular/router';
 */
 export class HomeComponent implements OnInit, AfterViewInit {
   symptomps: any;
-
+  user
   symptompsSeparator: string = '';
   shownList = null;
   maxHeightForScrollContainer: number;
@@ -89,6 +89,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   // Login page redirect
   gotologin() {
+    this.user='patient'
+    localStorage.setItem('currentMr', JSON.stringify(this.user));
     this.router.navigate(['/mr/dashboard']);
   }
 }

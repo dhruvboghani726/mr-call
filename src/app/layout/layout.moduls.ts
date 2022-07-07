@@ -20,7 +20,7 @@ import { DateAgoPipe } from '~app/shared/utils/pipe/date-ago.pipe';
 @NgModule({
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   imports: [
-  //  NgxSpinnerModule,
+
    CommonModule,
    RouterModule,
    MaterialModule,

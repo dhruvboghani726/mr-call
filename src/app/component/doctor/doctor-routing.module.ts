@@ -7,6 +7,10 @@ import { BlankLayoutComponent } from '../../layout/blank-layout/blank-layout.com
 import { CommonLayoutComponent } from '../../layout/common-layout/common-layout.component'
 
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { RegisterComponent } from './register/register.component';
+import { AppointmentComponent } from './appointment/appointment.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -22,6 +26,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
           // { path: '404', component: ErrorComponent, pathMatch: 'full' },
           // { path: 'doctor-login', component: DoctorLoginComponent, pathMatch: 'full' },
           // { path: 'doctor-signup', component: DoctorSignupComponent, pathMatch: 'full' },
+          { path: 'doctor-login', component: LoginComponent, pathMatch: 'full' },
+          { path: 'doctor-forgot-password', component: ForgotPasswordComponent, pathMatch: 'full' },
+          { path: 'doctor-register', component: RegisterComponent, pathMatch: 'full' } 
         ],
       },
       {
@@ -33,10 +40,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
               { path: '', component: DashboardComponent, pathMatch: 'full'},
             
             ]
-          }         
+          } ,
+          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full' },        
         ],
-      },
+      }
     ]),
+
     LayoutsModule,
   ],
   exports: [ RouterModule ],

@@ -1,1 +1,139 @@
-<p>dashboard works!</p>
+<div class="card-background-color" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="15px">
+    <mat-card class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}" style="margin:0px;">
+      <span class="menu-button mat-h2">
+        <mat-icon class="color-white">dashboard</mat-icon>
+        <span class="mat-h2" ngClass.xs="mat-h3">Dashboard</span>
+      </span>
+    </mat-card>
+  
+    <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-around stretch" fxLayout.xs="column" fxFlex>
+  
+      <div fxFlex="60%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutGap="15px" style="margin-right:0;">
+        <mat-card fxLayoutGap="20px" class="backgroud-color-gray" fxLayoutAlign="space-around stretch"
+          fxLayout.xs="column" style="margin: 0px;">
+          <mat-card class=" card-box-shadow" fxFlex="28" fxFlex.lt-sm="100">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div fxLayout="column" fxLayoutAlign="center center">
+                <p class="mat-h4" ngClass.xs="mat-h2">Doctor</p>
+                <p class="mat-h1 color-primary">25</p>
+              </div>
+            </div>
+          </mat-card>
+          <mat-card class="card-box-shadow" fxFlex="28" fxFlex.lt-sm="100">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div fxLayout="column" fxLayoutAlign="center center">
+                <p class="mat-h4" ngClass.xs="mat-h2">Appointment</p>
+                <p class="mat-h1  color-primary">35</p>
+              </div>
+            </div>
+          </mat-card>
+  
+          <mat-card class="card-box-shadow" fxFlex="28" fxFlex.lt-sm="100" fxLayoutGap="15px">
+            <div fxLayout="column" fxLayoutAlign="center center">
+              <div fxLayout="column" fxLayoutAlign="center center">
+                <p class="mat-h4" ngClass.xs="mat-h2">Today Doctor</p>
+                <p class="mat-h1 color-primary">15</p>
+              </div>
+            </div>
+          </mat-card>
+        </mat-card>
+        <br>
+        <mat-card class="cardsizedash backgroud-color-gray" [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="15px">
+          <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Remaining Booking Ponits(0)</mat-card-title>
+          <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="15px">
+            <mat-card class="mat-h2" ngClass.xs="mat-h5"></mat-card>
+            <mat-card class="mat-h2" ngClass.xs="mat-h5"></mat-card>
+            <mat-card class="mat-h2" ngClass.xs="mat-h5"></mat-card>
+          </mat-card-content>
+        </mat-card>
+        <br>
+        <mat-card class="cardsizedash contain-box-shadow backgroud-color-gray" [ngStyle.xs]="{ width: 'auto'}"
+          fxLayoutGap="15px">
+          <div fxLayout="row" class="paddingTop">
+            <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Important Notice</mat-card-title>
+            <div class="fill"></div>
+            <mat-card-title><button mat-button mat-raised-button class="backgroud-color-primary color-white">View
+                All</button>
+            </mat-card-title>
+          </div>
+          <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="15px">
+            <mat-card class="mat-h5 " ngClass.xs="mat-h5">Tutorial:&nbsp;<span class="txtdecorate font-color-primary2">How
+                to
+                book Dr appointment
+                and queue system</span></mat-card>
+            <mat-card class="mat-h5" ngClass.xs="mat-h5">Tutorial:<span class="txtdecorate font-color-primary2">How to
+                book
+                Dr appointment and
+                queue system</span></mat-card>
+            <mat-card class="mat-h5 " ngClass.xs="mat-h5">Tutorial:<span class="txtdecorate font-color-primary2">How to
+                book
+                Dr appointment and
+                queue system</span></mat-card>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  
+  
+      <div fxFlex="38%" fxFlex.xs="100%" fxFlex.lt-sm="33%" fxFlex.lt-md="50%" fxLayout.xs="column">
+        <mat-card [ngStyle.xs]="{ width: 'auto'}" style="margin-right: 0px;">
+          <mat-card-title class="mat-h4" ngClass.xs="mat-h2">News Feeds</mat-card-title>
+          <mat-card-content class="paddingLeft mat-h5" ngClass.xs="mat-h5">Lorem Ipsum is simply dummy text of the
+            printing
+            and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but
+            also
+            the leap into electronic typesetting, remaining essentially unchanged.</mat-card-content>
+        </mat-card>
+        <br>
+        <mat-card [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="20px">
+          <div fxLayout="row" class="paddingTop">
+            <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Vacancy</mat-card-title>
+            <div class="fill"></div>
+            <mat-card-title>
+              <mat-icon>chevron_left</mat-icon>
+              <mat-icon>chevron_right</mat-icon>
+            </mat-card-title>
+          </div>
+          <div class="fill"></div>
+          <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="8px">
+            <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="mat-h2">
+              <span ngClass.xs="mat-h5" class="mat-h5"><button mat-button mat-raised-button
+                  class="backgroud-color-primary color-white">Description</button></span>
+              <span ngClass.xs="mat-h5" class="mat-h5">Need Candidate for Baroda</span>
+            </div>
+  
+            <div fxLayout="row" fxLayoutGap="10px">
+              <span ngClass.xs="mat-h5"><button mat-button mat-raised-button
+                  class="backgroud-color-primary color-white">Description</button></span>
+              <span ngClass.xs="mat-h5" class="mat-h5">Need Candidate for Baroda</span>
+            </div>
+  
+            <div fxLayout="row" fxLayoutGap="10px">
+              <span ngClass.xs="mat-h5"><button mat-button mat-raised-button
+                  class="backgroud-color-primary color-white">Description</button></span>
+              <span ngClass.xs="mat-h5" class="mat-h5">Need Candidate for Baroda</span>
+            </div>
+  
+            <div fxLayout="row" fxLayoutGap="10px">
+              <span ngClass.xs="mat-h5"><button mat-button mat-raised-button
+                  class="backgroud-color-primary color-white">Description</button></span>
+              <span ngClass.xs="mat-h5" class="mat-h5">Need Candidate for Baroda</span>
+            </div>
+  
+            <div fxLayout="row" fxLayoutGap="10px">
+              <span ngClass.xs="mat-h5"><button mat-button mat-raised-button
+                  class="backgroud-color-primary color-white">Description</button></span>
+              <span ngClass.xs="mat-h5" class="mat-h5">Need Candidate for Baroda</span>
+            </div>
+  
+            <div fxLayout="row" fxLayoutGap="10px">
+              <span ngClass.xs="mat-h5"><button mat-button mat-raised-button
+                  class="backgroud-color-primary color-white">Description</button></span>
+              <span ngClass.xs="mat-h5" class="mat-h5">Need Candidate for Baroda</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
