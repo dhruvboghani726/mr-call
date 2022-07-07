@@ -4,15 +4,17 @@
     <mat-nav-list>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
         <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Home</a>
-        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Doctor</a>
+        <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding" [matMenuTriggerFor]="menu1">Doctor</a>
         <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">About Us</a>
+        <button mat-raised-button color="primary" class="btn button-shadow mat-h2" (click)=gotologin()>
+          Login / Register</button>
       </div>
     </mat-nav-list>
   </mat-sidenav>
 
   <!-- sidenav for desktop -->
   <mat-sidenav-content>
-    <div fxLayout="row" class="backimg header">
+    <div fxLayout="row" class="backimg header header-xs">
       <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutAlign.lt-md="space-around center"
         fxLayoutAlign.lt-sm="space-around" fxLayoutGap="20px" fxLayoutGap.lt-sm="13px" fxFlex="grow">
         <div fxLayout="row" fxHide.gt-md fxShow.lt-md fxHide>
@@ -55,14 +57,12 @@
               </div>
             </mat-menu>
             <mat-menu #menu1="matMenu">
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Pharma</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Resps</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center"
-                class="mat-h2 color-primary">Medical/Pharma</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center"
-                class="mat-h2 color-primary">Representative</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Jobs</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 color-primary">Vacancy</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Pharma</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Resps</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Medical/Pharma</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Representative</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Jobs</a>
+              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Vacancy</a>
             </mat-menu>
           </ul>
         </div>

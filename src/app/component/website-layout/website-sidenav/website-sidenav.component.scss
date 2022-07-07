@@ -12,6 +12,15 @@ a {
     padding: 10px;
 }
 
+.header-xs {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    overflow: auto;
+    padding: 10px;
+    top: -0.5%;
+}
+
 .content {
     position: absolute;
     width: 100%;
@@ -82,4 +91,8 @@ a {
     background-image: url("/assets/images/websitehome/RECTANGLE-11.png");
     // background-repeat: no-repeat;
 
+}
+
+.app-sidenav {
+    width: 190px;
 }

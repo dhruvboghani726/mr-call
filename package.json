@@ -25,6 +25,7 @@
     "@ngbmodule/material-carousel": "^0.7.1",
     "@ngmodule/material-carousel": "^0.6.0",
     "@ngneat/until-destroy": "^8.0.0",
+    "angularx-social-login": "^3.0.0",
     "ng-otp-input": "^1.7.1",
     "ngx-countdown": "^10.0.1",
     "rxjs": "~6.6.0",
