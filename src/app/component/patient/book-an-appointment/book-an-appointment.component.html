@@ -29,7 +29,7 @@
         <mat-card style="background-color:#e6fdf8">
 
             <span class="menu-button color-primary">
-                <mat-icon>info</mat-icon>
+                <mat-icon class="color-primary">info</mat-icon>
                 <span class="mat-h1" ngClass.xs="mat-h2"> Notes:</span>
             </span>
             <span class="mat-h3" ngClass.xs="mat-h5">
@@ -42,8 +42,8 @@
 
     </div>
     <div fxLayout="column" style="padding:10px" fxLayoutGap="10px">
-        <mat-card class="backgroud-color-primary">
-            <mat-toolbar class="backgroud-color-primary">
+        <mat-card class="backgroud-color-gray">
+            <mat-toolbar class="backgroud-color-white">
                 <mat-form-field>
                     <mat-label>Choose a date</mat-label>
                     <input matInput [matDatepicker]="picker">
@@ -55,7 +55,8 @@
         </mat-card>
     </div>
     <div fxLayout="column" style="padding:10px" fxLayoutGap="10px">
-        <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px" class="threecard" fxLayout.xs="column">
+        <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px" class="threecard backgroud-color-gray"
+            fxLayout.xs="column">
             <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
 
                 <span class="mat-h2">

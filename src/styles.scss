@@ -40,6 +40,7 @@ body {
 
 .color-primary {
   color: mat-color($primary);
+  font-weight: 700;
 }
 
 .color-accent {
@@ -82,7 +83,6 @@ body {
 .color-white {
   color: $light-primary-text;
 }
-
 
 .backgroud-color-teal {
   background-color: mat-color($mat-teal, 400);

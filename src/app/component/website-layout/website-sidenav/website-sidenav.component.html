@@ -4,8 +4,10 @@
     <mat-nav-list>
       <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
         <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Home</a>
-        <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding" [matMenuTriggerFor]="menu1">Doctor</a>
-        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">About Us</a>
+        <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Doctor</a>
+        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Pharma Resp.</a>
+        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Vacancy / Job</a>
+
         <button mat-raised-button color="primary" class="btn button-shadow mat-h2" (click)=gotologin()>
           Login / Register</button>
       </div>
@@ -31,39 +33,26 @@
 
         <!-- <div fxLayout="row" fxLayoutAlign="end end" fxFlex="47" fxHide.lt-md> -->
         <!-- <div class="backimg"> -->
-        <div fxHide.xs fxLayout="row" fxL ayoutAlign="center center" fxFlex="22" fxFlex.lt-sm="30">
+        <div fxHide.xs fxLayout="row" fxL ayoutAlign="center center" fxFlex="15" fxFlex.lt-sm="30">
           <h1 class="mat-h1 color-primary" style="margin: 0px;">MR Call</h1>
         </div>
-        <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex="47" fxHide.lt-md>
+        <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex="50" fxHide.lt-md>
           <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
             <a fxLayout="row" fxLayoutAlign="center center"
               class="mat-h2 color-secondary text-center cursor-pointer">Home</a>
 
-            <a fxLayout="row" fxLayoutAlign="center center" class="mat-h2 color-secondary text-center cursor-pointer"
-              [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="mouseEnter(menuTrigger)"
-              (mouseleave)="mouseLeave(menuTrigger)" fxLayout="row" fxLayoutAlign="center center">Doctor</a>
+            <a fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Doctor</a>
 
             <a fxLayout="row" fxLayoutAlign="center center"
-              class="mat-h2 color-secondary text-center cursor-pointer">About Us</a>
+              class="mat-h2 color-secondary text-center cursor-pointer">Pharma Resp.</a>
 
-            <mat-menu #menu="matMenu" [hasBackdrop]="false">
-              <div (mouseenter)="mouseEnter(menuTrigger)" (mouseleave)="mouseLeave(menuTrigger)">
-                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Pharma</a>
-                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Resps</a>
-                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Medical/Pharma</a>
-                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Representative</a>
-                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Jobs</a>
-                <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2 ">Vacancy</a>
-              </div>
-            </mat-menu>
-            <mat-menu #menu1="matMenu">
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Pharma</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Resps</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Medical/Pharma</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Representative</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Jobs</a>
-              <a mat-menu-item fxLayout="row" fxLayoutAlign="start center" class="mat-h2">Vacancy</a>
-            </mat-menu>
+            <a fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Vacancy / Job</a>
+
+
+
+
           </ul>
         </div>
         <!-- button for desktop -->

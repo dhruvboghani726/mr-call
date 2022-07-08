@@ -115,17 +115,4 @@ export class WebsiteSidenavComponent implements AfterViewInit, OnDestroy {
   }
   timedOutCloser;
 
-  // open menu for provider
-  mouseEnter(trigger) {
-    if (this.timedOutCloser) {
-      clearTimeout(this.timedOutCloser);
-    }
-    trigger.openMenu();
-  }
-  // close menu for provider
-  mouseLeave(trigger) {
-    this.timedOutCloser = setTimeout(() => {
-      trigger.closeMenu();
-    }, 50);
-  }
 }

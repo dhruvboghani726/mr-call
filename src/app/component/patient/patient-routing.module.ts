@@ -53,7 +53,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
           { path: 'book-an-appointment', component: BookAnAppointmentComponent, pathMatch: 'full' },
           { path: 'mydoctor-list', component: MydoctorListComponent, pathMatch: 'full' },
           { path: 'm-resp-vacancy', component: MRepsVacancyComponent, pathMatch: 'full' },
-          { path: 'mr-appoinment', component: AppointmentComponent, pathMatch: 'full' },
+          // { path: 'mr-appoinment', component: AppointmentComponent, pathMatch: 'full' },
 
 
           {

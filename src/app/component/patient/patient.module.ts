@@ -17,15 +17,16 @@ import { ChangePasswordComponent } from './profile-settings/change-password/chan
 import { MydoctorListComponent } from './mydoctor-list/mydoctor-list.component';
 import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component';
 import { RegisterComponent } from './register/register.component';
-import { AppointmentComponent } from './appointment/appointment.component';
+// import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { environment } from 'environments/environment';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { CountdownModule } from 'ngx-countdown';
+import { GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { MatTabsModule } from '@angular/material/tabs';
 
-// import { LoginComponent } from './login/login.component';
 // import { StripeModule } from "stripe-angular"
 
 @NgModule({
@@ -45,7 +46,7 @@ import { CountdownModule } from 'ngx-countdown';
     UpdateProfileComponent,
     ChangePasswordComponent,
     RegisterComponent,
-    AppointmentComponent,
+    // AppointmentComponent,
     LoginComponent,
     ForgotPasswordComponent,
 
@@ -61,9 +62,26 @@ import { CountdownModule } from 'ngx-countdown';
     MatStepperModule,
     NgOtpInputModule,
     CountdownModule,
+    SocialLoginModule,
+    MatTabsModule,
     // StripeModule.forRoot(environment.stripAPIKey)
   ],
-  providers: [AsyncPipe, DatePipe],
+
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: true,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('937894872683-q4rbr8nvuh3ii0o7mrak4bd1ga5kr39o.apps.googleusercontent.com'),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+
+    },
+  ],
 
 })
 
