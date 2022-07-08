@@ -1,9 +1,8 @@
-<nav mat-tab-nav-bar class="color-primary" mat-align-tabs="center">
+<nav mat-tab-nav-bar class="color-primary" mat-align-tabs="center" animationDuration="1000ms">
     <a mat-tab-link routerLink="/mr/mr-login" [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
     <a mat-tab-link routerLink="/mr/mr-register" [routerLinkActive]="" [active]="'/mr/mr-register'">Register</a>
-
 </nav>
-<!-- <ng-template [ngTemplateOutlet]="contentTemplate"> -->
+<ng-template [ngTemplateOutlet]="contentTemplate"></ng-template>
 
 <div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
     <div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
@@ -31,7 +30,7 @@
                         Login with Google
                     </button>
                 </div>
-                <span class="mat-h3" fxLayoutAlign="center center">OR</span>
+                <span class="mat-h5" style="font-weight: 600;" fxLayoutAlign="center center">OR</span>
             </mat-card-title>
             <mat-card-content class="cardpadding">
                 <form [formGroup]="LoginForm" (keyup.enter)="submit()" autocomplete="off">
@@ -90,8 +89,5 @@
         </mat-card>
     </div>
 </div>
-<router-outlet></router-outlet>
-<!-- <app-register></app-register> -->
 
-<!-- </ng-template> -->
-<!-- </ng-template> -->
+<!-- <app-register></app-register> -->

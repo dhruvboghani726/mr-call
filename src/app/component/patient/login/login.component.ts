@@ -1,22 +1,17 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { GoogleLoginProvider, SocialAuthService, SocialUser, } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule } from 'angularx-social-login';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  template: `
-  <ng-template>
-    <router-outlet></router-outlet>
-    <app-register></app-register>
-  </ng-template>
-`
+
 })
 export class LoginComponent implements OnInit {
-  // @ViewChild(TemplateRef, { static: true }) templateRef: TemplateRef<any>;
+  @ViewChild(TemplateRef, { static: true }) templateRef: TemplateRef<any>;
   hide = true;
   LoginForm!: FormGroup;
   error: string;
@@ -30,38 +25,64 @@ export class LoginComponent implements OnInit {
   passwordrequired: any;
   txtEmail: string;
   txtPassword: any;
+  socialUser: SocialUser;
+  isLoggedin: boolean;
+  // private user: SocialUser;
+  public authorized: boolean = false;
   errors: any;
-  isLoggedin?: boolean;
-  // contentTemplate: TemplateRef<any>;
+  contentTemplate: TemplateRef<any>;
+  returnUrl: any;
 
-
+  public user: SocialUser = new SocialUser;
+  googleLoginOptions: any;
   constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService) {
   }
 
   ngOnInit(): void {
     this.InitForm();
-    // this.componentInstance.contentTemplate = this.templateRef;
+    // this.socialAuthService.authState.subscribe(user => {
+    //   this.user = user;
+    //   console.log(user);
+    // });
   }
+
   InitForm() {
     this.LoginForm = this.fb.group({
       MobileNumber: ['', Validators.required,],
       Password: ['', Validators.required]
     });
-
-    this.socialAuthService.authState.subscribe((user) => {
-      // this.socialUser = user;
-      // this.isLoggedin = user != null;
-      // console.log(this.socialUser);
-    });
   }
 
-  loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    this.router.navigate(["/mr/dashboard"]);
+  public loginWithGoogle(): void {
+    // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+    //   (res) => {
+    //     console.log(res);
+    //   }
+    // );
+    // if (socialPlatform == "google") {
+    //   socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    // }
+    // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    // this.socialAuthService.authState.subscribe((user) => {
+    //   this.socialUser = user;
+    //   this.isLoggedin = (user != null);
+    //   console.log(this.socialUser);
+    //   this.router.navigate([this.returnUrl]);
+    // });
+
+    // this.socialAuthService.signIn(socialPlatformProvider).then(
+    //   (userData) => {
+    //     console.log(socialPlatform + " sign in data : ", userData);
+    //     // Now sign-in with userData        
+    //     if (userData != null) {
+    //       this.authorized = true;
+    //       this.user = userData;
+    //     }
+    //     this.router.navigate([this.returnUrl]);
+    //   }
+    // );
   }
-  // logOut(): void {
-  //   this.socialAuthService.signOut();
-  // }
+
   get f() {
     return this.LoginForm.controls;
   }
@@ -78,6 +99,7 @@ export class LoginComponent implements OnInit {
     //   this.router.navigate(["/mr/dashboard" ]);
     // }
   };
+
 
 }
 

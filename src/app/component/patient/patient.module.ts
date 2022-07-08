@@ -24,8 +24,9 @@ import { environment } from 'environments/environment';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { CountdownModule } from 'ngx-countdown';
-import { GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig, } from 'angularx-social-login';
 import { MatTabsModule } from '@angular/material/tabs';
+import { AppComponent } from '~app/app.component';
 
 // import { StripeModule } from "stripe-angular"
 
@@ -50,7 +51,6 @@ import { MatTabsModule } from '@angular/material/tabs';
     LoginComponent,
     ForgotPasswordComponent,
 
-
   ],
   imports: [
     CommonModule,
@@ -64,6 +64,7 @@ import { MatTabsModule } from '@angular/material/tabs';
     CountdownModule,
     SocialLoginModule,
     MatTabsModule,
+
     // StripeModule.forRoot(environment.stripAPIKey)
   ],
 
@@ -71,18 +72,19 @@ import { MatTabsModule } from '@angular/material/tabs';
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
-        autoLogin: true,
+        autoLogin: false,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('937894872683-q4rbr8nvuh3ii0o7mrak4bd1ga5kr39o.apps.googleusercontent.com'),
-          },
-        ],
+            provider: new GoogleLoginProvider(
+              '937894872683-q4rbr8nvuh3ii0o7mrak4bd1ga5kr39o.apps.googleusercontent.com'
+            )
+          }
+        ]
       } as SocialAuthServiceConfig,
-
-    },
+    }
   ],
-
+  bootstrap: [AppComponent],
 })
 
 

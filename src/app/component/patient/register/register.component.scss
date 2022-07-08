@@ -62,3 +62,29 @@ a {
 .Patient-Register-label {
     color: #7661e2;
 }
+
+/* Styles for tab labels */
+::ng-deep.mat-tab-link {
+    color: black;
+    font-weight: 700;
+}
+
+/* Styles for the active tab label */
+::ng-deep.mat-tab-link-active {
+    color: #7661E2;
+    font-weight: 800;
+}
+
+::ng-deep.mat-tab-header {
+    width: 54%;
+    margin-top: 3rem;
+    align-content: center;
+    margin-left: 21rem;
+}
+
+::ng-deep.mat-tab-header-xs {
+    width: 60%;
+    margin-top: 5rem;
+    align-items: center;
+    margin-left: 10rem;
+}
