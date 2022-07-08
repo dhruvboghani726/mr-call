@@ -1,6 +1,6 @@
 <nav mat-tab-nav-bar class="color-primary" mat-align-tabs="center">
-    <a mat-tab-link routerLink="/mr/mr-login" [routerLinkActive]="'/mr/mr-login'">Login</a>
-    <a mat-tab-link routerLink="/mr/mr-register" [routerLinkActive]="">Register</a>
+    <a mat-tab-link routerLink="/mr/mr-login" [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
+    <a mat-tab-link routerLink="/mr/mr-register" [routerLinkActive]="" [active]="'/mr/mr-register'">Register</a>
 
 </nav>
 <!-- <ng-template [ngTemplateOutlet]="contentTemplate"> -->
@@ -26,13 +26,14 @@
         </span>
         <mat-card class="cardsize" fxFlex.sm="50%">
             <mat-card-title class="padding-top">
-                <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-bottom]="'20px'">
+                <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-bottom]="'15px'">
                     <button type="button" class="login-with-google-btn" fxFlex="100" (click)="loginWithGoogle()">
-                        Sign in with Google
+                        Login with Google
                     </button>
                 </div>
+                <span class="mat-h3" fxLayoutAlign="center center">OR</span>
             </mat-card-title>
-            <mat-card-content class="cardpadding margin-top">
+            <mat-card-content class="cardpadding">
                 <form [formGroup]="LoginForm" (keyup.enter)="submit()" autocomplete="off">
                     <!-- Mobile Number field -->
                     <mat-form-field appearance="outline">
