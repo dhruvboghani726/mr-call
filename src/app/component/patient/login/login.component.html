@@ -1,6 +1,10 @@
-<nav mat-tab-nav-bar class="color-primary" mat-align-tabs="center" animationDuration="1000ms">
-    <a mat-tab-link routerLink="/mr/mr-login" [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
-    <a mat-tab-link routerLink="/mr/mr-register" [routerLinkActive]="" [active]="'/mr/mr-register'">Register</a>
+<nav fxHide.xs  mat-tab-nav-bar class="color-primary" mat-align-tabs="center" animationDuration="1000ms" >
+    <a mat-tab-link routerLink="/mr/mr-login"   [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
+    <a mat-tab-link routerLink="/mr/mr-register"   [routerLinkActive]="" [active]="'/mr/mr-register'">Register</a>
+</nav>
+<nav mat-tab-nav-bar class="responsive-mat-nav-xs" fxLayoutAlign="center center" fxHide.sm fxHide.gt-sm fxShow.xs class="color-primary" mat-align-tabs="center">
+    <a mat-tab-link routerLink="/mr/mr-login"   [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
+    <a mat-tab-link routerLink="/mr/mr-register"   [routerLinkActive]="" [active]="'/mr/mr-register'">Register</a>
 </nav>
 <ng-template [ngTemplateOutlet]="contentTemplate"></ng-template>
 

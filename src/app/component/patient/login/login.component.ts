@@ -54,11 +54,11 @@ export class LoginComponent implements OnInit {
   }
 
   public loginWithGoogle(): void {
-    // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-    //   (res) => {
-    //     console.log(res);
-    //   }
-    // );
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+      (res) => {
+        console.log(res);
+      }
+    );
     // if (socialPlatform == "google") {
     //   socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
     // }

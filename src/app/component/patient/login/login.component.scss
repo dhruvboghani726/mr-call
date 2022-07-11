@@ -56,29 +56,30 @@ a {
 }
 
 /* Styles for tab labels */
-::ng-deep.mat-tab-link {
+::ng-deep.a-mat-tab-link{
     color: black;
     font-weight: 700;
 }
 
 /* Styles for the active tab label */
-::ng-deep.mat-tab-link-active {
+::ng-deep.a-mat-tab-link {
     color: #7661E2;
     font-weight: 800;
 }
 
-::ng-deep.mat-tab-header {
-    width: 54%;
+::ng-deep.mat-tab-nav-bar {
+    width: 50%;
     margin-top: 3rem;
-    align-content: center;
+    
+    // align-content: center;
     margin-left: 21rem;
 }
 
-::ng-deep.mat-tab-header-xs {
-    width: 60%;
+::ng-deep.responsive-mat-nav-xs {
+    // width: 60%;
     margin-top: 5rem;
-    align-items: center;
-    margin-left: 10rem;
+    // align-items: center;
+    // margin-left: 10rem;
 }
 
 
