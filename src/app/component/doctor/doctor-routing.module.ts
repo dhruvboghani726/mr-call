@@ -11,6 +11,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { RegisterComponent } from './register/register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
+import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.component';
 
 
 
@@ -41,7 +42,8 @@ import { LoginComponent } from './login/login.component';
             
             ]
           } ,
-          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full' },        
+          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full' },
+          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full' },         
         ],
       }
     ]),

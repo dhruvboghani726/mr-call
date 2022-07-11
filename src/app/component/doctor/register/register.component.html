@@ -1,3 +1,7 @@
+<nav mat-tab-nav-bar class="color-primary" fxLayoutAlign="center center" mat-align-tabs="center" animationDuration="1000ms">
+    <a mat-tab-link routerLink="/doctor/doctor-login" [routerLinkActive]="''" [active]="''">Login</a>
+    <a mat-tab-link routerLink="/doctor/doctor-register" [routerLinkActive]="" [active]="'/doctor/doctor-register'">Register</a>
+</nav>
 <div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
     <div fxLayout="row" fxLayoutAlign="center" fxLayout.xs="column">
         <!-- Logo and Banner image for desktop -->
@@ -30,7 +34,7 @@
         </span>
         <mat-card class="cardsize" fxFlex.sm="50%">
             <mat-card-title class="padding-top">
-                <span fxLayoutAlign="center" class="color-primary mat-headline">Register</span>
+                <!-- <span fxLayoutAlign="center" class="color-primary mat-headline">Register</span> -->
             </mat-card-title>
             <mat-card-content class="cardpadding margin-top">
                 <form [formGroup]="RegistarionForm" (keyup.enter)="submit()" autocomplete="off">
@@ -52,9 +56,9 @@
                     </mat-form-field> -->
                     <!-- Email field -->
                     <mat-form-field appearance="outline">
-                        <mat-label> Enter Full UserName</mat-label>
+                        <mat-label> Enter UserName</mat-label>
                         <input matInput formControlName="username" type="email" id="username" maxlength="256" required>
-                        <mat-error>Full Username is required</mat-error>
+                        <mat-error> Username is required</mat-error>
                     </mat-form-field>
                     <!-- Password field -->
                     <mat-form-field appearance="outline">
@@ -75,7 +79,7 @@
                                 Tearm &
                                 condition
                             </mat-checkbox>
-                            <a routerLink="/mr/mr-login" class="color-primary">
+                            <a routerLink="/doctor/doctor-login" class="color-primary">
                                 Already have an account?</a>
                         </span>
                     </div>

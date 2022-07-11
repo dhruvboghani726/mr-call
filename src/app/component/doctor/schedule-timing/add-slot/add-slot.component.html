@@ -1,0 +1,126 @@
+<button mat-mini-fab color="primary" class="close-button close-icon" (click)="closeDialog()">
+    <mat-icon  style="color: #fff" class="close-icon">close</mat-icon>
+  </button>
+  
+  <div class="cardpadding">
+    <h2 mat-dialog-title>Add Time Slot</h2>
+    <!-- <span>{{this.day}}</span> -->
+    <div mat-dialog-content>
+      <div>
+        <form class="example-form"   [formGroup]="timeSlotForm">
+
+            <!-- <section class="container border mb-4 p-3" *ngFor="let address of addresses; let i = index;"> -->
+              <ng-container formArrayName="timeSlots"  *ngFor="let timeSlot of getTimeSlotFormArray().controls; let i = index">
+              <ng-container [formGroupName]="i">
+                <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+                  
+                  <mat-form-field class="half-width" appearance="outline">
+    
+                    <mat-label>Start Time</mat-label>
+                    <mat-select formControlName="fromTimeSlot">
+    
+                      <mat-option value="00:00:00">00:00:00</mat-option>
+                      <mat-option value="01:00:00">01:00:00</mat-option>
+                      <mat-option value="02:00:00">02:00:00</mat-option>
+                      <mat-option value="03:00:00">03:00:00</mat-option>
+                      <mat-option value="04:00:00">04:00:00</mat-option>
+                      <mat-option value="05:00:00">05:00:00</mat-option>
+                      <mat-option value="06:00:00">06:00:00</mat-option>
+                      <mat-option value="07:00:00">07:00:00</mat-option>
+                      <mat-option value="08:00:00">08:00:00</mat-option>
+                      <mat-option value="09:00:00">09:00:00</mat-option>
+                      <mat-option value="10:00:00">10:00:00</mat-option>
+                      <mat-option value="11:00:00">11:00:00</mat-option>
+                      <mat-option value="12:00:00">12:00:00</mat-option>
+                      <mat-option value="13:00:00">13:00:00</mat-option>
+                      <mat-option value="14:00:00">14:00:00</mat-option>
+                      <mat-option value="15:00:00">15:00:00</mat-option>
+                      <mat-option value="16:00:00">16:00:00</mat-option>
+                      <mat-option value="17:00:00">17:00:00</mat-option>
+                      <mat-option value="18:00:00">18:00:00</mat-option>
+                      <mat-option value="19:00:00">19:00:00</mat-option>
+                      <mat-option value="20:00:00">20:00:00</mat-option>
+                      <mat-option value="21:00:00">21:00:00</mat-option>
+                      <mat-option value="22:00:00">22:00:00</mat-option>
+                      <mat-option value="23:00:00">23:00:00</mat-option>
+    
+                    </mat-select>
+    
+                  </mat-form-field>
+    
+    
+                  <mat-form-field class="half-width" appearance="outline">
+    
+                    <mat-label>End Time</mat-label>
+                    <mat-select formControlName="toTimeSlot">
+    
+                      <mat-option value="00:00:00">00:00:00</mat-option>
+                      <mat-option value="01:00:00">01:00:00</mat-option>
+                      <mat-option value="02:00:00">02:00:00</mat-option>
+                      <mat-option value="03:00:00">03:00:00</mat-option>
+                      <mat-option value="04:00:00">04:00:00</mat-option>
+                      <mat-option value="05:00:00">05:00:00</mat-option>
+                      <mat-option value="06:00:00">06:00:00</mat-option>
+                      <mat-option value="07:00:00">07:00:00</mat-option>
+                      <mat-option value="08:00:00">08:00:00</mat-option>
+                      <mat-option value="09:00:00">09:00:00</mat-option>
+                      <mat-option value="10:00:00">10:00:00</mat-option>
+                      <mat-option value="11:00:00">11:00:00</mat-option>
+                      <mat-option value="12:00:00">12:00:00</mat-option>
+                      <mat-option value="13:00:00">13:00:00</mat-option>
+                      <mat-option value="14:00:00">14:00:00</mat-option>
+                      <mat-option value="15:00:00">15:00:00</mat-option>
+                      <mat-option value="16:00:00">16:00:00</mat-option>
+                      <mat-option value="17:00:00">17:00:00</mat-option>
+                      <mat-option value="18:00:00">18:00:00</mat-option>
+                      <mat-option value="19:00:00">19:00:00</mat-option>
+                      <mat-option value="20:00:00">20:00:00</mat-option>
+                      <mat-option value="21:00:00">21:00:00</mat-option>
+                      <mat-option value="22:00:00">22:00:00</mat-option>
+                      <mat-option value="23:00:00">23:00:00</mat-option>
+    
+                    </mat-select>
+                  
+    
+                  </mat-form-field>
+                 
+                  <button *ngIf="i >= 0"  matSuffix mat-icon-button color="primary" (click)="deleteTimeSlot(i)"
+                    matTooltip="delete" matTooltipPosition="below">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                  
+                </div>
+                <br/>
+               
+                
+                
+
+              
+                
+              
+               
+             
+            <!-- </section> -->
+              </ng-container>
+             
+             
+            </ng-container>
+         
+            <div class="mdl-layout-spacer"></div>
+          </form>
+        
+      </div>
+    </div>
+    <div class="add-more mb-3" align="end">
+     
+        <button mat-button color="primary"  (click)="addTimeSlotEntry()" class="button-icon-text"
+        aria-label="Example icon-button with menu icon and text">
+        <mat-icon color="primary">add</mat-icon>
+        <span>Add More</span>
+      </button>
+    </div>
+    <div mat-dialog-actions align="end">
+      <button mat-raised-button  color="primary" (click)="addTimeSlots()" cdkFocusInitial>Save Changes</button>
+      <button mat-raised-button class="backgroud-color-dark color-white" (click)="closeDialog()">Cancel</button>
+    </div>
+  </div>
