@@ -27,8 +27,8 @@
 
 .twocard-xs {
   width: 100% !important;
-  height: 271px !important;
-  max-height: 280px !important;
+  height: auto !important;
+  max-height: auto !important;
 
   border-radius: 8px;
   background-color: #e8f3f4;
@@ -36,8 +36,8 @@
 
 .twocard {
   width: 40%;
-  height: 230px;
-  max-height: 230px;
+  height: auto;
+  max-height: auto;
   max-width: auto;
   border-radius: 8px;
   background-color: #e8f3f4;
@@ -67,4 +67,8 @@
 // }
 .example-full-width {
   width: 100%;
+}
+.book-app-btn{
+  font-weight: 600;
+  align-self: center;
 }

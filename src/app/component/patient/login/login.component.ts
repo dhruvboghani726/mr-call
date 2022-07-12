@@ -57,7 +57,9 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       (res) => {
         console.log(res);
+        this.router.navigate(["/mr/mr-dashboard"]);
       }
+
     );
     // if (socialPlatform == "google") {
     //   socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;

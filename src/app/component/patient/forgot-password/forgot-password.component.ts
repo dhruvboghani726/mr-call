@@ -101,7 +101,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   public Send() {
-    this.router.navigate(['/mr/mr-email-check']);
+    this.router.navigate(['/mr/mr-login']);
   }
   submit() {
     if (this.UsercheckemailForm.valid) {

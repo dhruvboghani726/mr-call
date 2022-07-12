@@ -110,8 +110,15 @@
                 <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
             </span>
             <span class="mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
+            <span>{{currenttime | date:'fullDate'}}</span>
+            <mat-radio-group aria-label="Select an option" color="primary">
+                <mat-radio-button value="1">3:00 to 4:00</mat-radio-button>&nbsp;
+                <mat-radio-button value="2">7:00 to 8:00</mat-radio-button>
+            </mat-radio-group>
+            <button mat-raised-button color="primary" class="book-app-btn" fxFlex="50">Book
+                Appointment</button>
         </mat-card>
-        <mat-card class="twocard" ngClass.xs="twocard-xs" fxLayoutGap="10px" fxLayout="column">
+        <mat-card fxLayoutGap="10px" class="twocard" ngClass.xs="twocard-xs" fxLayout="column">
             <span class="mat-h1 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer" routerLink="/mr/mr-appoinment"
                 style="text-decoration: none; ">Dr.Harsh</span>
             <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
@@ -123,7 +130,15 @@
                 <mat-icon> place</mat-icon>
                 <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
             </span>
-            <span class="mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
+            <span *ngIf="this.hour > 15  || this.hour < 9" class="mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will
+                Open at 3.00 PM</span>
+            <span>{{currenttime | date:'fullDate'}}</span>
+            <mat-radio-group aria-label="Select an option" color="primary">
+                <mat-radio-button value="1">3:00 to 4:00</mat-radio-button>&nbsp;
+                <mat-radio-button value="2">7:00 to 8:00</mat-radio-button>
+            </mat-radio-group>
+            <button mat-raised-button color="primary" class="book-app-btn" fxFlex="50">Book
+                Appointment</button>
         </mat-card>
     </div>
 </div>

@@ -20,8 +20,8 @@ a {
 }
 
 .cardsize {
-    height: 380px;
-    max-height: 380px;
+    height: 400px;
+    max-height: 400px;
     width: 350px;
     max-width: 350px;
     box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
@@ -64,27 +64,19 @@ a {
 }
 
 /* Styles for tab labels */
-::ng-deep.mat-tab-link {
+::ng-deep.mat-tab-label{
     color: black;
-    font-weight: 700;
 }
 
 /* Styles for the active tab label */
-::ng-deep.mat-tab-link-active {
+::ng-deep.mat-tab-label-active{
     color: #7661E2;
-    font-weight: 800;
+    font-weight: 900;
+
 }
 
 ::ng-deep.mat-tab-header {
-    width: 54%;
-    margin-top: 3rem;
-    // align-content: center;
-    margin-left: 21rem;
-}
-
-::ng-deep.mat-tab-header-xs {
-    width: 60%;
-    margin-top: 5rem;
-    align-items: center;
-    margin-left: 10rem;
+    padding-top: 3rem;
+    width:53%;
+    margin: 10px auto;
 }
