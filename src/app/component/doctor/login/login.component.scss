@@ -56,33 +56,25 @@ a {
 }
 
 /* Styles for tab labels */
-::ng-deep.a-mat-tab-link{
+::ng-deep.mat-tab-label{
     color: black;
-    font-weight: 700;
+   
 }
 
 /* Styles for the active tab label */
-::ng-deep.a-mat-tab-link {
+::ng-deep.mat-tab-label-active{
     color: #7661E2;
-    font-weight: 800;
+    font-weight: 900;
+
 }
 
 ::ng-deep.mat-tab-nav-bar {
-    width: 50%;
-    margin-top: 3rem;
+    padding-top: 3rem;
+    width: 53%;
+    margin: 10px auto;
     
-    // align-content: center;
-    margin-left: 21rem;
+
 }
-
-::ng-deep.responsive-mat-nav-xs {
-    // width: 60%;
-    margin-top: 5rem;
-    // align-items: center;
-    // margin-left: 10rem;
-}
-
-
 // google login btn
 
 .image {
@@ -130,4 +122,10 @@ a {
         box-shadow: 0 -1px 0 rgba(0, 0, 0, .04), 0 1px 1px rgba(0, 0, 0, .25);
         cursor: not-allowed;
     }
+}
+
+
+
+.responsive-mat-nav-xs{
+    margin-left: 0px !important;
 }

@@ -1,11 +1,8 @@
-<nav fxHide.xs  mat-tab-nav-bar class="color-primary" mat-align-tabs="center" animationDuration="1000ms" >
+<nav  mat-tab-nav-bar class="color-primary" mat-align-tabs="center">
     <a mat-tab-link routerLink="/doctor/doctor-login"   [routerLinkActive]="''" [active]="'/doctor/doctor-login'">Login</a>
-    <a mat-tab-link routerLink="/doctor/doctor-register"   [routerLinkActive]="" [active]="'/doctor/doctor-register'">Register</a>
+    <a mat-tab-link routerLink="/doctor/doctor-register"   [routerLinkActive]="" [active]="''">Register</a>
 </nav>
-<nav mat-tab-nav-bar class="responsive-mat-nav-xs" fxLayoutAlign="center center" fxHide.sm fxHide.gt-sm fxShow.xs class="color-primary" mat-align-tabs="center">
-    <a mat-tab-link routerLink="/doctor/doctor-login"   [routerLinkActive]="''" [active]="'/doctor/doctor-login'">Login</a>
-    <a mat-tab-link routerLink="/doctor/doctor-register"   [routerLinkActive]="" [active]="'/doctor/doctor-register'">Register</a>
-</nav>
+
 <ng-template [ngTemplateOutlet]="contentTemplate"></ng-template>
 
 <div fxLayout="row wrap" fxLayout="column" fxLayoutAlign="center center" class="row-height">
