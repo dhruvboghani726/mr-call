@@ -1,4 +1,5 @@
 <div fxLayout="column" fxLayoutGap="15px">
+
     <mat-card class="backgroud-color-primary color-white" fxLayoutGap="10px" [ngStyle.xs]="{margin:'0px'}">
 
         <span class="menu-button mat-h2">
@@ -8,14 +9,14 @@
     </mat-card>
 
     <div fxLayout="row" fxLayoutGap="10px" style="padding:15px" fxLayout.xs="column">
-        <mat-card class="appointmentcard " ngClass.xs="appointmentcard-xs">
+        <mat-card class="appointmentcard backgroud-color-gray" ngClass.xs="appointmentcard-xs">
 
             <span class="menu-button mat-h2">
                 <mat-icon>assignment_turned_in</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3"> Appointment Booking Points(0)</span>
             </span>
         </mat-card>
-        <mat-card class="appointmentcard" ngClass.xs="appointmentcard-xs">
+        <mat-card class="appointmentcard backgroud-color-gray" ngClass.xs="appointmentcard-xs">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Purchase Booking Points</span>
@@ -26,7 +27,7 @@
 
     </div>
     <div fxLayout="column" style="padding:10px" fxLayout.xs="column" fxLayoutGap="10px">
-        <mat-card style="background-color:#e6fdf8">
+        <mat-card class="backgroud-color-gray">
 
             <span class="menu-button color-primary">
                 <mat-icon class="color-primary">info</mat-icon>
@@ -81,7 +82,7 @@
             </mat-card>
             <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
                 <div>
-                    <mat-toolbar class="backgroud-color-white">
+                    <mat-toolbar class="backgroud-color-gray">
                         <span class="fileter-width">
                             <mat-form-field>
                                 <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
@@ -96,10 +97,13 @@
             </mat-card>
         </mat-card>
     </div>
-    <div fxLayout="row" style="padding:10px" fxLayoutGap="20px" fxLayout.xs="column">
-        <mat-card fxLayoutGap="10px" class="twocard" ngClass.xs="twocard-xs" fxLayout="column">
-            <span class="mat-h1 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer" routerLink="/mr/mr-appoinment"
-                style="text-decoration: none; ">Dr.Bhargav</span>
+
+    <div fxLayout="row wrap" style="padding:10px" fxLayoutGap="27px" fxLayout.xs="column">
+
+        <mat-card *ngFor="let num of [1,2,3]" fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutGap="20px"
+            class="twocard" class="backgroud-color-gray" ngClass.xs="twocard-xs" fxLayout="column">
+
+            <span class="mat-h1 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">Dr.Bhargav</span>
             <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
             <span class="menu-button  color-primary">
                 <mat-icon> local_hospital</mat-icon>
@@ -109,36 +113,28 @@
                 <mat-icon> place</mat-icon>
                 <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
             </span>
-            <span class="mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
-            <span>{{currenttime | date:'fullDate'}}</span>
-            <mat-radio-group aria-label="Select an option" color="primary">
-                <mat-radio-button value="1">3:00 to 4:00</mat-radio-button>&nbsp;
-                <mat-radio-button value="2">7:00 to 8:00</mat-radio-button>
-            </mat-radio-group>
-            <button mat-raised-button color="primary" class="book-app-btn" fxFlex="50">Book
-                Appointment</button>
-        </mat-card>
-        <mat-card fxLayoutGap="10px" class="twocard" ngClass.xs="twocard-xs" fxLayout="column">
-            <span class="mat-h1 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer" routerLink="/mr/mr-appoinment"
-                style="text-decoration: none; ">Dr.Harsh</span>
-            <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
-            <span class="menu-button  color-primary">
-                <mat-icon> local_hospital</mat-icon>
-                <span class="mat-h3" ngClass.xs="mat-h4"> Dave Eye care</span>
+            <span *ngIf="this.hour < 14">
+                <span class=" mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
             </span>
-            <span class="menu-button">
-                <mat-icon> place</mat-icon>
-                <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
+            <span *ngIf="this.hour > 14  || this.hour < 9">
+                <span class="mat-h3" ngClass.xs="mat-h3">Mark the time slot to book the appointment </span>
             </span>
-            <span *ngIf="this.hour > 15  || this.hour < 9" class="mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will
-                Open at 3.00 PM</span>
-            <span>{{currenttime | date:'fullDate'}}</span>
-            <mat-radio-group aria-label="Select an option" color="primary">
-                <mat-radio-button value="1">3:00 to 4:00</mat-radio-button>&nbsp;
-                <mat-radio-button value="2">7:00 to 8:00</mat-radio-button>
-            </mat-radio-group>
-            <button mat-raised-button color="primary" class="book-app-btn" fxFlex="50">Book
-                Appointment</button>
+
+            <div *ngIf="this.hour > 14  || this.hour < 9">
+                <span>{{currenttime | date:'fullDate'}}</span>
+                <div class="timezone">
+                    <mat-radio-group aria-label="Select an option" color="primary">
+                        <mat-radio-button value="1">3:00 to 4:00</mat-radio-button>&nbsp;
+                        <mat-radio-button value="2">4:00 to 5:00</mat-radio-button>&nbsp;
+                        <mat-radio-button value="2">5:00 to 6:00</mat-radio-button>&nbsp;
+                        <mat-radio-button value="2">7:00 to 8:00</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div fxLayoutAlign="center center">
+                    <button mat-raised-button color="primary" class="book-app-btn" (click)="Bookappoinment()"
+                        fxFlex="50">Book Appointment</button>
+                </div>
+            </div>
         </mat-card>
     </div>
 </div>
