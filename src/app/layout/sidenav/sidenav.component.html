@@ -6,12 +6,12 @@
 
   <div fxlayout="row" class="full-width">
     <span fxHide.xs class="fileter-width">
-      <mat-form-field id="search" appearance="outline" style="width: 100%;">
+      <!-- <mat-form-field id="search" appearance="outline" style="width: 100%;">
         <input matInput [(ngModel)]="value" placeholder="Search">
         <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
           <mat-icon class="mat-18 color-white">search</mat-icon>
         </button>
-      </mat-form-field>
+      </mat-form-field> -->
     </span>
 
 
@@ -34,7 +34,7 @@
       'color-light-yellow' :this.checkstatus =='Away' ,
       'color-danger' :this.checkstatus == 'InSession'
       }">
-            {{this.checkstatus}}
+            <span style="font-weight:600;">{{this.checkstatus}}</span>
 
           </span>
         </span>
@@ -46,7 +46,7 @@
           <mat-icon class="color-white" matBadgeColor="warn" [matBadge]="1">notifications_active</mat-icon>
         </button>
       </div>
-      <div fxLayoutAlign="center center">
+      <div fxLayoutAlign="center center" [matMenuTriggerFor]="menu1">
         <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
           style="max-width:30px; max-height: 30px; border-radius: 50%;  margin-top: 0px;">
         <mat-icon class="color-white">arrow_drop_down</mat-icon>
@@ -72,6 +72,37 @@
           </mat-nav-list>
         </div>
       </mat-menu>
+
+      <mat-menu #menu1="matMenu" class="my-menu">
+
+        <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
+
+          <mat-nav-list>
+            <mat-list-item mat-line>
+              <p mat-line class="notificationline-hover">
+                Sanket Patel
+              </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <!-- <mat-list-item mat-line class="profile-dialog"> -->
+            <div fxLayout="row" fxLayoutAlign="start start" style="text-align: center;">
+              <span style="margin-left: 0.5rem;" routerLink="/mr/profile-settings">
+                <mat-icon>supervised_user_circle</mat-icon>
+                <p>profile</p>
+              </span>
+
+              &nbsp; &nbsp;&nbsp;
+              <span routerLink="/website/home">
+                <mat-icon> vpn_key</mat-icon>
+                <p>Logout</p>
+              </span>
+            </div>
+            <!-- </mat-list-item> -->
+
+
+          </mat-nav-list>
+        </div>
+      </mat-menu>
     </div>
   </div>
 
@@ -85,7 +116,7 @@
 
     <mat-divider></mat-divider>
     <!-- {{this.mrinfo}} -->
-    <div  *ngIf="this.mrinfo || this.mrinfo!= null" fxLayout="column" fxLayoutGap="10px">
+    <div *ngIf="this.mrinfo || this.mrinfo!= null" fxLayout="column" fxLayoutGap="10px">
       <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/dashboard">
         <mat-icon>dashboard</mat-icon>
         <span>Dashboard</span>
@@ -141,7 +172,7 @@
         <mat-icon>access_time</mat-icon>
         <span>Schedule Timings</span>
       </button>
-    
+
       <mat-divider></mat-divider>
 
       <button mat-button class="menu-button" routerLink="/website/home">

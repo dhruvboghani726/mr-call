@@ -27,6 +27,7 @@ import { CountdownModule } from 'ngx-countdown';
 import { GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig, } from 'angularx-social-login';
 import { MatTabsModule } from '@angular/material/tabs';
 import { AppComponent } from '~app/app.component';
+import { AppoinmentCancelDialogComponent } from './active-appointment/appoinment-cancel-dialog/appoinment-cancel-dialog.component';
 
 // import { StripeModule } from "stripe-angular"
 
@@ -50,6 +51,7 @@ import { AppComponent } from '~app/app.component';
     // AppointmentComponent,
     LoginComponent,
     ForgotPasswordComponent,
+    AppoinmentCancelDialogComponent,
 
   ],
   imports: [
@@ -77,7 +79,8 @@ import { AppComponent } from '~app/app.component';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              '937894872683-q4rbr8nvuh3ii0o7mrak4bd1ga5kr39o.apps.googleusercontent.com'
+              "937894872683-q4rbr8nvuh3ii0o7mrak4bd1ga5kr39o.apps.googleusercontent.com"
+
             )
           }
         ]

@@ -1,8 +1,8 @@
-.header-card {
-    box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
-    // background-color: linear-gradient(to right, #2AA7FF, to leftend, #ffffff);
-    background-color: #c9e3f5;
-}
+// .header-card {
+//     box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
+
+
+// }
 
 ::ng-deep #search {
     font-size: 10px;
@@ -59,6 +59,8 @@
 .mat-header-cell {
     font-size: 16px;
     color: #ffffff;
+    font-weight: 600;
     background-color: #7661e2;
     padding: 5px;
+
 }
