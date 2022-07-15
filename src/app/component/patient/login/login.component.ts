@@ -15,35 +15,19 @@ export class LoginComponent implements OnInit {
   hide = true;
   LoginForm!: FormGroup;
   error: string;
-  loginAttempt: number;
-  login_attempts = 5;
-  attamp_error: string;
-  combinelabel: any;
-  passwordlabel: any;
-  combinerequired: any;
-  combineinvalid: any;
-  passwordrequired: any;
-  txtEmail: string;
-  txtPassword: any;
   socialUser: SocialUser;
   isLoggedin: boolean;
-  // private user: SocialUser;
   public authorized: boolean = false;
   errors: any;
   contentTemplate: TemplateRef<any>;
   returnUrl: any;
+  public user: SocialUser;
 
-  public user: SocialUser = new SocialUser;
-  googleLoginOptions: any;
   constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService) {
   }
 
   ngOnInit(): void {
     this.InitForm();
-    // this.socialAuthService.authState.subscribe(user => {
-    //   this.user = user;
-    //   console.log(user);
-    // });
   }
 
   InitForm() {
@@ -52,25 +36,30 @@ export class LoginComponent implements OnInit {
       Password: ['', Validators.required]
     });
   }
+  get f() {
+    return this.LoginForm.controls;
+  }
+  public loginWithGoogle(socialPlatform: string): void {
+    // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
+    //   (res) => {
+    //     console.log(res);
+    //     this.router.navigate(["/mr/mr-dashboard"]);
+    //   }
 
-  public loginWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-      (res) => {
-        console.log(res);
-        this.router.navigate(["/mr/mr-dashboard"]);
-      }
+    // );
+    let socialPlatformProvider;
+    if (socialPlatform == "google") {
+      socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
+    }
 
-    );
-    // if (socialPlatform == "google") {
-    //   socialPlatformProvider = GoogleLoginProvider.PROVIDER_ID;
-    // }
-    // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
-    // this.socialAuthService.authState.subscribe((user) => {
-    //   this.socialUser = user;
-    //   this.isLoggedin = (user != null);
-    //   console.log(this.socialUser);
-    //   this.router.navigate([this.returnUrl]);
-    // });
+    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+    this.socialAuthService.authState.subscribe((user) => {
+      this.socialUser = user;
+      this.isLoggedin = (user != null);
+      console.log(this.socialUser);
+
+      this.router.navigate(['/mr/dashboard']);
+    });
 
     // this.socialAuthService.signIn(socialPlatformProvider).then(
     //   (userData) => {
@@ -80,28 +69,17 @@ export class LoginComponent implements OnInit {
     //       this.authorized = true;
     //       this.user = userData;
     //     }
-    //     this.router.navigate([this.returnUrl]);
+    //     console.log(userData)
+    //     this.router.navigate(['/mr/dashboard']);
     //   }
     // );
   }
-
-  get f() {
-    return this.LoginForm.controls;
-  }
-
-
   submit() {
     if (this.LoginForm.invalid) {
-      this.router.navigate(["/mr/mr-login"]);
       return;
     }
+    console.log('login fail');
 
-    // if ( data.isEmailVerified === 'True') {
-
-    //   this.router.navigate(["/mr/dashboard" ]);
-    // }
   };
-
-
 }
 

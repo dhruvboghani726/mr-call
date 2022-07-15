@@ -1,6 +1,6 @@
-<nav  mat-tab-nav-bar class="color-primary" mat-align-tabs="center">
-    <a mat-tab-link routerLink="/mr/mr-login"   [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
-    <a mat-tab-link routerLink="/mr/mr-register"   [routerLinkActive]="" [active]="''">Register</a>
+<nav mat-tab-nav-bar class="color-primary" mat-align-tabs="center">
+    <a mat-tab-link routerLink="/mr/mr-login" [routerLinkActive]="''" [active]="'/mr/mr-login'">Login</a>
+    <a mat-tab-link routerLink="/mr/mr-register" [routerLinkActive]="" [active]="''">Register</a>
 </nav>
 
 <ng-template [ngTemplateOutlet]="contentTemplate"></ng-template>
@@ -27,7 +27,8 @@
         <mat-card class="cardsize" fxFlex.sm="50%">
             <mat-card-title class="padding-top">
                 <div fxLayoutAlign="center" fxLayoutGap="12px" [style.margin-bottom]="'15px'">
-                    <button type="button" class="login-with-google-btn" fxFlex="100" (click)="loginWithGoogle()">
+                    <button type="button" class="login-with-google-btn" fxFlex="100"
+                        (click)="loginWithGoogle('google')">
                         Login with Google
                     </button>
                 </div>
