@@ -20,9 +20,9 @@
         </div>
     </mat-card>
     <!-- mobile view end  -->
-    <br>
+
     <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="20px">
-        <mat-card class="backgroud-color-gray">
+        <mat-card class="background-color-primary-light">
             <span class="menu-button color-primary">
                 <span class="mat-h2" ngClass.xs="mat-h2">
                     <mat-icon class="color-primary">info</mat-icon> Notes: <span style="font-weight: 500;">Active
@@ -119,7 +119,8 @@
                 <ng-container matColumnDef="Action">
                     <th mat-header-cell *matHeaderCellDef> Action </th>
                     <td mat-cell *matCellDef="let element">
-                        <button mat-button mat-raised-button color="primary" (click)="opendialog()">Cancel</button>
+                        <button mat-button mat-raised-button color="primary" (click)="opendialog()">Cancel
+                            Appointment</button>
                     </td>
                 </ng-container>
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

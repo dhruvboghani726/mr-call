@@ -1,6 +1,6 @@
-<div fxLayout="column" fxLayoutGap="15px">
+<div fxLayout="column" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="15px" style="margin-bottom: 0px;">
 
-    <mat-card class="backgroud-color-primary color-white" fxLayoutGap="10px" [ngStyle.xs]="{margin:'0px'}">
+    <mat-card class="backgroud-color-primary color-white" fxLayoutGap="15px" [ngStyle.xs]="{margin:'0px'}">
 
         <span class="menu-button mat-h2">
             <mat-icon class="color-white">assignment_turned_in</mat-icon>
@@ -8,15 +8,15 @@
         </span>
     </mat-card>
 
-    <div fxLayout="row" fxLayoutGap="10px" style="padding:15px" fxLayout.xs="column">
-        <mat-card class="appointmentcard backgroud-color-gray" ngClass.xs="appointmentcard-xs">
+    <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-around" fxLayout.xs="column">
+        <mat-card class="appointmentcard background-color-primary-light" ngClass.xs="appointmentcard-xs">
 
             <span class="menu-button mat-h2">
                 <mat-icon>assignment_turned_in</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3"> Appointment Booking Points(0)</span>
             </span>
         </mat-card>
-        <mat-card class="appointmentcard backgroud-color-gray" ngClass.xs="appointmentcard-xs">
+        <mat-card class="appointmentcard background-color-primary-light" ngClass.xs="appointmentcard-xs">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Purchase Booking Points</span>
@@ -26,24 +26,20 @@
 
 
     </div>
-    <div fxLayout="column" style="padding:10px" fxLayout.xs="column" fxLayoutGap="10px">
-        <mat-card class="backgroud-color-gray">
-
+    <div fxLayout="column" fxLayoutAlign="space-around" fxLayout.xs="column" fxLayoutGap="10px">
+        <mat-card class="background-color-primary-light">
             <span class="menu-button color-primary">
                 <mat-icon class="color-primary">info</mat-icon>
                 <span class="mat-h1" ngClass.xs="mat-h2"> Notes:</span>
             </span>
             <span class="mat-h3" ngClass.xs="mat-h5">
                 A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M<br>
-                B)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
             </span>
-
-
         </mat-card>
-
     </div>
-    <div fxLayout="column" style="padding:10px" fxLayoutGap="10px">
-        <mat-card class="backgroud-color-gray">
+
+    <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="10px">
+        <mat-card class="background-color-primary-light">
             <mat-toolbar class="backgroud-color-white">
                 <mat-form-field>
                     <mat-label>Choose a date</mat-label>
@@ -55,9 +51,9 @@
 
         </mat-card>
     </div>
-    <div fxLayout="column" style="padding:10px" fxLayoutGap="10px">
-        <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px" class="threecard backgroud-color-gray"
-            fxLayout.xs="column">
+    <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="10px">
+        <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px"
+            class="threecard background-color-primary-light" fxLayout.xs="column">
             <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
 
                 <span class="mat-h2">
@@ -82,7 +78,7 @@
             </mat-card>
             <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
                 <div>
-                    <mat-toolbar class="backgroud-color-gray">
+                    <mat-toolbar class="background-color-primary-light">
                         <span class="fileter-width">
                             <mat-form-field>
                                 <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
@@ -98,13 +94,15 @@
         </mat-card>
     </div>
 
-    <div fxLayout="row wrap" style="padding:10px" fxLayoutGap="27px" fxLayout.xs="column">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="27px" fxLayout.xs="column"
+        fxLayoutAlign="space-around">
 
-        <mat-card *ngFor="let num of [1,2,3]" fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutGap="20px"
-            class="twocard" class="backgroud-color-gray" ngClass.xs="twocard-xs" fxLayout="column">
+        <mat-card *ngFor="let num of [1,2,3]" fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutGap="8px"
+            class="twocard" class="background-color-primary-light" ngClass.xs="twocard-xs" fxLayout="column">
 
-            <span class="mat-h1 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">Dr.Bhargav</span>
-            <span class="mat-h2 color-primary" ngClass.xs="mat-h3">DOMS DNB</span>
+            <span class="mat-h2 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">Dr.Bhargav <span>(DOMS
+                    DNB)</span></span>
+
             <span class="menu-button  color-primary">
                 <mat-icon> local_hospital</mat-icon>
                 <span class="mat-h3" ngClass.xs="mat-h4"> Dave Eye care</span>

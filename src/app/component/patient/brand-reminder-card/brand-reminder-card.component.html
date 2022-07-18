@@ -1,4 +1,4 @@
-<div fxLayout="column">
+<div fxLayout="column" fxLayoutAlign="space-around">
     <mat-card class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
 
         <span class="menu-button mat-h2" style="margin-top: 0px;">
@@ -6,10 +6,11 @@
             <span class="mat-h2" ngClass.xs="mat-h3">Brand Reminder Card</span>
         </span>
     </mat-card>
-    <div fxLayout="row" fxLayoutGap="10px" style="padding:15px ; min-height: 60vh;" fxLayout.xs="column"
+    <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-around" style=" min-height: 60vh;" fxLayout.xs="column"
         fxLayoutAlign="center center">
-        <mat-card class="appointmentcard " style="cursor: pointer;" ngClass.xs="appointmentcard-xs"
-            routerLinkActive="active-list-item" routerLink="/mr/brand-reminder-card/upload-card">
+        <mat-card class="appointmentcard background-color-primary-light" style="cursor: pointer;"
+            ngClass.xs="appointmentcard-xs" routerLinkActive="active-list-item"
+            routerLink="/mr/brand-reminder-card/upload-card">
 
             <span class="menu-button mat-h2">
                 <mat-icon>assignment_turned_in</mat-icon>
@@ -17,16 +18,18 @@
                 <span class="mat-h2" ngClass.xs="mat-h3">Upload Card</span>
             </span>
         </mat-card>
-        <mat-card class="appointmentcard" style="cursor: pointer;" ngClass.xs="appointmentcard-xs"
-            routerLinkActive="active-list-item" routerLink="/mr/brand-reminder-card/share-card">
+        <mat-card class="appointmentcard background-color-primary-light" style="cursor: pointer;"
+            ngClass.xs="appointmentcard-xs" routerLinkActive="active-list-item"
+            routerLink="/mr/brand-reminder-card/share-card">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Share card</span>
             </span>
 
         </mat-card>
-        <mat-card class="appointmentcard" style="cursor: pointer;" ngClass.xs="appointmentcard-xs"
-            routerLinkActive="active-list-item" routerLink="/mr/brand-reminder-card/card-history">
+        <mat-card class="appointmentcard background-color-primary-light" style="cursor: pointer;"
+            ngClass.xs="appointmentcard-xs" routerLinkActive="active-list-item"
+            routerLink="/mr/brand-reminder-card/card-history">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Card History</span>

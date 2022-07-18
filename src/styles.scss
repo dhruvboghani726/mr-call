@@ -51,10 +51,10 @@ body {
   color: mat-color($mat-grey, 500);
 }
 
-.backgroud-color-gray {
-  background-color: #ececfd;
-  ;
-}
+// .backgroud-color-gray {
+//   background-color: #ececfd;
+//   ;
+// }
 
 .color-secondary {
   color: mat-color($accent, 500);
@@ -100,8 +100,8 @@ body {
   background-color: mat-color($mat-grey, 800);
 }
 
-.background-color-grey {
-  background-color: mat-color($mat-grey, 400);
+.background-color-primary-light {
+  background-color: mat-color($primary, 0.1);
 }
 
 .backgroud-color-white {
@@ -271,7 +271,7 @@ mat-icon {
 
 // Button hover shadow
 .button-shadow:hover {
-  background-color: mat-color($primary);
+  background-color: mat-color($primary, );
   color: $light-primary-text;
   box-shadow: 0 9px 20px 0 mat-color($accent, 0.9);
 }

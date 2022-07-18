@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutGap="20px">
+<div fxLayout="column" fxLayoutGap="20px" fxLayoutAlign="space-around">
     <mat-card class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
         <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
             <span class="menu-button mat-h2">
@@ -15,15 +15,15 @@
         </div>
     </mat-card>
 
-    <div fxLayout="row" fxLayoutGap="10px" style="padding:15px" fxLayout.xs="column">
-        <mat-card class="appointmentcard " ngClass.xs="appointmentcard-xs">
+    <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="space-around">
+        <mat-card class="appointmentcard background-color-primary-light" ngClass.xs="appointmentcard-xs">
 
             <span class="menu-button mat-h2">
                 <mat-icon>assignment_turned_in</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3"> Reminder Card Balance :20 </span>
             </span>
         </mat-card>
-        <mat-card class="appointmentcard" ngClass.xs="appointmentcard-xs">
+        <mat-card class="appointmentcard background-color-primary-light" ngClass.xs="appointmentcard-xs">
             <span class="menu-button mat-h2">
                 <mat-icon>assignment</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Purchase Reminder Card</span>
@@ -33,11 +33,11 @@
 
 
     </div>
-    <div fxLayout="column" style="padding:10px" fxLayout.xs="column" fxLayoutGap="10px">
-        <mat-card style="background-color:#e6fdf8">
+    <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="10px">
+        <mat-card class="background-color-primary-light">
             <div fxLayout="row">
                 <div class="color-primary" style="margin-top:6px;">
-                    <mat-icon>info</mat-icon>
+                    <mat-icon class="color-primary">info</mat-icon>
                 </div>
                 &nbsp;&nbsp;
                 <div>
@@ -66,7 +66,8 @@
     </div>
 
 
-    <div fxLayout="row" style="padding:10px" fxLayoutGap="10px" fxLayout.xs="column">
+    <div fxLayout="row" class="background-color-primary-light" fxLayoutGap="10px" fxLayout.xs="column"
+        fxLayoutAlign="space-around">
         <mat-card fxLayoutGap="10px" class="twocard" ngClass.xs="twocard-xs" fxLayout="column">
             <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;">
                 <div fxFlex="50">
@@ -97,7 +98,7 @@
 
                 </div>
             </div>
-            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 10px;">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" fxLayoutAlign="space-around">
 
 
                 <div class="rectangle" [ngStyle.xs]="{    height: '250px;', width: '250px;' }"
@@ -106,7 +107,7 @@
                 </div>
                 <div>
                     <button mat-raised-button color="primary">
-                        <mat-icon>keyboard_arrow_up</mat-icon>Send Card To Selected Doctors
+                        <mat-icon class="color-white">keyboard_arrow_up</mat-icon>Send Card To Selected Doctors
                     </button>
                 </div>
             </div>

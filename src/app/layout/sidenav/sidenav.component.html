@@ -16,7 +16,7 @@
 
 
     <!-- </div> -->
-    <div fxLayout="row" fxFlex="" fxLayoutAlign="end center" fxLayoutGap="5px">
+    <div fxLayout="row" fxFlex="" fxLayoutAlign="end center" fxLayoutGap="15px">
       <!-- Doctor patient name -->
       <span fxHide.xs *ngIf="this.allDetalis || this.allDetalis!= null" fxLayout="row" fxLayoutAlign="end center"
         fxFlex="50%">
@@ -86,7 +86,7 @@
             <mat-divider></mat-divider>
             <!-- <mat-list-item mat-line class="profile-dialog"> -->
             <div fxLayout="row" fxLayoutAlign="start start" style="text-align: center;">
-              <span style="margin-left: 0.5rem;" routerLink="/mr/profile-settings">
+              <span style="margin-left: 0.5rem; cursor:pointer;" routerLink="/mr/profile-settings">
                 <mat-icon>supervised_user_circle</mat-icon>
                 <p>profile</p>
               </span>

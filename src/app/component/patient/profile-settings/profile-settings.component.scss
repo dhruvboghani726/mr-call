@@ -1,28 +1,27 @@
 .menu-button {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 1rem;
-  
-    mat-icon {
-      margin-right: 8px;
-    }
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 1rem;
+
+  mat-icon {
+    margin-right: 8px;
   }
-  .appointmentcard{
-    height: auto;
-    max-height: auto;
-    width: 550px;
-    max-width: 550px;
-    border-radius: 5px;
-    background-color: #e8f3f4;
 }
-.appointmentcard-xs{
-    height: auto;
-    max-height: auto;
-    width: 94%;
-    max-width: auto;
-    border-radius: 5px;
-    background-color: #e8f3f4;
+
+.appointmentcard {
+  height: auto;
+  max-height: auto;
+  width: 550px;
+  max-width: 550px;
+  border-radius: 5px;
 }
- 
+
+.appointmentcard-xs {
+  height: auto;
+  max-height: auto;
+  width: 94%;
+  max-width: auto;
+  border-radius: 5px;
+}

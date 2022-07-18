@@ -21,11 +21,11 @@
     </mat-card>
     <!-- mobile view end  -->
 
-    <div fxLayout="column" fxLayoutGap="15px" style="padding:10px">
+    <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="space-around">
 
-        <mat-card class="noticecard " ngClass.xs="noticecard-xs" mat-elevation-z4>
+        <mat-card class="noticecard background-color-primary-light" ngClass.xs="noticecard-xs" mat-elevation-z4>
             <span class="menu-button color-primary">
-                <mat-icon>info</mat-icon>
+                <mat-icon class="background-color-primary color-primary">info</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h2"> Notes:</span>&nbsp;
             </span>
             <span>
@@ -35,9 +35,9 @@
         </mat-card>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="15px" style="padding:10px">
-        <mat-card class="noticecard " ngClass.xs="noticecard-xs" mat-elevation-z4>
-            <mat-card style="background-color: #e8f3f4;">
+    <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="space-around">
+        <mat-card class="noticecard background-color-primary-light" ngClass.xs="noticecard-xs" mat-elevation-z4>
+            <mat-card>
                 <mat-card-content>
                     <mat-form-field appearance="outline">
                         <mat-label>Status</mat-label>
@@ -47,9 +47,7 @@
                             </mat-option>
                         </mat-select>
                     </mat-form-field>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <button mat-raised-button color="primary">
-                        <mat-icon>check</mat-icon>Submit
-                    </button>
+                    <button mat-raised-button color="primary">Submit</button>
                 </mat-card-content>
             </mat-card>
             <br>
@@ -70,7 +68,7 @@
                             <input matInput [(ngModel)]="value" placeholder="Search">
                             <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
                                 (click)="value=''">
-                                <mat-icon class="mat-18 color-primary">search</mat-icon>
+                                <mat-icon>search</mat-icon>
                             </button>
                         </mat-form-field>
                     </span>

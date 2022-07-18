@@ -1,8 +1,8 @@
-<div fxLayout="column">
+<div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="15px">
     <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}">
         <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
             <span class="menu-button mat-h2">
-                <mat-icon>credit_card</mat-icon>
+                <mat-icon class="color-white">credit_card</mat-icon>
                 <span class="mat-h2" ngClass.xs="mat-h3">Upload Card</span>
             </span>
         </div>
@@ -14,10 +14,10 @@
             </button>
         </div>
     </mat-card>
-    <div fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;"
+    <div fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap="15px" fxLayoutAlign="space-around"
         [ngStyle.xs]="{  padding:'10'}">
 
-        <mat-card fxFlex="70" class="remindercard backgroud-color-greylight">
+        <mat-card fxFlex="70" class="remindercard background-color-primary-light">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h1">Add New Brand Reminder Card</mat-card-title>
 
@@ -26,47 +26,32 @@
             <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
                 style="border-radius: 15px;padding: 18px 40px 0px 40px;">
                 <form #loginForm="ngForm">
-                    <!-- <mat-form-field apie>
-                      <input matInput placeholder="Email" [(ngModel)]="username" name="username" required>
-                     
-                    </mat-form-field> -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Title</mat-label>
                         <input matInput placeholder="Title">
-                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
                     </mat-form-field>
+
                     <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
                         fxLayoutAlign="flex-start">
+
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Product1</mat-label>
                             <input matInput placeholder="Product1">
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
                         </mat-form-field>
+
                         <!-- Last name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Product2</mat-label>
                             <input matInput placeholder="Product2">
-                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
-
                         </mat-form-field>
                     </div>
 
-
-                    <!-- <mat-form-field appearance="outline">
-                        <mat-label>Upload Image</mat-label>
-                        <input matInput placeholder="Placeholder">
-                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                      
-                      </mat-form-field> -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Upload Image</mat-label>
                         <div>
                             <mat-toolbar>
                                 <input matInput />
-
                             </mat-toolbar>
                             <input type="file" id="fileInput" name="fileInput" accept="image/*" multiple />
                         </div>
@@ -74,38 +59,28 @@
 
                     <mat-card-actions fxLayout.xs="row" fxLayoutAlign.xs="center center" align="center"
                         fxLayoutGap="5px">
-
-
-                        <button mat-stroked-button color="primary">
-                            <mat-icon>refresh</mat-icon>Reset
+                        <button mat-raised-button color="primary">
+                            <mat-icon class="color-white">refresh</mat-icon>Reset
                         </button>
                         <button mat-raised-button color="primary">
-                            <mat-icon>add</mat-icon>Add
+                            <mat-icon class="color-white">add</mat-icon>Add
                         </button>
-
                     </mat-card-actions>
                 </form>
-
             </mat-card-content>
-
-
-
-
-
         </mat-card>
 
-
         <div fxFlex="30" fxLayout="column" fxLayout.xs="column" fxLayoutGap="15px">
-            <mat-card class="halfcard backgroud-color-bluelight">
+            <mat-card class="halfcard background-color-primary-light">
                 <span class="menu-button color-primary">
-                    <mat-icon>info</mat-icon>
+                    <mat-icon class="color-primary">info</mat-icon>
                     <span class="mat-h2" ngClass.xs="mat-h2"> Notes:</span>
                 </span><br>
                 <span class="mat-h3" ngClass.xs="mat-h5">
                     A)&nbsp;Booking Window Open from 3:00 P.M TO 9:00 A.M
                 </span>
             </mat-card>
-            <mat-card class="halfcard  backgroud-color-greylight" fxLayout="column" fxLayoutAlign="center center">
+            <mat-card class="halfcard background-color-primary-light" fxLayout="column" fxLayoutAlign="center center">
                 <span class="mat-h2" ngClass.xs="mat-h5">
                     Remaining Space in Card Bucket
                 </span>
@@ -116,11 +91,11 @@
         </div>
 
     </div>
-    <div fxLayout="column" style="padding: 20px;">
+    <div fxLayout="column" style="padding: 20px;" class="background-color-primary-light">
 
 
 
-        <mat-card class="appointcard backgroud-color-bluelight">
+        <mat-card class="appointcard ">
             <mat-card fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
                 <div>
                     <mat-toolbar class="backgroud-color-white">
@@ -149,9 +124,7 @@
                 </div>
             </mat-card>
 
-
-
-            <div class="table-responsive">
+            <div class="table-responsive ">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                     <!-- Position Column -->
                     <ng-container matColumnDef="Position">

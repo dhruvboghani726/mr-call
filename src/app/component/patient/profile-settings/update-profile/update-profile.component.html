@@ -1,5 +1,6 @@
 <div>
-    <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}">
+    <mat-card class="backgroud-color-primary color-white" style="margin:15px" [ngStyle.xs]="{margin:'0px'}"
+        fxLayoutAlign="space-around">
         <div fxLayoul="column" fxFlex="90" fxFlex.lt.sm="100">
             <span class="menu-button mat-h2">
                 <mat-icon class="color-white">credit_card</mat-icon>
@@ -7,15 +8,15 @@
             </span>
         </div>
         <div fxLayoul="column" fxFlex="5" fxFlex.lt.sm="100">
-            <button routerLink="/patient/profile-settings" style="height: 30px; width:30px;"
+            <button routerLink="/mr/profile-settings" style="height: 30px; width:30px;"
                 fxFlexAlign="center space-between" mat-mini-fab color="backgroud-color-white"
                 aria-label="Example icon button with a menu icon">
                 <mat-icon class="color-primary" style="margin-right: 0px;margin-top: -10px;">clear</mat-icon>
             </button>
         </div>
     </mat-card>
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;">
-        <mat-card fxFlex="40" class="backgroud-color-bluelight" style="height: 650px; max-height: 650px;"
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;" fxLayoutAlign="space-around">
+        <mat-card fxFlex="40" class="background-color-primary-light" style="height: 650px; max-height: 650px;"
             [ngStyle.xs]="{  height: '650px;' }">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Personal Information</mat-card-title>
@@ -83,7 +84,7 @@
             </mat-card-content>
         </mat-card>
 
-        <mat-card fxFlex="60" class=" backgroud-color-bluelight">
+        <mat-card fxFlex="60" class="background-color-primary-light">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Professional Information</mat-card-title>
 
@@ -166,7 +167,7 @@
         </mat-card>
     </div>
 
-    <mat-card class=" backgroud-color-bluelight">
+    <mat-card class=" background-color-primary-light">
         <mat-card-header fxLayoutAlign="center center">
             <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Product List </mat-card-title>
 
@@ -266,16 +267,11 @@
 
 
                     <button mat-raised-button color="primary">
-                        <mat-icon>edit</mat-icon>Update
+                        <mat-icon class="color-white">edit</mat-icon>Update
                     </button>
 
                 </mat-card-actions>
             </form>
-
         </mat-card-content>
-
-
-
-
     </mat-card>
 </div>

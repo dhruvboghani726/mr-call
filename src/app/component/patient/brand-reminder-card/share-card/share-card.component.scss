@@ -1,62 +1,69 @@
-.appointmentcard{
-    height: auto;
-    max-height: auto;
-    width: 550px;
-    max-width: 550px;
-    border-radius: 5px;
-    background-color: #e8f3f4;
+.appointmentcard {
+  height: auto;
+  max-height: auto;
+  width: 550px;
+  max-width: 550px;
+  border-radius: 5px;
+
 }
-.appointmentcard-xs{
-    height: auto;
-    max-height: auto;
-    width: 94%;
-    max-width: auto;
-    border-radius: 5px;
-    background-color: #e8f3f4;
+
+.appointmentcard-xs {
+  height: auto;
+  max-height: auto;
+  width: 94%;
+  max-width: auto;
+  border-radius: 5px;
+
 }
-.threecard{
-    height: auto;
-    max-height: auto;
-    width: 100%;
-    max-width: auto;
-    border-radius: 5px;
-    background-color: #e8f3f4;
+
+.threecard {
+  height: auto;
+  max-height: auto;
+  width: 100%;
+  max-width: auto;
+  border-radius: 5px;
+
 }
-.twocard-xs{
-    width: auto !important; 
-    height: 550px !important;
-    max-height: 280px !important;
-   
-    border-radius: 8px;
-    background-color: #e8f3f4;
+
+.twocard-xs {
+  width: auto !important;
+  height: 550px !important;
+  max-height: 280px !important;
+
+  border-radius: 8px;
+
 }
-.twocard{
-   
-    width: 100%;
-    height: 557px;
-    max-height: 557px;
-    max-width: auto;
-    border-radius: 8px;
-    background-color: #e8f3f4;
+
+.twocard {
+
+  width: 100%;
+  height: 557px;
+  max-height: 557px;
+  max-width: auto;
+  border-radius: 8px;
+
 }
+
 .rectangle {
   height: 350px;
   width: 350px;
   background-color: white;
   border: 1px solid black;
- 
+
 }
-  .datepicker{
-    height: auto;
-    max-height: auto;
-    width:25%;
- 
-    border-radius: 5px;
-   
-  }
-  .example-form-field {
-    margin: 0 8px 16px 0;
-  }
+
+.datepicker {
+  height: auto;
+  max-height: auto;
+  width: 25%;
+
+  border-radius: 5px;
+
+}
+
+.example-form-field {
+  margin: 0 8px 16px 0;
+}
 
 //   ::ng-deep .mat-datepicker{
 //     width: 100px !important;
@@ -64,10 +71,9 @@
 // }
 // ::ng-deep .mat-select{
 //     width:250px !important;
-   
+
 //     font-size: 20px !important;   
 // }
 .example-full-width {
-    width: 100%;
-  }
-  
+  width: 100%;
+}

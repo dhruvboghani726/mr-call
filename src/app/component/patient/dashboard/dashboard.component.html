@@ -9,7 +9,7 @@
   <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-around stretch" fxLayout.xs="column" fxFlex>
 
     <div fxFlex="60%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutGap="15px" style="margin-right:0;">
-      <mat-card fxLayoutGap="20px" class="backgroud-color-gray" fxLayoutAlign="space-around stretch"
+      <mat-card fxLayoutGap="20px" class="background-color-primary-light" fxLayoutAlign="space-around stretch"
         fxLayout.xs="column" style="margin: 0px;">
         <mat-card class=" card-box-shadow" fxFlex="30" fxFlex.lt-sm="100">
           <div fxLayout="column" fxLayoutAlign="center center">
@@ -38,7 +38,7 @@
         </mat-card>
       </mat-card>
       <br>
-      <mat-card class="cardsizedash backgroud-color-gray" [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="15px">
+      <mat-card class="cardsizedash background-color-primary-light" [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="15px">
         <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Remaining Booking Ponits(0)</mat-card-title>
         <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="15px">
           <mat-card class="mat-h2" ngClass.xs="mat-h5"></mat-card>
@@ -47,14 +47,12 @@
         </mat-card-content>
       </mat-card>
       <br>
-      <mat-card class="cardsizedash contain-box-shadow backgroud-color-gray" [ngStyle.xs]="{ width: 'auto'}"
+      <mat-card class="cardsizedash contain-box-shadow background-color-primary-light" [ngStyle.xs]="{ width: 'auto'}"
         fxLayoutGap="15px">
         <div fxLayout="row" class="paddingTop">
           <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Important Notice</mat-card-title>
           <div class="fill"></div>
-          <mat-card-title><button mat-button mat-raised-button class="backgroud-color-primary color-white">View
-              All</button>
-          </mat-card-title>
+
         </div>
         <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="15px">
           <mat-card-content class="paddingLeft mat-h5" ngClass.xs="mat-h5">Comming Soon...</mat-card-content>
@@ -76,19 +74,16 @@
 
 
     <div fxFlex="38%" fxFlex.xs="100%" fxFlex.lt-sm="33%" fxFlex.lt-md="50%" fxLayout.xs="column">
-      <mat-card [ngStyle.xs]="{ width: 'auto'}" style="margin-right: 0px;">
+      <mat-card [ngStyle.xs]="{ width: 'auto'}" style="margin-right: 0px;" class="background-color-primary-light">
         <mat-card-title class="mat-h4" ngClass.xs="mat-h2">News Feeds</mat-card-title>
         <mat-card-content class="paddingLeft mat-h5" ngClass.xs="mat-h5">Comming Soon...</mat-card-content>
       </mat-card>
       <br>
-      <mat-card [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="20px">
+      <mat-card [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="20px" class="background-color-primary-light">
         <div fxLayout="row" class="paddingTop">
           <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Vacancy</mat-card-title>
           <div class="fill"></div>
-          <mat-card-title>
-            <mat-icon>chevron_left</mat-icon>
-            <mat-icon>chevron_right</mat-icon>
-          </mat-card-title>
+
         </div>
         <div class="fill"></div>
         <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="8px">

@@ -22,7 +22,7 @@
     <!-- mobile view end  -->
     <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column">
         <div fxLayout="column" fxFlex="65%" fxFlex.lt.sm="100">
-            <mat-card mat-elevation-z4 class="formcard-description">
+            <mat-card mat-elevation-z4 class="formcard-description background-color-primary-light">
                 <mat-card-header class="mat-h2  color-primary" ngClass.xs="mat-h3" fxLayoutAlign="center">
                     Add New M-Rep-Vacancy
                 </mat-card-header>
@@ -91,7 +91,7 @@
                             </mat-form-field>
                             <div fxLayoutAlign="center">
                                 <button mat-raised-button color="primary">
-                                    <mat-icon>add</mat-icon>Add Vacancy
+                                    <mat-icon class="color-white">add</mat-icon>Add Vacancy
                                 </button>
                             </div>
 
@@ -102,9 +102,9 @@
         </div>
         <div fxLayout="column" fxFlex="35%" fxFlex.lt.sm="100">
             <div fxLayout="row">
-                <mat-card mat-elevation-z4 class="formcard-description">
+                <mat-card mat-elevation-z4 class="formcard-description background-color-primary-light">
                     <span class="menu-button color-primary">
-                        <mat-icon>info</mat-icon>
+                        <mat-icon class="color-primary">info</mat-icon>
                         <span class="mat-h2" ngClass.xs="mat-h2"> Description:</span>
                     </span>
                     <span>
@@ -149,13 +149,13 @@
                         <input matInput [(ngModel)]="value" placeholder="Search">
                         <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
                             (click)="value=''">
-                            <mat-icon class="mat-18 color-primary">search</mat-icon>
+                            <mat-icon>search</mat-icon>
                         </button>
                     </mat-form-field>
                 </span>
             </div>
         </div>
-        <br>
+
         <div class="table-responsive">
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                 <!-- Position Column -->

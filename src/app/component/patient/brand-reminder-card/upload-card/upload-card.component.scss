@@ -3,7 +3,6 @@
     max-height: 410px;
 
     border-radius: 5px;
-    background-color: #f8f5e9;
 }
 
 .halfcard {
@@ -92,12 +91,6 @@
     color: grey;
 }
 
-.header-card {
-    box-shadow: 0 0px 18px 0 rgba(0, 0, 0, 0.1);
-    // background-color: linear-gradient(to right, #2AA7FF, to leftend, #ffffff);
-    background-color: #c9e3f5;
-
-}
 
 .cardsize {
     height: auto;
@@ -142,34 +135,13 @@
         overflow: hidden;
         vertical-align: middle;
     }
-}
 
-.mat-header-column-Position,
-.mat-header-column-Date,
-.mat-header-column-Doctorname,
-.mat-header-column-Hospital,
-.mat-header-column-Territory,
-.mat-header-column-Timeslot,
-.mat-header-column-Status,
-.mat-header-column-Cancel {
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #7661e2;
-    padding: 5px;
-}
+    .mat-header-cell {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 600;
+        background-color: #7661e2;
+        padding: 5px;
 
-::ng-deep th.mat-header-cell:last-of-type,
-td.mat-cell:last-of-type,
-td.mat-footer-cell:last-of-type {
-    padding-right: 5px !important;
-}
-
-::ng-deep th.mat-header-cell:first-of-type,
-td.mat-cell:first-of-type,
-td.mat-footer-cell:first-of-type {
-    padding-left: 5px !important;
-}
-
-td.mat-cell {
-    padding: 8px;
+    }
 }
