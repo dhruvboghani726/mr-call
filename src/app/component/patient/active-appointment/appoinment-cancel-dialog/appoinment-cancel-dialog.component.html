@@ -1,0 +1,10 @@
+<div fxLayoutGap="15px">
+    <mat-dialog-title class="mat-h2">Cancel Appointment</mat-dialog-title>
+    <div mat-dialog-content>Are you sure you want to cancel the Appointment</div>
+
+    <div mat-dialog-actions fxLayoutAlign="center center">
+        <button mat-button mat-raised-button color="warn" mat-dialog-close color="warn">Cancel</button>
+        <button mat-button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial>Confirm</button>
+
+    </div>
+</div>

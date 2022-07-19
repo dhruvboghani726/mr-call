@@ -1,0 +1,51 @@
+.smallroundicon {
+    height: 30px;
+    width: 30px;
+    font-size: 15px;
+  }
+  .mat-dialog-content {
+    overflow: unset;
+  }
+  .close-button {
+    float: right;
+    top: 0px;
+    right: 0px;
+  }
+  .close-icon {
+    height: 32px;
+    width: 32px;
+    font-size: 18px;
+  }
+  .capitalize2 {
+    text-transform: uppercase;
+  }
+  ::ng-deep  .timepicker-overlay {
+    z-index: 10000000 !important;
+  }
+  ::ng-deep  .timepicker-backdrop-overlay {
+    z-index: 10000000 !important;
+  }
+  // .mat-form-field--inline .mat-form-field:nth-child(n) {
+  //   margin-right: 6px;
+  // }
+  .half-width {
+    width: 47%;
+   
+    margin-left:  7px;
+  
+  }
+  .mat-dialog-actions {
+    // ...
+    &[align='end'] {
+      justify-content: center;
+    }
+  
+    &[align='center'] {
+      justify-content: center;
+    }
+  }
+  .button-icon-text {
+    width: unset;
+    margin: 0 0 0 8px;
+  }
+ 

@@ -1,0 +1,192 @@
+<mat-toolbar class="mat-elevation-z8" color="primary">
+  <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+    <mat-icon class="color-white" *ngIf="!sidenav.opened"> menu </mat-icon>
+    <mat-icon class="color-white" *ngIf="sidenav.opened"> close </mat-icon>
+  </button>
+
+  <div fxlayout="row" class="full-width">
+    <span fxHide.xs class="fileter-width">
+      <!-- <mat-form-field id="search" appearance="outline" style="width: 100%;">
+        <input matInput [(ngModel)]="value" placeholder="Search">
+        <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon class="mat-18 color-white">search</mat-icon>
+        </button>
+      </mat-form-field> -->
+    </span>
+
+
+    <!-- </div> -->
+    <div fxLayout="row" fxFlex="" fxLayoutAlign="end center" fxLayoutGap="15px">
+      <!-- Doctor patient name -->
+      <span fxHide.xs *ngIf="this.allDetalis || this.allDetalis!= null" fxLayout="row" fxLayoutAlign="end center"
+        fxFlex="50%">
+        <span [ngStyle]="{'margin':'0px 5px 0px 0px','fontSize':'16px' }" class=" color-primary">
+          John Doe
+        </span>
+      </span>
+      <!-- Status toggle -->
+      <span fxLayout="row" fxLayoutAlign="center center">
+        <span *ngIf="hide != true" fxLayout="column" class="mat-small">
+
+          <span [ngClass]="{
+      'color-warn'  :this.checkstatus == 'Online',
+      'color-secondary' :this.checkstatus == 'Offline' ,
+      'color-light-yellow' :this.checkstatus =='Away' ,
+      'color-danger' :this.checkstatus == 'InSession'
+      }">
+            <span style="font-weight:600;">{{this.checkstatus}}</span>
+
+          </span>
+        </span>
+
+      </span>
+      <!-- Notification button -->
+      <div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon class="color-white" matBadgeColor="warn" [matBadge]="1">notifications_active</mat-icon>
+        </button>
+      </div>
+      <div fxLayoutAlign="center center" [matMenuTriggerFor]="menu1">
+        <img src="https://source.unsplash.com/c_GmwfHBDzk/200x200" alt="User Image" class="avatar mat-elevation-z8"
+          style="max-width:30px; max-height: 30px; border-radius: 50%;  margin-top: 0px;">
+        <mat-icon class="color-white">arrow_drop_down</mat-icon>
+      </div>
+
+      <mat-menu #menu="matMenu" class="my-menu">
+
+        <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
+
+          <mat-nav-list>
+            <mat-list-item mat-line>
+              <p mat-line class="notificationline-hover">
+                Appointment is here
+              </p>
+
+              <p mat-line>
+
+                {{this.today | dateAgo }}
+              </p>
+
+            </mat-list-item>
+            <mat-divider></mat-divider>
+          </mat-nav-list>
+        </div>
+      </mat-menu>
+
+      <mat-menu #menu1="matMenu" class="my-menu">
+
+        <div class="notification-container" [ngClass.xs]="'notification-containermobile'">
+
+          <mat-nav-list>
+            <mat-list-item mat-line>
+              <p mat-line class="notificationline-hover">
+                Sanket Patel
+              </p>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <!-- <mat-list-item mat-line class="profile-dialog"> -->
+            <div fxLayout="row" fxLayoutAlign="start start" style="text-align: center;">
+              <span style="margin-left: 0.5rem; cursor:pointer;" routerLink="/mr/profile-settings">
+                <mat-icon>supervised_user_circle</mat-icon>
+                <p>profile</p>
+              </span>
+
+              &nbsp; &nbsp;&nbsp;
+              <span routerLink="/website/home">
+                <mat-icon> vpn_key</mat-icon>
+                <p>Logout</p>
+              </span>
+            </div>
+            <!-- </mat-list-item> -->
+
+
+          </mat-nav-list>
+        </div>
+      </mat-menu>
+    </div>
+  </div>
+
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+
+  <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8  card-background-color">
+    <h1 class="mat-h1 font-color-primary2">MR Call</h1>
+
+    <mat-divider></mat-divider>
+    <!-- {{this.mrinfo}} -->
+    <div *ngIf="this.mrinfo || this.mrinfo!= null" fxLayout="column" fxLayoutGap="10px">
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/book-an-appointment">
+        <mat-icon>assignment_turned_in</mat-icon>
+        <span>Book An Appointment</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/active-appoinment">
+        <mat-icon>assignment</mat-icon>
+        <span>Active Appointment</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/brand-reminder-card">
+        <mat-icon>credit_card</mat-icon>
+        <span>Brand Reminder Card</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/mydoctor-list">
+        <mat-icon> supervised_user_circle</mat-icon>
+        <span>My Doctor List</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/m-resp-vacancy">
+        <mat-icon>search</mat-icon>
+        <span>M-Reps Vacancy</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/profile-settings">
+        <mat-icon>account_circle</mat-icon>
+        <span>Profile Setting</span>
+      </button>
+
+
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button" routerLink="/website/home">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+
+
+
+    </div>
+
+    <div *ngIf="this.mrinfo == null" fxLayout="column" fxLayoutGap="10px">
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/dashboard">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/appointment">
+        <mat-icon>assignment_turned_in</mat-icon>
+        <span>Appointments</span>
+      </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/schedule-timing">
+        <mat-icon>access_time</mat-icon>
+        <span>Schedule Timings</span>
+      </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-button class="menu-button" routerLink="/website/home">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Logout</span>
+      </button>
+
+
+
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="contentside mat-elevation-z8 backgroud-color-white">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

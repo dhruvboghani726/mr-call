@@ -1,0 +1,483 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./custom-theme.scss";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Font-Inter, Montserrat, Arial;
+}
+
+// 
+// Want to make an appointment easily
+.backgroud-color-primary {
+  background-color: mat-color($primary, 0.95);
+}
+
+.backgroud-color-accent {
+  background-color: mat-color($accent);
+}
+
+.backgroud-color-bluelight {
+  background-color: #e6fdf8;
+}
+
+.backgroud-color-greylight {
+  background-color: #f8f5e9;
+}
+
+.color-primary {
+  color: mat-color($primary);
+  font-weight: 700;
+}
+
+.color-accent {
+  color: mat-color($accent);
+}
+
+.color-grey {
+  color: mat-color($mat-grey, 500);
+}
+
+// .backgroud-color-gray {
+//   background-color: #ececfd;
+//   ;
+// }
+
+.color-secondary {
+  color: mat-color($accent, 500);
+}
+
+.color-danger {
+  color: mat-color($mat-red, 900);
+}
+
+.color-yellow {
+  color: mat-color($mat-yellow, 900);
+}
+
+.color-light-yellow {
+  color: mat-color($mat-yellow, 500);
+}
+
+.color-green {
+  color: mat-color($mat-green, 500);
+}
+
+.backgroud-color-white {
+  background-color: $light-primary-text;
+}
+
+.color-white {
+  color: $light-primary-text;
+}
+
+.backgroud-color-teal {
+  background-color: mat-color($mat-teal, 400);
+}
+
+.backgroud-color-cyan {
+  background-color: mat-color($mat-blue, 400);
+}
+
+.backgroud-color-light-red {
+  background-color: mat-color($mat-red, 100);
+}
+
+.backgroud-color-dark {
+  background-color: mat-color($mat-grey, 800);
+}
+
+.background-color-primary-light {
+  background-color: mat-color($primary, 0.1);
+}
+
+.backgroud-color-white {
+  background-color: #ffffff;
+}
+
+.background-color-lightblue {
+  background-color: mat-color($accent, 0.25);
+}
+
+.online {
+  color: mat-color($mat-green, 900);
+}
+
+//common card size for login
+.cardsize {
+  height: 350px;
+  max-height: 350px;
+  width: 350px;
+  max-width: 350px;
+}
+
+//leftend side banner image
+.img-responsive {
+  display: block;
+  max-width: 85%;
+  height: auto;
+  margin: 60px 0 0px 22px;
+}
+
+//below css for curve
+.cardimage {
+  background-image: url("/assets/images/cardbackground.png");
+  background-repeat: no-repeat, repeat;
+  background-size: 380px 380px;
+}
+
+// .cardpadding {
+//   padding: 0px 16px 0px 16px;
+
+// }
+
+.margin-top {
+  margin-top: 5px;
+}
+
+// Button hover shadow
+.button-shadow:hover {
+  background-color: mat-color($primary);
+  color: $light-primary-text;
+  box-shadow: 0 9px 20px 0 mat-color($primary, 0.9);
+}
+
+
+
+.mat-display-1 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 36px;
+}
+
+.mat-display-2 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 34px;
+}
+
+.mat-display-3 {
+
+  font-size: 350 56px/56px Quicksand;
+  font-family: Quicksand;
+  letter-spacing: -0.02em;
+  margin: 0 0 25px;
+}
+
+.mat-display-4 {
+  font-size: 80px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: none;
+  line-height: 90px;
+}
+
+
+.mat-h1 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.mat-h2 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 20px;
+}
+
+.mat-h3,
+.mat-h4 {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 0;
+}
+
+// {
+//   margin: 0;
+//   font-size: 14px;
+// }
+
+//provide space
+
+.mat-h5 {
+  font-weight: 400;
+  margin: 0;
+  font-size: 14px !important;
+}
+
+.mat-h6 {
+  font-weight: 500 !important;
+  margin: 0;
+  font-size: 13px !important;
+}
+
+.padding-top {
+  padding: 10px;
+}
+
+
+//height of flexlayout
+.row-height {
+  min-height: 70vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.display-none {
+  display: none;
+}
+
+mat-icon {
+  cursor: pointer;
+  color: #87888a;
+}
+
+//Border of Speciality box
+.border-box {
+  border: 1px solid mat-color($primary);
+}
+
+//Payment page
+.strike {
+  text-decoration: line-through;
+  color: mat-color($primary);
+}
+
+//Video options check button
+.videooption {
+  .mat-button-toggle-checked {
+    color: $light-primary-text  !important;
+    background-color: mat-color($primary) !important;
+  }
+}
+
+// Button hover shadow
+.button-shadow:hover {
+  background-color: mat-color($primary, );
+  color: $light-primary-text;
+  box-shadow: 0 9px 20px 0 mat-color($accent, 0.9);
+}
+
+.contain-box-shadow {
+  box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+}
+
+//Sidenav Icon background color
+.sidenav-icon {
+  background-color: $light-primary-text  !important;
+}
+
+.sidenav-active .active-list-item {
+  color: $light-primary-text  !important;
+  background-color: mat-color($mat-grey, 800) !important;
+  /* Note: You could also use a custom theme */
+}
+
+.sidenav-active .active-list-item .contenttext mat-icon {
+  color: mat-color($mat-grey, 800) !important;
+}
+
+//Notificatios Line hover
+.notificationline-hover:hover {
+  color: mat-color($primary);
+  text-decoration: underline;
+}
+
+//Toggle button
+.toggle-color mat-button-toggle {
+  border: 1px mat-color($primary) solid !important;
+  background-color: mat-color($mat-grey, 200) !important;
+}
+
+.toggle-color .mat-button-toggle-checked {
+  color: $light-primary-text  !important;
+  border: 1px mat-color($primary) solid !important;
+  background-color: mat-color($primary) !important;
+}
+
+//Verticle Divider
+.mat-divider-vertical {
+  border-right-color: mat-color($primary) !important;
+}
+
+//Dashboard round color
+.await-round {
+  border: 4px solid mat-color($primary);
+  border-radius: 50%;
+  padding: 50px 50px;
+}
+
+.text-primary-hover:hover {
+  color: mat-color($primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+//Feedback star
+input.star-1:checked~label.star:before {
+  color: mat-color($primary) !important;
+}
+
+input.star:checked~label.star:before {
+  content: "";
+  color: mat-color($primary) !important;
+  transition: 0s;
+}
+
+input.star-5:checked~label.star:before {
+  text-shadow: 0 0 20px mat-color($primary) !important;
+}
+
+.rating label.star {
+  padding: 4px !important;
+  font-size: 25px !important;
+}
+
+.rating label.star:hover {
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+//Snackbar
+.red-snackbar {
+  background: mat-color($mat-red, 500);
+  color: $light-primary-text;
+}
+
+.green-snackbar {
+  background: mat-color($mat-green, 500);
+  color: $light-primary-text;
+}
+
+//Time picker
+.timepicker .timepicker__header {
+  background-color: mat-color($primary) !important;
+}
+
+.timepicker .clock-face__clock-hand {
+  background-color: mat-color($primary) !important;
+}
+
+.timepicker .clock-face__clock-hand ::after {
+  background-color: mat-color($primary) !important;
+}
+
+.timepicker .clock-face__clock-hand ::before {
+  border-color: mat-color($primary) !important;
+}
+
+.timepicker .clock-face__number>span.active {
+  background-color: mat-color($primary) !important;
+}
+
+.timepicker button:not(.timepicker-dial__item) {
+  color: mat-color($primary) !important;
+}
+
+//Personal data doctor profile
+.doctor-profile-mat-chip {
+  background-color: mat-color($primary) !important;
+  color: $light-primary-text  !important;
+}
+
+.chip-clear-color {
+  color: $light-primary-text  !important;
+}
+
+.border-grey {
+  border-color: mat-color($mat-grey, 500);
+}
+
+.menu-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  font-weight: 600;
+
+  mat-icon {
+    margin-right: 8px;
+  }
+}
+
+.cursor-auto {
+  cursor: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+mat-divider {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-second-backgoung-color {
+  background-color: #c9e3f5;
+}
+
+.backgroud-color-whitered {
+  background-color: #e8f3f4;
+}
+
+.serach-box {
+  background-color: #fbfdff;
+  float: center;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 2px solid white;
+  float: left;
+  width: 100%;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.search-icon {
+  margin-left: -10px;
+  margin-top: 27px;
+  color: grey;
+}
+
+
+.font-color-primary2 {
+  color: #7661e2;
+}
+
+.secondary-color {
+  color: #87888a;
+}
+
+.card-background-color {
+  background-color: #fbfdff;
+}

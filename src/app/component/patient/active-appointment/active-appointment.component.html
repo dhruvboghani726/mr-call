@@ -1,0 +1,131 @@
+<div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="15px" fxFlexAlign="center">
+    <mat-card fxHide.xs class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
+
+        <span class="menu-button mat-h2" fxFlex="26%" fxFlex.lt.sm="100">
+            <mat-icon class="color-white">assignment</mat-icon>
+            <span class="mat-h2" ngClass.xs="mat-h3">Active Appointment</span>
+        </span>
+    </mat-card>
+
+    <!-- Mobile view  -->
+
+    <mat-card class="backgroud-color-primary color-white" fxLayout="row" fxFlex.xs="100%" fxHide.sm fxHide.gt-sm
+        [ngStyle.xs]="{margin:'0px'}">
+        <div fxlayout="row">
+            <div fxlayout="column" fxHide.sm fxHide.gt-sm>
+                <span class="menu-button mat-h2" fxFlex.lt.sm="100" fxLayoutAlign="space-between end">
+                    <span class="mat-h2" ngClass.xs="mat-h3">Active Appointment</span>
+                </span>
+            </div>
+        </div>
+    </mat-card>
+    <!-- mobile view end  -->
+
+    <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="20px">
+        <mat-card class="background-color-primary-light">
+            <span class="menu-button color-primary">
+                <span class="mat-h2" ngClass.xs="mat-h2">
+                    <mat-icon class="color-primary">info</mat-icon> Notes: <span style="font-weight: 500;">Active
+                        appoinment show below arre your
+                        today's &
+                        tommorrow's appoinment</span>
+                </span>&nbsp;
+            </span>
+            <br>
+            <!-- <div fxLayout="row" class="loram"> -->
+            <p ngClass.xs="mat-h3">
+                You can cancel tomorrow's appointment from 3:00 P. M. to 9:00 A. M. (For eg, Appointment taken for
+                Tuesday can be cancelled from 3 P. M. Monday to 9 A. M. Tuesday) <br>
+                If you cancel today's appointment after 9 A. M. , You must select reason from drop-down menu. <br>Our
+                team
+                will verify the reason and admin team will accept/reject the Cancellation request.<br>
+                (If cancelation request is accepted by our team, you can rebook appointment in next available time slot)
+            </p>
+        </mat-card>
+    </div>
+
+    <mat-card class="backgroud-color-gray">
+        <div fxLayout="row" fxLayout.xs="column">
+            <div fxLayoul="column " fxFlex="70" fxFlex.xs="100%" fxFlex.sm="33%" fxFlexAlign="center">
+                <mat-form-field appearance="outline">
+                    <mat-label>Show Entry</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value">
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <!-- <mat-toolbar class="backgroud-color-white"> -->
+                <span class="fileter-width">
+                    <mat-form-field appearance="outline">
+                        <input matInput [(ngModel)]="value" placeholder="Search">
+                        <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
+                            (click)="value=''">
+                            <mat-icon class="mat-18 ">search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </span>
+                <!-- </mat-toolbar> -->
+            </div>
+        </div>
+        <br>
+        <div class="table-responsive">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <!-- Position Column -->
+                <ng-container matColumnDef="Position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Position}} </td>
+                </ng-container>
+
+                <!-- Date Column -->
+                <ng-container matColumnDef="Date">
+                    <th mat-header-cell *matHeaderCellDef> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+                </ng-container>
+
+                <!--  Doctor Name Column-->
+                <ng-container matColumnDef="Doctorname">
+                    <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Doctorname}} </td>
+                </ng-container>
+
+                <!-- Hospital Column -->
+                <ng-container matColumnDef="Hospital">
+                    <th mat-header-cell *matHeaderCellDef> Hospital </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Hospital}} </td>
+                </ng-container>
+                <!-- Territory Column -->
+                <ng-container matColumnDef="Territory">
+                    <th mat-header-cell *matHeaderCellDef> Territory </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Territory}} </td>
+                </ng-container>
+                <!-- Time Slot Column -->
+                <ng-container matColumnDef="Timeslot">
+                    <th mat-header-cell *matHeaderCellDef> Time Slot </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Timeslot}} </td>
+                </ng-container>
+                <!-- Status Column -->
+                <ng-container matColumnDef="Status">
+                    <th mat-header-cell *matHeaderCellDef> Status </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Status}} </td>
+                </ng-container>
+                <!-- Hospital Column -->
+                <ng-container matColumnDef="Cancel">
+                    <th mat-header-cell *matHeaderCellDef> Reason to Cancel </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Cancel}} </td>
+                </ng-container>
+                <ng-container matColumnDef="Action">
+                    <th mat-header-cell *matHeaderCellDef> Action </th>
+                    <td mat-cell *matCellDef="let element">
+                        <button mat-button mat-raised-button color="primary" (click)="opendialog()">Cancel
+                            Appointment</button>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </mat-card>
+</div>

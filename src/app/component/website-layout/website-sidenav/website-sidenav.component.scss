@@ -1,0 +1,98 @@
+a {
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    overflow: auto;
+    padding: 10px;
+}
+
+.header-xs {
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    overflow: auto;
+    padding: 10px;
+    top: -0.5%;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 89%;
+    overflow: auto;
+    top: 7%;
+}
+
+.content1 {
+    position: absolute;
+    width: 100%;
+    height: 81%;
+    overflow: auto;
+    top: 19%;
+}
+
+.footer {
+    bottom: 0;
+    width: 100%;
+    margin: 0px;
+}
+
+.mat-h2 {
+    font-weight: 600;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.btn {
+    padding: 5px 20px;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+
+.padding-top {
+    padding: 20px;
+}
+
+.sidenav-button {
+    border-radius: 2px;
+}
+
+.mat-sidenav-container {
+    height: 100%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.scrollContent {
+    min-height: 1000px;
+}
+
+.getstarted {
+    padding: 5px 20px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    cursor: auto;
+}
+
+.backimg {
+    // position: absolute;
+    // content: "";
+    // margin-left: -110px;
+    // margin-top: 30px;
+
+    background-image: url("/assets/images/websitehome/RECTANGLE-11.png");
+    // background-repeat: no-repeat;
+
+}
+
+.app-sidenav {
+    width: 190px;
+}

@@ -1,0 +1,70 @@
+<div class="card-background-color" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="15px">
+    <mat-card class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}" style="margin:0px;">
+        <span class="menu-button mat-h2">
+
+            <mat-icon class="color-white">access_time</mat-icon>
+            <span class="mat-h2" ngClass.xs="mat-h3">Schedule Timings</span>
+        </span>
+    </mat-card>
+    <div fxLayout="column" fxLayoutAlign="center" style="padding: 12px;"  fxLayoutGap="15px">
+        <div fxLayout="column" fxLayoutGap="5px">
+            <span class="mat-h4" ngClass.xs="mat-h2">Timing Slot Duration</span>
+
+            <mat-form-field appearance="outline" [ngStyle.xs]="{'width': '100%;'}" style="width: 20%;
+        font-weight: 500;">
+                <mat-label>Select Slot Duration</mat-label>
+                <mat-select (valueChange)="changeValue($event)" [disableOptionCentering]="true" #select1
+                    placeholder="Auto Focus">
+                    <mat-select-filter *ngIf="select1.focused" [array]="slotDuration"
+                        (filteredReturn)="filteredList =$event"></mat-select-filter>
+                    <mat-option *ngFor="let item of filteredList" [value]="item">
+                        {{item}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px" style="padding:0px ;">
+
+            <button mat-button mat-raised-button [color]="this.selected == 7 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(7)" fxFlex="12">SUNDAY</button>
+            <button mat-button mat-raised-button [color]="this.selected == 1 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(1)" fxFlex="13">MONDAY</button>
+            <button mat-button mat-raised-button [color]="this.selected == 2 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(2)" fxFlex="13">TUESDAY</button>
+            <button mat-button mat-raised-button [color]="this.selected == 3 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(3)" fxFlex="17">WEDNESDAY</button>
+            <button mat-button mat-raised-button [color]="this.selected == 4 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(4)" fxFlex="13">THURSDAY</button>
+            <button mat-button mat-raised-button [color]="this.selected == 5 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(5)" fxFlex="13">FRIDAY</button>
+            <button mat-button mat-raised-button [color]="this.selected == 6 ? 'primary' : 'tab_unselected'"
+                (click)="changeSelectedWeekDay(6)" fxFlex="13">SATURDAY</button>
+
+        </div>
+        <div fxLayout="row"  fxLayoutGap="10px" fxLayoutAlign="space-between center" >
+            <span class="mat-h4"   ngClass.xs="mat-h2">Timing Slots</span>
+            <span >
+                 <button  (click)="openDialog('Add',1,'Sunday')"  mat-button color="primary" class="menu-button">
+                <mat-icon color="primary">add</mat-icon>
+                <span>Add Slot</span>
+            </button></span>
+           
+           
+
+        </div>
+        <div fxLayout="row" fxLayout.xs="column"  >
+          
+           
+            <span  class="mat-h3" *ngIf="options == null" ngClass.xs="mat-h4"> Not Available</span>
+            <mat-chip-list *ngIf="options">
+                <mat-chip color="primary" #chipList *ngFor="let option of options" [removable]="true"
+                (removed)="removeOption(option)">{{option.fromTimeSlot}} - {{option.toTimeSlot}}
+                
+
+                <mat-icon matChipRemove>cancel</mat-icon>
+                </mat-chip>
+                </mat-chip-list>
+       
+        </div>
+    </div>
+</div>

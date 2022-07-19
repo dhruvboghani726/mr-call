@@ -1,0 +1,70 @@
+.appointmentcard {
+  height: auto;
+  max-height: auto;
+  width: 550px;
+  max-width: 550px;
+  border-radius: 5px;
+
+}
+
+.appointmentcard-xs {
+  height: auto;
+  max-height: auto;
+  width: 94%;
+  max-width: auto;
+  border-radius: 5px;
+
+}
+
+.threecard {
+  height: auto;
+  max-height: auto;
+  width: 100%;
+  max-width: auto;
+  border-radius: 5px;
+
+}
+
+.twocard-xs {
+  width: 100% !important;
+  height: auto !important;
+  max-height: auto !important;
+
+  border-radius: 8px;
+
+}
+
+.twocard {
+  // width: 30%;
+  // height: auto;
+  // max-height: auto;
+  // max-width: 30%;
+  border-radius: 8px;
+
+}
+
+.datepicker {
+  height: auto;
+  max-height: auto;
+  width: 25%;
+
+  border-radius: 5px;
+
+}
+
+.example-form-field {
+  margin: 0 8px 16px 0;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.timezone {
+  margin-top: 10px;
+}
+
+.book-app-btn {
+  font-weight: 600;
+  margin-top: 10px;
+}

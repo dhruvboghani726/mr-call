@@ -1,0 +1,75 @@
+<mat-sidenav-container class="backgroud-color-white">
+  <!-- Sidenav for mobile -->
+  <mat-sidenav #sidenav class="app-sidenav">
+    <mat-nav-list>
+      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="30px">
+        <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Home</a>
+        <a routerLink="/website/home" class="mat-h2 color-secondary cardpadding">Doctor</a>
+        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Pharma Resp.</a>
+        <a routerLink="/website/about-us" class="mat-h2 color-secondary cardpadding">Vacancy / Job</a>
+
+        <button mat-raised-button color="primary" class="btn button-shadow mat-h2" (click)=gotologin()>
+          Login / Register</button>
+      </div>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- sidenav for desktop -->
+  <mat-sidenav-content>
+    <div fxLayout="row" class="backimg header header-xs">
+      <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutAlign.lt-md="space-around center"
+        fxLayoutAlign.lt-sm="space-around" fxLayoutGap="20px" fxLayoutGap.lt-sm="13px" fxFlex="grow">
+        <div fxLayout="row" fxHide.gt-md fxShow.lt-md fxHide>
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-md="20" fxHide.gt-md fxShow.lt-md fxHide>
+            <button mat-icon-button (click)="sidenav.toggle()" class="color-primary sidenav-button" color="accent">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <!-- class="logo" -->
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-sm="70">
+            <h1 class="mat-h1 color-primary" style="margin-bottom: 0px;">MR Call</h1>
+          </div>
+        </div>
+
+        <!-- <div fxLayout="row" fxLayoutAlign="end end" fxFlex="47" fxHide.lt-md> -->
+        <!-- <div class="backimg"> -->
+        <div fxHide.xs fxLayout="row" fxL ayoutAlign="center center" fxFlex="15" fxFlex.lt-sm="30">
+          <h1 class="mat-h1 color-primary" style="margin: 0px;">MR Call</h1>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex="50" fxHide.lt-md>
+          <ul fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="40px">
+            <a fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Home</a>
+
+            <a fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Doctor</a>
+
+            <a fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Pharma Resp.</a>
+
+            <a fxLayout="row" fxLayoutAlign="center center"
+              class="mat-h2 color-secondary text-center cursor-pointer">Vacancy / Job</a>
+
+
+
+
+          </ul>
+        </div>
+        <!-- button for desktop -->
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="row" fxLayoutAlign="center center" fxFlex="30"
+          fxFlex.lt-md="40" fxFlex.lt-sm="25" fxLayoutGap="10px" fxHide.lt-sm>
+          <button mat-raised-button color="primary" class="btn button-shadow mat-h2" (click)=gotologin()>
+            Login / Register</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content for website -->
+    <div class="content-router content backgroud-color-secondary" #main>
+      <!-- class="scrollContent" -->
+      <router-outlet></router-outlet>
+
+      <app-footer></app-footer>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

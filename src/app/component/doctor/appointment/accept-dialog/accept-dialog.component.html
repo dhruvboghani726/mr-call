@@ -1,0 +1,22 @@
+<div class="color-white background-color-primary cardpadding">
+    <div fxLayout="row" fxLayoutAlign="space-between">
+
+        <p class="mat-title color-secondary">Confirmation for Appointment
+        </p>
+        <mat-icon class="cursor-pointer color-secondary" mat-dialog-close>close</mat-icon>
+    </div>
+</div>
+
+<div class="cardpadding" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <p class="mat-h2">Are you sure want to {{this.local_data.actiondialog}} <span class="bold-text">
+            </span>?</p>
+    </div>
+
+    <!-- Buttons -->
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <button mat-raised-button color="warn" mat-dialog-close>No</button>
+        <button mat-raised-button color="primary" mat-dialdialog-close (click)="actionofDialog()">Yes</button>
+
+    </div>
+</div>

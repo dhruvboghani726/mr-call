@@ -1,0 +1,42 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$mat-mr-primary: (
+  100: #7661e2,
+  contrast: (100: white,
+  )
+);
+
+$mat-mr-accent: (
+  100: #1B3C74,
+  contrast: (100: white,
+  )
+);
+
+
+$primary: mat-palette($mat-mr-primary, 100, 100);
+$accent: mat-palette($mat-mr-accent, 100, 100);
+$warn: mat-palette($mat-red);
+
+
+$app-theme: mat-light-theme($primary, $accent, $warn);
+
+@include angular-material-theme($app-theme);
+
+$custom-typography: mat-typography-config($font-family: 'Quicksand',
+    $headline: mat-typography-level(26px, 44px, 600),
+
+    $body-1: mat-typography-level(14px, 22px, 500),
+
+  );
+@include mat-base-typography($custom-typography);
+// Override typography for a specific Angular Material components.
+//  #2AA7FF blue,FFB200 orange,4CD080 green,FF684C red,1B3C74 darkblue
+@include mat-checkbox-typography($custom-typography);
+
+@include mat-form-field-typography($custom-typography);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include mat-core($custom-typography);

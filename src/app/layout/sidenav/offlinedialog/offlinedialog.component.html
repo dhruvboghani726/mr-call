@@ -1,0 +1,20 @@
+<button mat-mini-fab color="primary" class="close-button close-icon" (click)="offlineDay()">
+    <mat-icon class="close-icon">close</mat-icon>
+</button>
+
+<div fxLayout="column" fxLayoutAlign="center center">
+    <span>
+        You have <span class="color-primary">{{ this.massage}}
+        </span> patient assigned in queue
+    </span>
+    <span>
+        Do You still want to offline
+    </span>
+    <!-- Yes and no button -->
+    <div mat-dialog-actions>
+
+        <button mat-raised-button color="primary" (click)="assignNewdoctor()">Yes</button>
+        <button mat-raised-button class="backgroud-color-dark color-white" (click)="offlineDay()"
+           >No</button>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+.remindercard {
+    height: 410px;
+    max-height: 410px;
+
+    border-radius: 5px;
+}
+
+.halfcard {
+    // height: 175px;
+    // max-height: 175px;
+    height: 181px;
+    max-height: 181px;
+
+    border-radius: 5px;
+
+}
+
+.appointcard {
+    height: 350px;
+    max-height: 350px;
+
+    border-radius: 5px;
+
+}
+
+.mat-form-fieldhalf {
+    width: 25% !important;
+    font-weight: 500;
+}
+
+.mat-form-field {
+    width: 100%;
+    font-weight: 500;
+}
+
+.mat-input-element {
+    font-size: medium;
+    font-weight: 200;
+}
+
+#fileInput {
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+}
+
+.mat-toolbar-single-row {
+    height: auto !important;
+    background: transparent;
+    padding: 0;
+}
+
+.mat-toolbar-single-row button {
+    width: 100px;
+}
+
+.mat-header-cell {
+    background: #7661e2;
+    color: white;
+}
+
+.serach-box {
+    background-color: #2AA7FF;
+    float: center;
+    padding: 6px 10px;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 100%;
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.search-icon {
+    margin-left: -10px;
+    margin-top: 27px;
+    color: grey;
+}
+
+
+.cardsize {
+    height: auto;
+    max-height: auto;
+    width: auto;
+    max-width: auto;
+}
+
+.dr-profile {
+    height: auto;
+    width: auto;
+}
+
+
+.table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+
+    .mat-table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        display: table;
+        border-collapse: collapse;
+        margin: 0px;
+    }
+
+    .mat-row,
+    .mat-header-row {
+        display: table-row;
+    }
+
+    .mat-cell,
+    .mat-header-cell {
+        word-wrap: initial;
+        display: table-cell;
+        padding: 0px 5px;
+        line-break: unset;
+        width: auto;
+        white-space: nowrap;
+        overflow: hidden;
+        vertical-align: middle;
+    }
+
+    .mat-header-cell {
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: 600;
+        background-color: #7661e2;
+        padding: 5px;
+
+    }
+}
