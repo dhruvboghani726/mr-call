@@ -1,16 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-interface Food {
-  value: string;
-  viewValue: string;
-}
 
-interface Food {
-  value: string;
-  viewValue: string;
-}
 export interface PeriodicElement {
   Position: number;
-
   Doctorname: string;
   Hospital: string;
   Degree: string;
@@ -28,16 +19,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class MydoctorListComponent implements OnInit {
   value
-  foods: Food[] = [
-    { value: 'steak-0', viewValue: 'All' },
-    { value: 'pizza-1', viewValue: 'Any One ' },
-    { value: 'tacos-2', viewValue: 'Multiple' },
-  ];
-  entrys: Food[] = [
-    { value: 'steak-0', viewValue: '10' },
-    { value: 'pizza-1', viewValue: '20' },
-    { value: 'tacos-2', viewValue: '30' },
-  ];
   displayedColumns: string[] = ['Position', 'Doctorname', 'Hospital', 'Degree', 'Specialization', 'action',];
   dataSource = ELEMENT_DATA;
   constructor() { }
