@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-book-an-appointment',
   templateUrl: './book-an-appointment.component.html',
@@ -8,22 +7,34 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class BookAnAppointmentComponent implements OnInit {
   value
   // disableSelect = new FormControl(false);
-  currenttime = new Date();
-  hour = 0;
+  currenttime;
+  hour: number;
+  hourInterval: any;
   constructor() {
   }
 
 
   ngOnInit(): void {
-
-
     console.log(this.currenttime);
-    this.currenttime.setDate(this.currenttime.getDate() + 1)
+    // this.currenttime.setDate(this.currenttime.getDate() + 1)
 
-    this.hour = this.currenttime.getHours();
-    console.log(this.currenttime.getHours())
+
+
+   this.hourInterval = setInterval(() => {
+      this.currenttime = new Date();
+      this.hour = this.currenttime.getHours();
+      console.log(this.currenttime.getHours());
+      if (this.hour > 14 || this.hour < 9) {
+        this.hour = this.currenttime.getHours();
+        console.log('show')
+      }
+    }, 5000);
   }
 
+  ngOnDestroy() {
+    clearInterval(this.hourInterval);
+    console.log('hide')
+  }
 
   Bookappoinment() {
 
