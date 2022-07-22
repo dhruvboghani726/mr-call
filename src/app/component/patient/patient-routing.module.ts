@@ -21,6 +21,7 @@ import { MRepsVacancyComponent } from './m-reps-vacancy/m-reps-vacancy.component
 import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { AppoinmentReciptComponent } from './appoinment-recipt/appoinment-recipt.component';
 
 
 
@@ -55,6 +56,9 @@ import { AppointmentComponent } from './appointment/appointment.component';
           { path: 'm-resp-vacancy', component: MRepsVacancyComponent, pathMatch: 'full' },
           // { path: 'mr-appoinment', component: AppointmentComponent, pathMatch: 'full' },
 
+
+
+          { path: 'appoinment-recipt', component: AppoinmentReciptComponent, pathMatch: 'full' },
 
           {
             path: 'brand-reminder-card', children: [

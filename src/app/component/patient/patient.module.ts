@@ -28,6 +28,7 @@ import { GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig, } from
 import { MatTabsModule } from '@angular/material/tabs';
 import { AppComponent } from '~app/app.component';
 import { AppoinmentCancelDialogComponent } from './active-appointment/appoinment-cancel-dialog/appoinment-cancel-dialog.component';
+import { AppoinmentReciptComponent } from './appoinment-recipt/appoinment-recipt.component';
 
 // import { StripeModule } from "stripe-angular"
 
@@ -52,6 +53,7 @@ import { AppoinmentCancelDialogComponent } from './active-appointment/appoinment
     LoginComponent,
     ForgotPasswordComponent,
     AppoinmentCancelDialogComponent,
+    AppoinmentReciptComponent,
 
   ],
   imports: [
