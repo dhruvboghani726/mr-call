@@ -68,3 +68,31 @@
   font-weight: 600;
   margin-top: 10px;
 }
+
+
+.card-padding-dashboard{
+  padding: 0px;
+}
+
+
+.total-dr-list{
+  padding: 0px 7px;
+}
+
+.twocard .mat-h2, .twocard .mat-h3{
+  font-weight: 800;
+}
+
+.meeting-card mat-icon{
+  font-size: 30px;
+}
+
+mat-toolbar-single-row {
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  white-space: nowrap;
+}

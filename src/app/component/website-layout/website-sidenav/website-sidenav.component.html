@@ -20,20 +20,20 @@
       <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="start center" fxLayoutAlign.lt-md="space-around center"
         fxLayoutAlign.lt-sm="space-around" fxLayoutGap="20px" fxLayoutGap.lt-sm="13px" fxFlex="grow">
         <div fxLayout="row" fxHide.gt-md fxShow.lt-md fxHide>
-          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-md="20" fxHide.gt-md fxShow.lt-md fxHide>
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-md="20" fxHide.gt-md fxShow.lt-md fxHide fxFlex.sm="20">
             <button mat-icon-button (click)="sidenav.toggle()" class="color-primary sidenav-button" color="accent">
               <mat-icon>menu</mat-icon>
             </button>
           </div>
           <!-- class="logo" -->
-          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-sm="70">
+          <div fxLayout="row" fxLayoutAlign="center center" fxFlex.lt-sm="70" fxHide.sm>
             <h1 class="mat-h1 color-primary" style="margin-bottom: 0px;">MR Call</h1>
           </div>
         </div>
 
         <!-- <div fxLayout="row" fxLayoutAlign="end end" fxFlex="47" fxHide.lt-md> -->
         <!-- <div class="backimg"> -->
-        <div fxHide.xs fxLayout="row" fxL ayoutAlign="center center" fxFlex="15" fxFlex.lt-sm="30">
+        <div fxHide.xs fxLayout="row" fxLayoutAlign="center center" fxFlex="15" fxFlex.lt-sm="30" fxFlex.sm="55">
           <h1 class="mat-h1 color-primary" style="margin: 0px;">MR Call</h1>
         </div>
         <div fxLayout="row" fxLayoutAlign="center stretch" fxFlex="50" fxHide.lt-md>
@@ -57,7 +57,7 @@
         </div>
         <!-- button for desktop -->
         <div fxLayout="row" fxLayout.lt-md="column" fxLayout.lt-sm="row" fxLayoutAlign="center center" fxFlex="30"
-          fxFlex.lt-md="40" fxFlex.lt-sm="25" fxLayoutGap="10px" fxHide.lt-sm>
+          fxFlex.lt-md="40" fxFlex.lt-sm="25" fxLayoutGap="10px" fxHide.lt-sm fxFlex.sm="20">
           <button mat-raised-button color="primary" class="btn button-shadow mat-h2" (click)=gotologin()>
             Login / Register</button>
         </div>
@@ -65,7 +65,7 @@
     </div>
 
     <!-- Content for website -->
-    <div class="content-router content backgroud-color-secondary" #main>
+    <div class="content-router content backgroud-color-secondary" #main ngClass.sm="content-sm">
       <!-- class="scrollContent" -->
       <router-outlet></router-outlet>
 

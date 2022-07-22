@@ -4,6 +4,7 @@
     <mat-icon class="color-white" *ngIf="sidenav.opened"> close </mat-icon>
   </button>
 
+
   <div fxlayout="row" class="full-width">
     <span fxHide.xs class="fileter-width">
       <!-- <mat-form-field id="search" appearance="outline" style="width: 100%;">
@@ -150,7 +151,7 @@
 
       <mat-divider></mat-divider>
 
-      <button mat-button class="menu-button" routerLink="/website/home">
+      <button mat-button class="menu-button" (click)="opendialogLogout()">
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>

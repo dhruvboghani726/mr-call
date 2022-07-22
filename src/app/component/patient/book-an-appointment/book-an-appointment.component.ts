@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-book-an-appointment',
   templateUrl: './book-an-appointment.component.html',
@@ -6,33 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookAnAppointmentComponent implements OnInit {
   value
-  // disableSelect = new FormControl(false);
-  currenttime = new Date();
-  hour: number;
-  constructor() {
+  currenttime;
+  hour: any;
+  minDate = new Date();
+  interval;
+  timeget = false;
+
+  constructor(private router: Router,) {
   }
 
 
   ngOnInit(): void {
-    console.log(this.currenttime);
-    this.currenttime.setDate(this.currenttime.getDate() + 1)
+    this.interval = setInterval(() => {
+      this.currenttime = new Date();
+      // console.log(this.currenttime);
+      this.currenttime.setDate(this.currenttime.getDate() + 1)
 
-    this.hour = this.currenttime.getHours();
-    console.log(this.currenttime.getHours());
+      this.hour = this.currenttime.getHours();
+      // console.log(this.currenttime.getHours());
 
-
-    setInterval(() => {
 
       if (this.hour > 14 || this.hour < 9) {
-        this.hour = this.currenttime.getHours();
-        console.log('show')
+        this.timeget = true
+
+        // console.log('show');
+      }
+      else if (this.hour < 15) {
+        this.timeget = false
       }
     }, 5000);
-  }
-
-  ngOnDestroy() {
-    clearInterval(this.hour);
-    console.log('hide')
   }
 
   Bookappoinment() {

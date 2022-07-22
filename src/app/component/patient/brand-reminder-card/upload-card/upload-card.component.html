@@ -17,7 +17,7 @@
     <div fxLayout="row" fxLayoutGap="15px" fxLayout.xs="column" fxLayoutGap="15px" fxLayoutAlign="space-around"
         [ngStyle.xs]="{  padding:'10'}">
 
-        <mat-card fxFlex="70" class="remindercard background-color-primary-light">
+        <mat-card fxFlex="70" class="remindercard background-color-primary-light" ngClass.sm="remindercard-sm">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h1">Add New Brand Reminder Card</mat-card-title>
 
@@ -32,7 +32,7 @@
                     </mat-form-field>
 
                     <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
+                        fxLayoutAlign="flex-start" fxLayout.sm="column">
 
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
@@ -95,10 +95,10 @@
 
 
 
-        <mat-card class="appointcard ">
+        <mat-card class="appointcard " ngClass.sm="appointcard-sm">
             <mat-card fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
-                <div>
-                    <mat-toolbar class="backgroud-color-white">
+                <div fxFlex.sm="45">
+                    <!-- <mat-toolbar class="backgroud-color-white">
                         <mat-form-field>
                             <mat-label>Show Entry</mat-label>
                             <mat-select>
@@ -107,13 +107,13 @@
                                 <mat-option value="30">Surat</mat-option>
                             </mat-select>
                         </mat-form-field>
-                    </mat-toolbar>
+                    </mat-toolbar> -->
                 </div>
-                <div>
+                <div fxFlex.sm="50">
                     <mat-toolbar class="backgroud-color-white">
                         <span class="fileter-width">
                             <mat-form-field>
-                                <input matInput placeholder="Get Doctor List">
+                                <input matInput placeholder="Search">
                                 <button [ngStyle.xs]="{ width: 'auto'}" class="backgroud-color-white" mat-button
                                     class="remove-search" matSuffix mat-icon-button aria-label="Clear">
                                     <mat-icon class="mat-18">search</mat-icon>
@@ -173,6 +173,11 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
             </div>
+            <mat-paginator [length]="100"
+              [pageSize]="5"
+              [pageSizeOptions]="[5, 10, 25, 100]"
+              aria-label="Select page of periodic elements">
+            </mat-paginator>
         </mat-card>
     </div>
 </div>

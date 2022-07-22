@@ -6,10 +6,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LogoutComponent } from './layout/sidenav/logout/logout.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogoutComponent
   ],
   imports: [
 

@@ -15,6 +15,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
 import { NavigationEnd } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { LogoutComponent } from './logout/logout.component';
 
 /*
  *Sidenav component 
@@ -31,6 +32,7 @@ import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
  *Reference link:
  */
 export class SidenavComponent implements OnDestroy {
+
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
   @Input()
@@ -240,7 +242,7 @@ export class SidenavComponent implements OnDestroy {
   }
   ngAfterViewInit() {
     this.observer
-      .observe(['(max-width: 800px)'])
+      .observe(['(max-width: 960px)'])
       .pipe(delay(1), untilDestroyed(this))
       .subscribe((res) => {
         console.log(res)
@@ -264,6 +266,14 @@ export class SidenavComponent implements OnDestroy {
           this.sidenav.close();
         }
       });
+  }
+
+  opendialogLogout() {
+    const dialogRef = this.dialog.open(LogoutComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
   }
 }
 

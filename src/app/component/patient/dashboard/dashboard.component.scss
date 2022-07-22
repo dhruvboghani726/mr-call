@@ -8,12 +8,22 @@
   // box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
 }
 
+
 .card-box-shadow {
   height: auto;
-  max-height: 110px;
+  max-height: auto;
   width: auto;
   max-width: auto;
   // box-shadow: 0 10px 30px 0 rgb(82 63 105 / 42%);
+}
+.card-box-shadow-sm{
+  max-height: unset;
+}
+.card-box-shadow-sm .mat-card-content{
+  margin-bottom: 0px;
+}
+.title-height-sm{
+  height: 40px !important;
 }
 
 
@@ -35,4 +45,8 @@
 .txtdecorate {
   text-decoration: none;
   cursor: pointer;
+}
+
+.card-margin-right{
+  margin-right: 0px !important;
 }

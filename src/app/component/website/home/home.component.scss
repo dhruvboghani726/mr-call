@@ -179,7 +179,7 @@ a {
 
 .padding-top-bottom {
   padding-top: 20px;
-  // padding-bottom: 20px;
+  padding-bottom: 50px;
 }
 
 .padding-center1 {
@@ -258,6 +258,10 @@ a {
   min-height: 50vh;
   width: 100%;
 
+}
+
+.secpartimg-sm{
+  min-height: unset;
 }
 
 .smilertimg {
@@ -439,6 +443,9 @@ a {
   margin: 0;
   height: 300px
 }
+.Sliderleft-sm{
+  height: unset;
+}
 
 .section {
   min-height: 50vh;
@@ -446,17 +453,27 @@ a {
   background: url('/assets/images/websitehome/RECTANGLE-11.png') no-repeat center / cover;
   margin-bottom: 0px;
 }
+.section-sm{
+  min-height: unset;
+}
 
 .faq {
   min-height: 50vh;
   width: 100%;
   background: url('/assets/images/websitehome/Rectangle-60.png') no-repeat center / cover;
 }
+.faq-sm{
+  background-size: auto;
+  min-height: unset;
+}
 
 .contain {
   width: 90%;
   max-width: 1000px;
   margin: 50px auto;
+}
+.contain-sm{
+  margin: 50px 0px 50px;
 }
 
 .left {
@@ -525,6 +542,12 @@ a {
 
 }
 
+// tablet device
+.rightnew-sm{
+  width: 40%;
+  margin-left: -50px;
+}
+
 .mastgruop4-xs {
 
   // background: url("/assets/images/websitehome/Mask Group 4.png") no-repeat center/cover;
@@ -568,12 +591,22 @@ a {
   height: 300px;
   min-height: 300px;
 }
+.faqimgleft-sm{
+  height: 350px;
+}
 
 .faqimgright-xs {
   // width: 90%;
   margin: 0;
-  height: 300px;
+  // height: 300px;
+  height: auto;
   width: 102%;
+}
+.faqimgright-sm{
+  height: unset;
+}
+.faq-xs{
+  background-size: auto;
 }
 
 .centered-xs {
@@ -619,3 +652,13 @@ a {
   height: 70px;
   padding: 10px;
 }
+
+
+
+.sec-padding{
+  padding: 40px 0px;
+}
+
+// .faqimgright-sm{
+//   height: 100% !important;
+// }

@@ -8,7 +8,7 @@
         </span>
     </mat-card>
 
-    <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-around" fxLayout.xs="column">
+    <!-- <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-around" fxLayout.xs="column">
         <mat-card class="appointmentcard background-color-primary-light" ngClass.xs="appointmentcard-xs">
 
             <span class="menu-button mat-h2">
@@ -25,7 +25,8 @@
         </mat-card>
 
 
-    </div>
+    </div> -->
+
     <div fxLayout="column" fxLayoutAlign="space-around" fxLayout.xs="column" fxLayoutGap="10px">
         <mat-card class="background-color-primary-light">
             <span class="menu-button color-primary">
@@ -38,6 +39,32 @@
         </mat-card>
     </div>
 
+    <!-- Meeting Date Card -->
+    <!-- <div class="meeting-card">
+        <mat-card fxLayoutGap="10px" fxFlex="37" fxFlex.md="51" fxFlex.sm="60" fxFlex.xs="100" class="backgroud-color-primary color-white" fxLayout="row">
+            <mat-icon class="color-white">date_range</mat-icon>
+            <span class="mat-h3" ngClass.xs="mat-h4">Meeting Date: </span>
+            <span class="mat-h2" ngClass.xs="mat-h3">Friday, 1st Jul, 2022</span>
+        </mat-card>
+    </div> -->
+
+    <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="10px">
+        <mat-card fxLayout="row" fxLayoutAlign="start center" class="background-color-primary-light">
+            <!-- <div class="background-color-primary-light"> -->
+            <mat-toolbar class="backgroud-color-white">
+                <span class="fileter-width">
+                    <mat-form-field>
+                        <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date">
+
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </span>
+            </mat-toolbar>
+            <!-- </div> -->
+        </mat-card>
+    </div>
+
     <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="10px">
         <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px"
             class="threecard background-color-primary-light" fxLayout.xs="column">
@@ -45,47 +72,49 @@
 
                 <span class="mat-h2">
                     Total Doctors in My List: &nbsp;<span fxLayout.xs="row" fxLayoutAlign.xs="center center"
-                        class="backgroud-color-primary color-white">2</span>
+                        class="backgroud-color-primary color-white total-dr-list">2</span>
                 </span>
             </mat-card>
-            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
-                <div>
-                    <mat-toolbar class="backgroud-color-white">
-                        <mat-form-field>
-                            <mat-label>Select Teritory</mat-label>
-                            <mat-select>
-                                <mat-option value="All">All</mat-option>
-                                <mat-option value="Ahmedabad">Ahmedabad</mat-option>
-                                <mat-option value="Surat">Surat</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-toolbar>
-                </div>
-
-            </mat-card>
-            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
-                <div>
-                    <mat-toolbar class="background-color-primary-light">
-                        <span class="fileter-width">
+            <!-- <div fxLayout.sm="row" fxLayoutGap.sm="10px"> -->
+                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                    <div>
+                        <mat-toolbar class="backgroud-color-white card-padding-dashboard">
                             <mat-form-field>
-                                <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
-                                <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
-                                    (click)="value=''">
-                                    <mat-icon class="mat-18">search</mat-icon>
-                                </button>
+                                <mat-label>Select Teritory</mat-label>
+                                <mat-select>
+                                    <mat-option value="All">All</mat-option>
+                                    <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                                    <mat-option value="Surat">Surat</mat-option>
+                                </mat-select>
                             </mat-form-field>
-                        </span>
-                    </mat-toolbar>
-                </div>
-            </mat-card>
+                        </mat-toolbar>
+                    </div>
+
+                </mat-card>
+                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                    <div>
+                        <mat-toolbar class="background-color-primary-light card-padding-dashboard">
+                            <span class="fileter-width">
+                                <mat-form-field>
+                                    <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
+                                    <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
+                                        (click)="value=''">
+                                        <mat-icon class="mat-18">search</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </span>
+                        </mat-toolbar>
+                    </div>
+                </mat-card>
+            <!-- </div> -->
         </mat-card>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="27px" fxLayout.xs="column"
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="27px" fxLayoutGap.sm="0px" fxLayout.xs="column"
         fxLayoutAlign="space-around">
 
-        <mat-card *ngFor="let num of [1,2,3]" fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayoutGap="8px"
-            class="twocard" class="background-color-primary-light" ngClass.xs="twocard-xs" fxLayout="column">
+        <mat-card *ngFor="let num of [1,2,3]" fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="32%" fxLayoutGap="8px"
+            class="twocard" class="background-color-primary-light twocard" ngClass.xs="twocard-xs" fxLayout="column">
 
             <span class="mat-h2 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">Dr.Bhargav <span>(DOMS
                     DNB)</span></span>
@@ -96,16 +125,16 @@
             </span>
             <span class="menu-button">
                 <mat-icon> place</mat-icon>
-                <span class="mat-h5"> Ram Nivas,LG Corner,Maninagar,Ahmedabad</span>
+                <span class="mat-h5"> Ram Nivas,LG Corner, Maninagar, Ahmedabad</span>
             </span>
-            <span *ngIf="this.hour < 14">
+            <span *ngIf="!this.timeget ">
                 <span class=" mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
             </span>
-            <span *ngIf="this.hour > 14  || this.hour < 9">
+            <span *ngIf="this.timeget ">
                 <span class="mat-h3" ngClass.xs="mat-h3">Mark the time slot to book the appointment </span>
             </span>
 
-            <div id="hidediv" *ngIf="this.hour > 14  || this.hour < 9">
+            <div id="hidediv" *ngIf="this.timeget ">
                 <span>{{currenttime | date:'fullDate'}}</span>
                 <div class="timezone">
                     <mat-radio-group aria-label="Select an option" color="primary">
@@ -117,7 +146,7 @@
                 </div>
                 <div fxLayoutAlign="center center">
                     <button mat-raised-button color="primary" class="book-app-btn" (click)="Bookappoinment()"
-                        fxFlex="50">Book Appointment</button>
+                        fxFlex="50" fxFlex.sm="100">Book Appointment</button>
                 </div>
             </div>
         </mat-card>
