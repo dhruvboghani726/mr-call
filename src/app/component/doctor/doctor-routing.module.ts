@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.component';
+import { BlockCompanyComponent } from './block-company/block-company.component';
 
 
 
@@ -43,7 +44,8 @@ import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.compo
             ]
           } ,
           { path: 'appointment', component: AppointmentComponent, pathMatch: 'full' },
-          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full' },         
+          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full' },
+          { path: 'block-company', component: BlockCompanyComponent}         
         ],
       }
     ]),

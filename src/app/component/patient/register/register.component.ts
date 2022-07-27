@@ -2,7 +2,7 @@ import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorFn, ValidationErrors } from "@angular/forms";
 import { Router } from '@angular/router';
-import { CONSTANT } from '~app/shared/utils/constant';
+import { LoginService } from 'src/app/shared/services/patient/login.service';
 
 @Component({
   selector: 'app-register',
@@ -17,15 +17,15 @@ export class RegisterComponent implements OnInit {
     this.InitForm();
   }
   constructor(
-    public router: Router) { }
+    public router: Router, private service: LoginService) { }
   InitForm() {
     this.RegistarionForm = new FormGroup({
-      MobileNumber: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      FirstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      LastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      username: new FormControl(''),
-      userEmail: new FormControl(''),
-      Password: new FormControl(''),
+      PhoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
+      Name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
+      Password: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
+      // username: new FormControl(''),
+      // userEmail: new FormControl(''),
+      // Password: new FormControl(''),
     });
   }
   get f() {
@@ -33,6 +33,24 @@ export class RegisterComponent implements OnInit {
   }
 
   submit() {
+
+    this.service.registerUser(this.f.PhoneNumber.value, this.f.Password.value, this.f.Name.value)
+      // this.authenticationService.patientregister(this.f.email.value, this.f.Password.value, this.f.firstName.value, this.f.lastName.value, this.f.gender.value, this.f.birthdate.value, this.reg(this.f.phoneNumber.value), this.f.Street1.value, this.f.City.value, this.f.State.value, this.f.Zip.value)
+      .pipe()
+      .subscribe(
+        data => {
+          // localStorage.setItem('patientUserName', this.f.email.value)
+          // localStorage.setItem('patientPhoneNumber', this.f.phoneNumber.value)
+
+          // localStorage.setItem('pa_role', data.userRole)
+          // localStorage.setItem('pa_id', data.userid)
+
+          // this.spinner.hide();
+          alert('registration successfully');
+          this.router.navigate(['mr/mr-login']);
+        })
+  }
+    
     // async submit() {
     //   try {
     //     console.log(this.RegistarionForm.valid);
@@ -93,7 +111,5 @@ export class RegisterComponent implements OnInit {
     //     this.RegistarionForm.reset();
     //   }
     // }
-
-  }
 
 }

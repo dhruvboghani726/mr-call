@@ -17,7 +17,7 @@
                     placeholder="Auto Focus">
                     <mat-select-filter *ngIf="select1.focused" [array]="slotDuration"
                         (filteredReturn)="filteredList =$event"></mat-select-filter>
-                    <mat-option *ngFor="let item of filteredList" [value]="item">
+                    <mat-option *ngFor="let item of filteredList" [value]="item" (click)="Show()">
                         {{item}}
                     </mat-option>
                 </mat-select>
@@ -41,30 +41,25 @@
                 (click)="changeSelectedWeekDay(6)" fxFlex="13">SATURDAY</button>
 
         </div>
-        <div fxLayout="row"  fxLayoutGap="10px" fxLayoutAlign="space-between center" >
-            <span class="mat-h4"   ngClass.xs="mat-h2">Timing Slots</span>
-            <span >
-                 <button  (click)="openDialog('Add',1,'Sunday')"  mat-button color="primary" class="menu-button">
-                <mat-icon color="primary">add</mat-icon>
-                <span>Add Slot</span>
-            </button></span>
-           
-           
 
-        </div>
-        <div fxLayout="row" fxLayout.xs="column"  >
-          
-           
-            <span  class="mat-h3" *ngIf="options == null" ngClass.xs="mat-h4"> Not Available</span>
-            <mat-chip-list *ngIf="options">
-                <mat-chip color="primary" #chipList *ngFor="let option of options" [removable]="true"
-                (removed)="removeOption(option)">{{option.fromTimeSlot}} - {{option.toTimeSlot}}
-                
-
-                <mat-icon matChipRemove>cancel</mat-icon>
-                </mat-chip>
+        <div *ngIf="AddSlotSection">
+            <div fxLayout="row"  fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                <span class="mat-h4"   ngClass.xs="mat-h2">Timing Slots</span>
+                <span >
+                     <button  (click)="openDialog('Add',1,'Sunday')"  mat-button color="primary" class="menu-button">
+                    <mat-icon color="primary">add</mat-icon>
+                    <span>Add Slot</span>
+                </button></span>
+            </div>
+            <div fxLayout="row" fxLayout.xs="column"  >
+                <span  class="mat-h3" *ngIf="options == null" ngClass.xs="mat-h4"> Not Available</span>
+                <mat-chip-list *ngIf="options">
+                    <mat-chip color="primary" #chipList *ngFor="let option of options" [removable]="true"
+                    (removed)="removeOption(option)">{{option.fromTimeSlot}} - {{option.toTimeSlot}}    
+                    <mat-icon matChipRemove>cancel</mat-icon>
+                    </mat-chip>
                 </mat-chip-list>
-       
+            </div>
         </div>
     </div>
 </div>

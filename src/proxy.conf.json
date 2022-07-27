@@ -1,0 +1,8 @@
+{
+    "/api": {
+       "target": "https://drmrtiming.in",
+      "secure": false,
+      "logLevel": "debug",
+    "changeOrigin": true
+ }
+  }

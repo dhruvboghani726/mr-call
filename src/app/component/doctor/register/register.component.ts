@@ -2,7 +2,6 @@ import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorFn, ValidationErrors } from "@angular/forms";
 import { Router } from '@angular/router';
-import { CONSTANT } from '~app/shared/utils/constant';
 
 @Component({
   selector: 'app-register',

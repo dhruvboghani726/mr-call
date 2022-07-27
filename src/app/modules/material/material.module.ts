@@ -35,6 +35,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { A11yModule } from '@angular/cdk/a11y';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+
+
 const MaterialComponents = [
   A11yModule,
   MatButtonToggleModule,
@@ -67,7 +71,10 @@ const MaterialComponents = [
   MatChipsModule,
   MatAutocompleteModule,
   MatCheckboxModule,
-  ReactiveFormsModule
+  ReactiveFormsModule,
+  HttpClientModule,
+  NgxMaterialTimepickerModule,
+
 ];
 
 @NgModule({

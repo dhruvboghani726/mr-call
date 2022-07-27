@@ -22,6 +22,7 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppoinmentReciptComponent } from './appoinment-recipt/appoinment-recipt.component';
+import { AuthGuard } from 'src/app/shared/services/patient/auth.guard';
 
 
 
@@ -45,36 +46,36 @@ import { AppoinmentReciptComponent } from './appoinment-recipt/appoinment-recipt
         component: CommonLayoutComponent,
         children: [
           {
-            path: 'dashboard', children: [
-              { path: '', component: DashboardComponent, pathMatch: 'full' },
+            path: 'dashboard',children: [
+              { path: '', component: DashboardComponent, pathMatch: 'full' , canActivate:[AuthGuard]},
 
             ],
           },
-          { path: 'active-appoinment', component: ActiveAppointmentComponent, pathMatch: 'full' },
-          { path: 'book-an-appointment', component: BookAnAppointmentComponent, pathMatch: 'full' },
-          { path: 'mydoctor-list', component: MydoctorListComponent, pathMatch: 'full' },
-          { path: 'm-resp-vacancy', component: MRepsVacancyComponent, pathMatch: 'full' },
+          { path: 'active-appoinment', component: ActiveAppointmentComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+          { path: 'book-an-appointment', component: BookAnAppointmentComponent, pathMatch: 'full', canActivate:[AuthGuard]},
+          { path: 'mydoctor-list', component: MydoctorListComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+          { path: 'm-resp-vacancy', component: MRepsVacancyComponent, pathMatch: 'full', canActivate:[AuthGuard] },
           // { path: 'mr-appoinment', component: AppointmentComponent, pathMatch: 'full' },
 
 
 
-          { path: 'appoinment-recipt', component: AppoinmentReciptComponent, pathMatch: 'full' },
+          { path: 'appoinment-recipt', component: AppoinmentReciptComponent, pathMatch: 'full', canActivate:[AuthGuard] },
 
           {
             path: 'brand-reminder-card', children: [
-              { path: '', component: BrandReminderCardComponent, pathMatch: 'full' },
-              { path: 'upload-card', component: UploadCardComponent, pathMatch: 'full' },
-              { path: 'share-card', component: ShareCardComponent, pathMatch: 'full' },
-              { path: 'card-history', component: CardHistoryComponent, pathMatch: 'full' },
+              { path: '', component: BrandReminderCardComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+              { path: 'upload-card', component: UploadCardComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+              { path: 'share-card', component: ShareCardComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+              { path: 'card-history', component: CardHistoryComponent, pathMatch: 'full', canActivate:[AuthGuard] },
 
             ]
           },
 
           {
             path: 'profile-settings', children: [
-              { path: '', component: ProfileSettingsComponent, pathMatch: 'full' },
-              { path: 'update-profile', component: UpdateProfileComponent, pathMatch: 'full' },
-              { path: 'change-password', component: ChangePasswordComponent, pathMatch: 'full' },
+              { path: '', component: ProfileSettingsComponent, pathMatch: 'full', canActivate:[AuthGuard]  },
+              { path: 'update-profile', component: UpdateProfileComponent, pathMatch: 'full', canActivate:[AuthGuard]  },
+              { path: 'change-password', component: ChangePasswordComponent, pathMatch: 'full', canActivate:[AuthGuard]  },
 
 
             ]

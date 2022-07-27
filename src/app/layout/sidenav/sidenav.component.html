@@ -173,10 +173,14 @@
         <mat-icon>access_time</mat-icon>
         <span>Schedule Timings</span>
       </button>
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/block-company">
+        <mat-icon>block</mat-icon>
+        <span>Block Companies</span>
+      </button>
 
       <mat-divider></mat-divider>
 
-      <button mat-button class="menu-button" routerLink="/website/home">
+      <button mat-button class="menu-button" (click)="opendialogLogout()">
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>

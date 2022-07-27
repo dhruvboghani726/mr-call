@@ -8,7 +8,7 @@ import { Location } from '@angular/common';
 
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
-import { OfflinedialogComponent } from '~app/layout/sidenav/offlinedialog/offlinedialog.component';
+import { OfflinedialogComponent } from '../../layout/sidenav/offlinedialog/offlinedialog.component';
 import { ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';

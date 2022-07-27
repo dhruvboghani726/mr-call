@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { CONSTANT } from '~app/shared/utils/constant';
+import { CONSTANT } from '../../../shared/utils/constant';
 import { AddSlotComponent } from './add-slot/add-slot.component';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -166,5 +166,11 @@ console.log(dayName);
     }
   }
 // mat chips
+
+
+  AddSlotSection: boolean = false;
+  Show() {
+    this.AddSlotSection = true;
+  }
 
 }

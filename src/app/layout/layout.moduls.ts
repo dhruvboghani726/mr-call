@@ -14,8 +14,8 @@ import { CommonLayoutComponent } from '../layout/common-layout/common-layout.com
 import {MaterialModule} from '../modules/material/material.module';
 // import {ConsultingDialogComponent} from '../../../src/app/component/doctor/doctor-consulting/consulting-dialog/consulting-dialog.component';
 import { SidenavdialogComponent } from './sidenav/sidenavdialog/sidenavdialog.component';
-import { OfflinedialogComponent } from '~app/layout/sidenav/offlinedialog/offlinedialog.component';
-import { DateAgoPipe } from '~app/shared/utils/pipe/date-ago.pipe';
+import { OfflinedialogComponent } from '../layout/sidenav/offlinedialog/offlinedialog.component';
+import { DateAgoPipe } from '../shared/utils/pipe/date-ago.pipe';
 // import {MatDialogModule} from '@angular/material/dialog';
 // import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 

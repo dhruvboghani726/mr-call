@@ -7,6 +7,7 @@ import { MaterialModule } from './modules/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LogoutComponent } from './layout/sidenav/logout/logout.component';
+import { HttpconfigInterceptor } from './shared/_helpers/httpconfig.interceptor';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,9 @@ import { LogoutComponent } from './layout/sidenav/logout/logout.component';
   
   ],
 
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpconfigInterceptor, multi: true },
+  ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }

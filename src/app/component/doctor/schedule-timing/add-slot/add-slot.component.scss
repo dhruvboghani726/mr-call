@@ -48,4 +48,22 @@
     width: unset;
     margin: 0 0 0 8px;
   }
- 
+
+
+
+
+
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix{
+    padding-top: 6px !important;
+    
+    .ngx-material-timepicker-toggle{
+      margin-top: -3px;
+    }
+  }
+::ng-deep.cdk-overlay-pane{
+  width: 500px !important;
+}
+
+::ng-deep .hr-example-xs, ::ng-deep .hr-example-xs .mat-form-field{
+  width: 100% !important;
+}
