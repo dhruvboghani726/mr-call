@@ -76,52 +76,52 @@
                 </span>
             </mat-card>
             <!-- <div fxLayout.sm="row" fxLayoutGap.sm="10px"> -->
-                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
-                    <div>
-                        <mat-toolbar class="backgroud-color-white card-padding-dashboard">
-                            <mat-form-field>
-                                <mat-label>Select Teritory</mat-label>
-                                <mat-select>
-                                    <mat-option value="All">All</mat-option>
-                                    <mat-option value="Ahmedabad">Ahmedabad</mat-option>
-                                    <mat-option value="Surat">Surat</mat-option>
-                                </mat-select>
-                            </mat-form-field>
-                        </mat-toolbar>
-                    </div>
+            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                <div>
+                    <mat-toolbar class="backgroud-color-white card-padding-dashboard">
+                        <mat-form-field>
+                            <mat-label>Select Teritory</mat-label>
+                            <mat-select>
+                                <mat-option value="All">All</mat-option>
+                                <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                                <mat-option value="Surat">Surat</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </mat-toolbar>
+                </div>
 
-                </mat-card>
-                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
-                    <div>
-                        <mat-toolbar class="background-color-primary-light card-padding-dashboard">
-                            <span class="fileter-width">
-                                <mat-form-field>
-                                    <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
-                                    <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
-                                        (click)="value=''">
-                                        <mat-icon class="mat-18">search</mat-icon>
-                                    </button>
-                                </mat-form-field>
-                            </span>
-                        </mat-toolbar>
-                    </div>
-                </mat-card>
+            </mat-card>
+            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                <div>
+                    <mat-toolbar class="background-color-primary-light card-padding-dashboard">
+                        <span class="fileter-width">
+                            <mat-form-field>
+                                <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
+                                <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
+                                    (click)="value=''">
+                                    <mat-icon class="mat-18">search</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </span>
+                    </mat-toolbar>
+                </div>
+            </mat-card>
             <!-- </div> -->
         </mat-card>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="27px" fxLayoutGap.sm="0px" fxLayout.xs="column"
-        fxLayoutAlign="space-around">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="15px" fxLayoutGap.sm="0px" fxLayout.xs="column">
 
-        <mat-card *ngFor="let num of [1,2,3]" fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="32%" fxLayoutGap="8px"
-            class="twocard" class="background-color-primary-light twocard" ngClass.xs="twocard-xs" fxLayout="column">
+        <mat-card *ngFor="let item of doctorlist" fxFlex="32%" fxFlex.xs="100%" fxFlex.sm="32%" class="twocard"
+            class="background-color-primary-light twocard" ngClass.xs="twocard-xs" fxLayout="column"
+            fxLayoutAlign="space-around">
 
-            <span class="mat-h2 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">Dr.Bhargav <span>(DOMS
-                    DNB)</span></span>
+            <span class="mat-h2 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">{{item.doctorName}}
+                <span>{{(item.degree)}}</span></span>
 
             <span class="menu-button  color-primary">
                 <mat-icon> local_hospital</mat-icon>
-                <span class="mat-h3" ngClass.xs="mat-h4"> Dave Eye care</span>
+                <span class="mat-h3" ngClass.xs="mat-h4"> {{item.speciality}}</span>
             </span>
             <span class="menu-button">
                 <mat-icon> place</mat-icon>
@@ -134,18 +134,21 @@
                 <span class="mat-h3" ngClass.xs="mat-h3">Mark the time slot to book the appointment </span>
             </span>
 
-            <div id="hidediv" *ngIf="this.timeget ">
+            <div *ngIf="this.timeget ">
                 <span>{{currenttime | date:'fullDate'}}</span>
                 <div class="timezone">
-                    <mat-radio-group aria-label="Select an option" color="primary">
-                        <mat-radio-button value="1">3:00 to 4:00</mat-radio-button>&nbsp;
-                        <mat-radio-button value="2">4:00 to 5:00</mat-radio-button>&nbsp;
-                        <mat-radio-button value="2">5:00 to 6:00</mat-radio-button>&nbsp;
-                        <mat-radio-button value="2">7:00 to 8:00</mat-radio-button>
+                    <mat-radio-group aria-label="Select an option" color="primary" fxLayoutGap="10px"
+                        [(ngModel)]="favoritetimeslot">
+                        <mat-radio-button class="example-radio-button" *ngFor="let timeslot of timeslots"
+                            [value]="timeslot" (change)="radioChange()">{{timeslot}}</mat-radio-button>
+                        <!-- <mat-radio-button  [value]="1" >3:00 to 4:00</mat-radio-button>&nbsp;
+                        <mat-radio-button  [value]="2">4:00 to 5:00</mat-radio-button>&nbsp;
+                        <mat-radio-button  [value]="3">5:00 to 6:00</mat-radio-button>&nbsp;
+                        <mat-radio-button  [value]="4">7:00 to 8:00</mat-radio-button> -->
                     </mat-radio-group>
                 </div>
                 <div fxLayoutAlign="center center">
-                    <button mat-raised-button color="primary" class="book-app-btn" (click)="Bookappoinment()"
+                    <button mat-raised-button color="primary" class="book-app-btn" (click)="BookAppointment()"
                         fxFlex="50" fxFlex.sm="100">Book Appointment</button>
                 </div>
             </div>

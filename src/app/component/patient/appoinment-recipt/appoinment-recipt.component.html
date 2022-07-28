@@ -7,111 +7,154 @@
             <span class="mat-h2" ngClass.xs="mat-h3">Appointment Receipt</span>
         </span>
     </mat-card>
-    <div fxLayout="column" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutAlign="space-between"
+
+    <div id="content" fxLayout="column" fxLayout.xs="column" fxLayoutGap="20px" fxLayoutAlign="space-between"
         fxLayoutAlign="center center" fxLayoutGap="15px">
-        <mat-card class="appoinment-card background-color-primary-light">
+        <!-- <mat-card class="appoinment-card  background-color-primary-light" ngClass.xs="appoinment-card-xs"> -->
+        <!-- <mat-card> -->
+        <!-- <mat-card-content> -->
+        <div ngClass.xs="appoinment-card-xs" style="padding: 16px 16px 16px 16px"
+            class="background-color-primary-light appoinment-card">
+            <div fxLayout.xs="column">
+                <div fxFlex.xs="100">
+                    <p class="mat-h2 color-primary" ngClass.xs="mat-h2" fxLayoutAlign="center">
+                        MR CALL
+                    </p>
+                </div>
+                <!-- <div fxFlex="40" fxLayoutAlign="end" fxLayoutAlign.xs="center" fxFlex.xs="100">
+                    <img mat-card-image src="/assets/images/websitehome/Mask Group 6.png" alt="banner"
+                        ngClass.xs="mat-card-image-xs img-height-xs" class="img-height">
+                </div> -->
+            </div>
 
-            <mat-card-title class="mat-h2 color-primary" ngClass.xs="mat-h3" fxLayoutAlign="center">
-                MR CALL
-            </mat-card-title>
+            <div class="mat-h5" ngClass.xs="mat-h5" fxLayout.xs="column">
+                <div fxAlign="start" fxFlex="60" fxFlex.xs="100">
+                    <p class="mat-h3 color-primary " ngClass.xs="mat-h4 text-xs">Dear Medical
+                        Representatives
+                    </p>
+                    From <span class="color-primary"><u>{{bookingdate |
+                            date:'fullDate'}}</u></span>onwards You have to bookcall of
+                    <span class="color-primary"><u>Dr.Bhargav</u></span> compulsory from
+                    online protal.
+                </div>
+                <div fxFlex="40" fxLayoutAlign="end" fxLayoutAlign.xs="center" fxFlex.xs="100">
+                    <img mat-card-image src="/assets/images/websitehome/Mask Group 6.png" alt="banner"
+                        ngClass.xs="mat-card-image-xs img-height-xs" class="img-height">
+                </div>
+            </div>
 
-            <mat-card-sub-title class="mat-h3 color-primary" ngClass.xs="mat-h4">Dear Medical Representatives
-            </mat-card-sub-title>
+            <span fxLayoutAlign="center" class="mat-h2 color-primary website" ngClass.xs="mat-h4">
+                www.mrcall.com</span>
 
-            <mat-card-content class="mat-h5">
-                From <span class="color-primary">{{bookingdate | date:'fullDate'}}</span>onwards You have to bookcall of
-                <br><span class="color-primary"> Dr.Bhargav</span> compulsory from online protal.<br><br>
+            <span fxLayoutAlign="start" class="mat-h5 text" ngClass.xs="mat-h4 website-xs">
+                Kindly visit mentioned site for further information for any queries
+                or,concerns,Click to CONTACT US on portal</span>
 
+            <div fxLayout="row" fxLayout.xs="column" class="mat-h5 call-time" ngClass.xs="mat-h4 website-xs">
+                <span class="timing-p">Call Timing :
+                    <p>Morning :-<u class="color-primary"> 12:00 AM </u>to<u class="color-primary"> 11:00 PM</u> No
+                        of MR <u class="color-primary">5</u></p>
+                    <p>Evening :-<u class="color-primary"> 12:00 AM </u>to<u class="color-primary"> 11:00 PM</u> No
+                        of MR <u class="color-primary">5</u></p>
+                </span>
+            </div>
 
-                <span fxLayoutAlign="center" class="mat-h3 color-primary" ngClass.xs="mat-h4">
-                    www.xyz.com</span>
-                <br>
-                <span fxLayoutAlign="center" class="mat-h5 " ngClass.xs="mat-h4">Kindly visit mentioned site for
-                    further<br>
-                    information for any queries<br>
-                    or,concerns,Click to CONTACT US on portal</span>
-                <br>
-                <div fxLayout="row" class="padding-top">
-                    <span>Call Timing : Morning <span class="color-primary">10:00 AM</span> to<span
-                            class="color-primary">11:00
-                            AM</span>&nbsp;No of MR <span class="color-primary">5</span>
-                        <br>
-                        <span class="evaning-time"> Evening: <span class="color-primary">10:00 AM</span> to<span
-                                class="color-primary">11:00
-                                AM
-                            </span>>No of MR <span class="color-primary">5</span>
+            <div class="table-responsive call-time" fxLayoutgap="15px">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="MON">
+                        <th mat-header-cell *matHeaderCellDef> MON </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Date Column -->
+                    <ng-container matColumnDef="TUE">
+                        <th mat-header-cell *matHeaderCellDef> TUE</th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!--  Doctor Name Column-->
+                    <ng-container matColumnDef="WED">
+                        <th mat-header-cell *matHeaderCellDef>WED</th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <!-- Hospital Column -->
+                    <ng-container matColumnDef="THU">
+                        <th mat-header-cell *matHeaderCellDef> THU </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
+                    </ng-container>
+                    <!-- Territory Column -->
+                    <ng-container matColumnDef="FRI">
+                        <th mat-header-cell *matHeaderCellDef> FRI </th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
+                    </ng-container>
+                    <!-- Time Slot Column -->
+                    <ng-container matColumnDef="SAT">
+                        <th mat-header-cell *matHeaderCellDef> SAT</th>
+                        <td mat-cell *matCellDef="let element">
+                            <mat-checkbox color="primary"></mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+
+            <div style="margin-top: 4rem;" ngClass="doc-mr-sign-xs">
+                <!-- <div fxLayoutAlign="end center">
+                        <span>hskjdhu</span>
+                    </div> -->
+                <div fxLayoutAlign="end center" fxLayoutGap="15px">
+                    <span style="font-weight: 600;">BY Order</span>
+                </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+                <span class="mat-h3 color-primary " ngClass.xs="mat-h4"> FOR ANY QUERY PLEASE VISIT
+                    WEBSITE OR
+                    CALL</span>
+            </div>
+
+            <div fxLayoutAlign="end" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column">
+                <div class="backgroud-color-primary color-white padding-top" fxLayoutGap="15px"
+                    [ngStyle.xs]="{margin:'0px'}" fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="33%" fxLayout.xs="column">
+
+                    <span class="menu-button mat-h2" fxFlex="50%">
+                        <mat-icon class="color-white">settings_phone</mat-icon>
+                        <span class="mat-h5" ngClass.xs="mat-h5">MR HELPLINE<br>
+                            + 91-8757857854
+                        </span>
+                    </span>
+                    <span class="menu-button mat-h2" fxFlex="50%">
+                        <mat-icon class="color-white">language</mat-icon>
+                        <span class="mat-h5" ngClass.xs="mat-h5">support@mrcall.com
+
                         </span>
                     </span>
                 </div>
-                <div class="table-responsive" fxLayoutgap="15px">
-                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="MON">
-                            <th mat-header-cell *matHeaderCellDef> MON </th>
-                            <td mat-cell *matCellDef="let element"> {{element.MON}} </td>
-                        </ng-container>
-
-                        <!-- Date Column -->
-                        <ng-container matColumnDef="TUE">
-                            <th mat-header-cell *matHeaderCellDef> TUE</th>
-                            <td mat-cell *matCellDef="let element"> {{element.TUE}} </td>
-                        </ng-container>
-
-                        <!--  Doctor Name Column-->
-                        <ng-container matColumnDef="WED">
-                            <th mat-header-cell *matHeaderCellDef>WED</th>
-                            <td mat-cell *matCellDef="let element"> {{element.WED}} </td>
-                        </ng-container>
-
-                        <!-- Hospital Column -->
-                        <ng-container matColumnDef="THU">
-                            <th mat-header-cell *matHeaderCellDef> THU </th>
-                            <td mat-cell *matCellDef="let element"> {{element.THU}} </td>
-                        </ng-container>
-                        <!-- Territory Column -->
-                        <ng-container matColumnDef="FRI">
-                            <th mat-header-cell *matHeaderCellDef> FRI </th>
-                            <td mat-cell *matCellDef="let element"> {{element.FRI}} </td>
-                        </ng-container>
-                        <!-- Time Slot Column -->
-                        <ng-container matColumnDef="SAT">
-                            <th mat-header-cell *matHeaderCellDef> SAT</th>
-                            <td mat-cell *matCellDef="let element"> {{element.SAT}} </td>
-                        </ng-container>
-
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
-                </div>
-                <br>
-                <div>
-                    <span class="mat-h3 color-primary " ngClass.xs="mat-h4"> FOR ANY QUERY PLEASE VISIT
-                        WEBSITE OR
-                        CALL</span>
-                </div>
-
-                <div>
-                    <mat-card class="backgroud-color-primary color-white padding-top" fxLayoutGap="15px"
-                        [ngStyle.xs]="{margin:'0px'}" fxFlex="100%" fxFlex.xs="100%" fxFlex.sm="33%">
-
-                        <span class="menu-button mat-h2" fxFlex="45%">
-                            <mat-icon class="color-white">settings_phone</mat-icon>
-                            <span class="mat-h5" ngClass.xs="mat-h5">MR HELPLINE<br>
-                                + 91-8757857854
-                            </span>
-                        </span>
-                        <span class="menu-button mat-h2" fxFlex="55%">
-                            <mat-icon class="color-white">language</mat-icon>
-                            <span class="mat-h5" ngClass.xs="mat-h5">support@mrcall.com
-
-                            </span>
-                        </span>
-                    </mat-card>
-                </div>
-            </mat-card-content>
-        </mat-card>
+            </div>
+            <!-- </mat-card-content> -->
+            <!-- </mat-card> -->
+        </div>
     </div>
-    <!-- <div class="cardpadding">
+    <div fxLayoutAlign="center center">
+        <button mat-raised-button color="primary" class="book-app-btn" (click)="downloadPdf()">Download
+            Receipt</button>
+    </div>
+</div>
+<!-- <div class="cardpadding">
         <mat-card>
             <div fxLayout="column" fxLayoutGap="15px">
                 <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between start" fxFlex
@@ -207,7 +250,3 @@
             </div>
         </mat-card>
     </div> -->
-    <div fxLayoutAlign="center center">
-        <button mat-raised-button color="primary" class="book-app-btn" (click)="downloadPdf()">Download
-            Receipt</button>
-    </div>

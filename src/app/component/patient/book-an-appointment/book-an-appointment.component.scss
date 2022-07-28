@@ -40,7 +40,8 @@
   // max-height: auto;
   // max-width: 30%;
   border-radius: 8px;
-
+  margin-bottom: 20px;
+  margin-right: 0px !important;
 }
 
 .datepicker {
@@ -70,20 +71,21 @@
 }
 
 
-.card-padding-dashboard{
+.card-padding-dashboard {
   padding: 0px;
 }
 
 
-.total-dr-list{
+.total-dr-list {
   padding: 0px 7px;
 }
 
-.twocard .mat-h2, .twocard .mat-h3{
+.twocard .mat-h2,
+.twocard .mat-h3 {
   font-weight: 800;
 }
 
-.meeting-card mat-icon{
+.meeting-card mat-icon {
   font-size: 30px;
 }
 

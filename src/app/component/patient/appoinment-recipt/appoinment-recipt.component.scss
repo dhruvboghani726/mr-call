@@ -1,10 +1,66 @@
+.img-height {
+    height: 130px;
+    width: auto;
+}
+
+.img-height-xs {
+    height: auto;
+    width: auto;
+}
+
 .appoinment-card {
+    width: 420px;
+    // min-width: ;
+    height: auto;
+    max-height: auto;
+    align-items: center;
+    line-height: 1px;
+}
+
+.appoinment-card-xs {
     width: auto;
     min-width: auto;
     height: auto;
     max-height: auto;
     align-items: center;
     line-height: 1px;
+}
+
+
+.website {
+    margin-top: 3rem;
+}
+
+.website-xs {
+    margin-top: 1rem;
+}
+
+.call-time {
+    margin-top: 1rem;
+}
+
+.text {
+    margin-top: 2rem;
+}
+
+.text-xs {
+    margin-top: unset;
+}
+
+.evaning-time {
+    margin-left: 5.2rem;
+}
+
+.evaning-time-xs {
+    margin-left: unset;
+}
+
+// .doc-mr-sign {
+//     margin-top: 4rem;
+// }
+
+.doc-mr-sign-xs {
+    margin-top: unset;
 }
 
 .table-responsive {
@@ -44,4 +100,16 @@
         background-color: #7661e2;
         padding: 5px;
     }
+}
+
+::ng-deep .mat-card-image-xs {
+    margin: 0px 0px 10px 0px !important;
+}
+
+::ng-deep .mat-card-image {
+    margin: 0px 0px 0px 0px !important;
+}
+
+.timing-p p {
+    margin-bottom: 0px;
 }
