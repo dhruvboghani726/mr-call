@@ -2,9 +2,9 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule } from 'angularx-social-login';
-import { LoginService } from '../../../shared/services/patient/login.service';
+import { LoginService } from '../../../shared/services/login.service';
 import { first } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   public user: SocialUser;
 
   constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService,
-    private service: LoginService, private _snackBar: MatSnackBar) {
+    private service: LoginService, private snackService: SnackbarService) {
   }
 
   ngOnInit(): void {
@@ -44,23 +44,6 @@ export class LoginComponent implements OnInit {
     return this.LoginForm.controls;
   }
 
-  openSnackBar(message: string, action) {
-    this._snackBar.open(message, action, {
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-      panelClass: [ 'green-snackbar' ]
-  });
-  }
-
-  openSnackBarError(message: string, action) {
-    this._snackBar.open(message, action, {
-      duration: 5000,
-      horizontalPosition: 'center',
-      verticalPosition: 'top',
-      panelClass: [ 'red-snackbar' ]
-  });
-  }
   public loginWithGoogle(socialPlatform: string): void {
     // this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
     //   (res) => {
@@ -107,7 +90,7 @@ export class LoginComponent implements OnInit {
         // this.router.navigate(['mr/dashboard']);
         if(value.data.message == 'Login successfully.'){
           // alert('logged in successfully..');
-          this.openSnackBar('Login successfully', '')
+          this.snackService.openSnackBar('Login successfully', '')
           this.router.navigate(['mr/dashboard']);
         }else{ 
           alert('login failed');
@@ -116,7 +99,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.log(error.message)
         console.log(error.error)
-        this.openSnackBarError('User name is not found', '')
+        this.snackService.openSnackBarError('User name is not found', '')
       })
     }// console.log('login fail');
 

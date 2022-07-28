@@ -13,6 +13,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.component';
 import { BlockCompanyComponent } from './block-company/block-company.component';
+import { AuthGuard } from 'src/app/shared/_helpers/auth.guard';
 
 
 
@@ -38,14 +39,14 @@ import { BlockCompanyComponent } from './block-company/block-company.component';
         component: CommonLayoutComponent,
         children: [
           {
-            path: 'dashboard', children: [
-              { path: '', component: DashboardComponent, pathMatch: 'full'},
+            path: 'doctor-dashboard', children: [
+              { path: '', component: DashboardComponent, pathMatch: 'full', canActivate:[AuthGuard]},
             
             ]
           } ,
-          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full' },
-          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full' },
-          { path: 'block-company', component: BlockCompanyComponent}         
+          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+          { path: 'block-company', component: BlockCompanyComponent, pathMatch: 'full', canActivate:[AuthGuard]}         
         ],
       }
     ]),

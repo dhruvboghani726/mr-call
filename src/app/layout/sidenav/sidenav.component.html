@@ -93,7 +93,7 @@
               </span>
 
               &nbsp; &nbsp;&nbsp;
-              <span routerLink="/website/home">
+              <span routerLink="/website/home" (click)="logout()">
                 <mat-icon> vpn_key</mat-icon>
                 <p>Logout</p>
               </span>
@@ -117,6 +117,7 @@
 
     <mat-divider></mat-divider>
     <!-- {{this.mrinfo}} -->
+    <!-- this.mrinfo || this.mrinfo!= null -->
     <div *ngIf="this.mrinfo || this.mrinfo!= null" fxLayout="column" fxLayoutGap="10px">
       <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/mr/dashboard">
         <mat-icon>dashboard</mat-icon>
@@ -151,7 +152,7 @@
 
       <mat-divider></mat-divider>
 
-      <button mat-button class="menu-button" (click)="opendialogLogout()">
+      <button mat-button class="menu-button" (click)="opendialogLogout(); logout()">
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>
@@ -160,8 +161,9 @@
 
     </div>
 
-    <div *ngIf="this.mrinfo == null" fxLayout="column" fxLayoutGap="10px">
-      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/dashboard">
+    <!-- doctor sidenav -->
+    <div *ngIf="this.doctorinfo || this.doctorinfo!= null" fxLayout="column" fxLayoutGap="10px">
+      <button mat-button class="menu-button" routerLinkActive="active-list-item" routerLink="/doctor/doctor-dashboard">
         <mat-icon>dashboard</mat-icon>
         <span>Dashboard</span>
       </button>
@@ -180,7 +182,7 @@
 
       <mat-divider></mat-divider>
 
-      <button mat-button class="menu-button" (click)="opendialogLogout()">
+      <button mat-button class="menu-button" (click)="opendialogLogout(); doctorlogout()">
         <mat-icon>exit_to_app</mat-icon>
         <span>Logout</span>
       </button>

@@ -1,8 +1,9 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorFn, ValidationErrors } from "@angular/forms";
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/shared/services/patient/login.service';
+import { LoginService } from 'src/app/shared/services/login.service';
 
 @Component({
   selector: 'app-register',
@@ -17,39 +18,46 @@ export class RegisterComponent implements OnInit {
     this.InitForm();
   }
   constructor(
-    public router: Router, private service: LoginService) { }
+    public router: Router, private service: LoginService, private _snackBar: MatSnackBar) { }
   InitForm() {
     this.RegistarionForm = new FormGroup({
-      PhoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
+      PhoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]),
       Name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      Password: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      // username: new FormControl(''),
-      // userEmail: new FormControl(''),
-      // Password: new FormControl(''),
+      Password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     });
   }
   get f() {
     return this.RegistarionForm.controls;
   }
 
-  submit() {
+  openSnackBar(message: string, action) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: [ 'green-snackbar' ]
+  });
+  }
 
+  // openSnackBarError(message: string, action) {
+  //   this._snackBar.open(message, action, {
+  //     duration: 5000,
+  //     horizontalPosition: 'center',
+  //     verticalPosition: 'top',
+  //     panelClass: [ 'red-snackbar' ]
+  // });
+  // }
+
+  submit() {
     this.service.registerUser(this.f.PhoneNumber.value, this.f.Password.value, this.f.Name.value)
-      // this.authenticationService.patientregister(this.f.email.value, this.f.Password.value, this.f.firstName.value, this.f.lastName.value, this.f.gender.value, this.f.birthdate.value, this.reg(this.f.phoneNumber.value), this.f.Street1.value, this.f.City.value, this.f.State.value, this.f.Zip.value)
       .pipe()
       .subscribe(
         data => {
-          // localStorage.setItem('patientUserName', this.f.email.value)
-          // localStorage.setItem('patientPhoneNumber', this.f.phoneNumber.value)
 
-          // localStorage.setItem('pa_role', data.userRole)
-          // localStorage.setItem('pa_id', data.userid)
-
-          // this.spinner.hide();
-          alert('registration successfully');
+          this.openSnackBar('Registration successfully', '')
           this.router.navigate(['mr/mr-login']);
         })
-  }
+  }    
     
     // async submit() {
     //   try {

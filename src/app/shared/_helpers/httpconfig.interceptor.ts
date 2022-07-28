@@ -8,7 +8,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { LoginService } from '../services/patient/login.service';
+import { LoginService } from '../services/login.service';
 import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
@@ -17,24 +17,24 @@ export class HttpconfigInterceptor implements HttpInterceptor {
   constructor(private service: LoginService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const currentUser = this.service.currentUserValue;
     const currentMr = this.service.currentMrValue;
-    if (currentUser || currentMr) {
-        if (currentUser && currentUser.authdata) {
-
-            request = request.clone({
-                setHeaders: {
-                    Authorization: `Bearer ${currentUser.authdata}`
-                }
-            });
-
-
-        }
+    const currentDoctor = this.service.currentDoctorValue;
+    if (currentMr || currentDoctor) {
         if (currentMr && currentMr.authdata) {
 
             request = request.clone({
                 setHeaders: {
                     Authorization: `Bearer ${currentMr.authdata}`
+                }
+            });
+
+
+        }
+        if (currentDoctor && currentDoctor.authdata) {
+
+            request = request.clone({
+                setHeaders: {
+                    Authorization: `Bearer ${currentDoctor.authdata}`
                 }
             });
 
