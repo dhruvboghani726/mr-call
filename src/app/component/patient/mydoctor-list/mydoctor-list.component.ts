@@ -47,13 +47,12 @@ export class MydoctorListComponent implements OnInit {
 
       })
   }
-  // FavoriteDoctor() {
-  //   this.favoritedoctorService.FavoriteDoctor(this.doctorId, this.mrId,)
-  //     .pipe()
-  //     .subscribe(res => {
-  //       console.log(res);
-  //     })
-  // }
+  FavoriteDoctor() {
+    this.favoritedoctorService.FavoriteDoctor(this.doctorId, this.mrId,)
+      .pipe()
+      .subscribe(res => {
+        console.log(res);
+      })
+  }
 }
 
-// this.doctorId, this.doctorName, this.speciality, this.hospitalName
