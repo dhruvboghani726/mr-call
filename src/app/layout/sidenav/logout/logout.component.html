@@ -1,0 +1,9 @@
+<div fxLayoutGap="15px" fxLayoutAlign="center center">
+    <!-- <mat-dialog-title class="mat-h2">Cancel Appointment</mat-dialog-title> -->
+    <div mat-dialog-content>Are you sure you want to logout?</div>
+
+    <div mat-dialog-actions fxLayoutAlign="center center" class="dialog-button">
+        <button mat-button mat-raised-button color="primary" [mat-dialog-close]="true" cdkFocusInitial routerLink="/website/home">Yes</button>
+        <button mat-button mat-raised-button color="warn" mat-dialog-close color="warn">No</button>
+    </div>
+</div>

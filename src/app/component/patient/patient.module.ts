@@ -20,14 +20,14 @@ import { RegisterComponent } from './register/register.component';
 // import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { environment } from 'environments/environment';
 import { MatStepperModule } from '@angular/material/stepper';
 import { NgOtpInputModule } from 'ng-otp-input';
 import { CountdownModule } from 'ngx-countdown';
 import { GoogleLoginProvider, SocialLoginModule, SocialAuthServiceConfig, } from 'angularx-social-login';
 import { MatTabsModule } from '@angular/material/tabs';
-import { AppComponent } from '~app/app.component';
+import { AppComponent } from '../../app.component';
 import { AppoinmentCancelDialogComponent } from './active-appointment/appoinment-cancel-dialog/appoinment-cancel-dialog.component';
+import { AppoinmentReciptComponent } from './appoinment-recipt/appoinment-recipt.component';
 
 // import { StripeModule } from "stripe-angular"
 
@@ -52,6 +52,7 @@ import { AppoinmentCancelDialogComponent } from './active-appointment/appoinment
     LoginComponent,
     ForgotPasswordComponent,
     AppoinmentCancelDialogComponent,
+    AppoinmentReciptComponent,
 
   ],
   imports: [

@@ -6,7 +6,6 @@ const routes: Routes = [];
   imports: [
     RouterModule.forRoot(
       [
-        
         { path: '', redirectTo: 'website/home', pathMatch: 'full' },
 
         { path: 'website', loadChildren: () => import('./component/website/website.module').then(m => m.WebsiteModule) },

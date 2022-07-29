@@ -2,6 +2,9 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule } from 'angularx-social-login';
+import { LoginService } from '../../../shared/services/login.service';
+import { first } from 'rxjs/operators';
+import { SnackbarService } from '../../../shared/services/snackbar.service';
 
 
 @Component({
@@ -35,7 +38,8 @@ export class LoginComponent implements OnInit {
 
   public user: SocialUser = new SocialUser;
   googleLoginOptions: any;
-  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService) {
+  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService,
+    private service: LoginService, private snackService: SnackbarService) {
   }
 
   ngOnInit(): void {
@@ -48,7 +52,7 @@ export class LoginComponent implements OnInit {
 
   InitForm() {
     this.LoginForm = this.fb.group({
-      MobileNumber: ['', Validators.required,],
+      PhoneNumber: ['', Validators.required,],
       Password: ['', Validators.required]
     });
   }
@@ -57,7 +61,7 @@ export class LoginComponent implements OnInit {
     this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       (res) => {
         console.log(res);
-        this.router.navigate(["/mr/mr-dashboard"]);
+        this.router.navigate(["/doctor/doctor-dashboard"]);
       }
 
     );
@@ -89,17 +93,31 @@ export class LoginComponent implements OnInit {
     return this.LoginForm.controls;
   }
 
-
   submit() {
     if (this.LoginForm.invalid) {
-      this.router.navigate(["/mr/mr-login"]);
+      this.router.navigate(["/doctor/doctor-login"]);
       return;
     }
 
-    // if ( data.isEmailVerified === 'True') {
-
-    //   this.router.navigate(["/mr/dashboard" ]);
-    // }
+    if (this.f.PhoneNumber.value, this.f.Password.value) {
+      // console.log(this.f.Password.value);
+      this.service.doctorLogin(this.f.PhoneNumber.value, this.f.Password.value)
+      .pipe(first())
+      .subscribe(value => {
+        console.log(value);
+        if(value.data.message == 'Login successfully.'){
+          this.snackService.openSnackBar('Login successfully', '')
+          this.router.navigate(['doctor/doctor-dashboard']);
+        }else{ 
+          alert('login failed');
+        }
+      },
+      error => {
+        console.log(error.message)
+        console.log(error.error)
+        this.snackService.openSnackBarError('User name is not found', '')
+      })
+    }
   };
 
 

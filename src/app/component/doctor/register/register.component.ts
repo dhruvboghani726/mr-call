@@ -1,8 +1,9 @@
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ValidatorFn, ValidationErrors } from "@angular/forms";
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { CONSTANT } from '~app/shared/utils/constant';
+import { LoginService } from '../../../shared/services/login.service';
 
 @Component({
   selector: 'app-register',
@@ -17,22 +18,37 @@ export class RegisterComponent implements OnInit {
     this.InitForm();
   }
   constructor(
-    public router: Router) { }
+    public router: Router, private service: LoginService, private _snackBar: MatSnackBar) { }
   InitForm() {
     this.RegistarionForm = new FormGroup({
-      MobileNumber: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      FirstName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      LastName: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
-      username: new FormControl(''),
-      userEmail: new FormControl(''),
-      Password: new FormControl(''),
+      PhoneNumber: new FormControl('', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]),
+      Name: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9]*$')]),
+      Password: new FormControl('', [Validators.required, Validators.minLength(8)]),
     });
   }
   get f() {
     return this.RegistarionForm.controls;
   }
 
+  openSnackBar(message: string, action) {
+    this._snackBar.open(message, action, {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'top',
+      panelClass: [ 'green-snackbar' ]
+  });
+  }
+
   submit() {
+
+    this.service.registerDoctor(this.f.PhoneNumber.value, this.f.Password.value, this.f.Name.value)
+      .pipe()
+      .subscribe(
+        data => {
+
+          this.openSnackBar('Registration successfully', '')
+          this.router.navigate(['doctor/doctor-login']);
+        })
     // async submit() {
     //   try {
     //     console.log(this.RegistarionForm.valid);

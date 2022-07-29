@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '~app/modules/material/material.module';
+import { MaterialModule } from '../../modules/material/material.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { WebsiteLayoutComponent } from './website-layout/website-layout.component';

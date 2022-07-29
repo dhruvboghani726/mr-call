@@ -91,6 +91,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   gotologin() {
     this.user='patient'
     localStorage.setItem('currentMr', JSON.stringify(this.user));
-    this.router.navigate(['/mr/dashboard']);
+    this.router.navigate(['/mr/mr-login']);
   }
 }

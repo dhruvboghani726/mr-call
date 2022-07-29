@@ -8,13 +8,15 @@ import { Location } from '@angular/common';
 
 import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 
-import { OfflinedialogComponent } from '~app/layout/sidenav/offlinedialog/offlinedialog.component';
+import { OfflinedialogComponent } from '../../layout/sidenav/offlinedialog/offlinedialog.component';
 import { ViewChild } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { delay, filter } from 'rxjs/operators';
 import { NavigationEnd } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
+import { LogoutComponent } from './logout/logout.component';
+import { LoginService } from '../../shared/services/login.service';
 
 /*
  *Sidenav component 
@@ -42,7 +44,7 @@ export class SidenavComponent implements OnDestroy {
   patientcount;
   public error: string;
   mobileQuery: MediaQueryList;
-  currentUser;
+  currentMr;
   currentDoctor;
   currentAdmin;
   count;
@@ -51,11 +53,9 @@ export class SidenavComponent implements OnDestroy {
   hoverIndex: any;
   countnumber;
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
-  userinfo = "patient"
+  // userinfo = "patient"
   doctorinfo = JSON.parse(localStorage.getItem('currentDoctor'));
   mrinfo = JSON.parse(localStorage.getItem('currentMr'));
-  // doctorinfo = null
-  // admininfo = null
   status: any
   notiList;
   isExpanded = true;
@@ -101,7 +101,7 @@ export class SidenavComponent implements OnDestroy {
   allDetalis
   constructor(private observer: BreakpointObserver, changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, public dialog: MatDialog,
     private router: Router,
-
+    private service: LoginService,
     private location: Location,
   ) {
 
@@ -154,12 +154,16 @@ export class SidenavComponent implements OnDestroy {
 
   //Patient logout
   logout() {
-
+    this.service.logout();
+    // this.stopNotificationinterval()
+    this.router.navigate([ '/mr/mr-login' ]);
   }
 
   //Doctor logout
   doctorlogout() {
-
+    this.service.logoutdoctor();
+    // this.stopNotificationinterval()
+    this.router.navigate([ '/doctor/doctor-login' ]);
   }
 
   //Admin logout
@@ -201,7 +205,22 @@ export class SidenavComponent implements OnDestroy {
 
   //Get data by id
   getDataByid() {
+    // if (this.doctorinfo || this.doctorinfo != null) {
+    //   let body = ({
 
+    //     loginType: "Doctor",
+    //     userId: this.service.currentDoctorValue.id
+    //   });
+      // this.getDataService.getDataByid(body)
+      //   .subscribe(
+      //     data => {
+      //       // this.dialogRef.close({event:this.action,data:this.data});
+      //       this.allDetalis = data
+      //       // this.spinnerService.hide();
+      //     },
+      //     error => {
+      //     });
+    // }
   }
 
   // notification list api
@@ -240,7 +259,7 @@ export class SidenavComponent implements OnDestroy {
   }
   ngAfterViewInit() {
     this.observer
-      .observe(['(max-width: 800px)'])
+      .observe(['(max-width: 960px)'])
       .pipe(delay(1), untilDestroyed(this))
       .subscribe((res) => {
         console.log(res)
@@ -264,6 +283,14 @@ export class SidenavComponent implements OnDestroy {
           this.sidenav.close();
         }
       });
+  }
+
+  opendialogLogout() {
+    const dialogRef = this.dialog.open(LogoutComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
   }
 }
 

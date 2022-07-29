@@ -25,6 +25,8 @@ import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.compo
 import { MatSelectFilterModule } from 'mat-select-filter';
 import {MatSelectModule} from '@angular/material/select';
 import { AddSlotComponent } from './schedule-timing/add-slot/add-slot.component';
+import { BlockCompanyComponent } from './block-company/block-company.component';
+import { UnblockDialogComponent } from './block-company/unblock-dialog/unblock-dialog.component';
 ;
 @NgModule({
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
@@ -38,7 +40,9 @@ import { AddSlotComponent } from './schedule-timing/add-slot/add-slot.component'
     AppointmentComponent,
     AcceptDialogComponent,
     ScheduleTimingComponent,
-    AddSlotComponent
+    AddSlotComponent,
+    BlockCompanyComponent,
+    UnblockDialogComponent
      ],
   imports: [
    

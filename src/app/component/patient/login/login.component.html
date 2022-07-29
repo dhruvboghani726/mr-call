@@ -39,15 +39,15 @@
                     <!-- Mobile Number field -->
                     <mat-form-field appearance="outline">
                         <mat-label> Enter Mobile No</mat-label>
-                        <input formControlName="MobileNumber" type="tel" id="MobileNumber" matInput
-                            placeholder="123-456-7890" maxlength="10" required>
+                        <input formControlName="PhoneNumber" type="tel" id="MobileNumber" matInput
+                            placeholder="123-456-7890" maxlength="10" required ngModel>
                         <mat-error>Mobile No is required</mat-error>
                     </mat-form-field>
                     <!-- Password field -->
                     <mat-form-field appearance="outline" class="margin-top">
                         <mat-label> Enter Password</mat-label>
                         <input formControlName="Password" id="password" [type]="hide ? 'password' : 'text'" matInput
-                            required maxlength="256" />
+                            required maxlength="256" ngModel />
                         <mat-icon matSuffix class="cursor-pointer " (click)="hide = !hide">{{hide ?
                             'visibility_off' :
                             'visibility'}}</mat-icon>

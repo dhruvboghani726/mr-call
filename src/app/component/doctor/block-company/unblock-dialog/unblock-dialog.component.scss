@@ -1,0 +1,31 @@
+::ng-deep .mat-dialog-container,
+.mat-dialog-content {
+    //  padding: 0 !important;
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 5px !important;
+    padding-left: 0px !important;
+}
+
+::ng-deep .mat-dialog-content,
+.mat-dialog-title {
+    margin: 0 !important;
+}
+
+.padding-left {
+    padding: 8px;
+}
+p {
+    margin: 0;
+}
+.full-width {
+    width: 100%;
+}
+ .mat-raised-button{
+    font-weight: 600;
+    color: #ffffff;
+}
+
+::ng-deep .cdk-overlay-pane{
+    width: auto !important;
+}

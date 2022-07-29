@@ -15,19 +15,19 @@
             </button>
         </div>
     </mat-card>
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;" fxLayoutAlign="space-around">
-        <mat-card fxFlex="40" class="background-color-primary-light" style="height: 650px; max-height: 650px;"
-            [ngStyle.xs]="{  height: '650px;' }">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;" fxLayoutAlign="space-around" ngStyle.xs="padding: 20px 0px">
+        <mat-card fxFlex="40" class="background-color-primary-light" style="height: auto; max-height: auto;"
+            [ngStyle.xs]="{  height: 'auto;' }" [ngStyle.sm]="{  height: 'auto;' }">
             <mat-card-header fxLayoutAlign="center center">
                 <mat-card-title class="mat-h2" ngClass.xs="mat-h6">Update Your Personal Information</mat-card-title>
 
             </mat-card-header>
 
             <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
-                style="border-radius: 10px; padding: 30px 40px 0px 40px;">
+                style="border-radius: 10px; padding: 30px 40px 30px 40px;" [ngStyle.sm]="{ padding: '30px 40px 50px 40px'}">
                 <form #loginForm="ngForm">
 
-                    <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
+                    <!-- <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
 
 
                         <mat-label>Title</mat-label>
@@ -37,19 +37,19 @@
                             <mat-option value="Mrs">Ms</mat-option>
                         </mat-select>
 
-                    </mat-form-field>
+                    </mat-form-field> -->
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
-                        <mat-label>First Name</mat-label>
+                        <mat-label>Full Name</mat-label>
                         <input matInput placeholder="MILIN" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
-                    <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
+                    <!-- <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Last Name</mat-label>
                         <input matInput placeholder="SHAH" required>
-                        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
 
-                    </mat-form-field>
+                    </mat-form-field> -->
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Mobile</mat-label>
                         <input matInput placeholder="1234567890" required>
@@ -96,7 +96,7 @@
 
                 <form #loginForm="ngForm">
                     <mat-form-field class="mat-form-field" appearance="outline">
-                        <mat-label>Company</mat-label>
+                        <mat-label>Company Name</mat-label>
                         <input matInput placeholder="Valiants Pharmaceuticals" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -129,7 +129,7 @@
                 style="border-radius: 10px;padding: 18px 40px 0px 40px;">
                 <form #loginForm="ngForm">
                     <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
+                        fxLayoutAlign="flex-start" fxLayout.sm="column">
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 1</mat-label>
@@ -146,7 +146,7 @@
                         </mat-form-field>
                     </div>
                     <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
-                        fxLayoutAlign="flex-start">
+                        fxLayoutAlign="flex-start" fxLayout.sm="column">
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 3</mat-label>

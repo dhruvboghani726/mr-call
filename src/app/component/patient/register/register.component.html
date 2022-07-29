@@ -40,7 +40,7 @@
                 <form [formGroup]="RegistarionForm" (keyup.enter)="submit()" autocomplete="off">
                     <mat-form-field appearance="outline">
                         <mat-label>Enter Mobile No</mat-label>
-                        <input formControlName="MobileNumber" type="tel" id="mobilenumnber" matInput
+                        <input formControlName="PhoneNumber" type="tel" id="mobilenumnber" matInput
                             placeholder="123-456-7890" maxlength="10" required>
                         <mat-error>Mobile No is required</mat-error>
                     </mat-form-field>
@@ -57,7 +57,7 @@
                     <!-- Email field -->
                     <mat-form-field appearance="outline">
                         <mat-label> Enter UserName</mat-label>
-                        <input matInput formControlName="username" type="email" id="username" maxlength="256" required>
+                        <input matInput formControlName="Name" type="email" id="username" maxlength="256" required>
                         <mat-error> Username is required</mat-error>
                     </mat-form-field>
                     <!-- Password field -->

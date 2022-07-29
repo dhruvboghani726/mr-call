@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MaterialModule } from '~app/modules/material/material.module';
+import { MaterialModule } from '../../modules/material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { MatCarouselModule } from '@ngbmodule/material-carousel';

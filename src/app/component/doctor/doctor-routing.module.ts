@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.component';
+import { BlockCompanyComponent } from './block-company/block-company.component';
+import { AuthGuard } from '../../shared/_helpers/auth.guard';
 
 
 
@@ -37,13 +39,14 @@ import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.compo
         component: CommonLayoutComponent,
         children: [
           {
-            path: 'dashboard', children: [
-              { path: '', component: DashboardComponent, pathMatch: 'full'},
+            path: 'doctor-dashboard', children: [
+              { path: '', component: DashboardComponent, pathMatch: 'full', canActivate:[AuthGuard]},
             
             ]
           } ,
-          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full' },
-          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full' },         
+          { path: 'appointment', component: AppointmentComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+          { path: 'schedule-timing', component: ScheduleTimingComponent, pathMatch: 'full', canActivate:[AuthGuard] },
+          { path: 'block-company', component: BlockCompanyComponent, pathMatch: 'full', canActivate:[AuthGuard]}         
         ],
       }
     ]),

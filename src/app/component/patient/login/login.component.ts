@@ -2,7 +2,9 @@ import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, PatternValidator } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule } from 'angularx-social-login';
-
+import { LoginService } from '../../../shared/services/login.service';
+import { first } from 'rxjs/operators';
+import { SnackbarService } from '../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +14,7 @@ import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule }
 })
 export class LoginComponent implements OnInit {
   @ViewChild(TemplateRef, { static: true }) templateRef: TemplateRef<any>;
+  // minPw = 8;
   hide = true;
   LoginForm!: FormGroup;
   error: string;
@@ -23,7 +26,8 @@ export class LoginComponent implements OnInit {
   returnUrl: any;
   public user: SocialUser;
 
-  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService) {
+  constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService,
+    private service: LoginService, private snackService: SnackbarService) {
   }
 
   ngOnInit(): void {
@@ -32,8 +36,8 @@ export class LoginComponent implements OnInit {
 
   InitForm() {
     this.LoginForm = this.fb.group({
-      MobileNumber: ['', Validators.required,],
-      Password: ['', Validators.required]
+      PhoneNumber: ['', (Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10))],
+      Password: ['', (Validators.required, Validators.minLength(8))]
     });
   }
   get f() {
@@ -75,10 +79,28 @@ export class LoginComponent implements OnInit {
     // );
   }
   submit() {
-    if (this.LoginForm.invalid) {
-      return;
-    }
-    console.log('login fail');
+    // console.log(this.f)
+    if (this.f.PhoneNumber.value, this.f.Password.value) {
+      // console.log(this.f.Password.value);
+      this.service.userLogin(this.f.PhoneNumber.value, this.f.Password.value)
+      .pipe(first())
+      .subscribe(value => {
+        console.log(value);
+        // this.router.navigate(['mr/dashboard']);
+        if(value.data.message == 'Login successfully.'){
+          // alert('logged in successfully..');
+          this.snackService.openSnackBar('Login successfully', '')
+          this.router.navigate(['mr/dashboard']);
+        }else{ 
+          alert('login failed');
+        }
+      },
+      error => {
+        console.log(error.message)
+        console.log(error.error)
+        this.snackService.openSnackBarError('User name is not found', '')
+      })
+    }// console.log('login fail');
 
   };
 }

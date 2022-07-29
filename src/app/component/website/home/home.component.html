@@ -6,7 +6,7 @@
       [ngStyle.sm]="{ padding: '53px'}" [ngStyle.md]="{ padding: '63px'}" [ngStyle.lg]="{ padding: '50px'}"
       fxLayout="row" fxLayoutAlign="center center" fxLayout.xs="column">
       <div class="contain" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-        <div class="Sliderleft" ngClass.xs="Sliderleft-xs">
+        <div class="Sliderleft" ngClass.xs="Sliderleft-xs" ngClass.sm="Sliderleft-sm">
           <div class="content" fxLayout="column" fxLayoutGap="10px" fxHide.lt-md fxShow.gt-md>
             <p class="matdisplay-3 color-accent">Serving Your Health<br>Needs is Our Priority</p>
 
@@ -35,7 +35,7 @@
 
 
   <!--  How it work -->
-  <div fxHide.xs class="header-home  secpartimg " fxLayout="column" fxLayoutGap="-130px" style="margin-bottom: 0px;">
+  <div fxHide.xs class="header-home  secpartimg " fxLayout="column" fxLayoutGap="-130px" fxLayoutGap.sm="-100px" style="margin-bottom: 0px;">
 
     <div fxLayout="column" class="backgroud-color-primary padding-bottom work-heading" fxLayoutGap="30px">
       <div fxLayout="row" fxLayoutAlign="center center" class="how-it-work-heading ">
@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <div fxLayout="column" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide>
+    <div fxLayout="column" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide fxHide.sm>
       <p class="mat-h2 text-center color-primary">Our Services</p>
       <p class="mat-h1 text-center color-accent">Serving For Your Health</p>
 
@@ -104,8 +104,9 @@
   </div>
 
   <!-- service section -->
-  <section class="section" fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 0px;">
-    <div class="header-home  secpartimg " style="padding-bottom: 10px;" fxLayout="column" fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px">
+  <section class="section sec-padding" fxLayout="row" fxLayoutAlign="center center" style="margin-bottom: 0px;" ngClass.sm="section-sm">
+    <div class="header-home  secpartimg " style="padding-bottom: 10px;" fxLayout="column" fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px"
+    ngClass.sm="secpartimg-sm">
       <div fxLayout="column" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
         <p class="mat-h1 text-center color-primary">Our Services</p>
         <p class="mat-display-1 text-center color-accent">Serving For Your Health</p>
@@ -140,9 +141,9 @@
   <!-- experience section -->
   <section class="Experience  backgroud-color-gray" fxLayout="row" fxLayoutAlign="center center">
     <div class="contain" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <div class="rect10" ngClass.xs="rect10-xs" fxHide.lt-md fxShow.gt-md></div>
+      <div class="rect10" ngClass.xs="rect10-xs" fxHide.lt-sm fxShow.gt-md></div>
       <div class="mastgruop4" ngClass.xs="mastgruop4-xs"></div>
-      <div class="rightnew" ngClass.xs="rightnew-xs">
+      <div class="rightnew" ngClass.xs="rightnew-xs" ngClass.sm="rightnew-sm">
         <div class="content" fxLayout="column" fxLayoutGap="10px" fxHide.lt-md fxShow.gt-md>
 
           <p class="mat-h1 color-primary">25+ Year Of Experience</p>
@@ -208,43 +209,45 @@
   </section>
 
   <!-- expert doctor section start -->
-  <div class="secpartimg  backgroud-color-gray" style="margin-bottom: 0px">
-    <div class="secpartimg " style="padding-bottom: 10px"fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.lt-sm="center center"
-      fxLayoutGap="20px">
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
-        <p class="mat-h1 text-center color-primary">Professional Team Members</p>
-        <p class="mat-display-1 text-center color-accent">Meet Our Expert Doctors</p>
-      </div>
-      <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide>
-        <p class="mat-h1 text-center color-primary">Professional Team Members</p>
-        <p class="mat-display-1-xs text-center color-accent">Meet Our Expert Doctors</p>
-      </div>
-      <div fxLayout="column" fxLayoutAlign="center center">
-        <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="45px grid">
-          <div class="grouphead" *ngFor="let num of doctors ">
-            <mat-card class="doctorcard2">
-              <mat-card-content>
-                <div fxLayout="column" fxLayoutAlign="center center">
-                  <span class=" mat-h2 color-accent">{{num.name}}</span>
-                  <span class=" mat-h3 color-primary">{{num.service}}</span>
-                </div>
-                <div class="change-avatar">
-                  <div class="profile-imgdoctor">
-                    <img mat-card-image [src]="num.url" alt="Photo of {{num.title}}">
+  <section class="sec-padding">
+    <div class="secpartimg  backgroud-color-gray" style="margin-bottom: 0px" ngClass.sm="secpartimg-sm">
+      <div class="secpartimg " style="padding-bottom: 10px"fxLayout="column" fxLayoutAlign="center center" fxLayoutAlign.lt-sm="center center"
+        fxLayoutGap="20px" ngClass.sm="secpartimg-sm">
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
+          <p class="mat-h1 text-center color-primary">Professional Team Members</p>
+          <p class="mat-display-1 text-center color-accent">Meet Our Expert Doctors</p>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.gt-md fxShow.lt-md fxHide>
+          <p class="mat-h1 text-center color-primary">Professional Team Members</p>
+          <p class="mat-display-1-xs text-center color-accent">Meet Our Expert Doctors</p>
+        </div>
+        <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="45px grid" fxLayoutGap.sm="10px grid">
+            <div class="grouphead" *ngFor="let num of doctors ">
+              <mat-card class="doctorcard2">
+                <mat-card-content>
+                  <div fxLayout="column" fxLayoutAlign="center center">
+                    <span class=" mat-h2 color-accent">{{num.name}}</span>
+                    <span class=" mat-h3 color-primary">{{num.service}}</span>
                   </div>
-                </div>
-              </mat-card-content>
-            </mat-card>
+                  <div class="change-avatar">
+                    <div class="profile-imgdoctor">
+                      <img mat-card-image [src]="num.url" alt="Photo of {{num.title}}">
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <!-- faq and  section start -->
-  <section class="faq" fxLayout="row" fxLayoutAlign="center center">
-    <div class="contain" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-      <div class="faqimgleft" ngClass.xs="faqimgleft-xs"></div>
-      <div class="faqimgright" ngClass.xs="faqimgright-xs">
+  <section class="faq" fxLayout="row" fxLayoutAlign="center center" ngClass.sm="faq-sm" ngClass.xs="faq-xs">
+    <div class="contain" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px" ngClass.sm="contain-sm">
+      <div class="faqimgleft" ngClass.xs="faqimgleft-xs" ngClass.sm="faqimgleft-sm"></div>
+      <div class="faqimgright" ngClass.xs="faqimgright-xs" ngClass.sm="faqimgright-sm">
         <app-faq></app-faq>
       </div>
     </div>
@@ -252,8 +255,8 @@
   <!-- faq and ask section start -->
 
   <!-- blog start section -->
-  <div class="secpartimg padding-top backgroud-color-gray " fxLayout="column" fxLayoutAlign="center center"
-    fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px">
+  <div class="secpartimg padding-top backgroud-color-gray sec-padding" fxLayout="column" fxLayoutAlign="center center"
+    fxLayoutAlign.lt-sm="center center" fxLayoutGap="20px" ngClass.sm="secpartimg-sm">
     <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px" fxHide.lt-md fxShow.gt-md>
       <p class="mat-h1 text-center color-primary">Blog & News</p>
       <p class="mat-display-1 text-center color-accent">Read Our Letest New</p>
@@ -267,7 +270,7 @@
 
     <div fxLayout="column" fxLayoutAlign="center center">
 
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="45px grid">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="45px grid" fxLayoutGap.sm="10px grid">
 
         <div class="grouphead" *ngFor="let num of  members ">
           <mat-card class="doctorcard">

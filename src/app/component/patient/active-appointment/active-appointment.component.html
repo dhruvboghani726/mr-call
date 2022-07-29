@@ -1,7 +1,7 @@
 <div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="15px" fxFlexAlign="center">
     <mat-card fxHide.xs class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
 
-        <span class="menu-button mat-h2" fxFlex="26%" fxFlex.lt.sm="100">
+        <span class="menu-button mat-h2" fxFlex="26%" fxFlex.lt.sm="100" fxFlex.sm="50%">
             <mat-icon class="color-white">assignment</mat-icon>
             <span class="mat-h2" ngClass.xs="mat-h3">Active Appointment</span>
         </span>
@@ -33,7 +33,7 @@
             </span>
             <br>
             <!-- <div fxLayout="row" class="loram"> -->
-            <p ngClass.xs="mat-h3">
+            <p ngClass.xs="mat-h3" class="line-height-p">
                 You can cancel tomorrow's appointment from 3:00 P. M. to 9:00 A. M. (For eg, Appointment taken for
                 Tuesday can be cancelled from 3 P. M. Monday to 9 A. M. Tuesday) <br>
                 If you cancel today's appointment after 9 A. M. , You must select reason from drop-down menu. <br>Our
@@ -44,17 +44,17 @@
         </mat-card>
     </div>
 
-    <mat-card class="backgroud-color-gray">
-        <div fxLayout="row" fxLayout.xs="column">
-            <div fxLayoul="column " fxFlex="70" fxFlex.xs="100%" fxFlex.sm="33%" fxFlexAlign="center">
-                <mat-form-field appearance="outline">
+    <mat-card class="background-color-primary-light">
+        <div fxLayout="row" fxLayout.xs="column" fxFlexAlign="end" fxLayoutAlign="end">
+            <div fxLayoul="column " fxFlex="70" fxFlex.xs="100%" fxFlex.sm="42%" fxFlexAlign="center">
+                <!-- <mat-form-field appearance="outline">
                     <mat-label>Show Entry</mat-label>
                     <mat-select>
                         <mat-option *ngFor="let food of foods" [value]="food.value">
                             {{food.viewValue}}
                         </mat-option>
                     </mat-select>
-                </mat-form-field>
+                </mat-form-field> -->
             </div>
             <div>
                 <!-- <mat-toolbar class="backgroud-color-white"> -->
@@ -127,5 +127,10 @@
                 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
             </table>
         </div>
+        <mat-paginator [length]="100"
+          [pageSize]="5"
+          [pageSizeOptions]="[5, 10, 25, 100]"
+          aria-label="Select page of periodic elements">
+        </mat-paginator>
     </mat-card>
 </div>

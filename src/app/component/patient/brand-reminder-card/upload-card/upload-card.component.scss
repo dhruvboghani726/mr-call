@@ -5,6 +5,11 @@
     border-radius: 5px;
 }
 
+.remindercard-sm{
+    height: unset;
+    max-height: unset;
+}
+
 .halfcard {
     // height: 175px;
     // max-height: 175px;
@@ -21,6 +26,10 @@
 
     border-radius: 5px;
 
+}
+.appointcard-sm{
+    height: auto;
+    max-height: auto;
 }
 
 .mat-form-fieldhalf {
@@ -144,4 +153,11 @@
         padding: 5px;
 
     }
+}
+
+td.mat-cell {
+    border: 1px solid lightgray;
+}
+th.mat-header-cell{
+    border: 1px solid lightgrey;
 }

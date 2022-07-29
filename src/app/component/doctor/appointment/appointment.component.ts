@@ -7,6 +7,13 @@ import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { AcceptDialogComponent } from './accept-dialog/accept-dialog.component';
 
+
+// interface select {
+//   value: string;
+//   viewValue: string;
+// }
+
+
 @Component({
   selector: 'app-appointment',
   templateUrl: './appointment.component.html',
@@ -20,6 +27,19 @@ export class AppointmentComponent implements OnInit {
   ngOnInit(): void {
    
   }
+
+  // Time_select: select[] = [
+  //   {value: 'Weekly-0', viewValue: 'Weekly'},
+  //   {value: 'Monthly-1', viewValue: 'Monthly'},
+  //   {value: 'Yearly-2', viewValue: 'Yearly'},
+  // ];
+
+
+  // isVisible: boolean = false;
+  // forceUnknownOption(){
+  //   this.isVisible = true;
+  // }
+
 
   accept(data,action){
     data.actiondialog = action

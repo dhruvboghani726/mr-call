@@ -1,7 +1,7 @@
 <div class="cardpadding" [ngClass.lt-sm]="'dr-profile'" fxLayout="column" fxLayoutGap="20px" fxFlexAlign="center">
     <mat-card fxHide.xs class="backgroud-color-primary color-white" [ngStyle.xs]="{margin:'0px'}">
 
-        <span class="menu-button mat-h2" fxFlex="25%" fxFlex.lt.sm="100">
+        <span class="menu-button mat-h2" fxFlex="25%" fxFlex.lt.sm="100" fxFlex.sm="50">
             <mat-icon class="color-white"> supervised_user_circle</mat-icon>
             <span class="mat-h2" ngClass.xs="mat-h3">My Doctor List</span>
         </span>
@@ -24,16 +24,50 @@
     <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="space-around">
 
         <mat-card class="noticecard background-color-primary-light" ngClass.xs="noticecard-xs" mat-elevation-z4>
-            <span class="menu-button color-primary">
+            <span class="menu-button">
                 <mat-icon class="background-color-primary color-primary">info</mat-icon>
-                <span class="mat-h2" ngClass.xs="mat-h2"> Notes:</span>&nbsp;
+                <p><span class="mat-h2 color-primary" ngClass.xs="mat-h2"> Notes: </span>
+                    <span>Click on"Add on my list" to add doctor currently availible doctor on system to your list.<br>
+                        You can only book those doctor's appoinment, which have added to your list.</span>
+                </p>
             </span>
             <span>
-                Click on"Add on my list" to add doctor currently availible doctor on system to your list.<br>
-                You can only book those doctor's appoinment, which have added to your list
+                <!-- Click on"Add on my list" to add doctor currently availible doctor on system to your list.<br> -->
+
             </span>
         </mat-card>
     </div>
+
+    <div fxLayout="column" fxLayoutGap="20px">
+        <mat-card class="backgroud-color-white" ngClass.xs="secondcard-xs">
+            <div fxLayout="column" fxLayout.xs="column" fxHide.xs>
+                <mat-label Class="mat-h2" ngClass.xs="mat-h3">Status</mat-label>
+
+            </div>
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 10px;">
+
+                <div fxFlex="45">
+                    <!-- <h2 Class="mat-h1" ngClass.xs="mat-h2" fxHide.xs >Status</h2> -->
+
+                    <mat-form-field style="min-width: calc(100% + 0px) !important;" appearance="outline">
+                        <mat-label>Status</mat-label>
+                        <mat-select>
+                            <mat-option value="All">All</mat-option>
+                            <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                            <mat-option value="Surat">Surat</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div fxFlex="45">
+                    <button style="margin: 5px;" mat-raised-button color="primary">
+                        <mat-icon class="color-white">check</mat-icon>Submit
+                    </button>
+                </div>
+            </div>
+
+        </mat-card>
+    </div>
+
 
     <div fxLayout="column" fxLayoutGap="15px" fxLayoutAlign="space-around">
         <mat-card class="noticecard background-color-primary-light" ngClass.xs="noticecard-xs" mat-elevation-z4>
@@ -53,42 +87,43 @@
 
 
             <div class="table-responsive">
-                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <table mat-table [dataSource]="doctorlist" class="mat-elevation-z8">
+
                     <!-- Position Column -->
-                    <ng-container matColumnDef="Position">
+                    <!-- <ng-container matColumnDef=" Position">
                         <th mat-header-cell *matHeaderCellDef> No. </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Position}} </td>
-                    </ng-container>
+                        <td mat-cell *matCellDef="let element"> {{item.doctorId}} </td>
+                    </ng-container> -->
 
                     <!--  Doctor Name Column-->
-                    <ng-container matColumnDef="Doctorname">
+                    <ng-container matColumnDef="doctorName">
                         <th mat-header-cell *matHeaderCellDef> Doctor Name </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Doctorname}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.doctorName}} </td>
                     </ng-container>
 
                     <!-- Hospital Column -->
-                    <ng-container matColumnDef="Hospital">
+                    <ng-container matColumnDef="hospitalName">
                         <th mat-header-cell *matHeaderCellDef> Hospital</th>
-                        <td mat-cell *matCellDef="let element"> {{element.Hospital}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.hospitalName}} </td>
                     </ng-container>
 
                     <!-- Degree Column -->
-                    <ng-container matColumnDef="Degree">
+                    <ng-container matColumnDef="degree">
                         <th mat-header-cell *matHeaderCellDef> Medical Degree </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Degree}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.degree}} </td>
                     </ng-container>
 
                     <!-- Specialization Column -->
-                    <ng-container matColumnDef="Specialization">
+                    <ng-container matColumnDef="speciality">
                         <th mat-header-cell *matHeaderCellDef>Specialization </th>
-                        <td mat-cell *matCellDef="let element"> {{element.Specialization}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.speciality}} </td>
                     </ng-container>
 
                     <!-- action Column -->
                     <ng-container matColumnDef="action">
                         <th mat-header-cell *matHeaderCellDef> Action </th>
                         <td mat-cell *matCellDef="let element">
-                            <button mat-raised-button color="primary" (click)="joinCall(element)">+
+                            <button mat-raised-button color="primary" (click)="FavoriteDoctor()">+
                                 Add To My List</button>
                         </td>
                     </ng-container>
@@ -97,6 +132,9 @@
                     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                 </table>
             </div>
+            <mat-paginator [length]="100" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 100]"
+                aria-label="Select page of periodic elements">
+            </mat-paginator>
         </mat-card>
     </div>
 </div>

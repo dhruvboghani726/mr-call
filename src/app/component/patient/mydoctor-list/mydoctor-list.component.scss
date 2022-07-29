@@ -53,3 +53,23 @@
         padding: 5px;
     }
 }
+
+
+.noticecard .menu-button{
+    font-weight: unset;
+}
+td.mat-cell {
+    border: 1px solid lightgray;
+}
+th.mat-header-cell{
+    border: 1px solid lightgrey;
+}
+.noticecard .menu-button {
+    align-items: unset;
+}
+.noticecard-xs mat-icon{
+    margin-top: 5px;
+}
+.noticecard .menu-button mat-icon{
+    margin-top: 4px;
+}
