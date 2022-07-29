@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule } from 'angularx-social-login';
 import { LoginService } from '../../../shared/services/login.service';
 import { first } from 'rxjs/operators';
-import { SnackbarService } from 'src/app/shared/services/snackbar.service';
+import { SnackbarService } from '../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-login',

@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ValidatorFn, ValidationErrors } from "@angular/forms";
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/shared/services/login.service';
+import { LoginService } from '../../../shared/services/login.service';
 
 @Component({
   selector: 'app-register',

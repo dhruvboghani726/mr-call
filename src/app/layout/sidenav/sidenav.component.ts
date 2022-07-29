@@ -16,7 +16,7 @@ import { delay, filter } from 'rxjs/operators';
 import { NavigationEnd } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { LogoutComponent } from './logout/logout.component';
-import { LoginService } from 'src/app/shared/services/login.service';
+import { LoginService } from '../../shared/services/login.service';
 
 /*
  *Sidenav component 

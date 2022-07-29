@@ -19,9 +19,11 @@ export class HttpconfigInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const currentMr = this.service.currentMrValue;
     const currentDoctor = this.service.currentDoctorValue;
+    // console.log(currentDoctor.authdata, "currentDoctor")
     if (currentMr || currentDoctor) {
         if (currentMr && currentMr.authdata) {
 
+    console.log(currentMr.authdata, "currentMR")
             request = request.clone({
                 setHeaders: {
                     Authorization: `Bearer ${currentMr.authdata}`

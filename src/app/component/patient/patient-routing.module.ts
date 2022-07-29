@@ -22,7 +22,7 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { AppointmentComponent } from './appointment/appointment.component';
 import { AppoinmentReciptComponent } from './appoinment-recipt/appoinment-recipt.component';
-import { AuthGuard } from 'src/app/shared/_helpers/auth.guard';
+import { AuthGuard } from '../../shared/_helpers/auth.guard';
 // import { AuthGuard } from 'src/app/shared/services/patient/auth.guard';
 
 

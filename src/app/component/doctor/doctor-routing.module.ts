@@ -13,7 +13,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { LoginComponent } from './login/login.component';
 import { ScheduleTimingComponent } from './schedule-timing/schedule-timing.component';
 import { BlockCompanyComponent } from './block-company/block-company.component';
-import { AuthGuard } from 'src/app/shared/_helpers/auth.guard';
+import { AuthGuard } from '../../shared/_helpers/auth.guard';
 
 
 

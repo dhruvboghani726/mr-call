@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { GetalldoctorService } from 'src/app/shared/services/Getalldoctor.service';
-import { FavoritedoctorService } from 'src/app/shared/services/favoritedoctor.service';
+import { GetalldoctorService } from '../../../shared/services/Getalldoctor.service';
+import { FavoritedoctorService } from '../../../shared/services/favoritedoctor.service';
 
 export interface PeriodicElement {
   doctorName: string;
