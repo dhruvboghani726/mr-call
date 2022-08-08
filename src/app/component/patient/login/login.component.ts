@@ -5,7 +5,7 @@ import { GoogleLoginProvider, SocialAuthService, SocialUser, SocialLoginModule }
 import { LoginService } from '../../../shared/services/login.service';
 import { first } from 'rxjs/operators';
 import { SnackbarService } from '../../../shared/services/snackbar.service';
-
+import { LoaderService } from 'src/app/shared/services/loader.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
   public user: SocialUser;
 
   constructor(private router: Router, private route: ActivatedRoute, private fb: FormBuilder, private socialAuthService: SocialAuthService,
-    private service: LoginService, private snackService: SnackbarService) {
+    private service: LoginService, private snackService: SnackbarService, public loader: LoaderService) {
   }
 
   ngOnInit(): void {
@@ -84,23 +84,23 @@ export class LoginComponent implements OnInit {
     if (this.f.PhoneNumber.value, this.f.Password.value) {
       // console.log(this.f.Password.value);
       this.service.userLogin(this.f.PhoneNumber.value, this.f.Password.value)
-      .pipe(first())
-      .subscribe(value => {
-        console.log(value);
-        // this.router.navigate(['mr/dashboard']);
-        if(value.data.message == 'Login successfully.'){
-          // alert('logged in successfully..');
-          this.snackService.openSnackBar('Login successfully', '')
-          this.router.navigate(['mr/dashboard']);
-        }else{ 
-          alert('login failed');
-        }
-      },
-      error => {
-        console.log(error.message)
-        console.log(error.error)
-        this.snackService.openSnackBarError('User name is not found', '')
-      })
+        .pipe(first())
+        .subscribe(value => {
+          console.log(value);
+          // this.router.navigate(['mr/dashboard']);
+          if (value.data.message == 'Login successfully.') {
+            // alert('logged in successfully..');
+            this.snackService.openSnackBar('Login successfully', '')
+            this.router.navigate(['mr/dashboard']);
+          } else {
+            alert('login failed');
+          }
+        },
+          error => {
+            console.log(error.message)
+            console.log(error.error)
+            this.snackService.openSnackBarError('User name is not found', '')
+          })
     }// console.log('login fail');
 
   };

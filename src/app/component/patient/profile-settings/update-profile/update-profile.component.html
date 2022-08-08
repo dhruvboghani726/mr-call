@@ -15,7 +15,8 @@
             </button>
         </div>
     </mat-card>
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;" fxLayoutAlign="space-around" ngStyle.xs="padding: 20px 0px">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="15px" style="padding: 20px;" fxLayoutAlign="space-around"
+        ngStyle.xs="padding: 20px 0px">
         <mat-card fxFlex="40" class="background-color-primary-light" style="height: auto; max-height: auto;"
             [ngStyle.xs]="{  height: 'auto;' }" [ngStyle.sm]="{  height: 'auto;' }">
             <mat-card-header fxLayoutAlign="center center">
@@ -24,8 +25,10 @@
             </mat-card-header>
 
             <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
-                style="border-radius: 10px; padding: 30px 40px 30px 40px;" [ngStyle.sm]="{ padding: '30px 40px 50px 40px'}">
-                <form #loginForm="ngForm">
+                style="border-radius: 10px; padding: 30px 40px 30px 40px;"
+                [ngStyle.sm]="{ padding: '30px 40px 50px 40px'}">
+
+                <form [formGroup]="MrProfileFormGroup" autocomplete="off">
 
                     <!-- <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
 
@@ -40,7 +43,8 @@
                     </mat-form-field> -->
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Full Name</mat-label>
-                        <input matInput placeholder="MILIN" required>
+                        <input matInput formControlName="Name" [(ngModel)]="Name" type="text" id="Name" maxlength="256"
+                            required required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -52,13 +56,15 @@
                     </mat-form-field> -->
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Mobile</mat-label>
-                        <input matInput placeholder="1234567890" required>
+                        <input matInput formControlName="phonenumber" [(ngModel)]="phonenumber" type="text"
+                            id="phonenumber" maxlength="10" type="tel" required required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input matInput placeholder="abc@gmail.com" value="abc@gmail.com" required disabled>
+                        <input matInput formControlName="Email" [(ngModel)]="Email" type="text" id="Email" required
+                            readonly>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -66,7 +72,7 @@
                         fxLayoutAlign="flex-start">
                         <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                             <mat-label>Date Of Birth</mat-label>
-                            <input matInput [matDatepicker]="picker">
+                            <input matInput [matDatepicker]="picker" formControlName="dob" [(ngModel)]="dob" id="dob">
                             <mat-hint>MM/DD/YYYY</mat-hint>
                             <mat-datepicker-toggle matSuffix [for]="picker">
                                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -94,10 +100,11 @@
                 style="border-radius: 10px;padding: 18px 40px 0px 40px;">
 
 
-                <form #loginForm="ngForm">
+                <form [formGroup]="MrProfileFormGroup">
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Company Name</mat-label>
-                        <input matInput placeholder="Valiants Pharmaceuticals" required>
+                        <input matInput formControlName="company" [(ngModel)]="company" type="text" id="company"
+                            placeholder="Valiants Pharmaceuticals" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -106,7 +113,7 @@
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Divison</mat-label>
-                            <input matInput placeholder="VALIANTS" required>
+                            <input matInput formControlName="division" [(ngModel)]="division" id="division" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
                         </mat-form-field>
                     </div>
@@ -114,7 +121,8 @@
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Speciality</mat-label>
-                        <input matInput placeholder="Ophtholmic" required>
+                        <input matInput formControlName="speciality" [(ngModel)]="speciality" id="Speciality"
+                            placeholder="Ophtholmic" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -127,20 +135,22 @@
             </mat-card-header>
             <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
                 style="border-radius: 10px;padding: 18px 40px 0px 40px;">
-                <form #loginForm="ngForm">
+                <form [formGroup]="MrProfileFormGroup">
                     <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
                         fxLayoutAlign="flex-start" fxLayout.sm="column">
-                        <!-- First name field -->
+                        <!-- city field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 1</mat-label>
-                            <input matInput placeholder="Ahmedabad" required>
+                            <input matInput placeholder="Ahmedabad" formControlName="City" [(ngModel)]="City" id="City"
+                                required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                         </mat-form-field>
-                        <!-- Last name field -->
+                        <!--  city field  -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 2</mat-label>
-                            <input matInput placeholder="Bhavnagar" required>
+                            <input matInput formControlName="city2" [(ngModel)]="city2" id="city2"
+                                placeholder="Bhavnagar" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                         </mat-form-field>
@@ -150,14 +160,16 @@
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 3</mat-label>
-                            <input matInput placeholder="Vadodara" required>
+                            <input matInput placeholder="Vadodara" formControlName="city3" [(ngModel)]="city3"
+                                id="city3" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                         </mat-form-field>
                         <!-- Last name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 4</mat-label>
-                            <input matInput placeholder="Surat" required>
+                            <input matInput placeholder="Surat" formControlName="city4" [(ngModel)]="city4" id="city4"
+                                required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                         </mat-form-field>
@@ -175,7 +187,7 @@
 
         <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
             style="border-radius: 10px;padding: 18px 40px 0px 40px;">
-            <form #loginForm="ngForm">
+            <form [formGroup]="">
                 <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
                     fxLayoutAlign="flex-start">
                     <!-- First name field -->
@@ -266,8 +278,10 @@
 
 
 
-                    <button mat-raised-button color="primary">
+                    <button mat-raised-button color="primary" [disabled]="MrProfileFormGroup.invalid.value"
+                        (click)="updateProfile()">
                         <mat-icon class="color-white">edit</mat-icon>Update
+
                     </button>
 
                 </mat-card-actions>

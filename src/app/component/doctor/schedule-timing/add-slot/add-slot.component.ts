@@ -1,7 +1,9 @@
 import { Component, Inject, OnInit, Optional } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-
+import { first } from 'rxjs/operators';
+import { FormsModule } from '@angular/forms';
+import { DoctorScheduledTimeService } from 'src/app/shared/services/doctor-schedule-time';
 
 
 
@@ -16,50 +18,61 @@ export interface DialogData {
   styleUrls: ['./add-slot.component.scss']
 })
 export class AddSlotComponent implements OnInit {
+  startTime: FormControl = new FormControl("");
+  endTime: FormControl = new FormControl("");
+
   addTimeForm: FormGroup;
-  
   timingData: any[] = [];
   showForm: boolean = false;
   selectedWeekDay: number = 1;
   timeSlotsFormArray: FormArray = null;
   timeSlotForm: FormGroup = null;
- 
+
   currentWeekDay: any = 1;
   timeSlotCounts = [[], [], [], [], [], [], []];
-  Sun:boolean=false;
-  Mon:boolean=false;
-  Tus:boolean=false;
-  Wed:boolean=false;
-  Thu:boolean=false;
-  Fri:boolean=false;
-  Sat:boolean=false;
- count;
- paletteColour;
- selected
- bodydata: any;
- local_data
- action
- day
-  constructor(  private fb: FormBuilder,public dialogRef: MatDialogRef<AddSlotComponent>,
+  Sun: boolean = false;
+  Mon: boolean = false;
+  Tus: boolean = false;
+  Wed: boolean = false;
+  Thu: boolean = false;
+  Fri: boolean = false;
+  Sat: boolean = false;
+  count;
+  paletteColour;
+  selected
+  bodydata: any;
+  local_data
+  action
+  day
+  doctorId: any;
+  docSchedules: any = [];
+  constructor(private fb: FormBuilder, private doctorscheduledtimeService: DoctorScheduledTimeService, public dialogRef: MatDialogRef<AddSlotComponent>,
     @Optional() @Inject(MAT_DIALOG_DATA) public data: DialogData) {
     this.bodydata = data
 
     this.local_data = { ...data };
-    console.log(this.local_data )
+    console.log(this.local_data)
     this.action = this.local_data.action;
     this.day = this.local_data.day;
- 
-    this.count=this.local_data.count
+
+    this.count = this.local_data.count
     console.log(this.count)
-  
 
 
-   }
+
+  }
 
   ngOnInit(): void {
-    var x=parseInt(this.count)
+    var x = parseInt(this.count)
     this.changeSelectedWeekDay(x);
     this.showForm = true;
+    this.doctorId = JSON.parse(localStorage.getItem('currentDoctor')).data.id
+    this.timeSlotForm = this.fb.group({
+      startTime: ['', Validators.required,],
+      endTime: ['', Validators.required]
+
+    });
+
   }
   //Close dialog
   closeDialog() {
@@ -70,7 +83,7 @@ export class AddSlotComponent implements OnInit {
     (this.timeSlotForm.controls.timeSlots as FormArray).removeAt(index);
   }
   getTimeSlotFormArray() {
-  
+
     return this.timeSlotForm.controls.timeSlots as FormArray;
   }
   addTimeSlotEntry() {
@@ -81,11 +94,27 @@ export class AddSlotComponent implements OnInit {
   }
 
 
-  
+  get f() {
+    return this.timeSlotForm.controls;
+  }
+
   addTimeSlots() {
 
-  
-   
+    this.docSchedules = this.timeSlotForm.value
+    console.log(this.docSchedules);
+
+
+    var doctorId = this.doctorId;
+    // this.doctorscheduledtimeService.doctorscheduletimeadd(this.doctorId, this.docSchedules
+    // )
+    //   .pipe(first())
+    //   .subscribe(res => {
+    //     console.log(res);
+
+    //   })
+
+    this.f.startTime.value, this.f.endTime.value
+
     if (this.timeSlotForm.valid) {
       var data = this.timeSlotForm.value;
       var invalidTimeSlots = [];
@@ -123,134 +152,127 @@ export class AddSlotComponent implements OnInit {
       // $('#add_time_slot').modal('hide');
     }
     else {
-     console.log("error")
+      console.log("error")
       return;
     }
   }
   changeSelectedWeekDay(weekDay) {
 
-   
+
     let dayName;
-    
+
     switch (weekDay) {
       case 7:
         dayName = 'Sunday';
-        this.Sun=true;
-        this.Mon=false;
-        this.Tus=false;
-        this.Wed=false;
-        this.Thu=false;
-        this.Fri=false;
-        this.Sat=false;
+        this.Sun = true;
+        this.Mon = false;
+        this.Tus = false;
+        this.Wed = false;
+        this.Thu = false;
+        this.Fri = false;
+        this.Sat = false;
         break;
       case 1:
         dayName = 'Monday';
-        this.Sun=false;
-        this.Mon=true;
-        this.Tus=false;
-        this.Wed=false;
-        this.Thu=false;
-        this.Fri=false;
-        this.Sat=false;
+        this.Sun = false;
+        this.Mon = true;
+        this.Tus = false;
+        this.Wed = false;
+        this.Thu = false;
+        this.Fri = false;
+        this.Sat = false;
         break;
       case 2:
         dayName = 'Tuesday';
-        this.Sun=false;
-        this.Mon=false;
-        this.Tus=true;
-        this.Wed=false;
-        this.Thu=false;
-        this.Fri=false;
-        this.Sat=false;
+        this.Sun = false;
+        this.Mon = false;
+        this.Tus = true;
+        this.Wed = false;
+        this.Thu = false;
+        this.Fri = false;
+        this.Sat = false;
         break;
       case 3:
         dayName = 'Wednesday';
-        this.Sun=false;
-        this.Mon=false;
-        this.Tus=false;
-        this.Wed=true;
-        this.Thu=false;
-        this.Fri=false;
-        this.Sat=false;
+        this.Sun = false;
+        this.Mon = false;
+        this.Tus = false;
+        this.Wed = true;
+        this.Thu = false;
+        this.Fri = false;
+        this.Sat = false;
         break;
       case 4:
         dayName = 'Thursday';
-        this.Sun=false;
-        this.Mon=false;
-        this.Tus=false;
-        this.Wed=false;
-        this.Thu=true;
-        this.Fri=false;
-        this.Sat=false;
+        this.Sun = false;
+        this.Mon = false;
+        this.Tus = false;
+        this.Wed = false;
+        this.Thu = true;
+        this.Fri = false;
+        this.Sat = false;
         break;
       case 5:
         dayName = 'Friday';
-        this.Sun=false;
-        this.Mon=false;
-        this.Tus=false;
-        this.Wed=false;
-        this.Thu=false;
-        this.Fri=true;
-        this.Sat=false;
+        this.Sun = false;
+        this.Mon = false;
+        this.Tus = false;
+        this.Wed = false;
+        this.Thu = false;
+        this.Fri = true;
+        this.Sat = false;
         break;
       case 6:
         dayName = 'Saturday';
-        this.Sun=false;
-        this.Mon=false;
-        this.Tus=false;
-        this.Wed=false;
-        this.Thu=false;
-        this.Fri=false;
-        this.Sat=true;
+        this.Sun = false;
+        this.Mon = false;
+        this.Tus = false;
+        this.Wed = false;
+        this.Thu = false;
+        this.Fri = false;
+        this.Sat = true;
         break;
       default:
         dayName = 'Invalid day';
-        this.Sun=false;
-        this.Mon=false;
-        this.Tus=false;
-        this.Wed=false;
-        this.Thu=false;
-        this.Fri=false;
-        this.Sat=false;
+        this.Sun = false;
+        this.Mon = false;
+        this.Tus = false;
+        this.Wed = false;
+        this.Thu = false;
+        this.Fri = false;
+        this.Sat = false;
     }
-    
+
     console.log(dayName);
-        this.paletteColour = 'warn';
-        this.selected=weekDay;
-    
-        this.selectedWeekDay = weekDay;
-        if (this.timeSlotCounts[this.selectedWeekDay - 1].length > 0) {
-          this.timeSlotsFormArray = this.fb.array([]);
-          this.timeSlotCounts[this.selectedWeekDay - 1].forEach(x => {
-            this.timeSlotsFormArray.push(this.fb.group({
-              fromTimeSlot: [x.fromTimeSlot],
-              toTimeSlot: [x.toTimeSlot]
-            }));
-          });
-    
-          this.timeSlotForm = this.fb.group({
-            weekDay: [this.selectedWeekDay],
-            timeSlots: this.timeSlotsFormArray
-          });
-    
-        }
-        else {
-          this.timeSlotsFormArray = this.fb.array([]);
-          this.timeSlotsFormArray.push(this.fb.group({
-            fromTimeSlot: ['00:00:00'],
-            toTimeSlot: ['01:00:00']
-          }));
-          this.timeSlotForm = this.fb.group({
-            weekDay: [this.selectedWeekDay],
-            timeSlots: this.timeSlotsFormArray
-          });
-        }
-      }
-    
+    this.paletteColour = 'warn';
+    this.selected = weekDay;
 
+    this.selectedWeekDay = weekDay;
+    if (this.timeSlotCounts[this.selectedWeekDay - 1].length > 0) {
+      this.timeSlotsFormArray = this.fb.array([]);
+      this.timeSlotCounts[this.selectedWeekDay - 1].forEach(x => {
+        this.timeSlotsFormArray.push(this.fb.group({
+          fromTimeSlot: [x.fromTimeSlot],
+          toTimeSlot: [x.toTimeSlot]
+        }));
+      });
 
+      this.timeSlotForm = this.fb.group({
+        weekDay: [this.selectedWeekDay],
+        timeSlots: this.timeSlotsFormArray
+      });
 
-
-
-
+    }
+    else {
+      this.timeSlotsFormArray = this.fb.array([]);
+      this.timeSlotsFormArray.push(this.fb.group({
+        fromTimeSlot: [''],
+        toTimeSlot: ['']
+      }));
+      this.timeSlotForm = this.fb.group({
+        weekDay: [this.selectedWeekDay],
+        timeSlots: this.timeSlotsFormArray
+      });
+    }
+  }
 }

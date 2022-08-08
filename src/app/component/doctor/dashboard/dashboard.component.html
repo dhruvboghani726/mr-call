@@ -9,8 +9,8 @@
   <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="space-around stretch" fxLayout.xs="column" fxFlex>
 
     <div fxFlex="60%" fxFlex.xs="100%" fxFlex.sm="100%" fxLayoutGap="15px" style="margin-right: 0px;">
-      <mat-card fxLayoutGap="20px" class="background-color-primary-light card-margin-right" fxLayoutAlign="space-around stretch"
-        fxLayout.xs="column">
+      <mat-card fxLayoutGap="20px" class="background-color-primary-light card-margin-right"
+        fxLayoutAlign="space-around stretch" fxLayout.xs="column">
         <mat-card class="card-box-shadow" ngClass.sm="card-box-shadow-sm" fxFlex="30" fxFlex.lt-sm="100">
           <div fxLayout="column" fxLayoutAlign="center center">
             <div fxLayout="column" fxLayoutAlign="start center">
@@ -18,7 +18,7 @@
                 <p class="mat-h4" ngClass.xs="mat-h2">Doctor</p>
               </mat-card-title>
               <mat-card-content>
-                <p class="mat-h1 color-primary">25</p>
+                <p class="mat-h1 color-primary">{{DoctorCountDashboard}}</p>
               </mat-card-content>
             </div>
             <!-- </div> -->
@@ -31,27 +31,29 @@
                 <p class="mat-h4" ngClass.xs="mat-h2">Appointment</p>
               </mat-card-title>
               <mat-card-content>
-                <p class="mat-h1 color-primary">35</p>
-              </mat-card-content>              
+                <p class="mat-h1 color-primary">{{AppointmentCountDashboard}}</p>
+              </mat-card-content>
             </div>
           </div>
         </mat-card>
 
-        <mat-card class="card-box-shadow" ngClass.sm="card-box-shadow-sm" fxFlex="30" fxFlex.lt-sm="100" fxLayoutGap="15px">
+        <mat-card class="card-box-shadow" ngClass.sm="card-box-shadow-sm" fxFlex="30" fxFlex.lt-sm="100"
+          fxLayoutGap="15px">
           <div fxLayout="column" fxLayoutAlign="start center">
             <div fxLayout="column" fxLayoutAlign="start center">
               <mat-card-title ngClass.sm="title-height-sm">
                 <p class="mat-h4" ngClass.xs="mat-h2">Today Appointment</p>
               </mat-card-title>
               <mat-card-content>
-                <p class="mat-h1 color-primary">15</p>
-              </mat-card-content>              
+                <p class="mat-h1 color-primary">{{TodayAppointmentDashboard}}</p>
+              </mat-card-content>
             </div>
           </div>
         </mat-card>
       </mat-card>
       <br>
-      <mat-card class="cardsizedash card-margin-right background-color-primary-light" [ngStyle.xs]="{ width: 'auto'}" fxLayoutGap="15px">
+      <mat-card class="cardsizedash card-margin-right background-color-primary-light" [ngStyle.xs]="{ width: 'auto'}"
+        fxLayoutGap="15px">
         <mat-card-title class="mat-h4" ngClass.xs="mat-h2">Remaining Booking Points(0)</mat-card-title>
         <mat-card-content class="paddingLeft" fxLayout="column" fxLayoutGap="15px">
           <mat-card class="mat-h2" ngClass.xs="mat-h5"></mat-card>

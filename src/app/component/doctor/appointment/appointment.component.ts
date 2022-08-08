@@ -2,10 +2,11 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 
 import { Pipe, PipeTransform } from '@angular/core';
 import { DatePipe } from '@angular/common';
-
+import { BookAppoinmentService } from 'src/app/shared/services/BookAppointment.service';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 import { AcceptDialogComponent } from './accept-dialog/accept-dialog.component';
+import { LoaderService } from 'src/app/shared/services/loader.service';
 
 
 // interface select {
@@ -21,11 +22,17 @@ import { AcceptDialogComponent } from './accept-dialog/accept-dialog.component';
 })
 export class AppointmentComponent implements OnInit {
   myDate = new Date();
-  constructor( public http: HttpClient,
-    public dialog: MatDialog) { }
+  doctorId: any;
+  ViewAppoinmentDr: any = [];
+  constructor(public http: HttpClient,
+    public dialog: MatDialog, private bookappoinmentService: BookAppoinmentService, public loader: LoaderService,) { }
 
   ngOnInit(): void {
-   
+
+    this.doctorId = JSON.parse(localStorage.getItem('currentDoctor')).data.id
+    this.DrViewappoinment();
+    console.log(this.doctorId);
+
   }
 
   // Time_select: select[] = [
@@ -40,8 +47,21 @@ export class AppointmentComponent implements OnInit {
   //   this.isVisible = true;
   // }
 
-
-  accept(data,action){
+  DrViewappoinment() {
+    this.doctorId = this.doctorId
+    this.loader.show();
+    this.bookappoinmentService.DrViewappoinment(this.doctorId)
+      .pipe()
+      .subscribe(res => {
+        console.log(res);
+        this.ViewAppoinmentDr = res['data'];
+        console.log(this.ViewAppoinmentDr);
+        this.loader.hide();
+        return res;
+      },
+      )
+  }
+  accept(data, action) {
     data.actiondialog = action
     const dialogRef = this.dialog.open(AcceptDialogComponent, {
       height: 'auto',
@@ -50,7 +70,7 @@ export class AppointmentComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       // this.loader.hide();
-     
+
     });
   }
 

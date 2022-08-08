@@ -6,7 +6,7 @@
             <span class="mat-h2" ngClass.xs="mat-h3">Schedule Timings</span>
         </span>
     </mat-card>
-    <div fxLayout="column" fxLayoutAlign="center" style="padding: 12px;"  fxLayoutGap="15px">
+    <div fxLayout="column" fxLayoutAlign="center" style="padding: 12px;" fxLayoutGap="15px">
         <div fxLayout="column" fxLayoutGap="5px">
             <span class="mat-h4" ngClass.xs="mat-h2">Timing Slot Duration</span>
 
@@ -43,20 +43,20 @@
         </div>
 
         <div *ngIf="AddSlotSection">
-            <div fxLayout="row"  fxLayoutGap="10px" fxLayoutAlign="space-between center">
-                <span class="mat-h4"   ngClass.xs="mat-h2">Timing Slots</span>
-                <span >
-                     <button  (click)="openDialog('Add',1,'Sunday')"  mat-button color="primary" class="menu-button">
-                    <mat-icon color="primary">add</mat-icon>
-                    <span>Add Slot</span>
-                </button></span>
+            <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+                <span class="mat-h4" ngClass.xs="mat-h2">Timing Slots</span>
+                <span>
+                    <button (click)="openDialog('Add',1,'Sunday')" mat-button color="primary" class="menu-button">
+                        <mat-icon color="primary">add</mat-icon>
+                        <span>Add Slot</span>
+                    </button></span>
             </div>
-            <div fxLayout="row" fxLayout.xs="column"  >
-                <span  class="mat-h3" *ngIf="options == null" ngClass.xs="mat-h4"> Not Available</span>
+            <div fxLayout="row" fxLayout.xs="column">
+                <span class="mat-h3" *ngIf="options == null" ngClass.xs="mat-h4"> Not Available</span>
                 <mat-chip-list *ngIf="options">
                     <mat-chip color="primary" #chipList *ngFor="let option of options" [removable]="true"
-                    (removed)="removeOption(option)">{{option.fromTimeSlot}} - {{option.toTimeSlot}}    
-                    <mat-icon matChipRemove>cancel</mat-icon>
+                        (removed)="removeOption(option)">{{option.startTime}} - {{option.endTime}}
+                        <mat-icon matChipRemove>cancel</mat-icon>
                     </mat-chip>
                 </mat-chip-list>
             </div>

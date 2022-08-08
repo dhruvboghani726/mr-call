@@ -63,6 +63,7 @@
 
 .timezone {
   margin-top: 10px;
+  margin-left: 10px;
 }
 
 .book-app-btn {
@@ -97,4 +98,11 @@ mat-toolbar-single-row {
   flex-direction: row;
   align-items: center;
   white-space: nowrap;
+}
+
+.mat-radio-group {
+  // display: flex;
+  // width: 100%;
+  // font-size: 0.5em;
+  justify-content: space-between;
 }

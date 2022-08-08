@@ -11,22 +11,23 @@ export class DashboardComponent implements OnInit {
   AppointmentCountDashboard: any;
   TodayAppointmentDashboard: any;
   dashboard: any;
-  isLoading: boolean;
 
-  constructor(private dashboardservice: DashboardService, private loaderService: LoaderService) { }
+  loading$ = this.loader.isLoading;
+
+  constructor(private dashboardservice: DashboardService, public loader: LoaderService) { }
 
   ngOnInit(): void {
     this.dashboardcount()
   }
   dashboardcount() {
-    this.isLoading = true;
+    this.loader.show();
     this.dashboardservice.dashboardcount().pipe().subscribe(res => {
       console.log(res);
       this.DoctorCountDashboard = res.data.doctorCount;
       this.AppointmentCountDashboard = res.data.totalAppointment;
       this.TodayAppointmentDashboard = res.data.todayAppointment;
       console.log(this.dashboard);
-      this.isLoading = false;
+      this.loader.hide();
     });
   }
 }
