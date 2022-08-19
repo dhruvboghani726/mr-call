@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { LoaderService } from 'src/app/shared/services/loader.service';
 import { SnackbarService } from 'src/app/shared/services/snackbar.service';
 import { DatePipe } from '@angular/common'
+import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 @Component({
   selector: 'app-book-an-appointment',
   templateUrl: './book-an-appointment.component.html',
@@ -42,6 +43,7 @@ export class BookAnAppointmentComponent implements OnInit {
   city: any;
   count: any;
   searchdataForm: FormGroup;
+  DatePickerForm: FormGroup;
   searchvalue: any;
   cityvalue: any;
   slottime: any;
@@ -51,7 +53,8 @@ export class BookAnAppointmentComponent implements OnInit {
   loading$ = this.loader.isLoading;
   appointmentId: string;
   date: string | number | Date;
-
+  events: string[] = [];
+  setDate: any;
 
   constructor(private router: Router, private bookappoinmentService: BookAppoinmentService, public datepipe: DatePipe, private snackService: SnackbarService, public loader: LoaderService, public fb: FormBuilder, private getallDoctorsService: GetalldoctorService,) {
   }
@@ -61,6 +64,9 @@ export class BookAnAppointmentComponent implements OnInit {
       search: [''],
       city: ['',]
 
+    });
+    this.DatePickerForm = this.fb.group({
+      DateForm: [''],
     });
     this.interval = setInterval(() => {
       this.currenttime = new Date();
@@ -84,13 +90,16 @@ export class BookAnAppointmentComponent implements OnInit {
 
 
     this.mrId = JSON.parse(localStorage.getItem('currentMr')).data.id
-    this.doctorlistbymr();
+    // this.doctorlistbymr();
     // this.serchDoctor();
     // this.Getalldoctor(); // all doctor show api function
 
   }
   get f() {
     return this.searchdataForm.controls;
+  }
+  get form_date() {
+    return this.DatePickerForm.controls;
   }
   timesloatChange(event: MatRadioChange) {
     var slottime = event.value;
@@ -135,22 +144,22 @@ export class BookAnAppointmentComponent implements OnInit {
   //     })
   // }
 
-  doctorlistbymr() {
-    this.loader.show();
-    var mrId = this.mrId;
-    this.bookappoinmentService.doctorlistbymr(mrId)
-      .pipe(first())
-      .subscribe(res => {
-        this.FavdoctorList = res['data'];
-        this.count = res.count;
-        // console.log(this.count);
+  // doctorlistbymr() {
+  //   this.loader.show();
+  //   var mrId = this.mrId;
+  //   this.bookappoinmentService.doctorlistbymr(mrId)
+  //     .pipe(first())
+  //     .subscribe(res => {
+  //       this.FavdoctorList = res['data'];
+  //       this.count = res.count;
+  //       // console.log(this.count);
 
-        console.log(this.FavdoctorList);
-        console.log(res);
-        this.loader.hide();
-        return res;
-      });
-  }
+  //       console.log(this.FavdoctorList);
+  //       console.log(res);
+  //       this.loader.hide();
+  //       return res;
+  //     });
+  // }
 
   Cityfilter(event) {
     this.loader.show();
@@ -164,7 +173,7 @@ export class BookAnAppointmentComponent implements OnInit {
         this.FavdoctorList = [];
         this.FavdoctorList = res['data'];
         ///this.count = res.count;
-        console.log(res['data']);
+        // console.log(res['data']);
         this.loader.hide();
       });
   }
@@ -180,10 +189,29 @@ export class BookAnAppointmentComponent implements OnInit {
         this.FavdoctorList = [];
         this.FavdoctorList = res['data'];
         ///this.count = res.count;
-        console.log(res['data']);
+        // console.log(res['data']);
         this.loader.hide();
       });
   }
 
+  // Filter Doctor List click event to search doctor 
+  FilterDoctorList(type: string, event: MatDatepickerInputEvent<Date>) {
+    this.events.push(`${type}: ${event.value}`);
+    this.AppointmentDate = this.datepipe.transform(`${event.value}`, 'yyyy-MM-dd');
+    // console.log(this.AppointmentDate)
+    if(this.AppointmentDate  !== null){
+      this.loader.show();
+      this.bookappoinmentService.SearchDoctorByDate(this.AppointmentDate, this.mrId)
+      .pipe(first())
+      .subscribe(res => {
+        this.FavdoctorList = [];
+        this.FavdoctorList = res['data'];
+        ///this.count = res.count;
+        console.log(res['data']);
+        this.loader.hide();
+      });
+    }
+
+  }
 }
 

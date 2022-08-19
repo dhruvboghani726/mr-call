@@ -43,7 +43,7 @@
                     </mat-form-field> -->
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Full Name</mat-label>
-                        <input matInput formControlName="Name" [(ngModel)]="Name" type="text" id="Name" maxlength="256"
+                        <input matInput formControlName="Name" [(ngModel)]="this.userData.data.name" type="text" id="Name" maxlength="256"
                             required required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -56,14 +56,14 @@
                     </mat-form-field> -->
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Mobile</mat-label>
-                        <input matInput formControlName="phonenumber" [(ngModel)]="phonenumber" type="text"
+                        <input matInput formControlName="phonenumber" [(ngModel)]="this.userData.data.phoneNumber" type="text"
                             id="phonenumber" maxlength="10" type="tel" required required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                         <mat-label>Email</mat-label>
-                        <input matInput formControlName="Email" [(ngModel)]="Email" type="text" id="Email" required
+                        <input matInput formControlName="Email" [(ngModel)]="Email" type="text" id="Email" 
                             readonly>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -72,7 +72,7 @@
                         fxLayoutAlign="flex-start">
                         <mat-form-field class="mat-form-field" ngClass.xs="mat-form-field-half" appearance="outline">
                             <mat-label>Date Of Birth</mat-label>
-                            <input matInput [matDatepicker]="picker" formControlName="dob" [(ngModel)]="dob" id="dob">
+                            <input matInput [matDatepicker]="picker" formControlName="dob" [(ngModel)]="this.userData.data.dob" id="dob">
                             <mat-hint>MM/DD/YYYY</mat-hint>
                             <mat-datepicker-toggle matSuffix [for]="picker">
                                 <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -103,7 +103,7 @@
                 <form [formGroup]="MrProfileFormGroup">
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Company Name</mat-label>
-                        <input matInput formControlName="company" [(ngModel)]="company" type="text" id="company"
+                        <input matInput formControlName="company" [(ngModel)]="this.userData.data.company" type="text" id="company"
                             placeholder="Valiants Pharmaceuticals" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -113,7 +113,7 @@
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Divison</mat-label>
-                            <input matInput formControlName="division" [(ngModel)]="division" id="division" required>
+                            <input matInput formControlName="division" [(ngModel)]="this.userData.data.division" id="division" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
                         </mat-form-field>
                     </div>
@@ -121,7 +121,7 @@
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Speciality</mat-label>
-                        <input matInput formControlName="speciality" [(ngModel)]="speciality" id="Speciality"
+                        <input matInput formControlName="speciality" [(ngModel)]="this.userData.data.speciality" id="Speciality"
                             placeholder="Ophtholmic" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -141,7 +141,7 @@
                         <!-- city field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 1</mat-label>
-                            <input matInput placeholder="Ahmedabad" formControlName="City" [(ngModel)]="City" id="City"
+                            <input matInput placeholder="Ahmedabad" formControlName="City" [(ngModel)]="this.userData.data.city[0]" id="City"
                                 required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -149,7 +149,7 @@
                         <!--  city field  -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 2</mat-label>
-                            <input matInput formControlName="city2" [(ngModel)]="city2" id="city2"
+                            <input matInput formControlName="city2" [(ngModel)]="this.userData.data.city[1]" id="city2"
                                 placeholder="Bhavnagar" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -160,7 +160,7 @@
                         <!-- First name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 3</mat-label>
-                            <input matInput placeholder="Vadodara" formControlName="city3" [(ngModel)]="city3"
+                            <input matInput placeholder="Vadodara" formControlName="city3" [(ngModel)]="this.userData.data.city[2]"
                                 id="city3" required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -168,7 +168,7 @@
                         <!-- Last name field -->
                         <mat-form-field class="mat-form-field" appearance="outline">
                             <mat-label>Territoris 4</mat-label>
-                            <input matInput placeholder="Surat" formControlName="city4" [(ngModel)]="city4" id="city4"
+                            <input matInput placeholder="Surat" formControlName="city4" [(ngModel)]="this.userData.data.city[3]" id="city4"
                                 required>
                             <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
@@ -187,20 +187,20 @@
 
         <mat-card-content fxLayoutAlign.xs="center center" class="backgroud-color-white"
             style="border-radius: 10px;padding: 18px 40px 0px 40px;">
-            <form [formGroup]="">
+            <form [formGroup]="productForm">
                 <div fxLayout fxLayoutGap="10px" fxLayout.gt-sm="row" fxLayout.lt-sm="column"
                     fxLayoutAlign="flex-start">
                     <!-- First name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 1</mat-label>
-                        <input matInput placeholder="Product 1" required>
+                        <input matInput placeholder="Product 1" formControlName="product1" [ngModel]="this.userData.data.products[0]" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 2</mat-label>
-                        <input matInput placeholder="Product 2" required>
+                        <input matInput placeholder="Product 2" formControlName="product2" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -210,14 +210,14 @@
                     <!-- First name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 3</mat-label>
-                        <input matInput placeholder="Product 3" required>
+                        <input matInput placeholder="Product 3" formControlName="product3" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 4</mat-label>
-                        <input matInput placeholder="Product 4" required>
+                        <input matInput placeholder="Product 4" formControlName="product4" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -227,14 +227,14 @@
                     <!-- First name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 5</mat-label>
-                        <input matInput placeholder="Product 5" required>
+                        <input matInput placeholder="Product 5" formControlName="product5" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 6</mat-label>
-                        <input matInput placeholder="Product 6" required>
+                        <input matInput placeholder="Product 6" formControlName="product6" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -244,14 +244,14 @@
                     <!-- First name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 7</mat-label>
-                        <input matInput placeholder="Product 7" required>
+                        <input matInput placeholder="Product 7" formControlName="product7" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 8</mat-label>
-                        <input matInput placeholder="Product 8" required>
+                        <input matInput placeholder="Product 8" formControlName="product8" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
@@ -261,31 +261,32 @@
                     <!-- First name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 9</mat-label>
-                        <input matInput placeholder="Product 9" required>
+                        <input matInput placeholder="Product 9" formControlName="product9" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                     <!-- Last name field -->
                     <mat-form-field class="mat-form-field" appearance="outline">
                         <mat-label>Product 10</mat-label>
-                        <input matInput placeholder="Product 10" required>
+                        <input matInput placeholder="Product 10" formControlName="product10" required>
                         <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
 
                     </mat-form-field>
                 </div>
 
-                <mat-card-actions fxLayout.xs="row" align="center" fxLayoutGap="5px">
-
-
-
-                    <button mat-raised-button color="primary" [disabled]="MrProfileFormGroup.invalid.value"
-                        (click)="updateProfile()">
-                        <mat-icon class="color-white">edit</mat-icon>Update
-
-                    </button>
-
-                </mat-card-actions>
+                
             </form>
+            <mat-card-actions fxLayout.xs="row" align="center" fxLayoutGap="5px">
+
+
+
+                <button mat-raised-button color="primary" [disabled]="MrProfileFormGroup.invalid.value"
+                    (click)="updateProfile()">
+                    <mat-icon class="color-white">edit</mat-icon>Update
+
+                </button>
+
+            </mat-card-actions>
         </mat-card-content>
     </mat-card>
 </div>

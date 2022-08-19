@@ -15,6 +15,7 @@ const API_URL = environment.apiUrl;
 })
 export class UpdateProfileService {
     apiEndPoint: string;
+    _apiEndPoint: string = '';
 
     private restmanagerService: RestmanagerService;
 
@@ -22,21 +23,21 @@ export class UpdateProfileService {
         this.restmanagerService = restmanagerService;
     }
 
-    // updateProfile(Mrid, Name, company, phonenumber, dob, division, speciality, City,) {
-    //     return this.restmanagerService.add<updateProfile>(`/api/MR/MrProfile`, {
-    //         Mrid,
-    //         Name,
-    //         company,
-    //         phonenumber,
-    //         dob,
-    //         division,
-    //         speciality,
-    //         City,
-    //         // ProductsName
-    //     })
-    //         .pipe(map(res => {
-    //             return res;
-    //         }));
-    // }
+    //Get All Appointment list api
+  GetProfileData<T>(apiURL: string): Observable<T[]> {
+    return this.http.get<T[]>(`${this._apiEndPoint}/${apiURL}`);
+  }
+
+//Update Profile API
+UpdateProfile(formdata) {
+    return this.http.post<updateProfile>(`${environment.apiUrl}/api/MR/MrProfile`,
+      formdata
+    )
+      .pipe(map(res => {
+        console.log(res,"res")
+        console.log(formdata,"formdata")
+        return res;
+      }));
+  }
 
 }

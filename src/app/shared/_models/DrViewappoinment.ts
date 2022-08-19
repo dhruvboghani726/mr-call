@@ -13,5 +13,5 @@ export class Drviewappoinment {
     startTime: string;
     endTime: string;
     status: string;
-    reasonToCancel: null;
+    reasonToCancel: string;
 }
