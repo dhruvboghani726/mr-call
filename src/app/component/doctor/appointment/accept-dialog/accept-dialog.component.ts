@@ -97,17 +97,17 @@ export class AcceptDialogComponent implements OnInit {
           (data: any) => {
             console.log(data)
             this.loader.hide();
-            if (data.message == 'Appointment updated successfully') {
+            // if (data.message == 'Appointment updated successfully') {
 
-            } else {
-              console.log(data.error.message)
-
-            }
+            // } else {
+            //   console.log(data.error.message)
+            //   this.snackService.openSnackBarError('Appointment status is Cancelled can not update.', '')
+            //   this.dialogRef.close({ data: this.local_data });
+            // }
             this.snackService.openSnackBar("Appointment updated successfully", '');
             this.dialogRef.close({ data: this.local_data });
 
-            this.snackService.openSnackBarError('Appointment status is Cancelled can not update.', '')
-            this.dialogRef.close({ data: this.local_data });
+
           },
           error => {
             console.log(error.message)
@@ -136,14 +136,14 @@ export class AcceptDialogComponent implements OnInit {
           (data: any) => {
             console.log(data)
             this.loader.hide();
-            if (data.message == 'Appointment updated successfully') {
-            }
-            else {
-              this.snackService.openSnackBarError('Appointment status is Cancelled can not update.', '')
-              this.dialogRef.close({ data: this.local_data });
-              console.log(data.error.message)
+            // if (data.message == 'Appointment updated successfully') {
+            // }
+            // else {
+            //   this.snackService.openSnackBarError('Appointment status is Cancelled can not update.', '')
+            //   this.dialogRef.close({ data: this.local_data });
+            //   console.log(data.error.message)
 
-            }
+            // }
             this.snackService.openSnackBar("Appointment updated successfully", '');
             this.dialogRef.close({ data: this.local_data });
 

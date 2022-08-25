@@ -121,14 +121,22 @@ export class BookAnAppointmentComponent implements OnInit {
     this.Mrid = this.mrId;
     this.date = data['date'];
     this.AppointmentDate = this.datepipe.transform(this.date, 'yyyy-MM-dd');
+    console.log(this.AppointmentDate);
+
     this.bookappoinmentService.BookAppointment(this.DoctorId, this.Mrid, this.AppointmentDate, this.StartTime, this.EndTime)
       .pipe(first())
       .subscribe(res => {
         console.log(res['appointmentId']);
         localStorage.setItem("apoimentId", res['appointmentId']);
         this.loader.hide();
-        alert('book appoinment successfully')
+        this.snackService.openSnackBar("Book Appointment  successfully", '');
+        this.router.navigate(['mr/appoinment-recipt'], { queryParams: { response: res['data'], appoimentDate: this.AppointmentDate, startTime: this.StartTime, endTime: this.EndTime } });
       })
+    error => {
+      console.log(data.error.message)
+      console.log(data.error.error)
+      this.snackService.openSnackBarError('Book Appointment  faild",.', '')
+    }
   }
 
   // Getalldoctor() {
@@ -199,17 +207,17 @@ export class BookAnAppointmentComponent implements OnInit {
     this.events.push(`${type}: ${event.value}`);
     this.AppointmentDate = this.datepipe.transform(`${event.value}`, 'yyyy-MM-dd');
     // console.log(this.AppointmentDate)
-    if(this.AppointmentDate  !== null){
+    if (this.AppointmentDate !== null) {
       this.loader.show();
       this.bookappoinmentService.SearchDoctorByDate(this.AppointmentDate, this.mrId)
-      .pipe(first())
-      .subscribe(res => {
-        this.FavdoctorList = [];
-        this.FavdoctorList = res['data'];
-        ///this.count = res.count;
-        console.log(res['data']);
-        this.loader.hide();
-      });
+        .pipe(first())
+        .subscribe(res => {
+          this.FavdoctorList = [];
+          this.FavdoctorList = res['data'];
+          ///this.count = res.count;
+          console.log(res['data']);
+          this.loader.hide();
+        });
     }
 
   }
