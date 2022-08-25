@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { CONSTANT } from '../../../shared/utils/constant';
 import { AddSlotComponent } from './add-slot/add-slot.component';
 import { MatDialog } from '@angular/material/dialog';
+import { count } from 'rxjs/internal/operators/count';
 
 @Component({
   selector: 'app-schedule-timing',
@@ -23,9 +24,10 @@ export class ScheduleTimingComponent implements OnInit {
   Sat: boolean = false;
   showSelected: boolean = false;
   showSelectededit: boolean = false;
-  selectedWeekDay: number = 1;
+  selectedWeekDay: string = '';
   selected
   paletteColour
+  SelectedDay: string = '';
 
   constructor(public dialog: MatDialog) { }
 
@@ -127,18 +129,21 @@ export class ScheduleTimingComponent implements OnInit {
 
     this.paletteColour = 'warn';
     this.selected = workday;
+    this.SelectedDay = dayName
+    // console.log(this.SelectedDay);
 
-    this.selectedWeekDay = workday;
+    this.selectedWeekDay = this.SelectedDay;
+    console.log(this.selectedWeekDay);
 
   }
 
-  openDialog(action, count, day) {
-    console.log(action)
+  openDialog() {
+    // console.log(action, selectedWeekDay, count)
+    console.log(this.selectedWeekDay);
 
-    var arr1 = [action, day, count];
-    const arr2 = arr1.reduce((obj, arrValue) => (obj["action"] = action, obj['day'] = day, obj['count'] = count, obj), {});
+    var arr1 = [this.selectedWeekDay];
+    const arr2 = arr1.reduce((obj, arrValue) => (obj['day'] = this.selectedWeekDay), {});
     console.log(arr2);
-
 
     const dialogRef = this.dialog.open(AddSlotComponent, {
       width: '470px',
@@ -149,7 +154,7 @@ export class ScheduleTimingComponent implements OnInit {
       console.log("result",)
       if (result) {
         console.log(result.data)
-        this.options = result.data[0].timeSlots
+        this.options = result.data[0].trim
         //  this.scheduleDatasunday(result.data);
       }
 

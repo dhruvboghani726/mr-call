@@ -80,7 +80,7 @@ export class BookAppoinmentService {
       );
   }
 
-  SearchDoctorByDate(date,mrId) {
+  SearchDoctorByDate(date, mrId) {
     return this.restmanagerService
       .getWithParametersdata<DoctorListByMr>(`/api/Doctor/SearchDoctor`, {
         date: date,
@@ -156,13 +156,13 @@ export class BookAppoinmentService {
   ) {
     return this.http
       .post<any>(`${environment.apiUrl}/api/MR/UpdateAppointment`, {
-        AppointmentId:AppointmentId,
-        StartTime:StartTime,
-        EndTime:EndTime,
-        AppointmentDate:AppointmentDate,
-        Type:Type,
-        Status:Status,
-        ReasonToCancel:ReasonToCancel,
+        AppointmentId: AppointmentId,
+        StartTime: StartTime,
+        EndTime: EndTime,
+        AppointmentDate: AppointmentDate,
+        Type: Type,
+        Status: Status,
+        ReasonToCancel: ReasonToCancel,
       })
       .pipe(
         map((res) => {

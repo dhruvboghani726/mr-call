@@ -31,13 +31,13 @@ export class DoctorScheduledTimeService {
     // }
 
     // working use
-    // doctorscheduletimeadd(doctorId: string, docSchedules: any) {
-    //     return this.restmanagerService.add<doctorscheduletimeadd>(`/api/DoctorSchedule/addDoctorSchedule`, {
-    //         doctorId,
-    //         docSchedules
-    //     })
-    //         .pipe(map(res => {
-    //             return res;
-    //         }));
-    // }
+    doctorscheduletimeadd(doctorId: string, docSchedules: []) {
+        return this.restmanagerService.add<doctorscheduletimeadd>(`/api/DoctorSchedule/addDoctorSchedule`, {
+            doctorId,
+            docSchedules
+        })
+            .pipe(map(res => {
+                return res;
+            }));
+    }
 }

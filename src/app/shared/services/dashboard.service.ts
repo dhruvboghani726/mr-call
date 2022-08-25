@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { dashboard } from '../_models/dashboard';
+import { RestmanagerService } from '../utils/restmanagerService';
 
 const API_URL = environment.apiUrl;
 
@@ -10,15 +12,19 @@ const API_URL = environment.apiUrl;
   providedIn: 'root'
 })
 export class DashboardService {
+  private restmanagerService: RestmanagerService;
+  constructor(private http: HttpClient,
+    restmanagerService: RestmanagerService) { this.restmanagerService = restmanagerService; }
 
-  constructor(private http: HttpClient) { }
-
-  dashboardcount(): Observable<any> {
-
-    return this.http.get(`${environment.apiUrl}/api/Dashboard/DashboardCount`, {
-    })
-      .pipe(map(res => {
-        return res;
-      }));
+  dashboardData(id) {
+    return this.restmanagerService
+      .getWithParametersdata<dashboard>(`/api/Dashboard/DashboardCount`, {
+        id: id,
+      })
+      .pipe(
+        map((data) => {
+          return data;
+        })
+      );
   }
 }

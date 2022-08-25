@@ -6,13 +6,13 @@
   <!-- <mat-card *ngIf="Nopatients"  class="card-box-shadow">
     <p class="mat-h3 color-primary">No Appointment Available</p>
   </mat-card> -->
-  <div class="cardpadding" fxLayout="column" fxLayoutGap="10px">
+  <div class="cardpadding" fxLayout="column " fxLayoutGap="10px">
     <!-- {{this.patients | json}} -->
     <!-- *ngFor="let item of this.patients" -->
     <div fxLayout="column" fxLayoutGap="10px">
-      <mat-card class="card-box-shadow">
-        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-between start"
-          fxLayoutAlign.lt-sm="center center" fxLayoutGap="10px" fxFlex *ngFor="let item of ViewAppoinmentDr">
+      <mat-card class="card-box-shadow" *ngFor="let item of ViewAppoinmentDr">
+        <div fxLayout="row " fxLayout.lt-sm="column" fxLayoutAlign="space-between start"
+          fxLayoutAlign.lt-sm="center center" fxLayoutGap="10px" fxFlex>
           <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="10px" fxFlex="80" fxFlex.lt-sm="100">
             <div fxLayout="row" fxLayoutAlign.lt-sm="center center">
               <!-- <img src="{{item.image}}" alt=""  class="profile-img"> -->
@@ -20,68 +20,46 @@
 
             </div>
             <div fxLayout="column" fxLayoutGap="10px">
-
               <div fxLayout="row" fxLayoutGap="10px">
                 <mat-icon>person</mat-icon>
                 <p class="mat-h3">
                   {{item.mrName}}
-                  <!-- {{item.firstName | titlecase}}  {{item.lastName | titlecase}} -->
                 </p>
               </div>
               <div fxLayout="row" fxLayoutGap="10px">
                 <mat-icon>date_range</mat-icon>
                 <p class="mat-h3">
                   {{item.appointmentDate | date: "dd MM yyyy"}}
-                  <!-- {{item.appointmentDate| date: "dd MMM yyyy"}},{{item.appointmentTime}} -->
                 </p>
               </div>
               <div fxLayout="row" fxLayoutGap="10px">
                 <mat-icon>view_week</mat-icon>
                 <p class="mat-h3">
                   {{ item.day}}
-                  <!-- {{item.email?.length >18?(item.email | slice:0:28)+'...':(item.email)}}</p> -->
               </div>
 
               <div fxLayout="row" fxLayoutGap="10px">
                 <mat-icon>access_time</mat-icon>
                 <p class="mat-h3">
                   {{ item.startTime}} - {{ item.endTime}}
-                  <!-- {{item.email?.length >18?(item.email | slice:0:28)+'...':(item.email)}}</p> -->
               </div>
               <div fxLayout="row" fxLayoutGap="10px">
                 <mat-icon>done</mat-icon>
                 <p class="mat-h3">
-                  {{ item.status}}
-                  <!-- {{item.email?.length >18?(item.email | slice:0:28)+'...':(item.email)}}</p> -->
+                  {{item.status}}
               </div>
             </div>
           </div>
-          <div fxLayout="column" fxLayout.xs="rwo" fxLayoutAlign="center" fxLayoutGap="10px" fxFlex="20"
+          <div fxLayout="column" fxLayout.xs="row" fxLayoutAlign="center" fxLayoutGap="10px" fxFlex="20"
             fxFlex.lt-sm="100" class="actions-button">
-            <button mat-raised-button color="primary" (click)="accept([{
-              id:'1'
-            }], 'Accept')">Accept</button>
-            <button mat-raised-button color="warn" (click)="accept([{
-              id:'1'
-            }], 'Cancel')">Cancel</button>
-            <button mat-raised-button color="accent" (click)="accept([{
-              id:'1'
-            }], 'Block')">Block</button>
+            <button [disabled]="item.status == 'Cancelled' || item.status == 'Accepted'" mat-raised-button
+              color="primary" (click)="accept ([{id:'1'}], 'Accept',item)">Accept</button>
+            <button [disabled]="item.status == 'Cancelled' || item.status == 'Accepted'" mat-raised-button color="warn"
+              (click)="accept   ([{id:'1'}], 'Cancel',item)">Cancel</button>
+            <button mat-raised-button color="accent" (click)="accept  ([{id:'1'}], 'Block')">Block</button>
           </div>
         </div>
       </mat-card>
     </div>
   </div>
 </div>
-
-
-<!-- <div ng-hide="myVar">
-  <mat-form-field appearance="outline">
-      <mat-label>Time Schedule</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let select of Time_select" [value]="select.value">
-          {{select.viewValue}}
-        </mat-option>
-      </mat-select>
-  </mat-form-field>
-</div> -->
