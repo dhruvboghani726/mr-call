@@ -4,6 +4,7 @@ import { CONSTANT } from '../../../shared/utils/constant';
 import { AddSlotComponent } from './add-slot/add-slot.component';
 import { MatDialog } from '@angular/material/dialog';
 import { count } from 'rxjs/internal/operators/count';
+import { DoctorScheduledTimeService } from 'src/app/shared/services/doctor-schedule-time';
 
 @Component({
   selector: 'app-schedule-timing',
@@ -28,10 +29,15 @@ export class ScheduleTimingComponent implements OnInit {
   selected
   paletteColour
   SelectedDay: string = '';
+  doctorId: any;
+  totalScheduleTime: any;
+  totalScheduleTimebyDay = [];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, private doctorscheduletimeservice: DoctorScheduledTimeService) { }
 
   ngOnInit(): void {
+    this.doctorId = JSON.parse(localStorage.getItem('currentDoctor')).data.id
+    this.getSchedule()
   }
   changeValue(value: any) {
 
@@ -134,7 +140,7 @@ export class ScheduleTimingComponent implements OnInit {
 
     this.selectedWeekDay = this.SelectedDay;
     console.log(this.selectedWeekDay);
-
+    this.timeSlotByday(this.selectedWeekDay)
   }
 
   openDialog() {
@@ -151,13 +157,13 @@ export class ScheduleTimingComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log("result",)
-      if (result) {
-        console.log(result.data)
-        this.options = result.data[0].trim
-        //  this.scheduleDatasunday(result.data);
-      }
-
+      console.log("result",result)
+      // if (result) {
+      //   console.log(result.data)
+      //   this.options = result.data[0].trim
+      //   //  this.scheduleDatasunday(result.data);
+      // }
+      this.timeSlotByday(result.event)
 
     });
 
@@ -178,4 +184,21 @@ export class ScheduleTimingComponent implements OnInit {
     this.AddSlotSection = true;
   }
 
+
+  getSchedule(){
+    this.doctorscheduletimeservice.doctorscheduletime(this.doctorId).pipe().subscribe(res => {
+      console.log(res);
+      this.totalScheduleTime = res
+ 
+    },
+      error => {
+        console.log('cannot work this api');
+
+      })
+  }
+  timeSlotByday(day){
+      this.totalScheduleTimebyDay = this.totalScheduleTime.filter(x=>x.workDay.toLowerCase() == day.toLowerCase() )
+      console.log(this.totalScheduleTimebyDay)
+      
+  }
 }

@@ -40,4 +40,11 @@ export class DoctorScheduledTimeService {
                 return res;
             }));
     }
+
+    doctorscheduletime(id): Observable<any> {
+        return this.http.get(`${environment.apiUrl}/api/DoctorSchedule/GetDoctorSchedule?doctorId=${id}`)
+            .pipe(map(res => {
+                return res;
+            }));
+    }
 }

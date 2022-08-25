@@ -41,6 +41,7 @@ export class AddSlotComponent implements OnInit {
   doctorId: any;
   docSchedules: any = [];
   SelectedDay: string;
+  timeSlotForm1: any;
 
 
   constructor(private fb: FormBuilder, private doctorscheduledtimeService: DoctorScheduledTimeService, public datepipe: DatePipe, public dialogRef: MatDialogRef<AddSlotComponent>,
@@ -50,7 +51,7 @@ export class AddSlotComponent implements OnInit {
     this.local_data = { data };
     console.log(this.local_data)
     // this.action = this.local_data.action;
-    this.selectedWeekDay = this.local_data;
+    this.selectedWeekDay = this.local_data.data;
     console.log(this.selectedWeekDay);
 
     // this.count = this.local_data.count
@@ -113,7 +114,7 @@ export class AddSlotComponent implements OnInit {
   }
   addTimeSlots() {
 
-    this.docSchedules = this.timeSlotForm.value
+    this.docSchedules = this.timeSlotForm1.value
     console.log(this.docSchedules);
 
     // let timechange = this.datepipe.transform(this.docSchedules.toLocaleString()); // convert format HH mm ss 
@@ -136,6 +137,7 @@ export class AddSlotComponent implements OnInit {
       .pipe(first())
       .subscribe(res => {
         console.log(res);
+        this.dialogRef.close({ event: this.local_data.data });
 
       })
 
@@ -146,46 +148,46 @@ export class AddSlotComponent implements OnInit {
     // console.log(newarr);
 
     // this.f.startTime.value, this.f.endTime.value
-    if (this.timeSlotForm.valid) {
-      var data = this.timeSlotForm.value;
-      var invalidTimeSlots = [];
-      data.timeSlots.forEach(element => {
-        if (element.startTime == '' && element.endTime == '') {
-          invalidTimeSlots.push(element);
-        }
-      });
+    // if (this.timeSlotForm.valid) {
+    //   var data = this.timeSlotForm.value;
+    //   var invalidTimeSlots = [];
+    //   data.timeSlots.forEach(element => {
+    //     if (element.startTime == '' && element.endTime == '') {
+    //       invalidTimeSlots.push(element);
+    //     }
+    //   });
 
-      data.timeSlots = (data.timeSlots as Array<any>).filter(selectedWeekDay => invalidTimeSlots.indexOf(selectedWeekDay) == -1);
-      var timingObjIndex = this.timingData.findIndex(selectedWeekDay => selectedWeekDay.workday == this.selectedWeekDay);
-      if (timingObjIndex != -1) {
-        this.timingData[timingObjIndex].timeSlots = data.timeSlots;
-      }
-      else {
-        this.timingData.push({
-          workday: this.selectedWeekDay,
-          timeSlots: data.timeSlots
-        });
-      }
-      this.timeSlotCounts[this.selectedWeekDay] = data.timeSlots;
-      this.timeSlotsFormArray = this.fb.array([]);
-      this.timeSlotsFormArray.push(this.fb.group({
-        startTime: ['00:00:00'],
-        endTime: ['01:00:00'],
-        workday: ['']
-      }));
-      this.timeSlotForm = this.fb.group({
-        workday: [1],
-        timeSlots: this.timeSlotsFormArray
-      });
-      this.changeSelectedWeekDay(this.selectedWeekDay);
-      this.dialogRef.close({ data: [this.timeSlotForm.value], day: this.selectedWeekDay });
-      // $('#edit_time_slot').modal('hide');
-      // $('#add_time_slot').modal('hide');
-    }
-    else {
-      console.log("error")
-      return;
-    }
+    //   data.timeSlots = (data.timeSlots as Array<any>).filter(selectedWeekDay => invalidTimeSlots.indexOf(selectedWeekDay) == -1);
+    //   var timingObjIndex = this.timingData.findIndex(selectedWeekDay => selectedWeekDay.workday == this.selectedWeekDay);
+    //   if (timingObjIndex != -1) {
+    //     this.timingData[timingObjIndex].timeSlots = data.timeSlots;
+    //   }
+    //   else {
+    //     this.timingData.push({
+    //       workday: this.selectedWeekDay,
+    //       timeSlots: data.timeSlots
+    //     });
+    //   }
+    //   this.timeSlotCounts[this.selectedWeekDay] = data.timeSlots;
+    //   this.timeSlotsFormArray = this.fb.array([]);
+    //   this.timeSlotsFormArray.push(this.fb.group({
+    //     startTime: ['00:00:00'],
+    //     endTime: ['01:00:00'],
+    //     workday: ['']
+    //   }));
+    //   this.timeSlotForm = this.fb.group({
+    //     workday: [1],
+    //     timeSlots: this.timeSlotsFormArray
+    //   });
+    //   this.changeSelectedWeekDay(this.selectedWeekDay);
+    //   this.dialogRef.close({ data: [this.timeSlotForm.value], day: this.selectedWeekDay });
+    //   // $('#edit_time_slot').modal('hide');
+    //   // $('#add_time_slot').modal('hide');
+    // }
+    // else {
+    //   console.log("error")
+    //   return;
+    // }
   }
   changeSelectedWeekDay(workday) {
 
@@ -287,7 +289,7 @@ export class AddSlotComponent implements OnInit {
     this.selectedWeekDay = this.SelectedDay;
     console.log(this.selectedWeekDay);
 
-
+    console.log(this.local_data.data)
 
     if (this.timeSlotCounts[this.selectedWeekDay]) {
       this.timeSlotsFormArray = this.fb.array([]);
@@ -295,28 +297,31 @@ export class AddSlotComponent implements OnInit {
         this.timeSlotsFormArray.push(this.fb.group({
           startTime: [selectedWeekDay.startTime],
           endTime: [selectedWeekDay.endTime],
-          workday: [selectedWeekDay.workday]
+          workday: [this.local_data.data]
         }));
       });
       console.log(this.selectedWeekDay);
 
       this.timeSlotForm = this.fb.group({
-        workday: [this.selectedWeekDay],
+        // workday: [this.local_data.data],
         timeSlots: this.timeSlotsFormArray
       });
 
+      this.timeSlotForm1 =  this.timeSlotsFormArray
     }
     else {
       this.timeSlotsFormArray = this.fb.array([]);
       this.timeSlotsFormArray.push(this.fb.group({
         startTime: [''],
         endTime: [''],
-        workday: ['']
+        workday: [this.local_data.data]
       }));
       this.timeSlotForm = this.fb.group({
-        workday: [this.selectedWeekDay],
+        // workday: [this.local_data.data],
         timeSlots: this.timeSlotsFormArray
       });
+
+      this.timeSlotForm1 =  this.timeSlotsFormArray
     }
   }
 }

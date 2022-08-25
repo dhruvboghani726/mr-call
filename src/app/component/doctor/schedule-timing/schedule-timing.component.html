@@ -42,7 +42,7 @@
 
         </div>
 
-        <div *ngIf="AddSlotSection">
+        <div class="mt-10">
             <div fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
                 <span class="mat-h4" ngClass.xs="mat-h2">Timing Slots</span>
                 <span>
@@ -52,11 +52,11 @@
                     </button></span>
             </div>
             <div fxLayout="row" fxLayout.xs="column">
-                <span class="mat-h3" *ngIf="options == null" ngClass.xs="mat-h4"> Not Available</span>
-                <mat-chip-list *ngIf="options">
-                    <mat-chip color="primary" #chipList *ngFor="let option of options" [removable]="true"
+                <span class="mat-h3" *ngIf="this.totalScheduleTimebyDay == null" ngClass.xs="mat-h4"> Not Available</span>
+                <mat-chip-list *ngIf="this.totalScheduleTimebyDay">
+                    <mat-chip color="primary" #chipList *ngFor="let option of this.totalScheduleTimebyDay" [removable]="true"
                         (removed)="removeOption(option)">{{option.startTime}} - {{option.endTime}}
-                        <mat-icon matChipRemove>cancel</mat-icon>
+                        <!-- <mat-icon matChipRemove>cancel</mat-icon> -->
                     </mat-chip>
                 </mat-chip-list>
             </div>
