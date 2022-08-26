@@ -52,104 +52,131 @@
         <mat-card fxLayout="row" fxLayoutAlign="start center" class="background-color-primary-light">
             <!-- <div class="background-color-primary-light"> -->
             <mat-toolbar class="backgroud-color-white">
+                <form [formGroup]="DatePickerForm">
                 <span class="fileter-width">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker" [min]="minDate" placeholder="Choose a date">
+                        <input formControlName="DateForm"  (dateChange)="FilterDoctorList('change', $event)"  matInput [matDatepicker]="picker" [min]="minDate" datePickerFormat="YYYY/DD/MM"
+                            placeholder="Choose a date">
 
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
+
                     </mat-form-field>
                 </span>
+            </form>
             </mat-toolbar>
             <!-- </div> -->
         </mat-card>
     </div>
 
     <div fxLayout="column" fxLayoutAlign="space-around" fxLayoutGap="10px">
-        <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px"
-            class="threecard background-color-primary-light" fxLayout.xs="column">
-            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+        <form [formGroup]="searchdataForm">
+            <mat-card fxLayout="row" fxLayoutGap="20px" style="padding:20px"
+                class="threecard background-color-primary-light" fxLayout.xs="column">
 
-                <span class="mat-h2">
-                    Total Doctors in My List: &nbsp;<span fxLayout.xs="row" fxLayoutAlign.xs="center center"
-                        class="backgroud-color-primary color-white total-dr-list">2</span>
-                </span>
-            </mat-card>
-            <!-- <div fxLayout.sm="row" fxLayoutGap.sm="10px"> -->
-            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
-                <div>
-                    <mat-toolbar class="backgroud-color-white card-padding-dashboard">
-                        <mat-form-field>
-                            <mat-label>Select Teritory</mat-label>
-                            <mat-select>
-                                <mat-option value="All">All</mat-option>
-                                <mat-option value="Ahmedabad">Ahmedabad</mat-option>
-                                <mat-option value="Surat">Surat</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-                    </mat-toolbar>
-                </div>
-
-            </mat-card>
-            <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
-                <div>
-                    <mat-toolbar class="background-color-primary-light card-padding-dashboard">
-                        <span class="fileter-width">
+                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                    <span class="mat-h2">
+                        Total Doctors in My List: &nbsp;<span fxLayout.xs="row" fxLayoutAlign.xs="center center"
+                            class="backgroud-color-primary color-white total-dr-list">{{count}}</span>
+                    </span>
+                </mat-card>
+                <!-- <div fxLayout.sm="row" fxLayoutGap.sm="10px"> -->
+                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                    <div>
+                        <mat-toolbar class="backgroud-color-white card-padding-dashboard">
                             <mat-form-field>
-                                <input matInput [(ngModel)]="value" placeholder="Get Doctor List">
-                                <button mat-button class="remove-search" matSuffix mat-icon-button aria-label="Clear"
-                                    (click)="value=''">
-                                    <mat-icon class="mat-18">search</mat-icon>
-                                </button>
+                                <mat-label>Select Teritory</mat-label>
+                                <mat-select formControlName="city" id="city"
+                                    (selectionChange)="Cityfilter($event.value)">
+                                    <!-- <mat-option value="All">All</mat-option> -->
+                                    <mat-option value="Ahmedabad">Ahmedabad</mat-option>
+                                    <mat-option value="Surat">Surat</mat-option>
+                                    <mat-option value="Jamnagar">Jamnagar</mat-option>
+                                    <mat-option value="Rajkot">Rajkot</mat-option>
+                                </mat-select>
                             </mat-form-field>
-                        </span>
-                    </mat-toolbar>
-                </div>
+                        </mat-toolbar>
+                    </div>
+                </mat-card>
+                <mat-card fxFlex="33" fxLayout="row" fxLayoutAlign="center center">
+                    <div>
+                        <mat-toolbar class="background-color-primary-light card-padding-dashboard">
+                            <span class="fileter-width">
+                                <mat-form-field>
+                                    <input matInput formControlName="search" id="search" [(ngModel)]="value"
+                                        placeholder="Get Doctor List">
+                                    <button mat-button class="remove-search" matSuffix mat-icon-button
+                                        aria-label="Clear" (click)="serchDoctorfilter()">
+                                        <mat-icon class="mat-18">search</mat-icon>
+                                    </button>
+                                </mat-form-field>
+                            </span>
+                        </mat-toolbar>
+                    </div>
+                </mat-card>
+                <!-- </div> -->
             </mat-card>
-            <!-- </div> -->
-        </mat-card>
+        </form>
     </div>
 
-    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="15px" fxLayoutGap.sm="0px" fxLayout.xs="column">
+    <div fxLayout="row wrap" fxLayoutAlign="space-around" fxLayoutGap="15px " fxLayoutGap.sm="10px"
+        fxLayout.xs="column">
 
-        <mat-card *ngFor="let item of doctorlist" fxFlex="32%" fxFlex.xs="100%" fxFlex.sm="32%" class="twocard"
-            class="background-color-primary-light twocard" ngClass.xs="twocard-xs" fxLayout="column"
-            fxLayoutAlign="space-around">
+        <mat-card *ngFor="let item of FavdoctorList" fxFlex="32%" fxflex="100%" fxFlex.xs="100%" fxFlex.sm="32%"
+            class="twocard" class="background-color-primary-light twocard" ngClass.xs="twocard-xs" fxLayout="column">
+            <div>
+                <span class="mat-h2 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">{{item.doctorName}}
+                    <span>({{item.degree}})</span></span>
 
-            <span class="mat-h2 cursor-pointer" ngClass.xs="mat-h2 cursor-pointer">{{item.doctorName}}
-                <span>{{(item.degree)}}</span></span>
+                <span class="menu-button  color-primary">
+                    <mat-icon> local_hospital</mat-icon>
+                    <span class="mat-h3" ngClass.xs="mat-h4"> {{item.speciality}}</span>
+                </span>
+                <span class="menu-button">
+                    <mat-icon> place</mat-icon>
+                    <span class="mat-h5" ngClass.xs="mat-h4"> {{item.street1}},{{item.street2}},{{item.city}}</span>
+                </span>
 
-            <span class="menu-button  color-primary">
-                <mat-icon> local_hospital</mat-icon>
-                <span class="mat-h3" ngClass.xs="mat-h4"> {{item.speciality}}</span>
-            </span>
-            <span class="menu-button">
-                <mat-icon> place</mat-icon>
-                <span class="mat-h5"> Ram Nivas,LG Corner, Maninagar, Ahmedabad</span>
-            </span>
-            <span *ngIf="!this.timeget ">
-                <span class=" mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
-            </span>
-            <span *ngIf="this.timeget ">
-                <span class="mat-h3" ngClass.xs="mat-h3">Mark the time slot to book the appointment </span>
-            </span>
-
+                <span *ngIf="!this.timeget ">
+                    <span class=" mat-h3" ngClass.xs="mat-h3">Booking For Tomorrow Will Open at 3.00 PM</span>
+                </span>
+                <span *ngIf="this.timeget ">
+                    <span class="mat-h3" ngClass.xs="mat-h3">Mark the time slot to book the appointment </span>
+                </span>
+            </div>
             <div *ngIf="this.timeget ">
-                <span>{{currenttime | date:'fullDate'}}</span>
+                <!-- <span>{{currenttime | date:'fullDate'}}</span><br> -->
+                <span style="font-weight:600;">Tomorrow Schedule:</span>
+                <br>
+                <span>{{item.tomorrowSchedule.day}}</span>&nbsp;&nbsp;
+                <span>{{item.tomorrowSchedule.date | date: 'yyyy/MM/dd'}}</span>
                 <div class="timezone">
-                    <mat-radio-group aria-label="Select an option" color="primary" fxLayoutGap="10px"
-                        [(ngModel)]="favoritetimeslot">
-                        <mat-radio-button class="example-radio-button" *ngFor="let timeslot of timeslots"
-                            [value]="timeslot" (change)="radioChange()">{{timeslot}}</mat-radio-button>
-                        <!-- <mat-radio-button  [value]="1" >3:00 to 4:00</mat-radio-button>&nbsp;
-                        <mat-radio-button  [value]="2">4:00 to 5:00</mat-radio-button>&nbsp;
-                        <mat-radio-button  [value]="3">5:00 to 6:00</mat-radio-button>&nbsp;
-                        <mat-radio-button  [value]="4">7:00 to 8:00</mat-radio-button> -->
+                    <mat-radio-group aria-label="Select an option" color="primary" fxLayoutGap="20px">
+                        <mat-radio-button class="example-radio-button" [value]="slot"
+                            *ngFor="let slot of item.tomorrowSchedule.slotTime" (change)="timesloatChange($event)">
+                            {{slot.startTime}}-{{slot.endTime}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+
+                </div>
+                <br>
+                <span style="font-weight:600;">Day After Schedule:</span>
+                <br>
+                <span>{{item.dayAfterSchedule.day}}</span>&nbsp;&nbsp;
+                <span>{{item.dayAfterSchedule.date | date: 'yyyy/MM/dd'}}</span>
+                <div class="timezone">
+                    <mat-radio-group aria-label="Select an option" color="primary" fxLayoutGap="20px">
+                        <mat-radio-button class="example-radio-button" [value]="slot"
+                            *ngFor="let slot of item.dayAfterSchedule.slotTime" (change)="timesloatChange($event)">
+                            {{slot.startTime}}-{{slot.endTime}}
+                        </mat-radio-button>
                     </mat-radio-group>
                 </div>
                 <div fxLayoutAlign="center center">
-                    <button mat-raised-button color="primary" class="book-app-btn" (click)="BookAppointment()"
-                        fxFlex="50" fxFlex.sm="100">Book Appointment</button>
+                    <button mat-raised-button color="primary" class="book-app-btn"
+                        (click)="BookAppointment({id:item.doctorId,date:item.tomorrowSchedule.date })" fxFlex="50"
+                        fxFlex.sm="100">Book
+                        Appointment</button>
                 </div>
             </div>
         </mat-card>

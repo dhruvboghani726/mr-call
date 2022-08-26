@@ -1,7 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import jspdf, { jsPDF } from "jspdf";
 import html2canvas from 'html2canvas';
-
+import { BookAppoinmentService } from 'src/app/shared/services/BookAppointment.service';
+import { LoaderService } from 'src/app/shared/services/loader.service';
+import { first } from 'rxjs/operators';
+import { Drviewappoinment } from 'src/app/shared/_models/DrViewappoinment';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 export interface PeriodicElement {
   MON: string;
   TUE: string;
@@ -9,7 +13,6 @@ export interface PeriodicElement {
   THU: string;
   FRI: string;
   SAT: string;
-
 }
 const ELEMENT_DATA: PeriodicElement[] = [
   { MON: 's', TUE: 's', WED: 's', THU: 's', FRI: 's', SAT: 's', },
@@ -26,24 +29,48 @@ export class AppoinmentReciptComponent implements OnInit {
   bookingdate = new Date();
   displayedColumns: string[] = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+  doctorId: any;
+  mrId: any;
+  Viewallappointment: any = [];
+  order: any;
+  constructor(private bookappoinmentService: BookAppoinmentService, public loader: LoaderService, private activatedRoute: ActivatedRoute) { }
+  appoimentDate: any;
+  startTime: any;
+  endTime: any;
 
   ngOnInit(): void {
+    // this.doctorId = JSON.parse(localStorage.getItem('currentDoctor')).data.id
+    // console.log(this.doctorId);
+
+    // subscribe to router event
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
+      console.log(params);
+      console.log(params['appoimentDate']);
+      console.log(params['startTime'])
+      this.appoimentDate = params['appoimentDate']
+      this.startTime = params['startTime']
+      this.endTime = params['endTime']
+
+    });
+    this.mrId = JSON.parse(localStorage.getItem('currentMr')).data.id
+    console.log(this.mrId);
+    this.ViewAppointment();
+
   }
+  ViewAppointment() {
+
+    this.bookappoinmentService.DrAllAppointment<Drviewappoinment>(`api/MR/ViewAllAppointment?mrId=${this.mrId}`)
+      .subscribe((data) => {
+        console.log(data);
+        this.Viewallappointment = data
+        console.log(this.Viewallappointment);
+      })
+  }
+
+
+
   async downloadPdf() {
-    // html2canvas(document.getElementById('content')!).then(canvas => {
-    //   // Few necessary setting options
-
-    //   const contentDataURL = canvas.toDataURL('image/png')
-    //   let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF
-    //   var width = pdf.internal.pageSize.getWidth();
-    //   var height = canvas.height * width / canvas.width;
-    //   pdf.addImage(contentDataURL, 'PNG', 0, 0, width, height)
-    //   pdf.save('Mrcall.pdf'); // Generated PDF
-    // });
-
     var data = document.getElementById('content');
-
     html2canvas(data).then(canvas => {
       let HTML_Width = canvas.width;
       let HTML_Height = canvas.height;

@@ -15,14 +15,10 @@ export class FavoritedoctorService {
     constructor(private http: HttpClient) { }
 
     FavoriteDoctor(doctorId: string, mrId: string) {
-        let header = new HttpHeaders().set("Authorization", "Berear" + localStorage.getItem("token"))
-        console.log("doctorId", localStorage.getItem("currentmrid"));
+
 
         return this.http.post(`${environment.apiUrl}/api/Doctor/AddToMyList`, {
             doctorId, mrId,
-            headers: header
-
-
         })
             .pipe(map(res => {
                 console.log(res);

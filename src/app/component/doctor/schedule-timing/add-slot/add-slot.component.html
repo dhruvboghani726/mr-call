@@ -1,24 +1,23 @@
 <button mat-mini-fab color="primary" class="close-button close-icon" (click)="closeDialog()">
-    <mat-icon  style="color: #fff" class="close-icon">close</mat-icon>
-  </button>
-  
-  <div class="cardpadding">
-    <h2 mat-dialog-title>Add Time Slot</h2>
-    <!-- <span>{{this.day}}</span> -->
-    <div mat-dialog-content>
-      <div>
-        <form class="example-form"   [formGroup]="timeSlotForm">
+  <mat-icon style="color: #fff" class="close-icon">close</mat-icon>
+</button>
 
-            <!-- <section class="container border mb-4 p-3" *ngFor="let address of addresses; let i = index;"> -->
-              <ng-container formArrayName="timeSlots"  *ngFor="let timeSlot of getTimeSlotFormArray().controls; let i = index">
-              <ng-container [formGroupName]="i">
-                <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-                  
-                  <!-- <mat-form-field class="half-width" appearance="outline">
-    
+<div class="cardpadding">
+  <h2 mat-dialog-title>Add Time Slot</h2>
+  <!-- <span>{{this.day}}</span> -->
+  <div mat-dialog-content>
+    <div>
+      <form class="example-form" [formGroup]="timeSlotForm">
+
+
+        <ng-container formArrayName="timeSlots" *ngFor="let timeSlot of getTimeSlotFormArray().controls; let i = index">
+          <ng-container [formGroupName]="i">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+
+              <!-- <mat-form-field class="half-width" appearance="outline">
+
                     <mat-label>Start Time</mat-label>
                     <mat-select formControlName="fromTimeSlot">
-    
                       <mat-option value="00:00:00">00:00</mat-option>
                       <mat-option value="01:00:00">01:00</mat-option>
                       <mat-option value="02:00:00">02:00</mat-option>
@@ -43,17 +42,12 @@
                       <mat-option value="21:00:00">21:00</mat-option>
                       <mat-option value="22:00:00">22:00</mat-option>
                       <mat-option value="23:00:00">23:00</mat-option>
-    
-                    </mat-select>
-    
+                    </mat-select>  
                   </mat-form-field>
-    
-    
+  
                   <mat-form-field class="half-width" appearance="outline">
-    
                     <mat-label>End Time</mat-label>
                     <mat-select formControlName="toTimeSlot">
-    
                       <mat-option value="00:00:00">00:00</mat-option>
                       <mat-option value="01:00:00">01:00</mat-option>
                       <mat-option value="02:00:00">02:00</mat-option>
@@ -78,71 +72,55 @@
                       <mat-option value="21:00:00">21:00</mat-option>
                       <mat-option value="22:00:00">22:00</mat-option>
                       <mat-option value="23:00:00">23:00</mat-option>
-    
                     </mat-select>
-                  
-    
                   </mat-form-field> -->
+              <div class="24hr-example" ngClass.xs="hr-example-xs">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Start time</mat-label>
+                  <div fxLayout="row" fxLayoutAlign="start center">
+                    <input aria-label="24hr format" [format]="24" matInput name="startTime" formControlName="startTime"
+                      [ngxTimepicker]="startTime " readonly>
+                    <ngx-material-timepicker-toggle [for]="startTime "></ngx-material-timepicker-toggle>
 
-                  <div class="12hr-example" ngClass.xs="hr-example-xs">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                      <mat-label>Start time</mat-label>
-                      <div fxLayout="row" fxLayoutAlign="start center">
-                        <input aria-label="12hr format" matInput [ngxTimepicker]="toggleTimepicker" readonly>
-                        <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-                      </div>
-                    </mat-form-field>
                   </div>
+                </mat-form-field>
+                <ngx-material-timepicker #startTime></ngx-material-timepicker>
+              </div>
 
-                  <div class="12hr-example" ngClass.xs="hr-example-xs">
-                    <mat-form-field class="example-full-width" appearance="outline">
-                      <mat-label>End time</mat-label>
-                      <div fxLayout="row" fxLayoutAlign="start center">
-                        <input aria-label="12hr format" matInput [ngxTimepicker]="toggleTimepicker" readonly>
-                        <ngx-material-timepicker-toggle [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
-                        <ngx-material-timepicker #toggleTimepicker></ngx-material-timepicker>
-                      </div>
-                    </mat-form-field>
+              <div class="24hr-example" ngClass.xs="hr-example-xs">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>End time</mat-label>
+                  <div fxLayout="row" fxLayoutAlign="start center">
+                    <input aria-label="24hr format" [format]="24" matInput name="endTime" formControlName="endTime"
+                      [ngxTimepicker]="endTime " value="" readonly>
+                    <ngx-material-timepicker-toggle [for]="endTime "></ngx-material-timepicker-toggle>
+
                   </div>
-                 
-                  <button *ngIf="i >= 0"  matSuffix mat-icon-button color="primary" (click)="deleteTimeSlot(i)"
-                    matTooltip="delete" matTooltipPosition="below">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                  
-                </div>
-                <br/>
-               
-                
-                
+                </mat-form-field>
+                <ngx-material-timepicker #endTime></ngx-material-timepicker>
+              </div>
+              <!-- 
+              <button matSuffix mat-icon-button color="primary" matTooltip="delete" matTooltipPosition="below">
+                <mat-icon>delete</mat-icon>
+              </button> -->
 
-              
-                
-              
-               
-             
-            <!-- </section> -->
-              </ng-container>
-             
-             
-            </ng-container>
-         
-            <div class="mdl-layout-spacer"></div>
-          </form>
-        
-      </div>
-    </div>
-    <div class="add-more mb-3" align="end">
-     
-        <button mat-button color="primary"  (click)="addTimeSlotEntry()" class="button-icon-text"
-        aria-label="Example icon-button with menu icon and text">
-        <mat-icon color="primary">add</mat-icon>
-        <span>Add More</span>
-      </button>
-    </div>
-    <div mat-dialog-actions align="end">
-      <button mat-raised-button  color="primary" (click)="addTimeSlots()" cdkFocusInitial>Save Changes</button>
-      <button mat-raised-button class="backgroud-color-dark color-white" (click)="closeDialog()">Cancel</button>
+            </div>
+            <br />
+          </ng-container>
+        </ng-container>
+        <div class="mdl-layout-spacer"></div>
+      </form>
     </div>
   </div>
+  <!-- <div class="add-more mb-3" align="end">
+    <button mat-button color="primary" (click)="addTimeSlotEntry()" class="button-icon-text"
+      aria-label="Example icon-button with menu icon and text">
+      <mat-icon color="primary">add</mat-icon>
+      <span>Add More</span>
+    </button>
+  </div> -->
+  <div mat-dialog-actions align="end">
+    <button mat-raised-button color="primary" (click)="addTimeSlots()" cdkFocusInitial>Save Changes</button>
+    <button mat-raised-button class="backgroud-color-dark color-white" (click)="closeDialog()">Cancel</button>
+  </div>
+</div>
